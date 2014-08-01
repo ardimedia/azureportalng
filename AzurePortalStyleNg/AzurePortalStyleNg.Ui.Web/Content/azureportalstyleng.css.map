@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "azureportalstyleng.css",
+  "sources": [
+    "azureportalstyleng.scss",
+    "../!Design/!design.scss",
+    "../!Design/!libmixin.scss",
+    "../!Design/portallayout.scss",
+    "../!Design/themems.scss"
+  ],
+  "names": [],
+  "mappings": ";ACEA,MAAM;ECCF,iBAAiB;EACjB,oBAAoB;EACpB,YAAY;EACZ,QAAQ;EACR,SAAS;EDHT,QAAQ;;;;;;;;;;;;;;;AEWZ;;EAEI,UAAU;EACV,UAAU;EACV,KAAK;EACL,MAAM;EACN,OAAO;EACP,QAAQ;;;AAIZ,YAAY;EACR,QAAQ;EACR,OAAO;EACP,YAAY;EACZ,YAAY;EACZ,aAAa;EACb,oBAAoB;EACpB,iBAAiB;EACjB,eAAe;EACf,YAAY;;AAGhB,YAAY,sBAAsB;EAC9B,aAAa;;AAGjB;EACI,qBAAqB;;AAGzB;EACI,WAAW;;AAGf,cAAc;EACV,UAAU;EACV,SAAS;EACT,QAAQ;;AAGZ,cAAc;EACV,cAAc;;AAGlB,cAAc,wBAAwB,cAAc;EAChD,SAAS;EACT,gBAAgB;EAChB,QAAQ;;AAGZ;EACI,QAAQ;;AAGZ,eAAe;EACX,QAAQ;;;;AAOZ,eAAe,sBAAsB,YAAY;EAC7C,cAAc;;AAGlB,eAAe,sBAAsB;EACjC,oBAAoC;EACpC,YAA4B;;AAGhC,2BAA2B;EACvB,UAAU;EACV,aAAa;EACb,QAAQ;;AAGZ,2BAA2B,mBAAmB;EAC1C,SAAS;EACT,gBAAgB;EAChB,YAAY;EACZ,QAAQ;EACR,aAAa;;;AClGjB;;EAEI,kBAAkB;EAClB,mBAAmB;EACnB,aAAa;EACb,aAAa;EACb,WAAW;EACX,2BAA2B;EAC3B,0BAA0B;EAC1B,2BAA2B"
+}

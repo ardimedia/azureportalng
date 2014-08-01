@@ -19,6 +19,8 @@
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
     <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\!Vs.Projects\Inofware.GitHub.Projects\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,6 +59,69 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="!Design\!libmixin.css">
+      <DependentUpon>!libmixin.scss</DependentUpon>
+    </Content>
+    <Content Include="!Design\!libmixin.min.css">
+      <DependentUpon>!libmixin.css</DependentUpon>
+    </Content>
+    <Content Include="!Design\!design.css">
+      <DependentUpon>!design.scss</DependentUpon>
+    </Content>
+    <Content Include="!Design\!design.min.css">
+      <DependentUpon>!design.css</DependentUpon>
+    </Content>
+    <Content Include="!Design\!test\azure.html" />
+    <Content Include="!Design\!test\test.css">
+      <DependentUpon>test.scss</DependentUpon>
+    </Content>
+    <Content Include="!Design\!test\test.min.css">
+      <DependentUpon>test.css</DependentUpon>
+    </Content>
+    <Content Include="!Design\themems.css">
+      <DependentUpon>themems.scss</DependentUpon>
+    </Content>
+    <Content Include="!Design\themems.min.css">
+      <DependentUpon>themems.css</DependentUpon>
+    </Content>
+    <Content Include="!Design\portallayout.css">
+      <DependentUpon>portallayout.scss</DependentUpon>
+    </Content>
+    <Content Include="!Design\portallayout.min.css">
+      <DependentUpon>portallayout.css</DependentUpon>
+    </Content>
+    <Content Include="Content\azureportalstyleng.css">
+      <DependentUpon>azureportalstyleng.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\azureportalstyleng.min.css">
+      <DependentUpon>azureportalstyleng.css</DependentUpon>
+    </Content>
+    <Content Include="Content\iwstyle.css" />
+    <Content Include="packages.config" />
+    <Content Include="!Design\!design.scss" />
+    <Content Include="!Design\!design.css.map">
+      <DependentUpon>!design.css</DependentUpon>
+    </Content>
+    <Content Include="Content\azureportalstyleng.scss" />
+    <Content Include="Content\azureportalstyleng.css.map">
+      <DependentUpon>azureportalstyleng.css</DependentUpon>
+    </Content>
+    <Content Include="!Design\portallayout.scss" />
+    <Content Include="!Design\portallayout.css.map">
+      <DependentUpon>portallayout.css</DependentUpon>
+    </Content>
+    <Content Include="!Design\!test\test.scss" />
+    <Content Include="!Design\!test\test.css.map">
+      <DependentUpon>test.css</DependentUpon>
+    </Content>
+    <Content Include="!Design\themems.scss" />
+    <Content Include="!Design\themems.css.map">
+      <DependentUpon>themems.css</DependentUpon>
+    </Content>
+    <Content Include="!Design\!libmixin.scss" />
+    <Content Include="!Design\!libmixin.css.map">
+      <DependentUpon>!libmixin.css</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -65,6 +130,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\normalize.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +161,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
