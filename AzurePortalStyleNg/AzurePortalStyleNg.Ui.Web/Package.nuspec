@@ -6,7 +6,7 @@
     <authors>Harry Pfleger - Infoware</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Framework for building Azure Portal (layout) based web sites.</description>
-    <releaseNotes>Very early beta version. Use on your own risk...</releaseNotes>
+    <releaseNotes>Very early preview. Use on your own risk...</releaseNotes>
     <dependencies>
       <dependency id="angularjs" />
     </dependencies>
