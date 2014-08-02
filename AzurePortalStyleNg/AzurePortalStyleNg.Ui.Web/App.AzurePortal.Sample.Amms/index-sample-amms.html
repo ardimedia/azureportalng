@@ -1,17 +1,18 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="app">
+<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="app.azureportal">
 <head>
     <title></title>
-    <link href="../Content/azureportalstyleng.css" rel="stylesheet" />
+    <link href="/Content/azureportalstyleng.css" rel="stylesheet" />
 </head>
-<body>
-    <div data-portal-shell></div>
+<body ng-controller="portalshell as vm">
+    <div data-azureportal-shell data-options="vm"></div>
 
     <script src="/Scripts/angular.js"></script>
     <script src="/App.AzurePortal/app.js"></script>
     <script src="/App.AzurePortal/config.js"></script>
-
     <script src="/App.AzurePortal/modules/portal/shell/shell.js"></script>
     <script src="/App.AzurePortal/modules/portal/child/child.js"></script>
+
+    <script src="controller/portalshell.js"></script>
 </body>
 </html>

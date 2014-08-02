@@ -3,13 +3,13 @@
 (function () {
     'use strict';
 
-    angular.module('app').directive('portalChild', ['$window', portalChild]);
+    angular.module('app.azureportal').directive('azureportalChild', ['$window', azureportalChild]);
 
-    function portalChild($window) {
-        var directive = {
+    function azureportalChild($window) {
+        return {
             replace: true,
+            scope: { vm: '=options' },
             templateUrl: '/App.AzurePortal/modules/portal/child/child.html',
         };
-        return directive;
     }
 })();

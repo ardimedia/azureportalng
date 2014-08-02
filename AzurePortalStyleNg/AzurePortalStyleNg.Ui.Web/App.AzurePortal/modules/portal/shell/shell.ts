@@ -3,12 +3,12 @@
 (function () {
     'use strict';
 
-    angular.module('app').directive('portalShell', ['$window', portalShell]);
+    angular.module('app.azureportal').directive('azureportalShell', ['$window', azureportalShell]);
 
-    function portalShell($window) {
-        var directive = {
+    function azureportalShell($window) {
+        return {
+            scope: { vm: '=options' },
             templateUrl: '/App.AzurePortal/modules/portal/shell/shell.html',
         };
-        return directive;
     }
 })();
