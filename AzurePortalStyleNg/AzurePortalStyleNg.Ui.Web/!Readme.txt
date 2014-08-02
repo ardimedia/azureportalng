@@ -4,7 +4,7 @@ DEPLOY TO NUGET
 DEPLOY FROM 
    D:\!Data\Source\Git.Github\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web\!!Out-Nuget
 TO:
-   https://www.nuget.org/packages/IwStyle/0.0.1-beta
+   https://www.nuget.org/packages/AzurePortalStyleNg
 ============================================================================================================
 
 ============================================================================================================
