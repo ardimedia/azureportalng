@@ -9,11 +9,11 @@
   -ms-scrollbar-face-color: #63707e;
   -ms-scrollbar-track-color: #dcdfe2; }
 
-/*body {
-    background: #61b7da 0 0 repeat-x;
-    background-image: url(../Images/MsPortalImpl/Portal_background.png?t=popn);
-    background-image: -webkit-linear-gradient(to bottom,#2e80ab 0%,#61b7da 100%);
-    background-image: linear-gradient(to bottom,#2e80ab 0%,#61b7da 100%);
-    -ms-scrollbar-track-color: #dcdfe2;
-}*/
+a {
+  color: #00bcf2;
+  text-decoration: none; }
+
+img, a img, :link img, :visited img {
+  border: 0; }
+
 /*# sourceMappingURL=themems.css.map */
