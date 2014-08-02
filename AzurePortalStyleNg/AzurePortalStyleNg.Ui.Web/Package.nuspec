@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>AzurePortalStyleNg</id>
+    <version>0.0.2-beta</version>
+    <authors>Harry Pfleger - Infoware</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Framework for building Azure Portal (layout) based web sites.</description>
+    <releaseNotes>Very early beta version. Use on your own risk...</releaseNotes>
+    <dependencies>
+      <dependency id="angularjs" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Web" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="index-sample-azureportal.html" target="content\index-sample-azureportal.html" />
+    <file src="App.AzurePortal\modules\portal\child\child.html" target="content\App.AzurePortal\modules\portal\child\child.html" />
+    <file src="App.AzurePortal\modules\portal\child\child.js" target="content\App.AzurePortal\modules\portal\child\child.js" />
+    <file src="App.AzurePortal\modules\portal\shell\shell.html" target="content\App.AzurePortal\modules\portal\shell\shell.html" />
+    <file src="App.AzurePortal\modules\portal\shell\shell.js" target="content\App.AzurePortal\modules\portal\shell\shell.js" />
+    <file src="App.AzurePortal\app.js" target="content\App.AzurePortal\app.js" />
+    <file src="App.AzurePortal\config.js" target="content\App.AzurePortal\config.js" />
+    <file src="Content\images\avatar.jpg" target="content\Content\images\avatar.jpg" />
+    <file src="Content\azureportalstyleng.css" target="content\Content\azureportalstyleng.css" />
+  </files>
+</package>

@@ -92,7 +92,8 @@
     <Content Include="!Design\portallayout.min.css">
       <DependentUpon>portallayout.css</DependentUpon>
     </Content>
-    <Content Include="!Test\testshell1-basic.html" />
+    <Content Include="!Readme.txt" />
+    <Content Include="index-sample-azureportal.html" />
     <Content Include="App.AzurePortal\modules\portal\child\child.html" />
     <Content Include="App.AzurePortal\modules\portal\shell\shell.html" />
     <Content Include="Content\azureportalstyleng.css">
@@ -102,7 +103,6 @@
       <DependentUpon>azureportalstyleng.css</DependentUpon>
     </Content>
     <Content Include="Content\images\avatar.jpg" />
-    <Content Include="Content\iwstyle.css" />
     <Content Include="packages.config" />
     <Content Include="!Design\!design.scss" />
     <Content Include="!Design\!design.css.map">
@@ -436,6 +436,10 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="nuspec-packager.config" />
+    <Content Include="Package.nuspec">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -444,7 +448,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\normalize.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -466,6 +469,7 @@
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="!!Out-Nuget\" />
     <Folder Include="App.AzurePortal\common\!directives\" />
     <Folder Include="App.AzurePortal\common\!services\" />
     <Folder Include="App.AzurePortal\modules\portal\!directives\" />
