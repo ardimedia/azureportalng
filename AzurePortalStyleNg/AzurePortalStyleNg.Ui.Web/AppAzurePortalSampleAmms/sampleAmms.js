@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('appAzurePortal').controller('portalshell', ['$scope', portalshell]);
+    angular.module('appAzurePortal').controller('sampleAmms', ['$scope', sampleAmms]);
 
-    function portalshell($scope) {
+    function sampleAmms($scope) {
         var vm = this;
 
         vm.activate = activate;
@@ -21,7 +21,8 @@
         ];
         vm.views = [];
 
-        function activate() { }
+        function activate() {
+        }
 
         function navigateTo(id) {
             console.log(id);
@@ -34,3 +35,4 @@
         }
     }
 })();
+//# sourceMappingURL=sampleAmms.js.map

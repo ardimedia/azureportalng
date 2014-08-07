@@ -24,7 +24,7 @@
             <div class="fxs-blade-title">
                 <div class="fxs-blade-title-text-container">
                     <h2 class="fxs-pannable fxs-blade-title-titleText msportalfx-tooltip-overflow">{{vm.title}}</h2>
-                    <h3 class="fxs-pnnable msportalfx-tooltip-overflow">{{vm.subTitle}}</h3>
+                    <h3 class="fxs-pannable msportalfx-tooltip-overflow">{{vm.subTitle}}</h3>
                 </div>
             </div>
             <div class="fxs-blade-commandBarContainer">
@@ -43,10 +43,18 @@
                             <section class="fxs-tile fxs-tilesize-fullwidthfitheight fx-rightClik">
                                 <div class="fxs-part">
                                     <header class="fxs-part-title">
-                                        <h2 class="msportalfx-tooltip-overflow">Title</h2>
-                                        <h3 class="msportalfx-tooltip-overflow">sub title</h3>
+                                        <h2 class="msportalfx-tooltip-overflow">{{vm.contentTitle}}</h2>
+                                        <h3 class="msportalfx-tooltip-overflow">{{vm.contentSubTitle}}</h3>
                                     </header>
-                                    <section class="fxs-part-content css-scope-HubsExtension"></section>
+                                    <section class="fxs-part-content css-scope-HubsExtension">
+                                        <div tabindex="0" class="fxcontrol-base azc-control azc-theme-frost azc-grid-focusableRow azc-grid-selectableRow azc-grid-activateableRow azc-grid-rightClickableRow azc-grid azc-grid-headerHidden Formatter FormatterHtmlBindings Focusable Selectable RightClickableRow" data-bind="pcGrid: $root" data-control="true">
+                                            <div class="azc-grid-container">
+
+                                                <div data-ng-if="vm.isNavGrid" data-navgrid data-options="vm.navGrid"></div>
+
+                                            </div>
+                                        </div>
+                                    </section>
                                 </div>
                             </section>
                         </div>

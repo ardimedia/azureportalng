@@ -1,0 +1,13 @@
+﻿{
+    "title": "Bergbahnen.Li",
+    "subTitle": "Aktienregister",
+    "XcontentTitle": "Navigation",
+    "XcontentSubTitle": "contentSubTitle",
+    "isNavGrid": true,
+    "navGrid": {
+        "items": [
+            { "title": "Aktienregister", "bladeId": "stockList" },
+            { "title": "Export Excel", "bladeId": "exportExcel" }
+        ]
+    }
+}

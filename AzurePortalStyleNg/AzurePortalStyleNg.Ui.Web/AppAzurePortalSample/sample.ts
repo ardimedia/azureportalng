@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('appAzurePortal').controller('portalshell', ['$scope', portalshell]);
+    angular.module('appAzurePortal').controller('sample', ['$scope', sample]);
 
-    function portalshell($scope) {
+    function sample($scope) {
         var vm = this;
 
         vm.activate = activate;
@@ -16,8 +16,8 @@
         };
         vm.tiles = [
             // size: normal (180x180), mini (180x90), small (90x90), herowide (540x360)
-            { title: 'Tile 1', subTitle: 'Some subtitle 1', size: 'normal', left: '0', top: '0', childId: 'tile1-nav' },
-            { title: 'Tile 2', subTitle: 'Some subtitle 2', size: 'normal', left: '180px', top: '0', childId: 'tile2-nav' }
+            { title: 'Tile 1', subTitle: 'Some subtitle 1', size: 'normal', left: '0', top: '0', bladeId: 'tile1-nav' },
+            { title: 'Tile 2', subTitle: 'Some subtitle 2', size: 'normal', left: '180px', top: '0', bladeId: 'tile2-nav' }
         ];
         vm.views = [];
 

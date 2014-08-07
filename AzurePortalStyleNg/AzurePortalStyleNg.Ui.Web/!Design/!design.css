@@ -236,6 +236,7 @@ PORTAL CHILD:
   box-shadow: inset 1px 0 #dcdfe2; }
 
 .fxs-part .fxs-part-title {
+  /*display: none;*/
   height: 49px;
   position: relative;
   top: -4px; }
@@ -541,6 +542,120 @@ PORTAL CHILD:
   padding: 0 0 15px 0; }
 
 /*#endregion*/
+.fxs-blade .fxs-blade-content {
+  padding: 25px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -ms-scrollbar-track-color: #d8d8ea;
+  -ms-scrollbar-arrow-color: #758393;
+  -ms-scrollbar-face-color: #63707e; }
+
+.fxs-lens > .fxs-lens-drag-handle {
+  position: absolute;
+  z-index: 52;
+  top: -12px;
+  left: -25px;
+  bottom: 12px;
+  width: 25px;
+  background-color: #e9e9f3;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s ease-out; }
+
+.fxs-blade-locked.fxs-blade .fxs-part .fxs-part-title {
+  height: 29px; }
+
+.fxs-part .fxs-part-title h3 {
+  font-family: wf_segoe-ui_semibold, "Segoe UI Semibold", "Segoe WP Semibold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  color: #8f9ca8;
+  text-transform: uppercase;
+  margin-top: 3px; }
+
+.azc-grid {
+  position: relative;
+  font-size: 12px; }
+
+.azc-grid .azc-grid-container {
+  overflow-x: auto;
+  overflow-y: visible; }
+
+.azc-grid table {
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-collapse: collapse; }
+
+.azc-control table {
+  border-collapse: collapse;
+  table-layout: fixed; }
+
+.azc-grid table caption {
+  display: none; }
+
+.azc-grid-headerHidden.azc-grid table thead {
+  display: none; }
+
+.azc-grid table thead tr th.azc-grid-unsortablecolumnheader {
+  cursor: default; }
+
+.azc-grid table th:first-child {
+  padding-left: 0px; }
+
+.azc-grid table thead tr th {
+  font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 10px;
+  padding: 0;
+  height: 40px;
+  font-family: wf_segoe-ui_bold, "Segoe UI Bold", "Segoe WP Bold", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 400; }
+
+.azc-grid-activateableRow table tbody tr[data-grid-row-activated='true'][aria-selected='true'] {
+  background-color: #c6edfa !important; }
+
+.azc-grid-selectableRow table tbody tr[aria-selected='true'] {
+  background-color: #d2f1fc !important; }
+
+.azc-grid-selectableRow table tbody tr[aria-selected='true'] td {
+  color: inherit !important; }
+
+.azc-grid table th:first-child a, .azc-grid table td:first-of-type {
+  padding-left: 7px; }
+
+.azc-grid table tbody tr td {
+  color: #3d3d3d;
+  padding: 1px 0 1px 10px;
+  height: 33px;
+  border-top: 1px solid #dcdfe2;
+  border-bottom: 1px solid #dcdfe2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.azc-control svg {
+  overflow: hidden; }
+
+.msportalfx-gridcolumn-asseticon img, .msportalfx-gridcolumn-asseticon svg {
+  margin-top: 4px;
+  height: 21px;
+  width: 21px; }
+
+.msportalfx-svg-c04 {
+  fill: #7a7a7a; }
+
+.msportalfx-svg-c20 {
+  fill: #68217a; }
+
+.msportalfx-svg-c01 {
+  fill: #fff; }
+
 body {
   /*background-color: #2e80ab;*/
   background-image: linear-gradient(to bottom, #2e80ab 0%, #61b7da 100%);

@@ -93,10 +93,11 @@
       <DependentUpon>portallayout.css</DependentUpon>
     </Content>
     <Content Include="!Readme.txt" />
-    <Content Include="AppAzurePortalSampleAmms\index-sample-amms.html" />
-    <Content Include="AppAzurePortalSample\index-sample-azureportal.html" />
-    <Content Include="AppAzurePortal\portal\!directives\child\child.html" />
-    <Content Include="AppAzurePortal\portal\!directives\shell\shell.html" />
+    <Content Include="AppAzurePortalSampleAmms\sample.html" />
+    <Content Include="AppAzurePortalSample\sample.html" />
+    <Content Include="AppAzurePortal\portal\!directives\blade\blade.html" />
+    <Content Include="AppAzurePortal\portal\!directives\home\home.html" />
+    <Content Include="AppAzurePortal\portal\!directives\navgrid\navgrid.html" />
     <Content Include="Content\azureportalstyleng.css">
       <DependentUpon>azureportalstyleng.scss</DependentUpon>
     </Content>
@@ -455,12 +456,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="AppAzurePortalSample\controller\portalshell.ts" />
+    <None Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\nav\nav.json" />
+    <TypeScriptCompile Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\nav\nav.ts" />
+    <TypeScriptCompile Include="AppAzurePortalSample\sample.ts" />
     <TypeScriptCompile Include="AppAzurePortal\app.ts" />
     <TypeScriptCompile Include="AppAzurePortal\config.ts" />
-    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\child\child.ts" />
-    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\shell\shell.ts" />
-    <TypeScriptCompile Include="AppAzurePortalSampleAmms\controller\portalshell.ts" />
+    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\blade\blade.ts" />
+    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\home\home.ts" />
+    <TypeScriptCompile Include="AppAzurePortalSampleAmms\sample.ts" />
+    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\navgrid\navgrid.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />

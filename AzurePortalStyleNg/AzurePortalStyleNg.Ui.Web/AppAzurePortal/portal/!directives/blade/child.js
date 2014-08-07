@@ -8,7 +8,10 @@
         return {
             replace: true,
             scope: { vm: '=options' },
-            templateUrl: '/AppAzurePortal/portal/!directives/child/child.html'
+            templateUrl: '/AppAzurePortal/portal/!directives/child/child.html',
+            link: function (scope, element, attrs, controller) {
+                console.log('azurePortalChild');
+            }
         };
     }
 })();
