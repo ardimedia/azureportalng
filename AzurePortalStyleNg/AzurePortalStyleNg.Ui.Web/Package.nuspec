@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>AzurePortalStyleNg</id>
-    <version>0.0.3-beta</version>
+    <version>0.0.6-beta</version>
     <authors>Harry Pfleger - Infoware</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Framework for building Azure Portal (layout) based web sites.</description>
@@ -15,15 +15,15 @@
     </frameworkAssemblies>
   </metadata>
   <files>
-    <file src="App.AzurePortal\modules\portal\child\child.html" target="content\App.AzurePortal\modules\portal\child\child.html" />
-    <file src="App.AzurePortal\modules\portal\child\child.js" target="content\App.AzurePortal\modules\portal\child\child.js" />
-    <file src="App.AzurePortal\modules\portal\shell\shell.html" target="content\App.AzurePortal\modules\portal\shell\shell.html" />
-    <file src="App.AzurePortal\modules\portal\shell\shell.js" target="content\App.AzurePortal\modules\portal\shell\shell.js" />
-    <file src="App.AzurePortal\app.js" target="content\App.AzurePortal\app.js" />
-    <file src="App.AzurePortal\config.js" target="content\App.AzurePortal\config.js" />
+    <file src="AppAzurePortal\portal\!directives\child\child.html" target="content\AppAzurePortal\portal\!directives\child\child.html" />
+    <file src="AppAzurePortal\portal\!directives\child\child.js" target="content\AppAzurePortal\portal\!directives\child\child.js" />
+    <file src="AppAzurePortal\portal\!directives\shell\shell.html" target="content\AppAzurePortal\portal\!directives\shell\shell.html" />
+    <file src="AppAzurePortal\portal\!directives\shell\shell.js" target="content\AppAzurePortal\portal\!directives\shell\shell.js" />
+    <file src="AppAzurePortal\app.js" target="content\AppAzurePortal\app.js" />
+    <file src="AppAzurePortal\config.js" target="content\AppAzurePortal\config.js" />
 
-    <file src="App.AzurePortal.Sample\index-sample-azureportal.html" target="content\App.AzurePortal.Sample\index-sample-azureportal.html" />
-    <file src="App.AzurePortal.Sample\controller\portalshell.js" target="content\App.AzurePortal.Sample\controller\portalshell.js" />
+    <file src="AppAzurePortalSample\index-sample-azureportal.html" target="content\AppAzurePortalSample\index-sample-azureportal.html" />
+    <file src="AppAzurePortalSample\controller\portalshell.js" target="content\AppAzurePortalSample\controller\portalshell.js" />
 
     <file src="Content\images\avatar.jpg" target="content\Content\images\avatar.jpg" />
     <file src="Content\azureportalstyleng.css" target="content\Content\azureportalstyleng.css" />

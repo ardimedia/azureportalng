@@ -1,0 +1,38 @@
+﻿<div class="fxs-portal">
+    <div class="fxs-portal-top-bar fxs-portal-appbar"></div>
+    <div class="fxs-portal-content fxs-panorama">
+        <div class="fxs-panorama-homearea">
+            <header class="fxs-pannable">
+                <h1 class="fxs-panorama-title fxs-pannable">{{vm.title}}</h1>
+                <div class="fxs-avatarmenu-target fxs-avatarmenu">
+                    <a class="fxs-avatarmenu-header" href="">
+                        <img alt="" src="/Content/images/avatar.jpg" />
+                        <div class="fxs-avatarmenu-username">{{vm.user.username}}</div>
+                        <div class="fxs-avatarmenu-emailaddresse">{{vm.user.emailaddress}}</div>
+                    </a>
+                </div>
+            </header>
+            <div class="fxs-startboard-target fxs-startboard fx-rightClick">
+                <div class="fxs-startboard-layout fxs-flowlayout">
+                    <div class="fxs-flowlayout-childcontainer">
+                        <section data-ng-repeat="tile in vm.tiles" class="fxs-tile fx-rightClick fxs-flowlayout-element" data-ng-class="{'fxs-tilesize-normal':tile.size=='normal', 'fxs-tilesize-mini':tile.size=='mini', 'fxs-tilesize-herowide':tile.size=='herowide'}" data-ng-style="{'left': tile.left, 'top': tile.top}">
+                            <div class="fxs-part fxs-part-clickable" ng-click="vm.navigateTo(tile.childId)">
+                                <header class="fxs-part-title">
+                                    <h2 class="msportalfx-tooltip-overflow">{{tile.title}}</h2>
+                                    <h3 class="msportalfx-tooltip-overflow">{{tile.subTitle}}</h3>
+                                </header>
+                                <section class="fxs-part-content css-scope-HubsExtension"></section>
+                            </div>
+                            <div class="fxs-title-overlay"></div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fxs-journey-target fxs-journey">
+            <div class="fxs-journey-layout fxs-stacklayout fxs-stacklayout-horizontal">
+                <!--<div data-azure-portal-child></div>-->
+                <div data-ng-repeat="view in vm.views" data-options="view" data-azure-portal-child></div>
+            </div>
+        </div>
+    </div>

@@ -93,10 +93,10 @@
       <DependentUpon>portallayout.css</DependentUpon>
     </Content>
     <Content Include="!Readme.txt" />
-    <Content Include="App.AzurePortal.Sample.Amms\index-sample-amms.html" />
-    <Content Include="App.AzurePortal.Sample\index-sample-azureportal.html" />
-    <Content Include="App.AzurePortal\modules\portal\child\child.html" />
-    <Content Include="App.AzurePortal\modules\portal\shell\shell.html" />
+    <Content Include="AppAzurePortalSampleAmms\index-sample-amms.html" />
+    <Content Include="AppAzurePortalSample\index-sample-azureportal.html" />
+    <Content Include="AppAzurePortal\portal\!directives\child\child.html" />
+    <Content Include="AppAzurePortal\portal\!directives\shell\shell.html" />
     <Content Include="Content\azureportalstyleng.css">
       <DependentUpon>azureportalstyleng.scss</DependentUpon>
     </Content>
@@ -455,12 +455,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="App.AzurePortal.Sample\controller\portalshell.ts" />
-    <TypeScriptCompile Include="App.AzurePortal\app.ts" />
-    <TypeScriptCompile Include="App.AzurePortal\config.ts" />
-    <TypeScriptCompile Include="App.AzurePortal\modules\portal\child\child.ts" />
-    <TypeScriptCompile Include="App.AzurePortal\modules\portal\shell\shell.ts" />
-    <TypeScriptCompile Include="App.AzurePortal.Sample.Amms\controller\portalshell.ts" />
+    <TypeScriptCompile Include="AppAzurePortalSample\controller\portalshell.ts" />
+    <TypeScriptCompile Include="AppAzurePortal\app.ts" />
+    <TypeScriptCompile Include="AppAzurePortal\config.ts" />
+    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\child\child.ts" />
+    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\shell\shell.ts" />
+    <TypeScriptCompile Include="AppAzurePortalSampleAmms\controller\portalshell.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
@@ -473,10 +473,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="!!Out-Nuget\" />
-    <Folder Include="App.AzurePortal\common\!directives\" />
-    <Folder Include="App.AzurePortal\common\!services\" />
-    <Folder Include="App.AzurePortal\modules\portal\!directives\" />
-    <Folder Include="App.AzurePortal\modules\portal\!services\" />
+    <Folder Include="AppAzurePortal\!directives\" />
+    <Folder Include="AppAzurePortal\!services\" />
+    <Folder Include="AppAzurePortal\portal\!services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
