@@ -4,26 +4,26 @@
     <title></title>
     <link href="/Content/azureportalstyleng.css" rel="stylesheet" />
     <style>
-        /*#region AZUREPORTAL*/
-        .fxs-panorama-homearea {
-            min-width: 0;
+        html, body {
+            height: 100%;
         }
-
-        .fxs-flowlayout-childcontainer {
-        }
-        /*#endregion*/
     </style>
 </head>
-<body ng-controller="sample as vm">
-    <div data-azure-portal-home data-options="vm"></div>
+<body ng-controller="azurePortalShell as vm">
+    <div class="fxs-journey-layout fxs-stacklayout fxs-stacklayout-horizontal">
+        <div data-ng-repeat="blade in vm.blades">
+            <div ng-include="blade.path"></div>
+        </div>
+    </div>
 
     <script src="/Scripts/angular.js"></script>
     <script src="/AppAzurePortal/app.js"></script>
     <script src="/AppAzurePortal/config.js"></script>
     <script src="/AppAzurePortal/portal/!directives/home/home.js"></script>
     <script src="/AppAzurePortal/portal/!directives/blade/blade.js"></script>
-    <script src="../AppAzurePortal/portal/!directives/navgrid/navgrid.js"></script>
+    <script src="/AppAzurePortal/portal/!directives/navgrid/navgrid.js"></script>
 
-    <script src="sample.js"></script>
+    <script src="azurePortalShell.js"></script>
+    <script src="nav.js"></script>
 </body>
 </html>

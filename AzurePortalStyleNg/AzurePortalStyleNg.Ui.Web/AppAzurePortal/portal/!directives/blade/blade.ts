@@ -11,7 +11,8 @@
             scope: { vm: '=options' },
             templateUrl: '/AppAzurePortal/portal/!directives/blade/blade.html',
             link: function (scope, element, attrs, controller) {
-                //console.log(scope);
+                console.log('blade-scope:');
+                console.log(scope);
             }
         };
     }

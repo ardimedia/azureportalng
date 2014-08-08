@@ -19,7 +19,7 @@
             { title: 'Tile 1', subTitle: 'Some subtitle 1', size: 'normal', left: '0', top: '0', bladeId: 'tile1-nav' },
             { title: 'Tile 2', subTitle: 'Some subtitle 2', size: 'normal', left: '180px', top: '0', bladeId: 'tile2-nav' }
         ];
-        vm.views = [];
+        vm.blades = [];
 
         function activate() {
         }
@@ -27,10 +27,10 @@
         function navigateTo(id) {
             console.log(id);
             if (id === 'tile1-nav') {
-                vm.views[0] = { title: 'Tile 1', subTitle: 'Some subtitle' };
+                vm.blades[0] = { title: 'Tile 1', subTitle: 'Some subtitle' };
             }
             if (id === 'tile2-nav') {
-                vm.views[0] = { title: 'Tile 2', subTitle: 'Some subtitle' };
+                vm.blades[0] = { title: 'Tile 2', subTitle: 'Some subtitle' };
             }
         }
     }

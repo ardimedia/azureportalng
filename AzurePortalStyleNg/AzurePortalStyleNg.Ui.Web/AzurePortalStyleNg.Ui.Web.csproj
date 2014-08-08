@@ -93,10 +93,14 @@
       <DependentUpon>portallayout.css</DependentUpon>
     </Content>
     <Content Include="!Readme.txt" />
+    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\nav\nav.html" />
+    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\nav\!test.html" />
     <Content Include="AppAzurePortalSampleAmms\sample.html" />
     <Content Include="AppAzurePortalSample\sample.html" />
+    <Content Include="AppAzurePortal\portal\!directives\blade\!test.html" />
     <Content Include="AppAzurePortal\portal\!directives\blade\blade.html" />
     <Content Include="AppAzurePortal\portal\!directives\home\home.html" />
+    <Content Include="AppAzurePortal\portal\!directives\navgrid\!test.html" />
     <Content Include="AppAzurePortal\portal\!directives\navgrid\navgrid.html" />
     <Content Include="Content\azureportalstyleng.css">
       <DependentUpon>azureportalstyleng.scss</DependentUpon>
@@ -442,7 +446,8 @@
     <Content Include="Package.nuspec">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="AppAzurePortal\%24schema\navgrid.json" />
+    <Content Include="AppAzurePortal\!!schema\navgrid.json" />
+    <Content Include="AppAzurePortal\portal\!directives\blade\!test.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -458,13 +463,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\nav\nav.json" />
+    <TypeScriptCompile Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\nav\azurePortalShell.ts" />
     <TypeScriptCompile Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\nav\nav.ts" />
     <TypeScriptCompile Include="AppAzurePortalSample\sample.ts" />
     <TypeScriptCompile Include="AppAzurePortal\app.ts" />
     <TypeScriptCompile Include="AppAzurePortal\config.ts" />
+    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\blade\!test.ts" />
     <TypeScriptCompile Include="AppAzurePortal\portal\!directives\blade\blade.ts" />
     <TypeScriptCompile Include="AppAzurePortal\portal\!directives\home\home.ts" />
     <TypeScriptCompile Include="AppAzurePortalSampleAmms\sample.ts" />
+    <None Include="AppAzurePortal\portal\!directives\navgrid\!test.json" />
+    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\navgrid\!test.ts" />
     <TypeScriptCompile Include="AppAzurePortal\portal\!directives\navgrid\navgrid.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />

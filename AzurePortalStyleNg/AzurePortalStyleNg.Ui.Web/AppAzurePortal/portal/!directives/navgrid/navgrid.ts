@@ -7,9 +7,10 @@
 
     function navgrid($window) {
         return {
-            scope: { vm: '=options' },
+            scope: { options: '=options' },
             templateUrl: '/AppAzurePortal/portal/!directives/navgrid/navgrid.html',
             link: function (scope, element, attrs, controller) {
+                console.log('navgrid-scope:');
                 console.log(scope);
             }
         };

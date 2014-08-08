@@ -6,19 +6,22 @@
     function nav($scope, $http) {
         var vm = this;
 
-        vm.activate = activate;
-        vm.navigateTo = navigateTo;
+        vm.options = {};
 
-        function activate() {
+        getOptions();
+
+        function getOptions() {
+            $http({ method: 'GET', url: '/AppAzurePortalSampleAmms/bergbahnenevent/blades/nav/nav.json' }).success(function (data, status, headers, config) {
+                var data2 = angular.fromJson(data);
+                vm.options = data2;
+                vm.options.navGridItems.navigateTo = navigateTo;
+            }).error(function (data, status, headers, config) {
+            });
+            return;
         }
 
         function navigateTo(id) {
-            if (id === 'amms-nav') {
-                vm.views[0] = { title: 'Amms', subTitle: 'Administration' };
-                return;
-            }
-
-            console.log('Did not navigate [navigateTo]! No route defined for id: ' + id);
+            console.log(id);
         }
     }
 })();

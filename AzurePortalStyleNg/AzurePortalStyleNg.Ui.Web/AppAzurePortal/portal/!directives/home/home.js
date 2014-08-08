@@ -9,6 +9,8 @@
             scope: { vm: '=options' },
             templateUrl: '/AppAzurePortal/portal/!directives/home/home.html',
             link: function (scope, element, attrs, controller) {
+                console.log('home-scope:');
+                console.log(scope);
             }
         };
     }

@@ -18,7 +18,7 @@
     <file src="AppAzurePortal\app.js" target="content\AppAzurePortal\app.js" />
     <file src="AppAzurePortal\config.js" target="content\AppAzurePortal\config.js" />
 
-    <file src="AppAzurePortal\$schema\navgrid.json" target="content\AppAzurePortal\$schema\navgrid.json" />
+    <file src="AppAzurePortal\!!schema\navgrid.json" target="content\AppAzurePortal\!!schema\navgrid.json" />
 
     <file src="AppAzurePortal\portal\!directives\blade\blade.html" target="content\AppAzurePortal\portal\!directives\blade\blade.html" />
     <file src="AppAzurePortal\portal\!directives\blade\blade.js" target="content\AppAzurePortal\portal\!directives\blade\blade.js" />
