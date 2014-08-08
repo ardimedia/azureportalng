@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>AzurePortalStyleNg</id>
-    <version>0.0.10-beta</version>
+    <version>0.0.11-beta</version>
     <authors>Harry Pfleger - Infoware</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Framework for building Azure Portal (layout) based web sites.</description>
-    <releaseNotes>Very early preview. Use on your own risk...</releaseNotes>
+    <description>Framework for building web sites based on the Azure Portal Layout.</description>
+    <releaseNotes>Early preview.</releaseNotes>
     <dependencies>
       <dependency id="angularjs" />
     </dependencies>
@@ -15,14 +15,17 @@
     </frameworkAssemblies>
   </metadata>
   <files>
+    <file src="AppAzurePortal\app.js" target="content\AppAzurePortal\app.js" />
+    <file src="AppAzurePortal\config.js" target="content\AppAzurePortal\config.js" />
+
+    <file src="AppAzurePortal\$schema\navgrid.json" target="content\AppAzurePortal\$schema\navgrid.json" />
+
     <file src="AppAzurePortal\portal\!directives\blade\blade.html" target="content\AppAzurePortal\portal\!directives\blade\blade.html" />
     <file src="AppAzurePortal\portal\!directives\blade\blade.js" target="content\AppAzurePortal\portal\!directives\blade\blade.js" />
     <file src="AppAzurePortal\portal\!directives\home\home.html" target="content\AppAzurePortal\portal\!directives\home\home.html" />
     <file src="AppAzurePortal\portal\!directives\home\home.js" target="content\AppAzurePortal\portal\!directives\home\home.js" />
     <file src="AppAzurePortal\portal\!directives\navgrid\navgrid.html" target="content\AppAzurePortal\portal\!directives\navgrid\navgrid.html" />
     <file src="AppAzurePortal\portal\!directives\navgrid\navgrid.js" target="content\AppAzurePortal\portal\!directives\navgrid\navgrid.js" />
-    <file src="AppAzurePortal\app.js" target="content\AppAzurePortal\app.js" />
-    <file src="AppAzurePortal\config.js" target="content\AppAzurePortal\config.js" />
 
     <file src="AppAzurePortalSample\sample.html" target="content\AppAzurePortalSample\sample.html" />
     <file src="AppAzurePortalSample\sample.js" target="content\AppAzurePortalSample\sample.js" />
