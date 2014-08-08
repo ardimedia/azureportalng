@@ -1,9 +1,1 @@
-{
-  "version": 3,
-  "file": "!libmixin.css",
-  "sources": [
-    "!libmixin.scss"
-  ],
-  "names": [],
-  "mappings": ""
-}
+﻿{"version":3,"file":"!libmixin.css","sources":["!libmixin.scss"],"names":[],"mappings":""}

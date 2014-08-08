@@ -442,6 +442,7 @@
     <Content Include="Package.nuspec">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="AppAzurePortal\%24schema\navgrid.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
