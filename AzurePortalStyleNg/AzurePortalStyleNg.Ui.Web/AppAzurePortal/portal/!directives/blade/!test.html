@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html data-ng-app="appAzurePortal">
+<html data-ng-app="azurePortal">
 <head>
     <title></title>
     <link href="/Content/azureportalstyleng.css" rel="stylesheet" />
@@ -10,7 +10,7 @@
     </style>
 </head>
 <body data-ng-controller="testcontroller as vm">
-    <div data-azure-portal-blade data-options="vm.options"></div>
+    <div data-azure-portal-blade data-view-model="vm.options"></div>
 
     <script src="/Scripts/angular.js"></script>
     <script src="/AppAzurePortal/app.js"></script>

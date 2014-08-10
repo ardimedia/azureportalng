@@ -1,12 +1,11 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('appAzurePortal').controller('azurePortalShell', ['$scope', '$http', azurePortalShell]);
+    angular.module('azurePortal').controller('azurePortalShell', ['$scope', '$http', azurePortalShell]);
 
     function azurePortalShell($scope, $http) {
         var vm = this;
-
-        vm.blades = [{ "path": "nav.html" }];
+        //vm.blades = [{ "path": "nav.html" }];
         //vm.activate = activate;
         //vm.navigateTo = navigateTo;
         //function activate() { }

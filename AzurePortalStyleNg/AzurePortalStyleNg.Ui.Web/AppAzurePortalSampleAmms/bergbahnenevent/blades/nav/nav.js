@@ -1,13 +1,13 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('appAzurePortal').controller('nav', ['$scope', '$http', nav]);
+    angular.module('azurePortal').controller('bergbahneneventNav', ['$scope', '$http', 'bladeService', bergbahneneventNav]);
 
-    function nav($scope, $http) {
+    function bergbahneneventNav($scope, $http, bladeService) {
         var vm = this;
 
-        vm.options = {};
-
+        //vm.options = {};
+        //vm.navigateTo = navigateTo;
         getOptions();
 
         function getOptions() {
@@ -21,7 +21,10 @@
         }
 
         function navigateTo(id) {
-            console.log(id);
+            bladeService.clearLevel(2);
+
+            var path = vm.options.navGridItems.items[id].bladePath;
+            bladeService.addBladePath(path);
         }
     }
 })();

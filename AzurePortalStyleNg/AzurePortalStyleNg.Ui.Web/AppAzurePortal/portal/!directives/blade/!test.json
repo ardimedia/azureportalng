@@ -5,8 +5,8 @@
     "isNavGrid": true,
     "navGridItems": {
         "items": [
-            { "title": "Aktienregister", "bladeId": "stockList" },
-            { "title": "Export Excel", "bladeId": "exportExcel" }
+            { "title": "Aktienregister", "bladePath": "stockList" },
+            { "title": "Export Excel", "bladePath": "exportExcel" }
         ]
     }
 }

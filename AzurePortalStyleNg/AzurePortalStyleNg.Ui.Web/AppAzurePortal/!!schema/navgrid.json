@@ -47,9 +47,9 @@
                     "description": "This is the title of one navigational item."
 
                 },
-                "bladeId": {
+                "bladePath": {
                     "type": "string",
-                    "description": "This is the blade id, which will be shown, when the item is selected."
+                    "description": "This is the blade path, which will be shown, when the item is selected."
                 }
             },
             "type": "object"

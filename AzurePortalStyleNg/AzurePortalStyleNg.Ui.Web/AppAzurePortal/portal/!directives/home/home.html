@@ -15,8 +15,8 @@
             <div class="fxs-startboard-target fxs-startboard fx-rightClick">
                 <div class="fxs-startboard-layout fxs-flowlayout">
                     <div class="fxs-flowlayout-childcontainer">
-                        <section data-ng-repeat="tile in vm.tiles" class="fxs-tile fx-rightClick fxs-flowlayout-element" data-ng-class="{'fxs-tilesize-normal':tile.size=='normal', 'fxs-tilesize-mini':tile.size=='mini', 'fxs-tilesize-herowide':tile.size=='herowide'}" data-ng-style="{'left': tile.left, 'top': tile.top}">
-                            <div class="fxs-part fxs-part-clickable" ng-click="vm.navigateTo(tile.bladeId)">
+                        <section data-ng-repeat="tile in vm.tiles track by $index" class="fxs-tile fx-rightClick fxs-flowlayout-element" data-ng-class="{'fxs-tilesize-normal':tile.size=='normal', 'fxs-tilesize-mini':tile.size=='mini', 'fxs-tilesize-herowide':tile.size=='herowide'}" data-ng-style="{'left': tile.left, 'top': tile.top}">
+                            <div class="fxs-part fxs-part-clickable" ng-click="vm.navigateTo(tile.bladePath);">
                                 <header class="fxs-part-title">
                                     <h2 class="msportalfx-tooltip-overflow">{{tile.title}}</h2>
                                     <h3 class="msportalfx-tooltip-overflow">{{tile.subTitle}}</h3>
@@ -31,8 +31,10 @@
         </div>
         <div class="fxs-journey-target fxs-journey">
             <div class="fxs-journey-layout fxs-stacklayout fxs-stacklayout-horizontal">
-                <!--<div data-azure-portal-blade></div>-->
-                <div data-ng-repeat="view in vm.blades" data-options="view" data-azure-portal-blade></div>
+                <div data-ng-repeat="blade in vm.blades track by $index" class="fxs-stacklayout-child">
+                    <!-- TOD: The following section tag should not be here, since it is as blade directive -->
+                    <section ng-include="blade.path" class="fxs-blade-locked fxs-blade fx-rightClick fxs-bladesize-small"></section>
+                </div>
             </div>
         </div>
     </div>

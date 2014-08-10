@@ -3,7 +3,7 @@
 (function () {
     'use strict';
 
-    var app = angular.module('appAzurePortal', [
+    var app = angular.module('azurePortal', [
         // Angular modules 
         //'ngAnimate',        // animations
         //'ngRoute'           // routing

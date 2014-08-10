@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('appAzurePortal').controller('testcontroller', ['$scope', '$http', testcontroller]);
+    angular.module('azurePortal').controller('testcontroller', ['$scope', '$http', testcontroller]);
 
     function testcontroller($scope, $http) {
         var vm = this;
@@ -18,7 +18,7 @@
 
 
         function navigateTo(id) {
-            console.log(id);
+            //console.log(id);
         }
     }
 })();

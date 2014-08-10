@@ -1,0 +1,14 @@
+﻿{
+    "$schema": "/AppAzurePortal/$schema/navgrid.json?reload",
+    "title": "Aktie: Harry Pfleger",
+    "subTitle": "Bearbeiten",
+    "isNavGrid": true,
+    "navGridItems": {
+        "items": [
+            { "title": "Name", "bladePath": "/AppAzurePortalSampleAmms/bergbahnenevent/blades/shares/shares.html" },
+            { "title": "Vorname", "bladePath": "/AppAzurePortalSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html" },
+            { "title": "Ort", "bladePath": "/AppAzurePortalSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html" },
+            { "title": "Anzahl", "bladePath": "/AppAzurePortalSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html" }
+        ]
+    }
+}

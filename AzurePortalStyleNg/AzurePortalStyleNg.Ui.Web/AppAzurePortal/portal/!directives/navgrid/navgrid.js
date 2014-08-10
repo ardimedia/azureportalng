@@ -2,15 +2,15 @@
 (function () {
     'use strict';
 
-    angular.module('appAzurePortal').directive('navgrid', ['$window', navgrid]);
+    angular.module('azurePortal').directive('navgrid', ['$window', navgrid]);
 
     function navgrid($window) {
         return {
-            scope: { options: '=options' },
+            scope: { vm: '=viewModel' },
             templateUrl: '/AppAzurePortal/portal/!directives/navgrid/navgrid.html',
             link: function (scope, element, attrs, controller) {
-                console.log('navgrid-scope:');
-                console.log(scope);
+                //console.log('navgrid-scope:');
+                //console.log(scope);
             }
         };
     }
