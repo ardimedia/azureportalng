@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="azurePortal">
+<head>
+    <title></title>
+    <link href="/Content/azureportalstyleng.css" rel="stylesheet" />
+    <style>
+        html, body, div {
+            height: 100%;
+        }
+    </style>
+</head>
+<body data-ng-controller="testcontroller as vm">
+    <div data-azure-portal-blade data-view-model="vm.options"></div>
+
+    <script src="/Scripts/angular.js"></script>
+    <script src="/AzurePortalNg/app.js"></script>
+    <script src="/AzurePortalNg/config.js"></script>
+
+    <script src="/AzurePortalNg/portal/!directives/blade/blade.js"></script>
+    <script src="/AzurePortalNg/portal/!directives/navgrid/navgrid.js"></script>
+
+    <script src="!test.js"></script>
+</body>
+</html>

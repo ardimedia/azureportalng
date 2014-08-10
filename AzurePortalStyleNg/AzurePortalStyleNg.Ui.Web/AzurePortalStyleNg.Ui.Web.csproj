@@ -93,22 +93,24 @@
       <DependentUpon>portallayout.css</DependentUpon>
     </Content>
     <Content Include="!Readme.txt" />
-    <Content Include="AppAzurePortalSampleAmms\amms\blades\nav\!test.html" />
-    <Content Include="AppAzurePortalSampleAmms\amms\blades\nav\nav.html" />
-    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\nav\nav.html" />
-    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\nav\!test.html" />
-    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\exportexcel\exportexcel.html" />
-    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\shares\!test.html" />
-    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\shares\shares.html" />
-    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\share\!test.html" />
-    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\share\share.html" />
-    <Content Include="AppAzurePortalSampleAmms\sample.html" />
-    <Content Include="AppAzurePortalSample\sample.html" />
-    <Content Include="AppAzurePortal\portal\!directives\blade\!test.html" />
-    <Content Include="AppAzurePortal\portal\!directives\blade\blade.html" />
-    <Content Include="AppAzurePortal\portal\!directives\home\home.html" />
-    <Content Include="AppAzurePortal\portal\!directives\navgrid\!test.html" />
-    <Content Include="AppAzurePortal\portal\!directives\navgrid\navgrid.html" />
+    <Content Include="AzurePortalNgSampleAmms\amms\blades\nav\!test.html" />
+    <Content Include="AzurePortalNgSampleAmms\amms\blades\nav\nav.html" />
+    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\nav\nav.html" />
+    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\nav\!test.html" />
+    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\exportexcel\exportexcel.html" />
+    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\shares\!test.html" />
+    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\shares\shares.html" />
+    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\share\!test.html" />
+    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\share\share.html" />
+    <Content Include="AzurePortalNgSampleAmms\sample.html" />
+    <Content Include="AzurePortalNgSample\blade2.html" />
+    <Content Include="AzurePortalNgSample\blade1.html" />
+    <Content Include="AzurePortalNgSample\sample.html" />
+    <Content Include="AzurePortalNg\portal\!directives\blade\!test.html" />
+    <Content Include="AzurePortalNg\portal\!directives\blade\blade.html" />
+    <Content Include="AzurePortalNg\portal\!directives\home\home.html" />
+    <Content Include="AzurePortalNg\portal\!directives\navgrid\!test.html" />
+    <Content Include="AzurePortalNg\portal\!directives\navgrid\navgrid.html" />
     <Content Include="Content\azureportalstyleng.css">
       <DependentUpon>azureportalstyleng.scss</DependentUpon>
     </Content>
@@ -454,20 +456,20 @@
     <Content Include="Package.nuspec">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="AppAzurePortal\!!schema\navgrid.json" />
-    <Content Include="AppAzurePortal\portal\!directives\blade\!test.json">
+    <Content Include="AzurePortalNg\!!schema\navgrid.json" />
+    <Content Include="AzurePortalNg\portal\!directives\blade\!test.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AppAzurePortalSampleAmms\amms\blades\nav\nav.json">
+    <Content Include="AzurePortalNgSampleAmms\amms\blades\nav\nav.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\share\share.json">
+    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\share\share.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\shares\shares.json">
+    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\shares\shares.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\exportexcel\exportexcel.json">
+    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\exportexcel\exportexcel.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\PublishProfiles\TEMP.pubxml" />
@@ -485,31 +487,33 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\nav\nav.json">
+    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\nav\nav.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <TypeScriptCompile Include="AppAzurePortalSampleAmms\amms\blades\nav\azurePortalShell.ts" />
-    <TypeScriptCompile Include="AppAzurePortalSampleAmms\amms\blades\nav\nav.ts" />
-    <TypeScriptCompile Include="AppAzurePortalSampleAmms\bergbahnenevent\!services\shareService.ts" />
-    <TypeScriptCompile Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\nav\azurePortalShell.ts" />
-    <TypeScriptCompile Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\nav\nav.ts" />
-    <TypeScriptCompile Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\exportexcel\exportexcel.ts" />
-    <TypeScriptCompile Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\shares\!test.ts" />
-    <TypeScriptCompile Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\shares\shares.ts" />
-    <TypeScriptCompile Include="AppAzurePortalSampleAmms\bergbahnenevent\blades\share\share.ts" />
-    <TypeScriptCompile Include="AppAzurePortalSample\sample.ts" />
-    <TypeScriptCompile Include="AppAzurePortal\app.ts" />
-    <TypeScriptCompile Include="AppAzurePortal\config.ts" />
-    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\blade\!test.ts" />
-    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\blade\blade.ts" />
-    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\home\home.ts" />
-    <TypeScriptCompile Include="AppAzurePortalSampleAmms\azureportalShell.ts" />
-    <None Include="AppAzurePortal\portal\!directives\navgrid\!test.json">
+    <TypeScriptCompile Include="AzurePortalNgSampleAmms\amms\blades\nav\azurePortalShell.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSampleAmms\amms\blades\nav\nav.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\!services\shareService.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\nav\azurePortalShell.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\nav\nav.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\exportexcel\exportexcel.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\shares\!test.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\shares\shares.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\share\share.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSample\blade2.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSample\blade1.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSample\sample.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\app.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\config.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\portal\!directives\blade\!test.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\portal\!directives\blade\blade.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\portal\!directives\home\home.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSampleAmms\azureportalShell.ts" />
+    <None Include="AzurePortalNg\portal\!directives\navgrid\!test.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\navgrid\!test.ts" />
-    <TypeScriptCompile Include="AppAzurePortal\portal\!directives\navgrid\navgrid.ts" />
-    <TypeScriptCompile Include="AppAzurePortal\portal\!services\bladeService.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\portal\!directives\navgrid\!test.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\portal\!directives\navgrid\navgrid.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\portal\!services\bladeService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
@@ -522,8 +526,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="!!Out-Nuget\" />
-    <Folder Include="AppAzurePortal\!directives\" />
-    <Folder Include="AppAzurePortal\!services\" />
+    <Folder Include="AzurePortalNg\!directives\" />
+    <Folder Include="AzurePortalNg\!services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

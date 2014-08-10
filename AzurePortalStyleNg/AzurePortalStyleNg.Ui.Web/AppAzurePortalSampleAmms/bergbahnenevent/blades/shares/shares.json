@@ -1,9 +1,0 @@
-﻿{
-    "$schema": "/AppAzurePortal/$schema/navgrid.json?reload",
-    "title": "Aktienregister",
-    "subTitle": "",
-    "isNavGrid": true,
-    "navGridItems": {
-        "items": [ ]
-    }
-}
