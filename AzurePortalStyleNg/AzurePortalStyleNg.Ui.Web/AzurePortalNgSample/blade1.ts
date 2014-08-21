@@ -6,19 +6,19 @@
     function blade1($scope, $http, bladeService) {
         var vm = this;
 
-        vm.options = {
+        vm.blade = {
             "$schema": "/AzurePortalNg/$schema/navgrid.json?reload",
             "title": "Blade 1",
             "subTitle": "First Blade",
             "isNavGrid": true,
-            "navGridItems": {
+            "navGrid": {
                 "items": [
                     { "title": "Als Excel exportieren", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html" }
                 ]
             }
         };
 
-        vm.options.navGridItems.navigateTo = navigateTo;
+        vm.blade.navGrid.navigateTo = navigateTo;
 
         function navigateTo(id) {
             bladeService.addBladePath(id);

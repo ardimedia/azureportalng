@@ -31,10 +31,7 @@
         </div>
         <div class="fxs-journey-target fxs-journey">
             <div class="fxs-journey-layout fxs-stacklayout fxs-stacklayout-horizontal">
-                <div data-ng-repeat="blade in vm.blades track by $index" class="fxs-stacklayout-child">
-                    <!-- TODO: The following section tag should not be here, since it is as blade directive -->
-                    <section ng-include="blade.path" class="fxs-blade-locked fxs-blade fx-rightClick fxs-bladesize-small"></section>
-                </div>
+                <div data-ng-repeat="blade in vm.blades track by $index" class="fxs-stacklayout-child" ng-include="blade.path"></div>
             </div>
         </div>
     </div>

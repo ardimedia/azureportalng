@@ -8,13 +8,14 @@
             blades: [],
             clear: clear,
             clearLevel: clearLevel,
+            clearLastLevel: clearLastLevel,
             addBladePath: addBladePath
         };
 
         return service;
 
         function addBladePath(path) {
-            service.blades.push({ "path": path, "controller": "" });
+            service.blades.push({ "path": path });
         }
 
         function clear() {
@@ -26,6 +27,10 @@
                 level = 1;
             }
             service.blades.length = level - 1;
+        }
+
+        function clearLastLevel() {
+            clearLevel(service.blades.length);
         }
     }
 })();

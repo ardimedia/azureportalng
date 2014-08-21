@@ -1,6 +1,4 @@
-﻿/// <reference path="../scripts/typings/angularjs/angular.d.ts" />
-
-(function () {
+﻿(function () {
     'use strict';
 
     var app = angular.module('azureportalng', [

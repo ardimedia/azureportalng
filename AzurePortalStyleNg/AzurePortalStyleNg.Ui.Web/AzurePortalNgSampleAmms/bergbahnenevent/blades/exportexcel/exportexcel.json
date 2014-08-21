@@ -3,7 +3,7 @@
     "title": "Aktienregister",
     "subTitle": "Als Excel exportieren",
     "isNavGrid": true,
-    "navGridItems": {
+    "navGrid": {
         "items": [
             { "title": "Als Excel exportieren", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html" }
         ]

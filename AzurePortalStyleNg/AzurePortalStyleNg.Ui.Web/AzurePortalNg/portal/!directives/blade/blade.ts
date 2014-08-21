@@ -1,20 +1,18 @@
-﻿/// <reference path="../../../../scripts/typings/angularjs/angular.d.ts" />
-
-(function () {
+﻿(function () {
     'use strict';
 
-    angular.module('azureportalng').directive('azurePortalBlade', ['$window', azurePortalBlade]);
+    angular.module('azureportalng').directive('azurePortalBlade', ['$window', 'bladeService', azurePortalBlade]);
 
-    function azurePortalBlade($window) {
+    function azurePortalBlade($window, bladeService) {
         return {
             replace: true,
-            scope: {
-                vm: '=viewModel'
-            },
+            transclude: true,
+            //scope: true,
             templateUrl: '/AzurePortalNg/portal/!directives/blade/blade.html',
             link: function (scope, element, attrs, controller) {
-                //console.log('blade-scope:');
-                //console.log(scope);
+                scope.bladeClose = function () {
+                    bladeService.clearLastLevel();
+                }
             }
         };
     }

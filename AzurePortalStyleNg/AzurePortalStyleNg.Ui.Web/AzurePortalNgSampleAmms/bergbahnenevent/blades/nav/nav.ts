@@ -6,28 +6,24 @@
     function bergbahneneventNav($scope, $http, bladeService) {
         var vm = this;
 
-        //vm.options = {};
-        //vm.navigateTo = navigateTo;
+        vm.blade = {
+            "$schema": "/AzurePortalNg/$schema/navgrid.json?reload",
+            "title": "Bergbahnen.Li",
+            "subTitle": "Aktienregister",
+            "isNavGrid": true,
+            "navGrid": {
+                "items": [
+                    { "title": "Aktienregister", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/shares/shares.html", "bladeController": "bergbahneneventShares" },
+                    { "title": "Export Excel", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html", "bladeController": "exportexcel" }
+                ]
+            }
+        };
 
-        getOptions();
-
-        function getOptions() {
-            $http({ method: 'GET', url: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/nav/nav.json' })
-                .success(function (data, status, headers, config) {
-                    var data2 = angular.fromJson(data);
-                    vm.options = data2;
-                    vm.options.navGridItems.navigateTo = navigateTo;
-                })
-                .error(function (data, status, headers, config) {
-                });
-            return;
-        }
+        vm.blade.navGrid.navigateTo = navigateTo;
 
         function navigateTo(id) {
             bladeService.clearLevel(2);
-
-            var path = vm.options.navGridItems.items[id].bladePath;
-            bladeService.addBladePath(path);
+            bladeService.addBladePath(id);
         }
     }
 })();

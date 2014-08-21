@@ -3,7 +3,7 @@
     "title": "Bergbahnen.Li",
     "subTitle": "Aktienregister",
     "isNavGrid": true,
-    "navGridItems": {
+    "navGrid": {
         "items": [
             { "title": "Aktienregister", "bladePath": "stockList" },
             { "title": "Export Excel", "bladePath": "exportExcel" }

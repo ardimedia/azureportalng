@@ -1,10 +1,9 @@
-﻿/// <reference path="../../../../scripts/typings/angularjs/angular.d.ts" />
-(function () {
+﻿(function () {
     'use strict';
 
-    angular.module('azureportalng').directive('navgrid', ['$window', navgrid]);
+    angular.module('azureportalng').directive('navGrid', ['$window', navGrid]);
 
-    function navgrid($window) {
+    function navGrid($window) {
         return {
             scope: { vm: '=viewModel' },
             templateUrl: '/AzurePortalNg/portal/!directives/navgrid/navgrid.html',

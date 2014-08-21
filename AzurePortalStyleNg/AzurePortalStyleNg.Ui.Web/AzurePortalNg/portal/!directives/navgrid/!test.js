@@ -8,8 +8,8 @@
 
         $http({ method: 'GET', url: '!test.json' }).success(function (data, status, headers, config) {
             var data2 = angular.fromJson(data);
-            vm.options = data2;
-            vm.options.navigateTo = navigateTo;
+            vm.blade = data2;
+            vm.blade.navigateTo = navigateTo;
         }).error(function (data, status, headers, config) {
             console.log('Could not successfully get json file.');
         });

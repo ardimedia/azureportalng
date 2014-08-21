@@ -23,13 +23,13 @@
                 "isNavGrid": {
                     "type": "boolean"
                 },
-                "navGridItems": {
-                    "$ref": "#/definitions/navGridItems"
+                "navGrid": {
+                    "$ref": "#/definitions/navGrid"
                 }
             },
             "type": "object"
         },
-        "navGridItems": {
+        "navGrid": {
             "properties": {
                 "items": {
                     "type": "array",

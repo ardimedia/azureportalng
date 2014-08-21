@@ -6,28 +6,40 @@
     function bergbahneneventShare($scope, $http, $location, bladeService, shareService) {
         var vm = this;
 
-        //vm.options = {};
+        vm.blade = {
+            "$schema": "/AzurePortalNg/$schema/navgrid.json?reload",
+            "title": "Aktie: Harry Pfleger",
+            "subTitle": "Bearbeiten",
+            "isNavGrid": true,
+            "isCommandNew": true,
+            "commandNew": commandNew,
+            "isCommandSave": true,
+            "isCommandDelete": true,
+            "isCommandCancel":true,
+            "width": { 'width': '600px' },
+            "widthStackLayout": { 'width': '550px' },
+            "navGrid": {
+                "items": [
+                    { "title": "Name", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/shares/shares.html" },
+                    { "title": "Vorname", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html" },
+                    { "title": "Ort", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html" },
+                    { "title": "Anzahl", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html" }
+                ]
+            }
+        };
 
-        getOptions();
+        setShare(shareService.share);
 
         shareService.shareChanged.bind(function (share) {
             setShare(share);
         });
 
-        function getOptions() {
-            $http({ method: 'GET', url: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/share/share.json' })
-                .success(function (data, status, headers, config) {
-                    var data2 = angular.fromJson(data);
-                    vm.options = data2;
-                    setShare(shareService.share);
-                })
-                .error(function (data, status, headers, config) {
-                });
-            return;
+        function setShare(share) {
+            //vm.blade.title = "Aktie: " + share.title;
         }
 
-        function setShare(share) {
-            vm.options.title = "Aktie: " + share.title;
+        function commandNew() {
+            console.log('commandNewFunction');
         }
     }
 })();

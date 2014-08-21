@@ -108,6 +108,7 @@
     <Content Include="AzurePortalNgSample\sample.html" />
     <Content Include="AzurePortalNg\portal\!directives\blade\!test.html" />
     <Content Include="AzurePortalNg\portal\!directives\blade\blade.html" />
+    <Content Include="AzurePortalNg\portal\!directives\blade\!test2.html" />
     <Content Include="AzurePortalNg\portal\!directives\home\home.html" />
     <Content Include="AzurePortalNg\portal\!directives\navgrid\!test.html" />
     <Content Include="AzurePortalNg\portal\!directives\navgrid\navgrid.html" />
@@ -463,12 +464,6 @@
     <Content Include="AzurePortalNgSampleAmms\amms\blades\nav\nav.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\share\share.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\shares\shares.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\exportexcel\exportexcel.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -487,13 +482,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\nav\nav.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <TypeScriptCompile Include="AzurePortalNgSampleAmms\amms\blades\nav\azurePortalShell.ts" />
     <TypeScriptCompile Include="AzurePortalNgSampleAmms\amms\blades\nav\nav.ts" />
     <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\!services\shareService.ts" />
-    <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\nav\azurePortalShell.ts" />
+    <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\nav\!test.ts" />
     <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\nav\nav.ts" />
     <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\exportexcel\exportexcel.ts" />
     <TypeScriptCompile Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\shares\!test.ts" />
@@ -506,6 +498,7 @@
     <TypeScriptCompile Include="AzurePortalNg\config.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\blade\!test.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\blade\blade.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\portal\!directives\blade\!test2.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\home\home.ts" />
     <TypeScriptCompile Include="AzurePortalNgSampleAmms\azureportalShell.ts" />
     <None Include="AzurePortalNg\portal\!directives\navgrid\!test.json">

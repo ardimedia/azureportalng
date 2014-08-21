@@ -3,7 +3,7 @@
     "title": "Amms",
     "subTitle": "Administration",
     "isNavGrid": true,
-    "navGridItems": {
+    "navGrid": {
         "items": [
             { "title": "Applicationen", "bladePath": "applications" },
             { "title": "Benutzer", "bladePath": "users" },

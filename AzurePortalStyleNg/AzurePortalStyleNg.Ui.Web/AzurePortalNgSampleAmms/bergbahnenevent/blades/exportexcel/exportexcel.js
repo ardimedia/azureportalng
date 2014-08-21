@@ -6,15 +6,15 @@
     function exportexcel($scope, $http, bladeService) {
         var vm = this;
 
-        //vm.options = {};
+        //vm.blade = {};
         //$scope.vm = vm;
         getOptions();
 
         function getOptions() {
             $http({ method: 'GET', url: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.json' }).success(function (data, status, headers, config) {
                 var data2 = angular.fromJson(data);
-                vm.options = data2;
-                vm.options.navGridItems.navigateTo = navigateTo;
+                vm.blade = data2;
+                vm.blade.navGrid.navigateTo = navigateTo;
             }).error(function (data, status, headers, config) {
             });
             return;
