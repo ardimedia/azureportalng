@@ -80,6 +80,8 @@
     <Content Include="!Design\!test\test.min.css">
       <DependentUpon>test.css</DependentUpon>
     </Content>
+    <Content Include="!Design\fromMsPortal\style0.css" />
+    <Content Include="!Design\fromMsPortal\style1.css" />
     <Content Include="!Design\themems.css">
       <DependentUpon>themems.scss</DependentUpon>
     </Content>

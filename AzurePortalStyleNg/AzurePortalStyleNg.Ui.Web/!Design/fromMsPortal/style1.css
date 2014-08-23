@@ -1,0 +1,1443 @@
+﻿.msportalfx-layoutChildren-horizontal-inlineblock {
+    white-space: nowrap;
+    line-height: 0;
+    font-size: 0;
+}
+
+    .msportalfx-layoutChildren-horizontal-inlineblock > .msportalfx-layoutChildren-child {
+        display: inline-block;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        white-space: normal;
+        font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #464f59;
+        line-height: normal;
+    }
+
+.msportalfx-layoutChildren-horizontal-float > .msportalfx-layoutChildren-child {
+    float: left;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.msportalfx-layoutChildren-horizontal-float::after {
+    content: " ";
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+.msportalfx-bgcolor-themeMain {
+    background-color: #00bcf2;
+}
+
+.msportalfx-bgcolor-themeWarning {
+    background-color: #ff8c00;
+}
+
+.msportalfx-bgcolor-themeError {
+    background-color: #ec008c;
+}
+
+.msportalfx-bgcolor-themeSuccess {
+    background-color: #7fba00;
+}
+
+.msportalfx-bgcolor-paletteDiffAdd {
+    background-color: #c7f1c7;
+}
+
+.msportalfx-bgcolor-paletteDiffDel {
+    background-color: #fcd6f1;
+}
+
+.msportalfx-bgcolor-paletteLightGray {
+    background-color: #f1f1f8;
+}
+
+.msportalfx-bgcolor-white {
+    background-color: #fff;
+}
+
+.msportalfx-removeTableBorders {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.msportalfx-boxsizing-borderbox {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.msportalfx-removeDefaultListStyle {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .msportalfx-removeDefaultListStyle > li {
+        margin: 0;
+        padding: 0;
+    }
+
+.msportalfx-lineheight-reset {
+    line-height: normal;
+}
+
+.msportalfx-fill {
+    height: 100%;
+    width: 100%;
+}
+
+.msportalfx-clearfix::after {
+    content: " ";
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+.msportalfx-removepartpadding {
+    height: -webkit-calc(100% + 15px + 15px);
+    height: calc(100% + 15px + 15px);
+    width: -webkit-calc(100% + 15px + 15px);
+    width: calc(100% + 15px + 15px);
+    margin: -15px -15px -15px -15px;
+}
+
+.fxs-blade-locked .msportalfx-removepartpaddingside {
+    width: -webkit-calc(100% + 15px + 15px);
+    width: calc(100% + 15px + 15px);
+    margin: 0 -15px 0 -15px;
+}
+
+.msportalfx-removepartpaddingside {
+    width: -webkit-calc(100% + 14px + 15px);
+    width: calc(100% + 14px + 15px);
+    margin: 0 -15px 0 -14px;
+}
+
+.msportalfx-partdivider:after {
+    content: "";
+    display: block;
+    width: -webkit-calc(100% + 15px + 15px);
+    width: calc(100% + 15px + 15px);
+    margin: 0 -15px 0 -15px;
+    border-bottom: 1px solid #dcdfe2;
+}
+
+.msportalfx-text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.msportalfx-font-monospace {
+    font-family: Consolas,"Courier New",monospace;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.msportalfx-text-header {
+    font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #32383f;
+}
+
+.msportalfx-text-header-small, .msportalfx-text-label {
+    font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    color: #32383f;
+    text-transform: uppercase;
+}
+
+.msportalfx-text-small {
+    font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    color: #32383f;
+}
+
+.msportalfx-text-subheader {
+    font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    color: #8f9ca8;
+    text-transform: uppercase;
+}
+
+.msportalfx-text-header-regular {
+    font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #32383f;
+}
+
+.msportalfx-text-regular {
+    font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #464f59;
+}
+
+.msportalfx-number-jumbo {
+    font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: -.02em;
+    color: #32383f;
+}
+
+.msportalfx-number-large {
+    font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 43px;
+    line-height: 43px;
+    letter-spacing: -.02em;
+    color: #32383f;
+}
+
+.msportalfx-number-medium {
+    font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    letter-spacing: -.025em;
+    color: #32383f;
+}
+
+.msportalfx-number-small {
+    font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 17px;
+    letter-spacing: -.02em;
+    color: #32383f;
+}
+
+.msportalfx-number-jumbo-adorn {
+    font-family: wf_segoe-ui_bold,"Segoe UI Bold","Segoe WP Bold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: -.02em;
+    color: #32383f;
+}
+
+.msportalfx-number-large-adorn {
+    font-family: wf_segoe-ui_bold,"Segoe UI Bold","Segoe WP Bold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 15px;
+    letter-spacing: -.02em;
+    color: #32383f;
+}
+
+.msportalfx-number-medium-adorn {
+    font-family: wf_segoe-ui_bold,"Segoe UI Bold","Segoe WP Bold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 15px;
+    letter-spacing: -.02em;
+    color: #32383f;
+}
+
+.msportalfx-number-small-adorn {
+    font-family: wf_segoe-ui_bold,"Segoe UI Bold","Segoe WP Bold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    letter-spacing: -.05em;
+    color: #32383f;
+}
+
+.msportalfx-code {
+    font-family: Consolas,"Courier New",monospace;
+    font-weight: 400;
+    font-size: 12px;
+    background-color: #f1f1f8;
+    color: #32383f;
+    border-top: 1px solid #dcdfe2;
+    border-bottom: 1px solid #dcdfe2;
+    border-left: 5px solid #dcdfe2;
+    border-right: 1px solid #dcdfe2;
+    padding: 10px 10px 10px 15px;
+    margin: 5px 0 5px 0;
+    overflow-x: auto;
+}
+
+.msportalfx-code-comment {
+    color: green;
+}
+
+.msportalfx-code-keyword, .msportalfx-code-lang-html .msportalfx-code-value, .msportalfx-code-lang-xml .msportalfx-code-value, .msportalfx-code-lang-html .msportalfx-code-tag, .msportalfx-code-lang-xml .msportalfx-code-tag, .msportalfx-code-lang-html .msportalfx-code-tag .msportalfx-code-value, .msportalfx-code-lang-xml .msportalfx-code-tag .msportalfx-code-value {
+    color: #00f;
+}
+
+.msportalfx-code-string, .msportalfx-code-title {
+    color: #b21515;
+}
+
+.msportalfx-code-doctype, .msportalfx-code-pi, .msportalfx-code-xmlDocTag {
+    color: gray;
+}
+
+.msportalfx-code-lang-json .msportalfx-code-attribute {
+    color: #2e75b6;
+}
+
+.msportalfx-code-lang-html .msportalfx-code-tag .msportalfx-code-attribute, .msportalfx-code-lang-xml .msportalfx-code-tag .msportalfx-code-attribute {
+    color: red;
+}
+
+.msportalfx-code-lang-cs .msportalfx-code-title {
+    color: #32383f;
+}
+
+.msportalfx-twolineellipsis-donotuse {
+    display: block;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.msportalfx-statuspart {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+    .msportalfx-statuspart > * {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .msportalfx-statuspart .msportalfx-statuspart-statussection {
+        height: -webkit-calc(100% - 55px);
+        height: calc(100% - 55px);
+        padding-top: 10px;
+    }
+
+        .msportalfx-statuspart .msportalfx-statuspart-statussection > * {
+            vertical-align: middle;
+        }
+
+        .msportalfx-statuspart .msportalfx-statuspart-statussection > img {
+            height: 30px;
+            width: 30px;
+        }
+
+        .msportalfx-statuspart .msportalfx-statuspart-statussection > span {
+            font-family: wf_segoe-ui_bold,"Segoe UI Bold","Segoe WP Bold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+            font-weight: 400;
+            font-size: 11px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    .msportalfx-statuspart .msportalfx-statuspart-messagesection {
+        position: absolute;
+        bottom: 55px;
+        margin-bottom: 25px;
+        height: 40px;
+        line-height: 0;
+        white-space: normal;
+    }
+
+        .msportalfx-statuspart .msportalfx-statuspart-messagesection > span {
+            font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #464f59;
+        }
+
+    .msportalfx-statuspart .msportalfx-statuspart-propertysection, .msportalfx-statuspart .msportalfx-statuspart-metricsection {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 55px;
+    }
+
+    .msportalfx-statuspart .msportalfx-statuspart-propertysection {
+        padding-top: 5px;
+        font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #464f59;
+    }
+
+        .msportalfx-statuspart .msportalfx-statuspart-propertysection > span, .msportalfx-statuspart .msportalfx-statuspart-propertysection > div {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+    .msportalfx-statuspart .msportalfx-statuspart-metricsection > div {
+        float: left;
+        width: -webkit-calc(100%/3 - 3px);
+        width: calc(100%/3 - 3px);
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border-right: 1px solid #8f9ca8;
+        padding-left: 7px;
+    }
+
+        .msportalfx-statuspart .msportalfx-statuspart-metricsection > div:first-child {
+            padding-left: 0;
+        }
+
+        .msportalfx-statuspart .msportalfx-statuspart-metricsection > div:last-child {
+            border-right: none;
+        }
+
+    .msportalfx-statuspart .msportalfx-statuspart-metricsection .msportalfx-statuspart-metrictitle {
+        white-space: normal;
+        height: 30px;
+        font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 10px;
+        color: #32383f;
+        text-transform: uppercase;
+    }
+
+.msportalfx-specpicker {
+    width: 270px;
+    height: 415px;
+    background-color: #fff;
+    position: relative;
+}
+
+    .msportalfx-specpicker ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-header-left {
+        font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 33px;
+        width: 55px;
+        height: 50px;
+        float: left;
+        text-align: center;
+        position: relative;
+        line-height: normal;
+    }
+
+        .msportalfx-specpicker .msportalfx-specpicker-header-left div {
+            position: absolute;
+            bottom: 3px;
+            width: 100%;
+        }
+
+    .msportalfx-specpicker .msportalfx-specpicker-header-right {
+        border-left: 1px solid rgba(255,255,255,.5);
+        float: left;
+        width: 215px;
+        height: 50px;
+        position: relative;
+        line-height: normal;
+        box-sizing: border-box;
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-header-right-container {
+        position: absolute;
+        bottom: 10px;
+        left: 6px;
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-header1 {
+        font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 10px;
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-header2 {
+        font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-detail-value {
+        font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 39px;
+        color: #404040;
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-detail-label {
+        font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        margin-left: 6px;
+        color: #464f59;
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-main-value {
+        font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 30px;
+        color: #404040;
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-mediumBlue-shade1 {
+        background-color: #4668c5;
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-mediumBlue-shade2 {
+        background-color: rgba(70,104,197,.2);
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-mediumBlue-shade3 {
+        background-color: rgba(70,104,197,.1);
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-darkOrchid-shade1 {
+        background-color: #9b4f96;
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-darkOrchid-shade2 {
+        background-color: rgba(155,79,150,.2);
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-darkOrchid-shade3 {
+        background-color: rgba(155,79,150,.1);
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-yellowGreen-shade1 {
+        background-color: #7fba00;
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-yellowGreen-shade2 {
+        background-color: rgba(127,186,0,.2);
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-yellowGreen-shade3 {
+        background-color: rgba(127,186,0,.1);
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-orange-shade1 {
+        background-color: #ffb900;
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-orange-shade2 {
+        background-color: rgba(255,185,0,.2);
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-orange-shade3 {
+        background-color: rgba(255,185,0,.1);
+    }
+
+    .msportalfx-specpicker .msportalfx-specpicker-row, .msportalfx-specpicker .msportalfx-specpicker-row-header {
+        clear: both;
+        width: 270px;
+        height: 39px;
+        border-bottom: 1px solid #dcdfe2;
+        font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 10px;
+        color: #32383f;
+    }
+
+        .msportalfx-specpicker .msportalfx-specpicker-row .msportalfx-specpicker-row-col1, .msportalfx-specpicker .msportalfx-specpicker-row-header .msportalfx-specpicker-row-col1, .msportalfx-specpicker .msportalfx-specpicker-row .msportalfx-specpicker-row-col2, .msportalfx-specpicker .msportalfx-specpicker-row-header .msportalfx-specpicker-row-col2, .msportalfx-specpicker .msportalfx-specpicker-row .msportalfx-specpicker-row-image, .msportalfx-specpicker .msportalfx-specpicker-row-header .msportalfx-specpicker-row-image {
+            height: 39px;
+            line-height: 39px;
+            float: left;
+        }
+
+        .msportalfx-specpicker .msportalfx-specpicker-row .msportalfx-specpicker-row-col1, .msportalfx-specpicker .msportalfx-specpicker-row-header .msportalfx-specpicker-row-col1 {
+            width: 55px;
+            text-align: center;
+        }
+
+            .msportalfx-specpicker .msportalfx-specpicker-row .msportalfx-specpicker-row-col1 img, .msportalfx-specpicker .msportalfx-specpicker-row-header .msportalfx-specpicker-row-col1 img {
+                width: 22px;
+                height: 22px;
+                margin-top: 8px;
+            }
+
+        .msportalfx-specpicker .msportalfx-specpicker-row .msportalfx-specpicker-row-col3, .msportalfx-specpicker .msportalfx-specpicker-row-header .msportalfx-specpicker-row-col3 {
+            text-align: right;
+            float: right;
+            margin-right: 10px;
+            line-height: 39px;
+        }
+
+    .msportalfx-specpicker .msportalfx-specpicker-row-header {
+        border-bottom: 1px solid rgba(255,255,255,.5);
+    }
+
+        .msportalfx-specpicker .msportalfx-specpicker-row-header .msportalfx-specpicker-row-col2 {
+            width: 215px;
+        }
+
+    .msportalfx-specpicker .msportalfx-specpicker-footer-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 45px;
+        text-align: right;
+        background-color: #fafafb;
+    }
+
+        .msportalfx-specpicker .msportalfx-specpicker-footer-container .msportalfx-specpicker-footer {
+            margin-right: 10px;
+            margin-bottom: 8px;
+        }
+
+            .msportalfx-specpicker .msportalfx-specpicker-footer-container .msportalfx-specpicker-footer .msportalfx-specpicker-footer-value {
+                line-height: normal;
+                font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 30px;
+                letter-spacing: -.025em;
+                color: #32383f;
+            }
+
+            .msportalfx-specpicker .msportalfx-specpicker-footer-container .msportalfx-specpicker-footer .msportalfx-specpicker-footer-details {
+                font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 10px;
+                color: #8f9ca8;
+                text-transform: uppercase;
+            }
+
+    .msportalfx-specpicker .msportalfx-specpicker-extendedFeatures {
+        height: 240px;
+    }
+
+        .msportalfx-specpicker .msportalfx-specpicker-extendedFeatures .msportalfx-specpicker-row-col1 div {
+            width: 21px;
+            height: 21px;
+            padding-top: 8px;
+            padding-left: 16px;
+        }
+
+.msportalfx-pricingTier .msportalfx-pricingTier-specTitle, .msportalfx-pricingTier .msportalfx-pricingTier-specCode {
+    text-align: center;
+}
+
+.msportalfx-pricingTier .msportalfx-pricingTier-number {
+    display: inline-block;
+    margin-top: -15px;
+}
+
+.msportalfx-pricingTier .msportalfx-pricingTier-secondNumber {
+    margin-left: 5px;
+}
+
+.msportalfx-pricingTier .msportalfx-pricingTier-featureGroupTitle {
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.msportalfx-pricingTier .msportalfx-pricingTier-normal-textContainer {
+    height: 40px;
+}
+
+.msportalfx-pricingTier .msportalfx-pricingTier-wide-textContainer {
+    height: 35px;
+}
+
+.msportalfx-pricingTier .msportalfx-pricingTier-normal-iconContainer .msportalfx-layoutChildren-horizontal-inlineblock {
+    padding-top: 14px;
+}
+
+    .msportalfx-pricingTier .msportalfx-pricingTier-normal-iconContainer .msportalfx-layoutChildren-horizontal-inlineblock .msportalfx-layoutChildren-child {
+        width: 26px;
+        text-align: center;
+    }
+
+        .msportalfx-pricingTier .msportalfx-pricingTier-normal-iconContainer .msportalfx-layoutChildren-horizontal-inlineblock .msportalfx-layoutChildren-child .msportalfx-pricingTier-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+.msportalfx-pricingTier .msportalfx-layoutChildren-horizontal-inlineblock {
+    padding-top: 12px;
+}
+
+    .msportalfx-pricingTier .msportalfx-layoutChildren-horizontal-inlineblock .msportalfx-layoutChildren-child {
+        width: 57px;
+        text-align: center;
+    }
+
+        .msportalfx-pricingTier .msportalfx-layoutChildren-horizontal-inlineblock .msportalfx-layoutChildren-child .msportalfx-pricingTier-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+.msportalfx-pricingTier .msportalfx-pricingTier-normal-iconContainer, .msportalfx-pricingTier .msportalfx-pricingTier-wide-iconContainer {
+    border-top: 1px solid #dcdfe2;
+}
+
+.azc-listView-item[aria-disabled=true] .msportalfx-specpicker {
+    background-color: rgba(189,189,189,.05);
+}
+
+    .azc-listView-item[aria-disabled=true] .msportalfx-specpicker .msportalfx-specpicker-header-left, .azc-listView-item[aria-disabled=true] .msportalfx-specpicker .msportalfx-specpicker-header-right {
+        background-color: #bdbdbd;
+    }
+
+    .azc-listView-item[aria-disabled=true] .msportalfx-specpicker .msportalfx-specpicker-promotedFeatures .msportalfx-specpicker-row-col1 {
+        background-color: rgba(189,189,189,.2);
+    }
+
+    .azc-listView-item[aria-disabled=true] .msportalfx-specpicker .msportalfx-specpicker-promotedFeatures .msportalfx-specpicker-row-col2 {
+        background-color: rgba(189,189,189,.1);
+    }
+
+    .azc-listView-item[aria-disabled=true] .msportalfx-specpicker .msportalfx-specpicker-footer-container {
+        background-color: rgba(189,189,189,.5);
+    }
+
+    .azc-listView-item[aria-disabled=true] .msportalfx-specpicker .msportalfx-specpicker-detail-value, .azc-listView-item[aria-disabled=true] .msportalfx-specpicker .msportalfx-specpicker-detail-label, .azc-listView-item[aria-disabled=true] .msportalfx-specpicker .msportalfx-specpicker-footer-value {
+        color: #bdbdbd;
+    }
+
+    .azc-listView-item[aria-disabled=true] .msportalfx-specpicker .msportalfx-specpicker-disable-blockui-shield {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .azc-listView-item[aria-disabled=true] .msportalfx-specpicker .msportalfx-specpicker-disable-message-anchor {
+        position: absolute;
+        text-align: center;
+        left: 15px;
+        right: 15px;
+        top: 40%;
+    }
+
+        .azc-listView-item[aria-disabled=true] .msportalfx-specpicker .msportalfx-specpicker-disable-message-anchor .msportalfx-specpicker-disable-message-container {
+            display: inline-block;
+            background-color: rgba(50,56,63,.8);
+            margin-top: 20px;
+            padding: 15px 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+            .azc-listView-item[aria-disabled=true] .msportalfx-specpicker .msportalfx-specpicker-disable-message-anchor .msportalfx-specpicker-disable-message-container .msportalfx-specpicker-disable-message {
+                display: inline;
+                color: #fff;
+            }
+
+.msportalfx-bgcolor-a1 {
+    background-color: #fcd116;
+}
+
+.msportalfx-bgcolor-b1 {
+    background-color: #eb3c00;
+}
+
+.msportalfx-bgcolor-c1 {
+    background-color: #ba141a;
+}
+
+.msportalfx-bgcolor-d1 {
+    background-color: #b4009e;
+}
+
+.msportalfx-bgcolor-e1 {
+    background-color: #442359;
+}
+
+.msportalfx-bgcolor-f1 {
+    background-color: #002050;
+}
+
+.msportalfx-bgcolor-g1 {
+    background-color: #0072c6;
+}
+
+.msportalfx-bgcolor-h1 {
+    background-color: #008272;
+}
+
+.msportalfx-bgcolor-i1 {
+    background-color: #007233;
+}
+
+.msportalfx-bgcolor-j1 {
+    background-color: #7fba00;
+}
+
+.msportalfx-bgcolor-k1 {
+    background-color: #a0a5a8;
+}
+
+.msportalfx-bgcolor-a0 {
+    background-color: #fff100;
+}
+
+.msportalfx-bgcolor-b0 {
+    background-color: #ff8c00;
+}
+
+.msportalfx-bgcolor-c0 {
+    background-color: #e81123;
+}
+
+.msportalfx-bgcolor-d0 {
+    background-color: #ec008c;
+}
+
+.msportalfx-bgcolor-e0 {
+    background-color: #68217a;
+}
+
+.msportalfx-bgcolor-f0 {
+    background-color: #00188f;
+}
+
+.msportalfx-bgcolor-g0 {
+    background-color: #00bcf2;
+}
+
+.msportalfx-bgcolor-h0 {
+    background-color: #00b294;
+}
+
+.msportalfx-bgcolor-i0 {
+    background-color: #009e49;
+}
+
+.msportalfx-bgcolor-j0 {
+    background-color: #bad80a;
+}
+
+.msportalfx-bgcolor-k0 {
+    background-color: #bbc2ca;
+}
+
+.msportalfx-bgcolor-a2 {
+    background-color: #fffc9e;
+}
+
+.msportalfx-bgcolor-b2 {
+    background-color: #ffb900;
+}
+
+.msportalfx-bgcolor-c2 {
+    background-color: #dd5900;
+}
+
+.msportalfx-bgcolor-d2 {
+    background-color: #f472d0;
+}
+
+.msportalfx-bgcolor-e2 {
+    background-color: #9b4f96;
+}
+
+.msportalfx-bgcolor-f2 {
+    background-color: #4668c5;
+}
+
+.msportalfx-bgcolor-g2 {
+    background-color: #6dc2e9;
+}
+
+.msportalfx-bgcolor-h2 {
+    background-color: #00d8cc;
+}
+
+.msportalfx-bgcolor-i2 {
+    background-color: #55d455;
+}
+
+.msportalfx-bgcolor-j2 {
+    background-color: #e2e584;
+}
+
+.msportalfx-bgcolor-k2 {
+    background-color: #d6d7d8;
+}
+
+.msportalfx-bgcolor-a0s2 {
+    background-color: #807900;
+}
+
+.msportalfx-bgcolor-b0s2 {
+    background-color: #804600;
+}
+
+.msportalfx-bgcolor-c0s2 {
+    background-color: #740912;
+}
+
+.msportalfx-bgcolor-d0s2 {
+    background-color: #760046;
+}
+
+.msportalfx-bgcolor-e0s2 {
+    background-color: #34113d;
+}
+
+.msportalfx-bgcolor-f0s2 {
+    background-color: #000c48;
+}
+
+.msportalfx-bgcolor-g0s2 {
+    background-color: #005e79;
+}
+
+.msportalfx-bgcolor-h0s2 {
+    background-color: #084c41;
+}
+
+.msportalfx-bgcolor-i0s2 {
+    background-color: #063d20;
+}
+
+.msportalfx-bgcolor-j0s2 {
+    background-color: #3d460a;
+}
+
+.msportalfx-bgcolor-k0s2 {
+    background-color: #32383f;
+}
+
+.msportalfx-bgcolor-a0s1 {
+    background-color: #bfb500;
+}
+
+.msportalfx-bgcolor-b0s1 {
+    background-color: #bf6900;
+}
+
+.msportalfx-bgcolor-c0s1 {
+    background-color: #ae0d1a;
+}
+
+.msportalfx-bgcolor-d0s1 {
+    background-color: #b10069;
+}
+
+.msportalfx-bgcolor-e0s1 {
+    background-color: #4e195c;
+}
+
+.msportalfx-bgcolor-f0s1 {
+    background-color: #00126b;
+}
+
+.msportalfx-bgcolor-g0s1 {
+    background-color: #008db5;
+}
+
+.msportalfx-bgcolor-h0s1 {
+    background-color: #00856f;
+}
+
+.msportalfx-bgcolor-i0s1 {
+    background-color: #0f5b2f;
+}
+
+.msportalfx-bgcolor-j0s1 {
+    background-color: #8ba208;
+}
+
+.msportalfx-bgcolor-k0s1 {
+    background-color: #464f59;
+}
+
+.msportalfx-bgcolor-a0t1 {
+    background-color: #fcf37e;
+}
+
+.msportalfx-bgcolor-b0t1 {
+    background-color: #ffba66;
+}
+
+.msportalfx-bgcolor-c0t1 {
+    background-color: #f1707b;
+}
+
+.msportalfx-bgcolor-d0t1 {
+    background-color: #f466ba;
+}
+
+.msportalfx-bgcolor-e0t1 {
+    background-color: #a47aaf;
+}
+
+.msportalfx-bgcolor-f0t1 {
+    background-color: #6674bc;
+}
+
+.msportalfx-bgcolor-g0t1 {
+    background-color: #66d7f7;
+}
+
+.msportalfx-bgcolor-h0t1 {
+    background-color: #66d1bf;
+}
+
+.msportalfx-bgcolor-i0t1 {
+    background-color: #66c592;
+}
+
+.msportalfx-bgcolor-j0t1 {
+    background-color: #d6e86c;
+}
+
+.msportalfx-bgcolor-k0t1 {
+    background-color: #8f9ca8;
+}
+
+.msportalfx-bgcolor-a0t2 {
+    background-color: #fffccc;
+}
+
+.msportalfx-bgcolor-b0t2 {
+    background-color: #ffe8cc;
+}
+
+.msportalfx-bgcolor-c0t2 {
+    background-color: #facfd3;
+}
+
+.msportalfx-bgcolor-d0t2 {
+    background-color: #fbcce8;
+}
+
+.msportalfx-bgcolor-e0t2 {
+    background-color: #e1d3e4;
+}
+
+.msportalfx-bgcolor-f0t2 {
+    background-color: #ccd1e9;
+}
+
+.msportalfx-bgcolor-g0t2 {
+    background-color: #ccf2fc;
+}
+
+.msportalfx-bgcolor-h0t2 {
+    background-color: #ccf0ea;
+}
+
+.msportalfx-bgcolor-i0t2 {
+    background-color: #ccecdb;
+}
+
+.msportalfx-bgcolor-j0t2 {
+    background-color: #f0f7b2;
+}
+
+.msportalfx-bgcolor-k0t2 {
+    background-color: #63707e;
+}
+
+.msportalfx-gettingstarted-part {
+    color: #fff;
+}
+
+.msportalfx-gridcolumn-asseticon img, .msportalfx-gridcolumn-asseticon svg {
+    margin-top: 4px;
+    height: 21px;
+    width: 21px;
+}
+
+.msportalfx-gridcolumn-statusicon {
+    text-align: center;
+}
+
+    .msportalfx-gridcolumn-statusicon img, .msportalfx-gridcolumn-statusicon svg {
+        text-align: center;
+        height: 15px;
+        width: 15px;
+    }
+
+    .msportalfx-gridcolumn-statusicon svg {
+        margin-top: 4px;
+    }
+
+.fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section {
+    margin-bottom: 55px;
+}
+
+    .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-sectionTitle {
+        font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #32383f;
+        margin-top: 55px;
+        margin-bottom: 20px;
+    }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-sectionTitle:first-child {
+            margin-top: 0;
+        }
+
+    .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement {
+        display: block;
+        height: 30px;
+        margin: 20px 0;
+    }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer:first-child, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement:first-child {
+            margin-top: 0;
+        }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer:last-child, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement:last-child {
+            margin-bottom: 0;
+        }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer::after {
+            content: ' ';
+        }
+
+    .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement {
+        font-size: 0;
+        line-height: 0;
+    }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-elementContainer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement .azc-formElementContainer {
+            display: inline-block;
+            vertical-align: middle;
+            width: 66%;
+            margin-left: 1.5%;
+            font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #32383f;
+            line-height: normal;
+        }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement.azc-selectorField {
+            font-size: medium;
+            line-height: normal;
+        }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement.azc-multiLineTextField {
+            height: auto;
+        }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement.msportalfx-form-fileUploadField {
+            height: 80px;
+        }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-labelcontainer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement .azc-form-labelcontainer {
+            width: 32%;
+        }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement .msportalfx-form-labelcontainer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement .azc-form-labelcontainer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement .azc-checkBoxField-inlineLabelContainer {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: medium;
+            line-height: normal;
+        }
+
+    .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-extralabel {
+        display: block;
+        width: 66%;
+        margin-top: -20px;
+        margin-bottom: -20px;
+        margin-left: 33.5%;
+        margin-right: 0;
+    }
+
+.fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form-custom .msportalfx-form-elementContainer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form-custom .azc-formElementContainer {
+    width: 100%;
+}
+
+.fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section {
+    font-size: 0;
+    line-height: 0;
+}
+
+    .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement {
+        height: 60px;
+        width: 48.75%;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 1%;
+        font-size: medium;
+        line-height: normal;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer:first-child, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer:first-child, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement:first-child, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement:first-child, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer:last-child, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer:last-child, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement:last-child, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement:last-child {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer.azc-optionsGroupField, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer.azc-optionsGroupField, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement.azc-optionsGroupField, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement.azc-optionsGroupField, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer.azc-multiLineTextField, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer.azc-multiLineTextField, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement.azc-multiLineTextField, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement.azc-multiLineTextField {
+            height: auto;
+        }
+
+        .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer.msportalfx-form-fileUploadField, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer.msportalfx-form-fileUploadField, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement.msportalfx-form-fileUploadField, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement.msportalfx-form-fileUploadField {
+            height: 100px;
+        }
+
+    .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-labelcontainer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-labelcontainer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .azc-form-labelcontainer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .azc-form-labelcontainer {
+        display: block;
+        margin-bottom: 10px;
+        width: auto;
+        height: 20px;
+    }
+
+    .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-elementContainer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-elementContainer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .azc-formElementContainer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .azc-formElementContainer {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-compact:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-extralabel, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-extralabel {
+        display: inline-block;
+        width: 48.75%;
+        margin-top: 60px;
+        margin-bottom: 0;
+        margin-left: -49.75%;
+        margin-right: 1%;
+    }
+
+    .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-spacer, .fxs-blade:not(.fxs-bladestyle-create) .msportalfx-form.msportalfx-form-full:not(.msportalfx-form-custom) .msportalfx-form-section .msportalfx-form-formelement {
+        width: 100%;
+    }
+
+.fxs-blade.fxs-bladestyle-context .msportalfx-form-custom .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-labelcontainer label, .fxs-blade.fxs-bladestyle-context .msportalfx-form .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-labelcontainer label, .fxs-blade.fxs-bladestyle-context .msportalfx-form-custom .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-form-labelcontainer label, .fxs-blade.fxs-bladestyle-context .msportalfx-form .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-form-labelcontainer label {
+    color: #fff;
+}
+
+.fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-section {
+    margin-bottom: 55px;
+}
+
+    .fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-section .msportalfx-form-sectionTitle {
+        font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #32383f;
+        margin-top: 55px;
+        margin-bottom: 20px;
+    }
+
+        .fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-section .msportalfx-form-sectionTitle:first-child {
+            margin-top: 0;
+        }
+
+.fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-spacer, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section), .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section) {
+    display: block;
+    height: 50px;
+    padding: 10px 25px 20px;
+}
+
+    .fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-spacer.azc-multiLineTextField, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section).azc-multiLineTextField, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section).azc-multiLineTextField {
+        height: auto;
+    }
+
+    .fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-spacer::after, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section)::after, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.azc-selectorField):not(.msportalfx-form-section)::after {
+        content: ' ';
+    }
+
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-labelcontainer, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-labelcontainer, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-form-labelcontainer, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-form-labelcontainer {
+    height: 20px;
+}
+
+    .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-labelcontainer label, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-labelcontainer label, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-form-labelcontainer label, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-form-labelcontainer label {
+        color: #8f9ca8;
+    }
+
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-elementContainer, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section) .msportalfx-form-elementContainer, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-formElementContainer, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section) .azc-formElementContainer {
+    display: block;
+    width: 100%;
+    font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #32383f;
+    line-height: normal;
+}
+
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox {
+    height: 30px;
+}
+
+    .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox input, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox input, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password input, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password input, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown input, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown input, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown input, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown input, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox input, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox input, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo input, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo input, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo input, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo input, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider input, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider input, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox input, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox input, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider input, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider input, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox input, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox input, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-textField .azc-textBox textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-passwordField .azc-password textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dropdownField .azc-dropdown textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-multiselectDropDownField .azc-multiSelectDropDown textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-numericTextBoxField .azc-numericTextBox textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-dateTimeComboField .azc-editableCombo textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-listComboField .azc-editableCombo textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-slider textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-sliderField .azc-textBox textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-slider textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox textarea, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).azc-rangeSliderField .azc-textBox textarea {
+        font-size: 12px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+.fxs-blade.fxs-bladestyle-create .msportalfx-form :not(.azc-vivaControl) > .msportalfx-form-formelement:not(.msportalfx-form-section).msportalfx-form-fileUploadField, .fxs-blade.fxs-bladestyle-create .msportalfx-form > .msportalfx-form-formelement:not(.msportalfx-form-section).msportalfx-form-fileUploadField {
+    height: 100px;
+}
+
+.fxs-blade.fxs-bladestyle-create .msportalfx-form .msportalfx-form-extralabel {
+    display: block;
+    color: #32383f;
+    position: relative;
+    top: -20px;
+    right: -25px;
+    width: -webkit-calc(100% - 2*25px);
+    width: calc(100% - 2*25px);
+    margin-bottom: -18px;
+}
+
+.msportalfx-form-custom .msportalfx-form-labelcontainer, .msportalfx-form .msportalfx-form-labelcontainer, .msportalfx-form-custom .azc-form-labelcontainer, .msportalfx-form .azc-form-labelcontainer, .msportalfx-form-custom .azc-checkBoxField-inlineLabelContainer, .msportalfx-form .azc-checkBoxField-inlineLabelContainer {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+    .msportalfx-form-custom .msportalfx-form-labelcontainer label, .msportalfx-form .msportalfx-form-labelcontainer label, .msportalfx-form-custom .azc-form-labelcontainer label, .msportalfx-form .azc-form-labelcontainer label, .msportalfx-form-custom .azc-checkBoxField-inlineLabelContainer label, .msportalfx-form .azc-checkBoxField-inlineLabelContainer label, .msportalfx-form-custom .msportalfx-form-labelcontainer .azc-dockedballoon-info, .msportalfx-form .msportalfx-form-labelcontainer .azc-dockedballoon-info, .msportalfx-form-custom .azc-form-labelcontainer .azc-dockedballoon-info, .msportalfx-form .azc-form-labelcontainer .azc-dockedballoon-info, .msportalfx-form-custom .azc-checkBoxField-inlineLabelContainer .azc-dockedballoon-info, .msportalfx-form .azc-checkBoxField-inlineLabelContainer .azc-dockedballoon-info {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+        .msportalfx-form-custom .msportalfx-form-labelcontainer label .azc-dockedballoon-anchor-image, .msportalfx-form .msportalfx-form-labelcontainer label .azc-dockedballoon-anchor-image, .msportalfx-form-custom .azc-form-labelcontainer label .azc-dockedballoon-anchor-image, .msportalfx-form .azc-form-labelcontainer label .azc-dockedballoon-anchor-image, .msportalfx-form-custom .azc-checkBoxField-inlineLabelContainer label .azc-dockedballoon-anchor-image, .msportalfx-form .azc-checkBoxField-inlineLabelContainer label .azc-dockedballoon-anchor-image, .msportalfx-form-custom .msportalfx-form-labelcontainer .azc-dockedballoon-info .azc-dockedballoon-anchor-image, .msportalfx-form .msportalfx-form-labelcontainer .azc-dockedballoon-info .azc-dockedballoon-anchor-image, .msportalfx-form-custom .azc-form-labelcontainer .azc-dockedballoon-info .azc-dockedballoon-anchor-image, .msportalfx-form .azc-form-labelcontainer .azc-dockedballoon-info .azc-dockedballoon-anchor-image, .msportalfx-form-custom .azc-checkBoxField-inlineLabelContainer .azc-dockedballoon-info .azc-dockedballoon-anchor-image, .msportalfx-form .azc-checkBoxField-inlineLabelContainer .azc-dockedballoon-info .azc-dockedballoon-anchor-image {
+            margin-bottom: 2px;
+        }
+
+    .msportalfx-form-custom .msportalfx-form-labelcontainer label, .msportalfx-form .msportalfx-form-labelcontainer label, .msportalfx-form-custom .azc-form-labelcontainer label, .msportalfx-form .azc-form-labelcontainer label, .msportalfx-form-custom .azc-checkBoxField-inlineLabelContainer label, .msportalfx-form .azc-checkBoxField-inlineLabelContainer label {
+        max-width: -webkit-calc(100% - 25px);
+        max-width: calc(100% - 25px);
+    }
+
+    .msportalfx-form-custom .msportalfx-form-labelcontainer .azc-dockedballoon-info, .msportalfx-form .msportalfx-form-labelcontainer .azc-dockedballoon-info, .msportalfx-form-custom .azc-form-labelcontainer .azc-dockedballoon-info, .msportalfx-form .azc-form-labelcontainer .azc-dockedballoon-info, .msportalfx-form-custom .azc-checkBoxField-inlineLabelContainer .azc-dockedballoon-info, .msportalfx-form .azc-checkBoxField-inlineLabelContainer .azc-dockedballoon-info {
+        width: 25px;
+    }
+
+.msportalfx-form-custom .azc-checkBoxField-inlineLabelContainer, .msportalfx-form .azc-checkBoxField-inlineLabelContainer {
+    width: -webkit-calc(100% - 25px - 5px);
+    width: calc(100% - 25px - 5px);
+}
+
+    .msportalfx-form-custom .azc-checkBoxField-inlineLabelContainer label, .msportalfx-form .azc-checkBoxField-inlineLabelContainer label {
+        color: #32383f;
+        font-size: 13px;
+        margin-top: -6px;
+    }
+
+.msportalfx-form-custom .msportalfx-form-labelcontainer label, .msportalfx-form .msportalfx-form-labelcontainer label, .msportalfx-form-custom .azc-form-labelcontainer label, .msportalfx-form .azc-form-labelcontainer label {
+    font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    color: #32383f;
+    text-transform: uppercase;
+}
+
+.msportalfx-form-custom .msportalfx-form-extralabel, .msportalfx-form .msportalfx-form-extralabel {
+    font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #32383f;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+}
+
+.msportalfx-form-custom .azc-checkBoxField .azc-checkBox, .msportalfx-form .azc-checkBoxField .azc-checkBox, .msportalfx-form-custom .azc-textField .azc-textBox, .msportalfx-form .azc-textField .azc-textBox, .msportalfx-form-custom .azc-passwordField .azc-password, .msportalfx-form .azc-passwordField .azc-password, .msportalfx-form-custom .azc-dropdownField .azc-dropdown, .msportalfx-form .azc-dropdownField .azc-dropdown, .msportalfx-form-custom .azc-multiselectDropDownField .azc-multiSelectDropDown, .msportalfx-form .azc-multiselectDropDownField .azc-multiSelectDropDown, .msportalfx-form-custom .azc-optionsGroupField .azc-optionPicker, .msportalfx-form .azc-optionsGroupField .azc-optionPicker, .msportalfx-form-custom .azc-numericTextBoxField .azc-numericTextBox, .msportalfx-form .azc-numericTextBoxField .azc-numericTextBox, .msportalfx-form-custom .azc-dateTimeComboField .azc-editableCombo, .msportalfx-form .azc-dateTimeComboField .azc-editableCombo, .msportalfx-form-custom .azc-listComboField .azc-editableCombo, .msportalfx-form .azc-listComboField .azc-editableCombo, .msportalfx-form-custom .azc-fileUpload, .msportalfx-form .azc-fileUpload, .msportalfx-form-custom .azc-multiLineTextField .azc-multiLineTextBox, .msportalfx-form .azc-multiLineTextField .azc-multiLineTextBox {
+    display: block;
+    width: 100%;
+}
+
+.msportalfx-form-custom .azc-multiLineTextField .azc-multiLineTextBox, .msportalfx-form .azc-multiLineTextField .azc-multiLineTextBox {
+    height: 100%;
+    width: 100%;
+}
+
+.msportalfx-form-custom .azc-sliderField .azc-slider, .msportalfx-form .azc-sliderField .azc-slider, .msportalfx-form-custom .azc-sliderField .azc-textBox, .msportalfx-form .azc-sliderField .azc-textBox {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.msportalfx-form-custom .azc-sliderField .azc-slider, .msportalfx-form .azc-sliderField .azc-slider {
+    width: -webkit-calc(100% - 40px);
+    width: calc(100% - 40px);
+}
+
+.msportalfx-form-custom .azc-sliderField .azc-textBox, .msportalfx-form .azc-sliderField .azc-textBox {
+    width: 40px !important;
+    text-align: center;
+}
+
+.msportalfx-form-custom .azc-rangeSliderField .azc-rangeSlider, .msportalfx-form .azc-rangeSliderField .azc-rangeSlider {
+    display: inline-block;
+    width: -webkit-calc(100% - 40px*2);
+    width: calc(100% - 40px*2);
+}
+
+.msportalfx-form-custom .azc-rangeSliderField .azc-textBox, .msportalfx-form .azc-rangeSliderField .azc-textBox {
+    width: 40px !important;
+    text-align: center;
+}
+
+    .msportalfx-form-custom .azc-rangeSliderField .azc-textBox.azc-rangeSlider-textBoxLeft, .msportalfx-form .azc-rangeSliderField .azc-textBox.azc-rangeSlider-textBoxLeft {
+        float: left;
+    }
+
+    .msportalfx-form-custom .azc-rangeSliderField .azc-textBox.azc-rangeSlider-textBoxRight, .msportalfx-form .azc-rangeSliderField .azc-textBox.azc-rangeSlider-textBoxRight {
+        float: right;
+    }
+
+.msportalfx-form-custom .azc-selectorField .fxcontrol-selector, .msportalfx-form .azc-selectorField .fxcontrol-selector {
+    box-sizing: border-box;
+}
+
+.msportalfx-form-custom .msportalfx-form-fileUploadField, .msportalfx-form .msportalfx-form-fileUploadField {
+    height: 80px;
+}
+
+    .msportalfx-form-custom .msportalfx-form-fileUploadField .azc-fileUpload, .msportalfx-form .msportalfx-form-fileUploadField .azc-fileUpload {
+        padding-right: 0;
+    }
+
+        .msportalfx-form-custom .msportalfx-form-fileUploadField .azc-fileUpload .azc-fileUpload-wrapper .azc-fileUpload-selectedFile, .msportalfx-form .msportalfx-form-fileUploadField .azc-fileUpload .azc-fileUpload-wrapper .azc-fileUpload-selectedFile {
+            width: -webkit-calc(100% - 35px);
+            width: calc(100% - 35px);
+        }
+
+    .msportalfx-form-custom .msportalfx-form-fileUploadField .fxcontrol-fileUpload-uploadTasks .fxcontrol-fileUpload-uploadTask, .msportalfx-form .msportalfx-form-fileUploadField .fxcontrol-fileUpload-uploadTasks .fxcontrol-fileUpload-uploadTask {
+        width: 100%;
+    }

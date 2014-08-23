@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('azureportalng').factory('bladeService', ['$http', '$rootScope', bladeService]);
+    angular.module('azureportalng').factory('bladeService', ['$http', '$rootScope', '$window', bladeService]);
 
-    function bladeService($http, $rootScope) {
+    function bladeService($http, $rootScope, $window) {
 
         var service = {
             blades: [],
@@ -18,6 +18,14 @@
 
         function addBladePath(path: string) {
             service.blades.push({ "path": path });
+            var portalcontent = $window.document.getElementById('azureportalscroll');
+
+            $window.setTimeout(function () {
+                var azureportalblades = $window.document.getElementsByClassName('azureportalblade');
+                var i = service.blades.length - 1;
+                var sl = azureportalblades[i].offsetLeft - 30;
+                portalcontent.scrollLeft = sl;
+            }, 150);
         }
 
         function clear() {
