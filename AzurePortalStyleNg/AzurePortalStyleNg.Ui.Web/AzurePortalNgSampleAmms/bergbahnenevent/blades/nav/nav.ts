@@ -14,7 +14,9 @@
             "navGrid": {
                 "items": [
                     { "title": "Aktienregister", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/shares/shares.html", "bladeController": "bergbahneneventShares" },
-                    { "title": "Export Excel", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html", "bladeController": "exportexcel" }
+                    { "title": "Export Excel", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html", "bladeController": "exportexcel" },
+                    { "title": "", "bladePath": "", "bladeController": "" },
+                    { "title": "xxx", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/xxx/xxx.html", "bladeController": "xxx" }
                 ]
             }
         };
