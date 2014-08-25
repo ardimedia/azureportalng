@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html ng-app="exampleDialog">
+<head>
+    <meta charset="utf-8">
+    <title>ngDialog demo</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body ng-controller="MainCtrl">
+
+    <script type="text/ng-template" id="modalDialogId">
+        <div class="ngdialog-message">
+            <h3>ngDialog modal example</h3>
+            <p>The <code>.openConfirm()</code> function returns a promise that is resolved when confirmed and rejected when otherwise closed. Modal dialogs by default do not close when clicked outside the dialog or when hitting escape. This can ofcourse be overridden when opening the dialog.</p>
+            <p>Confirm can take a value. Enter one here for example and see the console output: <input ng-model="confirmValue" /></p>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="confirm(confirmValue)">Confirm</button>
+            <button type="button" class="ngdialog-button ngdialog-button-secondary" ng-click="closeThisDialog('button')">Cancel</button>
+        </div>
+    </script>
+
+    <script src="../../../Scripts/angular.js"></script>
+    <script src="dialog.js"></script>
+    <script>
+        var app = angular.module('exampleDialog', ['ngDialog']);
+
+        app.config(['ngDialogProvider', function (ngDialogProvider) {
+            ngDialogProvider.setDefaults({
+                className: 'ngdialog-theme-default',
+                plain: false,
+                showClose: false,
+                closeByDocument: true,
+                closeByEscape: true,
+                appendTo: false
+            });
+        }]);
+
+        app.controller('MainCtrl', function ($scope, $rootScope, ngDialog) {
+            ngDialog.openConfirm({
+                template: 'modalDialogId',
+                className: 'ngdialog-theme-default'
+            })
+                .then(function (value) {
+                    console.log('Modal promise resolved. Value: ', value);
+                }, function (reason) {
+                    console.log('Modal promise rejected. Reason: ', reason);
+                });
+        });
+
+    </script>
+</body>
+</html>

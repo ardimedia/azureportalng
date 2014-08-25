@@ -22,7 +22,9 @@
         };
 
         vm.blade.navGrid.navigateTo = navigateTo;
+        console.log($scope);
 
+        //$scope.formblade.statusbar = 'Loading...';
         function navigateTo(id) {
             bladeService.clearLevel(2);
             bladeService.addBladePath(id);

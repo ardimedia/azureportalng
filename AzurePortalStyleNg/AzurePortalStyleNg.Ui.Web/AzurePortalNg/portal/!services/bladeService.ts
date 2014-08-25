@@ -25,7 +25,7 @@
                 var i = service.blades.length - 1;
                 var sl = azureportalblades[i].offsetLeft - 30;
                 portalcontent.scrollLeft = sl;
-            }, 150);
+            }, 250);
         }
 
         function clear() {

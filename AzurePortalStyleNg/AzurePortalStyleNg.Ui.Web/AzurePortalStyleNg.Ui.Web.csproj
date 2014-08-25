@@ -108,6 +108,18 @@
     <Content Include="AzurePortalNgSample\blade2.html" />
     <Content Include="AzurePortalNgSample\blade1.html" />
     <Content Include="AzurePortalNgSample\sample.html" />
+    <Content Include="AzurePortalNg\!directives\dialog\!Readme.txt" />
+    <Content Include="AzurePortalNg\!directives\dialog\dialog.js" />
+    <Content Include="AzurePortalNg\!directives\dialog\style.css">
+      <DependentUpon>style.scss</DependentUpon>
+    </Content>
+    <Content Include="AzurePortalNg\!directives\dialog\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
+    <Content Include="AzurePortalNg\!directives\dialog\style.scss" />
+    <Content Include="AzurePortalNg\!directives\dialog\partial1.html" />
+    <Content Include="AzurePortalNg\!directives\dialog\test2.html" />
+    <Content Include="AzurePortalNg\!directives\dialog\test.html" />
     <Content Include="AzurePortalNg\portal\!directives\blade\!test.html" />
     <Content Include="AzurePortalNg\portal\!directives\blade\blade.html" />
     <Content Include="AzurePortalNg\portal\!directives\blade\!test2.html" />
@@ -469,6 +481,9 @@
     <Content Include="AzurePortalNgSampleAmms\bergbahnenevent\blades\exportexcel\exportexcel.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="AzurePortalNg\!directives\dialog\style.css.map">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\TEMP.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -496,6 +511,7 @@
     <TypeScriptCompile Include="AzurePortalNgSample\blade2.ts" />
     <TypeScriptCompile Include="AzurePortalNgSample\blade1.ts" />
     <TypeScriptCompile Include="AzurePortalNgSample\sample.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!directives\dirtyflag\dirtyflag.ts" />
     <TypeScriptCompile Include="AzurePortalNg\app.ts" />
     <TypeScriptCompile Include="AzurePortalNg\config.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\blade\!test.ts" />
@@ -521,7 +537,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="!!Out-Nuget\" />
-    <Folder Include="AzurePortalNg\!directives\" />
     <Folder Include="AzurePortalNg\!services\" />
   </ItemGroup>
   <PropertyGroup>

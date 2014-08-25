@@ -1,7 +1,9 @@
-﻿<section class="fxs-blade-locked fxs-blade fx-rightClick fxs-bladesize-small" ng-style="vm.blade.width">
+﻿<section data-ng-form="formblade" class="fxs-blade-locked fxs-blade fx-rightClick fxs-bladesize-small" ng-style="vm.blade.width">
     <header class="fxs-blade-header">
         <div class="fxs-blade-statusbar-wrapper">
-            <div class="fxs-blade-statusbar"></div>
+            <div class="fxs-blade-statusbar">
+                <span ng-class="formblade.statusbarClass">{{formblade.statusbar}}</span>
+            </div>
         </div>
         <div class="fxs-blade-actions">
             <!--<button title="Pin blade to Startboard" class="fxs-blade-pin" type="button">
