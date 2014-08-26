@@ -19,3 +19,8 @@ a {
 img, a img, :link img, :visited img {
     border: 0;
 }
+
+
+input.ng-invalid {
+    border: 1px solid red;
+}

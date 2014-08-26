@@ -74,6 +74,7 @@
       <DependentUpon>!design.css</DependentUpon>
     </Content>
     <Content Include="!Design\!test\azure.html" />
+    <Content Include="!Design\!test\required\test1.html" />
     <Content Include="!Design\!test\test.css">
       <DependentUpon>test.scss</DependentUpon>
     </Content>
