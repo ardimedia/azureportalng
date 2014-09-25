@@ -1122,4 +1122,9 @@ img, a img, :link img, :visited img {
 input.ng-invalid {
   border: 1px solid red; }
 
+.collapsed {
+  visibility: collapse;
+  width: 0;
+  min-width: 0; }
+
 /*# sourceMappingURL=azureportalstyleng.css.map */

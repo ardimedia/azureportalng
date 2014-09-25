@@ -12,6 +12,7 @@
             "subTitle": "Bearbeiten",
             "isNavGrid": true,
             "isCommandSearch": true,
+            "isCommandOrder": true,
             "isCommandNew": true,
             "commandNew": commandNew,
             "isCommandSave": true,

@@ -15,8 +15,7 @@
         };
 
         vm.tiles = [
-            { title: 'Bergbahnen.Li', subTitle: 'Aktienverzeichnis', size: 'normal', left: '0', top: '0', bladePath: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/nav/nav.html', bladeController: "bergbahneneventNav" },
-            { title: 'Amms', subTitle: 'Administration', size: 'normal', left: '180px', top: '0', bladePath: '/AzurePortalNgSampleAmms/amms/blades/nav/nav.html', bladeController: "ammsNav" }
+            { title: 'Bergbahnen.Li', subTitle: 'Aktienverzeichnis', size: 'normal', left: '0', top: '0', bladePath: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/nav/nav.html', bladeController: "bergbahneneventNav" }
         ];
 
         //vm.blades = [
@@ -26,6 +25,12 @@
         //    { path: "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html", controller: "4" }
         //];
         vm.blades = bladeService.blades;
+        console.log(vm.tiles);
+
+        if (vm.tiles.length === 1) {
+            console.log("nav to 1");
+            navigateTo(vm.tiles[0].bladePath);
+        }
 
         function navigateTo(id) {
             bladeService.clearLevel(1);

@@ -195,7 +195,7 @@
     <Content Include="AzurePortalNg\!directives\dialog\style.css.map">
       <DependentUpon>style.css</DependentUpon>
     </Content>
-    <Content Include="Package.config" />
+    <Content Include="nuspec-packager.config" />
     <None Include="Properties\PublishProfiles\TEMP.pubxml" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
