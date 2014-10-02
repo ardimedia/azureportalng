@@ -10,6 +10,9 @@
             "$schema": "/AzurePortalNg/$schema/navgrid.json?reload",
             "title": "Blade 1",
             "subTitle": "First Blade",
+            "isCommandDocument": true,
+            //"commandDocumentText": 'Lieferschein',
+            "commandDocument": dummy, 
             "isNavGrid": true,
             "navGrid": {
                 "items": [
@@ -23,5 +26,7 @@
         function navigateTo(id) {
             bladeService.addBladePath(id);
         }
+
+        function dummy() { }
     }
 })();
