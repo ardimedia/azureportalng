@@ -10,6 +10,9 @@
             link: function (scope, element, attrs, controller) {
                 //console.log('navgrid-scope:');
                 //console.log(scope);
+                angular.forEach(scope.vm.items, function (item) {
+                    if (item.isVisible == undefined) { item.isVisible = true; }
+                });
             }
         };
     }

@@ -1,4 +1,5 @@
-﻿body {
+﻿/* line 1, D:/!Data/Source/Git.Github/AzurePortalStyleNg/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/!Design/themems.scss */
+body {
   /*background-color: #2e80ab;*/
   background-image: linear-gradient(to bottom, #2e80ab 0%, #61b7da 100%);
   background-repeat: no-repeat;
@@ -9,16 +10,20 @@
   -ms-scrollbar-face-color: #63707e;
   -ms-scrollbar-track-color: #dcdfe2; }
 
+/* line 14, D:/!Data/Source/Git.Github/AzurePortalStyleNg/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/!Design/themems.scss */
 a {
   color: #00bcf2;
   text-decoration: none; }
 
+/* line 19, D:/!Data/Source/Git.Github/AzurePortalStyleNg/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/!Design/themems.scss */
 img, a img, :link img, :visited img {
   border: 0; }
 
+/* line 24, D:/!Data/Source/Git.Github/AzurePortalStyleNg/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/!Design/themems.scss */
 input.ng-invalid {
   border: 1px solid red; }
 
+/* line 28, D:/!Data/Source/Git.Github/AzurePortalStyleNg/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/!Design/themems.scss */
 .collapsed {
   visibility: collapse;
   width: 0;

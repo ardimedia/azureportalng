@@ -7,16 +7,16 @@
         var vm = this;
 
         vm.blade = {
-            "$schema": "/AzurePortalNg/$schema/navgrid.json?reload",
-            "title": "Bergbahnen.Li",
-            "subTitle": "Aktienregister",
-            "isNavGrid": true,
-            "navGrid": {
-                "items": [
-                    { "title": "Aktienregister", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/shares/shares.html", "bladeController": "bergbahneneventShares" },
-                    { "title": "Export Excel", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html", "bladeController": "exportexcel" },
-                    { "title": "", "bladePath": "", "bladeController": "" },
-                    { "title": "xxx", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/xxx/xxx.html", "bladeController": "xxx" }
+            $schema: "/AzurePortalNg/$schema/navgrid.json?reload",
+            title: "Bergbahnen.Li",
+            subTitle: "Aktienregister",
+            isNavGrid: true,
+            navGrid: {
+                items: [
+                    { title: "Aktienregister", bladePath: "/AzurePortalNgSampleAmms/bergbahnenevent/blades/shares/shares.html", bladeController: "bergbahneneventShares", isVisible: true },
+                    { title: "Export Excel", bladePath: "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html", bladeController: "exportexcel", isVisible: true },
+                    { title: "", bladePath: "", bladeController: "" },
+                    { title: "xxx", bladePath: "/AzurePortalNgSampleAmms/bergbahnenevent/blades/xxx/xxx.html", bladeController: "xxx" }
                 ]
             }
         };
