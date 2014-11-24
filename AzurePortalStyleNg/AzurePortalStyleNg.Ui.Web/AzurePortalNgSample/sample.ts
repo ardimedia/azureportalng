@@ -1,9 +1,11 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('azureportalng').controller('sample', ['$scope','bladeService', sample]);
+    angular.module('azureportalng')
+        .controller('sample', ['$scope', 'bladeService', sample]);
 
     function sample($scope, bladeService) {
+        /* jshint validthis: true */
         var vm = this;
 
         vm.navigateTo = navigateTo;

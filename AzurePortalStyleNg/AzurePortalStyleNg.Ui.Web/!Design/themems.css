@@ -1,7 +1,7 @@
-﻿/* line 1, D:/!Data/Source/Git.Github/AzurePortalStyleNg/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/!Design/themems.scss */
-body {
+﻿body {
   /*background-color: #2e80ab;*/
   background-image: linear-gradient(to bottom, #2e80ab 0%, #61b7da 100%);
+  background-color: #3590bf;
   background-repeat: no-repeat;
   font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
   font-weight: 400;
@@ -10,23 +10,19 @@ body {
   -ms-scrollbar-face-color: #63707e;
   -ms-scrollbar-track-color: #dcdfe2; }
 
-/* line 14, D:/!Data/Source/Git.Github/AzurePortalStyleNg/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/!Design/themems.scss */
 a {
   color: #00bcf2;
   text-decoration: none; }
 
-/* line 19, D:/!Data/Source/Git.Github/AzurePortalStyleNg/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/!Design/themems.scss */
 img, a img, :link img, :visited img {
   border: 0; }
 
-/* line 24, D:/!Data/Source/Git.Github/AzurePortalStyleNg/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/!Design/themems.scss */
 input.ng-invalid {
   border: 1px solid red; }
 
-/* line 28, D:/!Data/Source/Git.Github/AzurePortalStyleNg/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/!Design/themems.scss */
 .collapsed {
   visibility: collapse;
   width: 0;
   min-width: 0; }
 
-/*# sourceMappingURL=themems.css.map */
+/*# sourceMappingURL=../../../../../../../../C:/Program Files (x86)/Microsoft Visual Studio 12.0/Common7/IDE/themems.css.map */

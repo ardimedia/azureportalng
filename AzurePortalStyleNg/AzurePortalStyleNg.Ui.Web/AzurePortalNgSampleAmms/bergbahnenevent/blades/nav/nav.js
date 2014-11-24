@@ -4,6 +4,7 @@
     angular.module('azureportalng').controller('bergbahneneventNav', ['$scope', '$http', 'bladeService', bergbahneneventNav]);
 
     function bergbahneneventNav($scope, $http, bladeService) {
+        /* jshint validthis: true */
         var vm = this;
 
         vm.blade = {
@@ -24,7 +25,6 @@
         vm.blade.navGrid.navigateTo = navigateTo;
         console.log($scope);
 
-        //$scope.formblade.statusbar = 'Loading...';
         function navigateTo(id) {
             bladeService.clearLevel(2);
             bladeService.addBladePath(id);

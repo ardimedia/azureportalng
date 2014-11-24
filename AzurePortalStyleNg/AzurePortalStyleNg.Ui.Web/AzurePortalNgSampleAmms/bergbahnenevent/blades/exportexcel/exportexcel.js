@@ -4,6 +4,7 @@
     angular.module('azureportalng').controller('exportexcel', ['$scope', '$http', 'bladeService', exportexcel]);
 
     function exportexcel($scope, $http, bladeService) {
+        /* jshint validthis: true */
         var vm = this;
 
         //vm.blade = {};

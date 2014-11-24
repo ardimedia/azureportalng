@@ -4,6 +4,7 @@
     angular.module('azureportalng').controller('ammsNav', ['$scope', '$http', ammsNav]);
 
     function ammsNav($scope, $http) {
+        /* jshint validthis: true */
         var vm = this;
 
         //vm.blade = {};

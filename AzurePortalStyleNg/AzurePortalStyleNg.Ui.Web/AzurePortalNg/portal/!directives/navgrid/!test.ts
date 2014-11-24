@@ -1,9 +1,11 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('azureportalng').controller('testcontroller', ['$scope', '$http', testcontroller]);
+    angular.module('azureportalng')
+        .controller('testcontroller', ['$scope', '$http', testcontroller]);
 
     function testcontroller($scope, $http) {
+        /* jshint validthis: true */
         var vm = this;
 
         $http({ method: 'GET', url: '!test.json' })

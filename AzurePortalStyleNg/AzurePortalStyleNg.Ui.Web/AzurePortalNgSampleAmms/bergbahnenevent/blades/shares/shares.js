@@ -4,16 +4,16 @@
     angular.module('azureportalng').controller('bergbahneneventShares', ['$scope', '$http', '$location', 'bladeService', 'shareService', bergbahneneventShares]);
 
     function bergbahneneventShares($scope, $http, $location, bladeService, shareService) {
+        /* jshint validthis: true */
         var vm = this;
 
         vm.blade = {
-            "$schema": "/AzurePortalNg/$schema/navgrid.json?reload",
-            "title": "Aktienregister",
-            "subTitle": "",
-            "isNavGrid": true,
-            "isCommandNew": true,
-            "navGrid": {
-                "items": []
+            title: "Aktienregister",
+            subTitle: "",
+            isNavGrid: true,
+            isCommandNew: true,
+            navGrid: {
+                items: []
             }
         };
 
