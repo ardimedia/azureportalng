@@ -1289,7 +1289,7 @@ a {
 
 /* line 1, D:/!Data/Source/Git.Github/AzurePortalStyleNg/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/!Design/themems.scss */
 body {
-  /*background-color: #2e80ab;*/
+  background-color: #2e80ab;
   background-image: linear-gradient(to bottom, #2e80ab 0%, #61b7da 100%);
   background-repeat: no-repeat;
   font-family: wf_segoe-ui_normal, "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
