@@ -1,8 +1,6 @@
-﻿(function () {
+(function () {
     'use strict';
-
     angular.module('azureportalng').factory('shareService', ['$http', '$rootScope', shareService]);
-
     function shareService($http, $rootScope) {
         var service = {
             shares: [],
@@ -12,11 +10,8 @@
             // Events
             shareChanged: EventHelper()
         };
-
         service.shares = getShares();
-
         return service;
-
         function getShares() {
             return [
                 { "title": "Aktie 1", "bladePath": "aktie1" },
@@ -51,32 +46,26 @@
                 { "title": "Aktie 30", "bladePath": "aktie30" }
             ];
         }
-
         function selectShare(id) {
             service.share = service.shares[id];
             service.shareChanged.trigger(service.share);
         }
-
         function shareChanged(share) {
             //console.log(share);
         }
-
         function EventHelper() {
             var event = { handlers: [], bind: function (fn) {
-                }, trigger: function (args) {
-                } };
+            }, trigger: function (args) {
+            } };
             event.handlers = [];
-
             event.bind = function (fn) {
                 event.handlers.push(fn);
             };
-
             event.trigger = function (args) {
                 for (var i = 0; i < event.handlers.length; i++) {
                     event.handlers[i].call(event, args);
                 }
             };
-
             return event;
         }
     }

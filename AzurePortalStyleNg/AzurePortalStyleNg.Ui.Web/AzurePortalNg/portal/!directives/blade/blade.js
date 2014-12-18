@@ -1,8 +1,6 @@
-﻿(function () {
+(function () {
     'use strict';
-
     angular.module('azureportalng').directive('azurePortalBlade', ['$window', 'bladeService', azurePortalBlade]);
-
     function azurePortalBlade($window, bladeService) {
         return {
             replace: true,

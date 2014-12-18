@@ -1,12 +1,9 @@
-﻿(function () {
+(function () {
     'use strict';
-
     angular.module('azureportalng').controller('blade2', ['$scope', '$http', 'bladeService', blade2]);
-
     function blade2($scope, $http, bladeService) {
         /* jshint validthis: true */
         var vm = this;
-
         vm.blade = {
             title: "Blade 2",
             subTitle: "Second Blade",
@@ -17,9 +14,7 @@
                 ]
             }
         };
-
         vm.blade.navGrid.navigateTo = navigateTo;
-
         function navigateTo(id) {
             bladeService.addBladePath(id);
         }
