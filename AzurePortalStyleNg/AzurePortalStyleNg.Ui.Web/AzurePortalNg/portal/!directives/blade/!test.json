@@ -1,0 +1,12 @@
+﻿{
+    "$schema": "/AzurePortalNg/$schema/navgrid.json?reload",
+    "title": "Bergbahnen.Li",
+    "subTitle": "Aktienregister",
+    "isNavGrid": true,
+    "navGrid": {
+        "items": [
+            { "title": "Aktienregister", "bladePath": "stockList" },
+            { "title": "Export Excel", "bladePath": "exportExcel" }
+        ]
+    }
+}
