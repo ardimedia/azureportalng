@@ -1,8 +1,6 @@
-﻿(function () {
+(function () {
     'use strict';
-
     angular.module('azureportalng').directive('navGrid', ['$window', navGrid]);
-
     function navGrid($window) {
         return {
             scope: { vm: '=viewModel' },

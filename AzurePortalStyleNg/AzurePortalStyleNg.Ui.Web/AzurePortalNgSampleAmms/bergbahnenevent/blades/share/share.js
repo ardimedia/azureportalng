@@ -1,12 +1,9 @@
-﻿(function () {
+(function () {
     'use strict';
-
     angular.module('azureportalng').controller('bergbahneneventShare', ['$scope', '$http', '$location', 'bladeService', 'shareService', bergbahneneventShare]);
-
     function bergbahneneventShare($scope, $http, $location, bladeService, shareService) {
         /* jshint validthis: true */
         var vm = this;
-
         vm.blade = {
             title: "Aktie: Harry Pfleger",
             subTitle: "Bearbeiten",
@@ -35,17 +32,13 @@
                 ]
             }
         };
-
         setShare(shareService.share);
-
         shareService.shareChanged.bind(function (share) {
             setShare(share);
         });
-
         function setShare(share) {
             //vm.blade.title = "Aktie: " + share.title;
         }
-
         function commandNew() {
             console.log('commandNewFunction');
         }

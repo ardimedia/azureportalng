@@ -1,12 +1,9 @@
-﻿(function () {
+(function () {
     'use strict';
-
     angular.module('azureportalng').controller('bergbahneneventNav', ['$scope', '$http', 'bladeService', bergbahneneventNav]);
-
     function bergbahneneventNav($scope, $http, bladeService) {
         /* jshint validthis: true */
         var vm = this;
-
         vm.blade = {
             $schema: "/AzurePortalNg/$schema/navgrid.json?reload",
             title: "Bergbahnen.Li",
@@ -21,10 +18,8 @@
                 ]
             }
         };
-
         vm.blade.navGrid.navigateTo = navigateTo;
         console.log($scope);
-
         function navigateTo(id) {
             bladeService.clearLevel(2);
             bladeService.addBladePath(id);
