@@ -121,11 +121,8 @@
     <Content Include="AzurePortalNg\!directives\dialog\partial1.html" />
     <Content Include="AzurePortalNg\!directives\dialog\test2.html" />
     <Content Include="AzurePortalNg\!directives\dialog\test.html" />
-    <Content Include="AzurePortalNg\portal\!directives\blade\!test.html" />
     <Content Include="AzurePortalNg\portal\!directives\blade\blade.html" />
-    <Content Include="AzurePortalNg\portal\!directives\blade\!test2.html" />
     <Content Include="AzurePortalNg\portal\!directives\home\home.html" />
-    <Content Include="AzurePortalNg\portal\!directives\navgrid\!test.html" />
     <Content Include="AzurePortalNg\portal\!directives\navgrid\navgrid.html" />
     <Content Include="Content\azureportalstyleng.css">
       <DependentUpon>azureportalstyleng.scss</DependentUpon>
@@ -183,9 +180,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="AzurePortalNg\!!schema\navgrid.json" />
-    <Content Include="AzurePortalNg\portal\!directives\blade\!test.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="AzurePortalNgSampleAmms\amms\blades\nav\nav.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -966,15 +960,9 @@
     <TypeScriptCompile Include="AzurePortalNg\!directives\dirtyflag\dirtyflag.ts" />
     <TypeScriptCompile Include="AzurePortalNg\app.ts" />
     <TypeScriptCompile Include="AzurePortalNg\config.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\portal\!directives\blade\!test.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\blade\blade.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\portal\!directives\blade\!test2.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\home\home.ts" />
     <TypeScriptCompile Include="AzurePortalNgSampleAmms\azureportalShell.ts" />
-    <None Include="AzurePortalNg\portal\!directives\navgrid\!test.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <TypeScriptCompile Include="AzurePortalNg\portal\!directives\navgrid\!test.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\navgrid\navgrid.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!services\bladeService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />

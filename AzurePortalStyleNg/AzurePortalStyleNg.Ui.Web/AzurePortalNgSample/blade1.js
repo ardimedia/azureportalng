@@ -13,8 +13,9 @@
             navGrid: {
                 items: [
                     { title: 'Menu 1', bladePath: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html' },
-                    { title: '', style: { cursor: 'default' }, bladePath: '' },
                     { title: 'Menu 2', bladePath: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html', roles: 'lgtbc-admin' },
+                    { title: '', bladePath: '' },
+                    { title: 'no path', bladePath: '' },
                 ]
             }
         };

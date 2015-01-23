@@ -1,6 +1,0 @@
-﻿{
-    "items": [
-        { "title": "Aktienregister", "bladePath": "stockList" },
-        { "title": "Export Excel", "bladePath": "exportExcel" }
-    ]
-}
