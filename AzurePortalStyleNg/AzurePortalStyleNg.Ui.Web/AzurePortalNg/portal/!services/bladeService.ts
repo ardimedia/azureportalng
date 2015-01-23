@@ -25,8 +25,12 @@
             $window.setTimeout(function () {
                 var azureportalblades = $window.document.getElementsByClassName('azureportalblade');
                 var i = service.blades.length - 1;
-                var sl = azureportalblades[i].offsetLeft - 30;
-                portalcontent.scrollLeft = sl;
+                // HACK: Sometime azureportalblades[i].offsetLeft is undefined.
+                //       So now if it is, the user has to scroll on its own.
+                if (azureportalblades[i].offsetLeft !== undefined) {
+                    var sl = azureportalblades[i].offsetLeft - 30;
+                    portalcontent.scrollLeft = sl;
+                }
             }, 250);
         }
 
