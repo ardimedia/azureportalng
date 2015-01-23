@@ -11,7 +11,10 @@
         };
         return service;
         function addBladePath(path) {
-            service.blades.push({ "path": path });
+            if (path === undefined || path == '') {
+                return;
+            }
+            service.blades.push({ 'path': path });
             var portalcontent = $window.document.getElementById('azureportalscroll');
             $window.setTimeout(function () {
                 var azureportalblades = $window.document.getElementsByClassName('azureportalblade');
