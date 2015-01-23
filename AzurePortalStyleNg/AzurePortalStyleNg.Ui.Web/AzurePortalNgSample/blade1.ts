@@ -9,14 +9,16 @@
         var vm = this;
 
         vm.blade = {
-            title: "Blade 1",
-            subTitle: "First Blade",
+            title: 'Blade 1',
+            subTitle: 'First Blade',
             isCommandDocument: true,
-            commandDocument: dummy, 
+            commandDocument: dummy,
             isNavGrid: true,
             navGrid: {
                 items: [
-                    { title: "Als Excel exportieren", bladePath: "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html" }
+                    { title: 'Menu 1', bladePath: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html' },
+                    { title: '', style: { cursor: 'default' }, bladePath: '' },
+                    { title: 'Menu 2', bladePath: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html', roles: 'lgtbc-admin' },
                 ]
             }
         };

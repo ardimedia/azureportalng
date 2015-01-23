@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AzurePortalStyleNg.Ui.Web")]
-[assembly: AssemblyDescription("Release Date: 2014-11-24")]
+[assembly: AssemblyDescription("Release Date: 2015-01-23")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Infoware, Schaan - Liechtenstein")]
 [assembly: AssemblyProduct("AzurePortalStyleNg.Ui.Web")]
-[assembly: AssemblyCopyright("Copyright © 2014 Infoware")]
+[assembly: AssemblyCopyright("Copyright © 2015 Infoware")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("0.0.32")]
-[assembly: AssemblyFileVersion("0.0.32")]
+[assembly: AssemblyVersion("0.0.33")]
+[assembly: AssemblyFileVersion("0.0.33")]

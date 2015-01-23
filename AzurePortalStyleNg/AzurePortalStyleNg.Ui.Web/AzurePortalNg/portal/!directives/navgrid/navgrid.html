@@ -1,21 +1,11 @@
 ﻿<table class="azc-grid-full azc-grid-multiselectable" aria-readonly="true">
-    <caption data-bind="text: data.summary">Services</caption>
+    <caption data-bind="text: data.summary"></caption>
     <colgroup>
         <col class="col0" style="width: 41px;">
         <col class="col1">
     </colgroup>
-    <!--<thead>
-        <tr>
-            <th class="azc-grid-unsortablecolumnheader msportalfx-gridcolumn-asseticon" role="columnheader" style="width: 41px;">
-                <a><span class="azc-grid-headerlabel" data-bind="text: name"></span></a>
-            </th>
-            <th class="azc-grid-unsortablecolumnheader " role="columnheader">
-                <a><span class="azc-grid-headerlabel" data-bind="text: name">Service</span></a>
-            </th>
-        </tr>
-    </thead>-->
     <tbody class="azc-grid-groupdata" role="rowgroup">
-        <tr data-ng-repeat="item in vm.items track by $index" data-ng-click="vm.navigateTo(item.bladePath);" role="row" aria-selected="false" data-grid-row-activated="false" data-grid-selectable="true" data-grid-focusable="true" data-grid-activateable="true" ng-show="item.isVisible">
+        <tr data-ng-repeat="item in vm.items track by $index" data-ng-click="vm.navigateTo(item.bladePath);" role="row" aria-selected="false" data-grid-row-activated="false" data-grid-selectable="true" data-grid-focusable="true" data-grid-activateable="true" ng-show="item.isVisible" style="cursor:pointer" ng-style="item.style">
             <td class="msportalfx-gridcolumn-asseticon" role="gridcell" data-grid-cell-activated="false">
                 <div class="azc-vivaControl" data-bind='vivaControl: "DEB28B4C-518F-4F70-A817-BF9277606CAB"'>
                     <div data-bind="image: value">

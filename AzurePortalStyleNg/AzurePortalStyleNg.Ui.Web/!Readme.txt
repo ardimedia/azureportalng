@@ -2,7 +2,7 @@
 DEPLOY TO NUGET
 ------------------------------------------------------------------------------------------------------------
 DEPLOY FROM 
-   D:\!Data\Source\Git.Github\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web\!!Out-Nuget
+   D:\!Data\Source\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web\!!Out-Nuget
 TO:
    https://www.nuget.org/packages/AzurePortalStyleNg
 ============================================================================================================
