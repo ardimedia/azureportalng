@@ -17,7 +17,7 @@
                 <div class="fxs-startboard-layout fxs-flowlayout">
                     <div class="fxs-flowlayout-childcontainer">
                         <section data-ng-repeat="tile in vm.tiles track by $index" class="fxs-tile fx-rightClick fxs-flowlayout-element" data-ng-class="{'fxs-tilesize-normal':tile.size=='normal', 'fxs-tilesize-mini':tile.size=='mini', 'fxs-tilesize-herowide':tile.size=='herowide'}" data-ng-style="{'left': tile.left, 'top': tile.top}">
-                            <div class="fxs-part fxs-part-clickable" ng-click="vm.navigateTo(tile.bladePath);" style="cursor:pointer;">
+                            <div class="fxs-part fxs-part-clickable" ng-click="vm.navigateTo(tile.bladePath);tile.clicked();" style="cursor:pointer;">
                                 <header class="fxs-part-title">
                                     <h2 class="msportalfx-tooltip-overflow">{{tile.title}}</h2>
                                     <h3 class="msportalfx-tooltip-overflow">{{tile.subTitle}}</h3>
