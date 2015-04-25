@@ -7,6 +7,7 @@ var __extends = this.__extends || function (d, b) {
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
+    //#region Class Definition: BaseViewModel
     var BaseViewModel = (function (_super) {
         __extends(BaseViewModel, _super);
         //#endregion
@@ -14,12 +15,14 @@ var AzurePortalNg;
         function BaseViewModel(portalService, path, title, subtitle, width) {
             if (width === void 0) { width = 300; }
             _super.call(this, portalService, path, title, subtitle, width);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel\' constructor called.', [portalService, path, title, subtitle, width]);
             this.blade = this;
         }
         //#endregion
         //#region Methods
         //#region GetDataList
         BaseViewModel.prototype.getDataList = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel.getDataList\' called.');
             var that = this;
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';

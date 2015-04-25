@@ -35,7 +35,7 @@
             return this._name;
         }
         set name(value: string) {
-            throw new Error('[azureportalng] \'name\' is a calculated value form \'firsName\' and \'lastName\'');
+            throw new Error('[azureportalng] \'name\' is a calculated value from \'firsName\' and \'lastName\'. Assignment not allowed.');
             this._name = value;
         }
         //#endregion
@@ -48,17 +48,14 @@
         //#region Constructors
 
         constructor(username: string, firstName: string = '', lastName: string = '') {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'UserAccount\' constructor called.', [username, firstName, lastName]);
             this.userName = username;
             this.firstName = firstName;
             this.lastName = lastName;
         }
 
         //#endregion
-
-        //#region Methods
-        //#endregion
     }
 
     //#endregion
-
 }

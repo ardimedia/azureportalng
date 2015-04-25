@@ -17,6 +17,7 @@
         //#region Constructors
 
         constructor(title: string) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Panorama\' constructor called.', [title]);
             this.title = title;
 
             this.avatarMenu = new AvatarMenu();
@@ -24,11 +25,7 @@
         }
 
         //#endregion
-
-        //#region Methods
-        //#endregion
     }
 
     //#endregion
-
 }

@@ -44,6 +44,7 @@ var AzurePortalNg;
             this.isCommandSave = false;
             this.commandSave = this.onCommandSave;
             this.commandSaveText = '';
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' constructor called.', [portalService, path, title, subtitle, width]);
             this.portalService = portalService;
             this.path = path;
             this.title = title;
@@ -68,12 +69,15 @@ var AzurePortalNg;
         };
         //#endregion
         Blade.prototype.initialize = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.initialize\' called.');
             this.activate();
             this.setObsoleteLayoutProperites();
         };
         Blade.prototype.activate = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.');
         };
         Blade.prototype.setObsoleteLayoutProperites = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.setObsoleteLayoutProperites\' called.');
             this.blade.title = this.title;
             this.blade.statusbar = this.statusbar;
             this.blade.statusbarClass = this.statusbarClass;
@@ -83,6 +87,7 @@ var AzurePortalNg;
             this.blade.isCommandSave = this.isCommandSave;
         };
         Blade.prototype.bladeClose = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.');
             this.portalService.bladeService.clear(this.path);
         };
         return Blade;

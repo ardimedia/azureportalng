@@ -6,6 +6,7 @@ var AzurePortalNg;
         //#endregion
         //#region Constructors
         function Startboard() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.');
             this.tiles = new AzurePortalNg.Tiles();
         }
         return Startboard;

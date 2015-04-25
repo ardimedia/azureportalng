@@ -4,8 +4,12 @@ var AzurePortalNg;
     //#region Class Definition: PortalService
     var PortalService = (function () {
         //#endregion
+        //#endregion
         //#region Constructors
         function PortalService($injector) {
+            //#region Setup Debugging
+            this.debug = new AzurePortalNg.Debug();
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [$injector]);
             this.$injector = $injector;
             this.$http = $injector.get('$http');
             this.$httpBackend = $injector.get('$httpBackend');
@@ -19,6 +23,7 @@ var AzurePortalNg;
         //#endregion
         //#region Methods
         PortalService.prototype.initialize = function (portalShell) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService.initialize\' called.', [portalShell]);
             this.portalShell = portalShell;
             this.portalShell.setObsoleteLayoutProperites();
         };

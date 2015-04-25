@@ -14,6 +14,8 @@ var AzurePortalNg;
     //#region Class Definition: BladeCommand
     var BladeCommand = (function () {
         function BladeCommand() {
+            //#region Properties
+            this.bladeUrls = new Array();
             this.isVisible = false;
             this.isEnabled = false;
             this.text = '';
@@ -29,16 +31,19 @@ var AzurePortalNg;
         function BladeService(portalService) {
             //#region Properties
             this.bladeUrls = new Array();
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeService\' constructor called.', [portalService]);
             this.portalService = portalService;
             this.portalService.bladeService = this;
         }
         //#endregion
         //#region Methods
         BladeService.prototype.setFirstBlade = function (path) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeService.setFirstBlade\' called.', [path]);
             this.clearAll();
             return this.addBlade('', path);
         };
         BladeService.prototype.addBlade = function (senderPath, path) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeService.addBlade\' called.', [senderPath, path]);
             var that = this;
             if (path === undefined || path === '') {
                 return;
@@ -72,26 +77,40 @@ var AzurePortalNg;
             return blade;
         };
         BladeService.prototype.clearAll = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeService.clearAll\' called.');
             this.bladeUrls.length = 0;
         };
         BladeService.prototype.clear = function (path) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeService.clear\' called.', [path]);
             var that = this;
-            that.bladeUrls.forEach(function (blade, index) {
+            var isremoved = that.bladeUrls.some(function (blade, index) {
                 if (blade.path === path) {
+                    AzurePortalNg.Debug.write('>>> set bladeUrls.length to: ' + index);
                     that.bladeUrls.length = index;
-                    return;
+                    return true;
                 }
             });
-            throw new Error('[azureportalng] path: \'' + path + '\' could not be removed, since it is not shown.');
+            if (!isremoved) {
+                throw new Error('[azureportalng] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
+            }
         };
         BladeService.prototype.clearChild = function (path) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeService.clearChild\' called.', [path]);
             var that = this;
-            that.bladeUrls.forEach(function (blade, index) {
+            if (path === '') {
+                AzurePortalNg.Debug.write('>>> path is empty, nothing to clear.');
+                return;
+            }
+            var isremoved = that.bladeUrls.some(function (blade, index) {
                 if (blade.path === path) {
+                    AzurePortalNg.Debug.write('>>> set bladeUrls.length to: ' + (index + 1));
                     that.bladeUrls.length = index + 1;
-                    return;
+                    return true;
                 }
             });
+            if (!isremoved) {
+                throw new Error('[azureportalng] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
+            }
         };
         return BladeService;
     })();

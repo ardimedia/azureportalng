@@ -7,6 +7,7 @@ var __extends = this.__extends || function (d, b) {
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
+    //#region Class Definition: ListViewModel
     var ListViewModel = (function (_super) {
         __extends(ListViewModel, _super);
         //#endregion
@@ -15,10 +16,12 @@ var AzurePortalNg;
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 200; }
             _super.call(this, portalService, path, title, subtitle, width);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'ListViewModel\' constructor called.', [portalService, path, title, subtitle, width]);
         }
         //#endregion
         //#region Methods
         ListViewModel.prototype.activate = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'ListViewModel.activate\' called.');
             var that = this;
             return _super.prototype.getDataList.call(this).success(function (data) {
                 that.listItems = data;

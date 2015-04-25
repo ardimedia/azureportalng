@@ -2,7 +2,7 @@ var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
     //#region Enum Definition: TileSizes
-    // The names are used in CSS for layouting, e.g. style='mini'
+    /** The names are used in CSS for layouting, e.g. style='mini' */
     (function (TileSizes) {
         TileSizes[TileSizes["small"] = 0] = "small";
         TileSizes[TileSizes["mini"] = 1] = "mini";
@@ -18,10 +18,12 @@ var AzurePortalNg;
             this.tileSizes = tileSizes;
             this.width = width;
             this.height = height;
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize\' constructor called.', [tileSizes, width, height]);
         }
         //#endregion
         //#region Methods
         TileSize.getTileSizes = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize.getTileSizes\' called.');
             var tileSizes = Array();
             tileSizes.push(new TileSize(0 /* small */, 90, 90));
             tileSizes.push(new TileSize(1 /* mini */, 180, 90));
@@ -38,6 +40,7 @@ var AzurePortalNg;
         //#endregion
         //#region Constructors
         function Tile(title, bladePath, portalService) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Tile\' constructor called.', [title, bladePath, portalService]);
             this.portalService = portalService;
             this.title = title;
             this.bladePath = bladePath;
@@ -46,6 +49,7 @@ var AzurePortalNg;
         //#endregion
         //#region Methods
         Tile.prototype.clicked = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'clicked\' called.', [this]);
             var blade = this.portalService.bladeService.setFirstBlade(this.bladePath);
             blade.activate();
         };
@@ -67,6 +71,7 @@ var AzurePortalNg;
         //#endregion
         //#region Methods
         Tiles.prototype.addTile = function (tile) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Tiles.addTile\' called.', [this, tile]);
             var tileSize = this.tileSizes[tile.tileSize];
             tile.size = TileSizes[tile.tileSize]; // Get CSS Name
             tile.top = this.nextTop + 'px';

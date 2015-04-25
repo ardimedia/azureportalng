@@ -6,6 +6,7 @@ var AzurePortalNg;
         //#endregion
         //#region Constructors
         function Panorama(title) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Panorama\' constructor called.', [title]);
             this.title = title;
             this.avatarMenu = new AzurePortalNg.AvatarMenu();
             this.startboard = new AzurePortalNg.Startboard();

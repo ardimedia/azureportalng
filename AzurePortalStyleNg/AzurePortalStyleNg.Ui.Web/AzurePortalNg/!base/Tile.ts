@@ -3,7 +3,7 @@
 
     //#region Enum Definition: TileSizes
 
-    // The names are used in CSS for layouting, e.g. style='mini'
+    /** The names are used in CSS for layouting, e.g. style='mini' */
     export enum TileSizes {
         small,
         mini,
@@ -20,6 +20,7 @@
         //#region Constructors
 
         constructor(public tileSizes: TileSizes, public width: number, public height: number) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize\' constructor called.', [tileSizes, width, height]);
         }
 
         //#endregion
@@ -27,6 +28,7 @@
         //#region Methods
 
         static getTileSizes(): Array<TileSize> {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize.getTileSizes\' called.');
             var tileSizes = Array<TileSize>();
 
             tileSizes.push(new TileSize(TileSizes.small, 90, 90));
@@ -68,6 +70,7 @@
         //#region Constructors
 
         constructor(title: string, bladePath: string, portalService: PortalService) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Tile\' constructor called.', [title, bladePath, portalService]);
             this.portalService = portalService;
 
             this.title = title;
@@ -80,6 +83,7 @@
         //#region Methods
 
         clicked() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'clicked\' called.', [this]);
             var blade = <BaseViewModel>this.portalService.bladeService.setFirstBlade(this.bladePath);
             blade.activate();
         }
@@ -108,6 +112,7 @@
         //#region Methods
 
         addTile(tile: Tile) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Tiles.addTile\' called.', [this, tile]);
             var tileSize = this.tileSizes[tile.tileSize];
             tile.size = TileSizes[tile.tileSize];  // Get CSS Name
 

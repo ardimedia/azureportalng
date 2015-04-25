@@ -67,6 +67,7 @@
         //#region Constructor
 
         constructor(portalService: PortalService, path: string, title: string = '', subtitle: string = '', width: number = 200) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' constructor called.', [portalService, path, title, subtitle, width]);
             this.portalService = portalService;
             this.path = path;
             this.title = title;
@@ -100,14 +101,17 @@
         //#endregion
 
         initialize() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.initialize\' called.');
             this.activate();
             this.setObsoleteLayoutProperites();
         }
 
         activate() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.');
         }
 
         setObsoleteLayoutProperites() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.setObsoleteLayoutProperites\' called.');
             this.blade.title = this.title;
             this.blade.statusbar = this.statusbar;
             this.blade.statusbarClass = this.statusbarClass;
@@ -118,6 +122,7 @@
         }
 
         bladeClose() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.');
             this.portalService.bladeService.clear(this.path);
         }
 
@@ -125,5 +130,4 @@
     }
 
     //#endregion
-
 }

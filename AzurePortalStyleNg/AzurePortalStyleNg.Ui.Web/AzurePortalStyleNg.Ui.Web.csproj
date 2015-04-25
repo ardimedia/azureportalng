@@ -951,6 +951,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="AzurePortalNg\!base\Blade.Service.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\Debug.ts" />
     <TypeScriptCompile Include="Sample1\blade11\blade11.ts" />
     <TypeScriptCompile Include="Sample1\blade11\blade11blade.ts" />
     <TypeScriptCompile Include="Sample1\blade1\blade1blade.ts" />

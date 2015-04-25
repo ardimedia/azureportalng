@@ -15,6 +15,8 @@ var Sample1;
         //#region Constructors
         function SampleShell(portalService) {
             _super.call(this, 'SAMPLE', portalService);
+            AzurePortalNg.Debug.isEnabled = true;
+            AzurePortalNg.Debug.isWithObjects = false;
             this.portalService.panorama.avatarMenu.userAccount = new AzurePortalNg.UserAccount('useraccount@mail.com', 'first', 'last');
             this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Application A', '/Sample1/blade1/blade1.html', portalService));
             this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Application B', '/Sample1/blade2/blade2.html', portalService));

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>AzurePortalStyleNg</id>
-    <version>0.1.3-beta</version>
+    <version>0.1.4-beta</version>
     <authors>Harry Pfleger - Infoware</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Framework for building web sites based on the Azure Portal Layout.</description>
@@ -38,6 +38,8 @@
     <file src="\AzurePortalNg\!base\avatarMenu.js" target="content\AzurePortalNg\!base\avatarMenu.js"></file>
     <file src="\AzurePortalNg\!base\blade.ts" target="content\AzurePortalNg\!base\blade.ts"></file>
     <file src="\AzurePortalNg\!base\blade.js" target="content\AzurePortalNg\!base\blade.js"></file>
+    <file src="\AzurePortalNg\!base\debug.ts" target="content\AzurePortalNg\!base\debug.ts"></file>
+    <file src="\AzurePortalNg\!base\debug.js" target="content\AzurePortalNg\!base\debug.js"></file>
     <file src="\AzurePortalNg\!base\panorama.ts" target="content\AzurePortalNg\!base\panorama.ts"></file>
     <file src="\AzurePortalNg\!base\panorama.js" target="content\AzurePortalNg\!base\panorama.js"></file>
     <file src="\AzurePortalNg\!base\portalShell.ts" target="content\AzurePortalNg\!base\portalShell.ts"></file>

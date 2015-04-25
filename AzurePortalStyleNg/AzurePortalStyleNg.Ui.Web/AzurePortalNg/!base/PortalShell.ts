@@ -32,6 +32,7 @@
         //#region Constructors
 
         constructor(title: string, portalService: PortalService) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell\' constructor called.', [title, portalService]);
             this.portalService = portalService;
 
             this.portalService.panorama = new Panorama(title);
@@ -45,10 +46,12 @@
         //#region Methods
 
         initialize() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell.initialize\' called.');
             this.setObsoleteLayoutProperites();
         }
 
         setObsoleteLayoutProperites() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell.setObsoleteLayoutProperites\' called.');
             this.title = this.portalService.panorama.title;
             this.tiles = this.portalService.panorama.startboard.tiles.tiles;
             //this.blades = this.portalService.bladeService.blades;

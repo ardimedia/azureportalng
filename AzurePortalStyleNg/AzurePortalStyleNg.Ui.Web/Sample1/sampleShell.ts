@@ -13,6 +13,8 @@
 
         constructor(portalService: AzurePortalNg.PortalService) {
             super('SAMPLE', portalService);
+            AzurePortalNg.Debug.isEnabled = true;
+            AzurePortalNg.Debug.isWithObjects = false;
 
             this.portalService.panorama.avatarMenu.userAccount = new AzurePortalNg.UserAccount('useraccount@mail.com', 'first', 'last');
 
