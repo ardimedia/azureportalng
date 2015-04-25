@@ -18,6 +18,8 @@
 
         function addBladePath(path: string) {
             if (path === undefined || path == '') { return; }
+            console.log(path);
+            console.log(service.blades);
 
             service.blades.push({ 'path': path });
             var portalcontent = $window.document.getElementById('azureportalscroll');

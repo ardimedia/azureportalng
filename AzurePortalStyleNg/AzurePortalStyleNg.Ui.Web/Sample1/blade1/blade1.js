@@ -16,17 +16,19 @@ var Sample1;
         function Blade1(portalService) {
             _super.call(this, portalService, '/Sample1/blade1/blade1.html', 'Blade-1', 'subtitle', 315);
             this.isCommandNew = true;
+            this.commandNewText = 'Blade-11';
             this.isCommandSave = true;
+            this.commandSaveText = 'Blade-2';
             this.initialize();
             this.setObsoleteLayoutProperites();
         }
         //#endregion
         //#region Methods - Overrides for Blade
         Blade1.prototype.onCommandNew = function () {
-            this.portalService.bladeService.addBlade(this.path, '/Sample1/blade2/blade2.html');
+            this.portalService.bladeService.addBlade(this.path, '/Sample1/blade11/blade11.html');
         };
         Blade1.prototype.onCommandSave = function () {
-            this.portalService.bladeService.addBlade(this.path, '/Sample1/blade11/blade11.html');
+            this.portalService.bladeService.addBlade(this.path, '/Sample1/blade2/blade2.html');
         };
         //#endregion
         //#region Data Access

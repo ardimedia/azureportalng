@@ -13,8 +13,8 @@
             statusbar: 'blade1-bar',
             navGrid: {
                 items: [
-                    { title: 'Menu 1', bladePath: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html' },
-                    { title: 'Menu 2', bladePath: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html', roles: 'lgtbc-admin' },
+                    { title: 'blade22', bladePath: '/Sample1/blade22/blade22.html' },
+                    { title: 'blade1', bladePath: '/Sample1/blade1/blade1.html' },
                     { title: '', bladePath: '' },
                     { title: 'no path', bladePath: '' },
                 ]
@@ -22,6 +22,7 @@
         };
         vm.blade.navGrid.navigateTo = navigateTo;
         function navigateTo(id) {
+            console.log(id);
             bladeService.addBladePath(id);
         }
         function dummy() {

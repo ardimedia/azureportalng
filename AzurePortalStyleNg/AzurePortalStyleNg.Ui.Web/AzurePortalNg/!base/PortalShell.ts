@@ -54,8 +54,10 @@
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell.setObsoleteLayoutProperites\' called.');
             this.title = this.portalService.panorama.title;
             this.tiles = this.portalService.panorama.startboard.tiles.tiles;
-            //this.blades = this.portalService.bladeService.blades;
             this.blades = this.portalService.bladeService.bladeUrls;
+
+            var bladeServiceOLD = this.portalService.$injector.get('bladeService');
+            bladeServiceOLD.blades = this.portalService.bladeService.bladeUrls;
 
             if (this.portalService.panorama.avatarMenu.userAccount != undefined) {
                 this.user = {

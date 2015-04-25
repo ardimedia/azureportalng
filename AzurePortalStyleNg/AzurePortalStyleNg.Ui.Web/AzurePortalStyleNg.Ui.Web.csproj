@@ -155,6 +155,7 @@
     </Content>
     <None Include="Properties\PublishProfiles\TEMP.pubxml" />
     <Content Include="Sample1\blade11\blade11.html" />
+    <Content Include="Sample1\blade22\blade22.html" />
     <Content Include="Sample1\blade2\blade2.html" />
     <Content Include="Sample1\blade1\blade1.html" />
     <Content Include="Sample1\index.html" />
@@ -975,6 +976,7 @@
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\home\home.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\navgrid\navgrid.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!services\bladeService.ts" />
+    <TypeScriptCompile Include="Sample1\blade22\blade22.ts" />
     <TypeScriptCompile Include="Sample1\blade2\blade2.ts" />
     <TypeScriptCompile Include="Sample1\blade1\blade1.ts" />
     <TypeScriptCompile Include="Sample1\sampleApp.ts" />
