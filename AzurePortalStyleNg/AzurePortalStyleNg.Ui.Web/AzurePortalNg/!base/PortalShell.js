@@ -24,8 +24,8 @@ var AzurePortalNg;
             this.blades = this.portalService.bladeService.bladeUrls;
             if (this.portalService.panorama.avatarMenu.userAccount != undefined) {
                 this.user = {
-                    name: this.portalService.panorama.avatarMenu.userAccount.userName,
-                    emailaddress: this.portalService.panorama.avatarMenu.userAccount.emailAddress
+                    name: this.portalService.panorama.avatarMenu.userAccount.name,
+                    emailaddress: this.portalService.panorama.avatarMenu.userAccount.userName
                 };
             }
             if (this.portalService.bladeService != null) {
