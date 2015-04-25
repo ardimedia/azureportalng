@@ -147,7 +147,6 @@
     <Content Include="nuspec-packager.nuspec">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="AzurePortalNg\!!schema\navgrid.json" />
     <Content Include="AzurePortalNg\!directives\dialog\style.css.map">
       <DependentUpon>style.css</DependentUpon>
     </Content>
@@ -988,7 +987,9 @@
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="AzurePortalNg\!!schema\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
