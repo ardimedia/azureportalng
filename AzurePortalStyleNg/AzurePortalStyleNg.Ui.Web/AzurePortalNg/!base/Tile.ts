@@ -84,7 +84,7 @@
 
         clicked() {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'clicked\' called.', [this]);
-            var blade = <BaseViewModel>this.portalService.bladeService.setFirstBlade(this.bladePath);
+            var blade = <BladeBase>this.portalService.bladeService.setFirstBlade(this.bladePath);
             blade.activate();
         }
 

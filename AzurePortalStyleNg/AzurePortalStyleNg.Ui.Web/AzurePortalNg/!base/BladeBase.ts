@@ -3,7 +3,7 @@
 
     //#region Class Definition: BaseViewModel
 
-    export class BaseViewModel extends Blade {
+    export class BladeBase extends Blade {
 
         //#region Properties
 
@@ -27,7 +27,7 @@
 
         getDataList(): angular.IHttpPromise<any> {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel.getDataList\' called.');
-            var that: BaseViewModel = this;
+            var that: BladeBase = this;
 
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';

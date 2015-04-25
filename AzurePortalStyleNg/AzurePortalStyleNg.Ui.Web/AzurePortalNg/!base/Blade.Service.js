@@ -94,6 +94,33 @@ var AzurePortalNg;
                 throw new Error('[azureportalng] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
             }
         };
+        BladeService.prototype.clearLevel = function (level) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeService.clearLevel\' called.', [level]);
+            if (level == 0) {
+                level = 1;
+            }
+            this.bladeUrls.length = level - 1;
+        };
+        BladeService.prototype.addBladeOld = function (path) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeService.addBladeOld\' called.', [path]);
+            var that = this;
+            if (path === undefined || path == '') {
+                return;
+            }
+            var blade = new AzurePortalNg.Blade(that.portalService, path);
+            that.bladeUrls.push(blade);
+            //var portalcontent = $window.document.getElementById('azureportalscroll');
+            //$window.setTimeout(function () {
+            //    var azureportalblades = $window.document.getElementsByClassName('azureportalblade');
+            //    var i = service.blades.length - 1;
+            //    // HACK: Sometime azureportalblades[i].offsetLeft is undefined.
+            //    //       So now if it is, the user has to scroll on its own.
+            //    if (azureportalblades[i] !== undefined && azureportalblades[i].offsetLeft !== undefined) {
+            //        var sl = azureportalblades[i].offsetLeft - 30;
+            //        portalcontent.scrollLeft = sl;
+            //    }
+            //}, 250);
+        };
         BladeService.prototype.clearChild = function (path) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeService.clearChild\' called.', [path]);
             var that = this;

@@ -36,8 +36,16 @@
 
         //#region Grid
 
+        isNavGrid: boolean = false;
         navGrid = {
-            items: []
+            portalService: null,
+            items: [],
+            navigateTo: function (path) {
+                console.log(this);
+                console.log(path);
+                //this.portalService.bladeService.cle.clearLevel(2);
+                this.portalService.bladeService.addBlade('', path);
+            }
         };
 
         //#endregion
@@ -74,6 +82,9 @@
             this.subTitle = subtitle;
             this.width.width = width + 'px';
             this.widthStackLayout.width = width - 50 + 'px';
+
+            this.navGrid.navigateTo = this.navigateTo;
+            this.navGrid.portalService = this.portalService;
         }
 
         //#endregion
@@ -106,12 +117,16 @@
             this.setObsoleteLayoutProperites();
         }
 
-        activate() {
+        activate(): void {
+            this.onActivate();
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.');
         }
 
+        protected onActivate(): void {
+        }
+
         setObsoleteLayoutProperites() {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.setObsoleteLayoutProperites\' called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.setObsoleteLayoutProperites\' called.', [this]);
             this.blade.title = this.title;
             this.blade.statusbar = this.statusbar;
             this.blade.statusbarClass = this.statusbarClass;
@@ -119,6 +134,15 @@
             this.blade.isCommandDelete = this.isCommandDelete;
             this.blade.isCommandNew = this.isCommandNew;
             this.blade.isCommandSave = this.isCommandSave;
+            this.blade.isNavGrid = this.isNavGrid;
+            this.blade.navGrid = this.navGrid;
+        }
+
+        navigateTo(path: string) {
+            console.log(this);
+            console.log(path);
+            this.portalService.bladeService.clearLevel(2);
+            this.portalService.bladeService.addBladeOld(path);
         }
 
         bladeClose() {
