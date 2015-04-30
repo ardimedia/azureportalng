@@ -15,7 +15,7 @@
 
         constructor(portalService: PortalService, path: string, title: string, subtitle: string = '', width: number = 200) {
             super(portalService, path, title, subtitle, width);
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'ListViewModel\' constructor called.', [portalService, path, title, subtitle, width]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'ListViewModel\' constructor called.', [this, portalService, path, title, subtitle, width]);
         }
 
         //#endregion
@@ -23,7 +23,7 @@
         //#region Methods
 
         activate(): angular.IHttpPromise<any> {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'ListViewModel.activate\' called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'ListViewModel.activate\' called.', [this]);
             var that: ListViewModel = this;
 
             return super.getDataList().success(function (data: any) {

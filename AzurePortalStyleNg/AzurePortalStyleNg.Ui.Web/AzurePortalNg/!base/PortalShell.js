@@ -7,7 +7,7 @@ var AzurePortalNg;
         //#endregion
         //#region Constructors
         function PortalShell(title, portalService) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell\' constructor called.', [title, portalService]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell\' constructor called.', [this, title, portalService]);
             this.portalService = portalService;
             this.portalService.panorama = new AzurePortalNg.Panorama(title);
             this.portalService.bladeService = new AzurePortalNg.BladeService(portalService);
@@ -16,11 +16,11 @@ var AzurePortalNg;
         //#endregion
         //#region Methods
         PortalShell.prototype.initialize = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell.initialize\' called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell.initialize\' called.', [this]);
             this.setObsoleteLayoutProperites();
         };
         PortalShell.prototype.setObsoleteLayoutProperites = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell.setObsoleteLayoutProperites\' called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell.setObsoleteLayoutProperites\' called.', [this]);
             this.title = this.portalService.panorama.title;
             this.tiles = this.portalService.panorama.startboard.tiles.tiles;
             this.blades = this.portalService.bladeService.bladeUrls;

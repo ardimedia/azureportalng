@@ -20,7 +20,7 @@
         //#region Constructors
 
         constructor(public tileSizes: TileSizes, public width: number, public height: number) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize\' constructor called.', [tileSizes, width, height]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize\' constructor called.', [this, tileSizes, width, height]);
         }
 
         //#endregion
@@ -28,7 +28,7 @@
         //#region Methods
 
         static getTileSizes(): Array<TileSize> {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize.getTileSizes\' called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize.getTileSizes\' called.', [this]);
             var tileSizes = Array<TileSize>();
 
             tileSizes.push(new TileSize(TileSizes.small, 90, 90));
@@ -70,7 +70,7 @@
         //#region Constructors
 
         constructor(title: string, bladePath: string, portalService: PortalService) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Tile\' constructor called.', [title, bladePath, portalService]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Tile\' constructor called.', [this, title, bladePath, portalService]);
             this.portalService = portalService;
 
             this.title = title;

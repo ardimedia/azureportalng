@@ -41,8 +41,6 @@
             portalService: null,
             items: [],
             navigateTo: function (path) {
-                console.log(this);
-                console.log(path);
                 //this.portalService.bladeService.cle.clearLevel(2);
                 this.portalService.bladeService.addBlade('', path);
             }
@@ -75,7 +73,7 @@
         //#region Constructor
 
         constructor(portalService: PortalService, path: string, title: string = '', subtitle: string = '', width: number = 200) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' constructor called.', [portalService, path, title, subtitle, width]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' constructor called.', [this, portalService, path, title, subtitle, width]);
             this.portalService = portalService;
             this.path = path;
             this.title = title;
@@ -112,14 +110,14 @@
         //#endregion
 
         initialize() {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.initialize\' called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.initialize\' called.', [this]);
             this.activate();
             this.setObsoleteLayoutProperites();
         }
 
         activate(): void {
             this.onActivate();
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.', [this]);
         }
 
         protected onActivate(): void {
@@ -139,14 +137,12 @@
         }
 
         navigateTo(path: string) {
-            console.log(this);
-            console.log(path);
             this.portalService.bladeService.clearLevel(2);
             this.portalService.bladeService.addBladeOld(path);
         }
 
         bladeClose() {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.', [this]);
             this.portalService.bladeService.clear(this.path);
         }
 

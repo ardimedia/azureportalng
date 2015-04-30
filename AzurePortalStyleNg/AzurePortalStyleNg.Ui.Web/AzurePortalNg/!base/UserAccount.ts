@@ -48,7 +48,7 @@
         //#region Constructors
 
         constructor(username: string, firstName: string = '', lastName: string = '') {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'UserAccount\' constructor called.', [username, firstName, lastName]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'UserAccount\' constructor called.', [this, username, firstName, lastName]);
             this.userName = username;
             this.firstName = firstName;
             this.lastName = lastName;

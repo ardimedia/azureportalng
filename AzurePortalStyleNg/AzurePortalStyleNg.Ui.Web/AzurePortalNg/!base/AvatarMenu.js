@@ -6,7 +6,7 @@ var AzurePortalNg;
         //#endregion
         //#region Constructors
         function AvatarMenu() {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.', [this]);
         }
         return AvatarMenu;
     })();

@@ -17,7 +17,7 @@ var AzurePortalNg;
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 200; }
             _super.call(this, portalService, path, title, subtitle, width);
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.', [portalService, path, title, subtitle, width]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.', [this, portalService, path, title, subtitle, width]);
         }
         return DetailViewModel;
     })(AzurePortalNg.BladeBase);

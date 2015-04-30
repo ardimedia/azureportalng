@@ -14,7 +14,7 @@
         //#region Constructors
 
         constructor() {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.', [this]);
         }
 
         //#endregion

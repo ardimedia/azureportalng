@@ -16,12 +16,12 @@ var AzurePortalNg;
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 200; }
             _super.call(this, portalService, path, title, subtitle, width);
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'ListViewModel\' constructor called.', [portalService, path, title, subtitle, width]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'ListViewModel\' constructor called.', [this, portalService, path, title, subtitle, width]);
         }
         //#endregion
         //#region Methods
         ListViewModel.prototype.activate = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'ListViewModel.activate\' called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'ListViewModel.activate\' called.', [this]);
             var that = this;
             return _super.prototype.getDataList.call(this).success(function (data) {
                 that.listItems = data;

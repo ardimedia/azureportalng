@@ -8,7 +8,7 @@ var AzurePortalNg;
         function UserAccount(username, firstName, lastName) {
             if (firstName === void 0) { firstName = ''; }
             if (lastName === void 0) { lastName = ''; }
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'UserAccount\' constructor called.', [username, firstName, lastName]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'UserAccount\' constructor called.', [this, username, firstName, lastName]);
             this.userName = username;
             this.firstName = firstName;
             this.lastName = lastName;

@@ -33,7 +33,7 @@
         //#region Constructors
 
         constructor($injector: angular.auto.IInjectorService) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [$injector]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [this, $injector]);
             this.$injector = $injector;
 
             this.$http = $injector.get('$http');
@@ -50,7 +50,7 @@
         //#region Methods
 
         initialize(portalShell: PortalShell) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService.initialize\' called.', [portalShell]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService.initialize\' called.', [this, portalShell]);
             this.portalShell = portalShell;
             this.portalShell.setObsoleteLayoutProperites();
         }

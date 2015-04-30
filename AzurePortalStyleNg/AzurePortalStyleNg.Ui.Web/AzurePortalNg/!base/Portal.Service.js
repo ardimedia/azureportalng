@@ -9,7 +9,7 @@ var AzurePortalNg;
         function PortalService($injector) {
             //#region Setup Debugging
             this.debug = new AzurePortalNg.Debug();
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [$injector]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [this, $injector]);
             this.$injector = $injector;
             this.$http = $injector.get('$http');
             this.$httpBackend = $injector.get('$httpBackend');
@@ -23,7 +23,7 @@ var AzurePortalNg;
         //#endregion
         //#region Methods
         PortalService.prototype.initialize = function (portalShell) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService.initialize\' called.', [portalShell]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService.initialize\' called.', [this, portalShell]);
             this.portalShell = portalShell;
             this.portalShell.setObsoleteLayoutProperites();
         };

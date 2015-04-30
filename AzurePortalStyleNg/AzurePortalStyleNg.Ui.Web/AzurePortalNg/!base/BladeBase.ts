@@ -15,7 +15,7 @@
 
         constructor(portalService: PortalService, path: string, title: string, subtitle: string, width: number = 300) {
             super(portalService, path, title, subtitle, width);
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel\' constructor called.', [portalService, path, title, subtitle, width]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel\' constructor called.', [this, portalService, path, title, subtitle, width]);
             this.blade = this;
         }
 
@@ -26,7 +26,7 @@
         //#region GetDataList
 
         getDataList(): angular.IHttpPromise<any> {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel.getDataList\' called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel.getDataList\' called.', [this]);
             var that: BladeBase = this;
 
             that.statusbar = 'Daten laden...';

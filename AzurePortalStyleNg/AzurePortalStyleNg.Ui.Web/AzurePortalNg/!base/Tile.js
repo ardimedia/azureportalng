@@ -18,12 +18,12 @@ var AzurePortalNg;
             this.tileSizes = tileSizes;
             this.width = width;
             this.height = height;
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize\' constructor called.', [tileSizes, width, height]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize\' constructor called.', [this, tileSizes, width, height]);
         }
         //#endregion
         //#region Methods
         TileSize.getTileSizes = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize.getTileSizes\' called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize.getTileSizes\' called.', [this]);
             var tileSizes = Array();
             tileSizes.push(new TileSize(0 /* small */, 90, 90));
             tileSizes.push(new TileSize(1 /* mini */, 180, 90));
@@ -40,7 +40,7 @@ var AzurePortalNg;
         //#endregion
         //#region Constructors
         function Tile(title, bladePath, portalService) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Tile\' constructor called.', [title, bladePath, portalService]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Tile\' constructor called.', [this, title, bladePath, portalService]);
             this.portalService = portalService;
             this.title = title;
             this.bladePath = bladePath;

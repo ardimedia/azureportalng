@@ -15,14 +15,14 @@ var AzurePortalNg;
         function BladeBase(portalService, path, title, subtitle, width) {
             if (width === void 0) { width = 300; }
             _super.call(this, portalService, path, title, subtitle, width);
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel\' constructor called.', [portalService, path, title, subtitle, width]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel\' constructor called.', [this, portalService, path, title, subtitle, width]);
             this.blade = this;
         }
         //#endregion
         //#region Methods
         //#region GetDataList
         BladeBase.prototype.getDataList = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel.getDataList\' called.');
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel.getDataList\' called.', [this]);
             var that = this;
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';
