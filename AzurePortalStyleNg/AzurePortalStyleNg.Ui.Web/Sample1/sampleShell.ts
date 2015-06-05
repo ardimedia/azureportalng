@@ -16,6 +16,9 @@
             AzurePortalNg.Debug.isEnabled = true;
             AzurePortalNg.Debug.isWithObjects = false;
 
+            this.portalService.panorama.startboard.tiles.showTiles = true;
+            console.log(this.portalService.panorama.startboard.tiles.showTiles);
+
             this.portalService.panorama.avatarMenu.userAccount = new AzurePortalNg.UserAccount('useraccount@mail.com', 'first', 'last');
 
             this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('NAV', '/Sample1/nav/nav.html', portalService));

@@ -6,7 +6,8 @@ var __extends = this.__extends || function (d, b) {
 };
 (function () {
     'use strict';
-    angular.module('sampleapp').controller('lgtbcNavX', ['$scope', '$http', 'bladeService', lgtbcNav]);
+    angular.module('sampleapp')
+        .controller('lgtbcNavX', ['$scope', '$http', 'bladeService', lgtbcNav]);
     function lgtbcNav($scope, $http, bladeService) {
         /* jshint validthis: true */
         var vm = this;
@@ -18,9 +19,11 @@ var __extends = this.__extends || function (d, b) {
             isUserRoleAdmin: false,
             navGrid: {
                 items: [
+                    // BUSINESS CARD
                     { title: 'Visitenkarten Vorlagen / Bestellen', bladePath: '/app/lgtbc/blades/businesscards/businesscards.html', roles: 'lgtbc-create-bc' },
                     { title: 'Visitenkarten Druckaufträge', bladePath: '/app/lgtbc/blades/workorders/workorders.html', roles: 'lgtbc-create-bc' },
                     { title: 'BVD Druckaufträge (Visitenkarten)', bladePath: '/app/lgtbc/blades/workordersprinter/workordersprinter.html', roles: 'lgtbc-admin' },
+                    // MASTER DATA
                     { title: '', bladePath: '', roles: 'lgtbc-admin' },
                     { title: 'Gesellschaften', bladePath: '/app/lgtbc/blades/companies/companies.html', roles: 'lgtbc-admin' },
                     { title: 'Standorte', bladePath: '/app/lgtbc/blades/locations/locations.html', roles: 'lgtbc-admin' },
@@ -28,8 +31,12 @@ var __extends = this.__extends || function (d, b) {
                     { title: 'Telefonnummernformate', bladePath: '/app/lgtbc/blades/phonenumberformats/phonenumberformats.html', roles: 'lgtbc-admin' },
                     { title: 'Projektnummern', bladePath: '/app/lgtbc/blades/projectnumbers/projectnumbers.html', roles: 'lgtbc-admin' },
                     { title: 'Sprachen', bladePath: '/app/lgtbc/blades/languages/languages.html', roles: 'lgtbc-admin' },
+                    // MASTER USER
                     { title: '', bladePath: '', roles: 'lgtbc-admin' },
                     { title: 'Benutzer', bladePath: '/app/lgtbc/blades/users/users.html', roles: 'lgtbc-admin' },
+                    //{ title: 'Benutzer zu Standorte zuordnen', bladePath: '', roles: 'lgtbc-admin' },
+                    //{ title: 'Benutzer zu Projektnummern zuordnen', bladePath: '', roles: 'lgtbc-admin' },
+                    // MASTER USER
                     { title: '', bladePath: '', roles: 'lgtbc-admin,lgtbc-create-bc' },
                     { title: 'Dokumentation', hrefPath: '/app/lgtbc/Lgt.Com.Vk-Benutzerhandbuch.pdf', roles: 'lgtbc-admin,lgtbc-create-bc' },
                 ],
@@ -83,9 +90,11 @@ var LgtbcNav = (function (_super) {
         this.isUserRoleAdmin = false;
         this.isNavGrid = true;
         this.navGrid.items = [
+            // BUSINESS CARD
             { title: 'Visitenkarten Vorlagen / Bestellen', bladePath: '/app/lgtbc/blades/businesscards/businesscards.html', roles: 'lgtbc-create-bc' },
             { title: 'Visitenkarten Druckaufträge', bladePath: '/app/lgtbc/blades/workorders/workorders.html', roles: 'lgtbc-create-bc' },
             { title: 'BVD Druckaufträge (Visitenkarten)', bladePath: '/app/lgtbc/blades/workordersprinter/workordersprinter.html', roles: 'lgtbc-admin' },
+            // MASTER DATA
             { title: '', bladePath: '', roles: 'lgtbc-admin' },
             { title: 'Gesellschaften', bladePath: '/app/lgtbc/blades/companies/companies.html', roles: 'lgtbc-admin' },
             { title: 'Standorte', bladePath: '/app/lgtbc/blades/locations/locations.html', roles: 'lgtbc-admin' },
@@ -93,8 +102,12 @@ var LgtbcNav = (function (_super) {
             { title: 'Telefonnummernformate', bladePath: '/app/lgtbc/blades/phonenumberformats/phonenumberformats.html', roles: 'lgtbc-admin' },
             { title: 'Projektnummern', bladePath: '/app/lgtbc/blades/projectnumbers/projectnumbers.html', roles: 'lgtbc-admin' },
             { title: 'Sprachen', bladePath: '/app/lgtbc/blades/languages/languages.html', roles: 'lgtbc-admin' },
+            // MASTER USER
             { title: '', bladePath: '', roles: 'lgtbc-admin' },
             { title: 'Benutzer', bladePath: '/app/lgtbc/blades/users/users.html', roles: 'lgtbc-admin' },
+            //{ title: 'Benutzer zu Standorte zuordnen', bladePath: '', roles: 'lgtbc-admin' },
+            //{ title: 'Benutzer zu Projektnummern zuordnen', bladePath: '', roles: 'lgtbc-admin' },
+            // MASTER USER
             { title: '', bladePath: '', roles: 'lgtbc-admin,lgtbc-create-bc' },
             { title: 'Dokumentation', hrefPath: '/app/lgtbc/Lgt.Com.Vk-Benutzerhandbuch.pdf', roles: 'lgtbc-admin,lgtbc-create-bc' }
         ];

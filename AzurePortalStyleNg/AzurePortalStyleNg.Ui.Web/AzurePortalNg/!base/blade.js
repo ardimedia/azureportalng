@@ -43,9 +43,7 @@ var AzurePortalNg;
             this.commandDelete = this.onCommandDelete;
             this.commandDeleteText = '';
             this.isCommandNew = false;
-            this.commandNew = function () {
-                this.onCommandNew();
-            };
+            this.commandNew = function () { this.onCommandNew(); };
             this.commandNewText = '';
             this.isCommandSave = false;
             this.commandSave = this.onCommandSave;

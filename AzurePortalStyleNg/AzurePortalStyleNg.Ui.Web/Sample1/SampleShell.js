@@ -17,6 +17,8 @@ var Sample1;
             _super.call(this, 'SAMPLE', portalService);
             AzurePortalNg.Debug.isEnabled = true;
             AzurePortalNg.Debug.isWithObjects = false;
+            this.portalService.panorama.startboard.tiles.showTiles = true;
+            console.log(this.portalService.panorama.startboard.tiles.showTiles);
             this.portalService.panorama.avatarMenu.userAccount = new AzurePortalNg.UserAccount('useraccount@mail.com', 'first', 'last');
             this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('NAV', '/Sample1/nav/nav.html', portalService));
             this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('blade1', '/Sample1/blade1/blade1.html', portalService));
@@ -34,7 +36,8 @@ var Sample1;
             customers.push(new Customer('Eva', 'Barker'));
             this.portalService.$httpBackend.whenGET(/\/AzurePortalNg\/.*/).passThrough();
             this.portalService.$httpBackend.whenGET(/\/Sample1\/.*/).passThrough();
-            this.portalService.$httpBackend.whenGET('/customers').respond(customers);
+            this.portalService.$httpBackend.whenGET('/customers')
+                .respond(customers);
         };
         return SampleShell;
     })(AzurePortalNg.PortalShell);

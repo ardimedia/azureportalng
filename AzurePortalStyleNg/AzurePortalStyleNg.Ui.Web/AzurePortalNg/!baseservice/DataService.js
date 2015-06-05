@@ -17,8 +17,10 @@ var AzurePortalNg;
         //#region Methods
         DataService.prototype.getData = function (url) {
             var that = this;
-            return that.$http({ method: 'GET', url: url }).success(function (data, status, headers, config) {
-            }).error(function (data, status, headers, config) {
+            return that.$http({ method: 'GET', url: url })
+                .success(function (data, status, headers, config) {
+            })
+                .error(function (data, status, headers, config) {
             });
         };
         return DataService;

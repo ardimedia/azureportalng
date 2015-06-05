@@ -99,6 +99,7 @@
 
         //#region Properties
 
+        showTiles: boolean = true;
         tiles: Array<any> = new Array<any>();
         hideTileIfOnlyOne: boolean = true;  // not yet evaluated in HTML, but this is the standard behavior
 
@@ -138,5 +139,4 @@
     }
 
     //#endregion
-
 }

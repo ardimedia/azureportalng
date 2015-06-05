@@ -1,6 +1,7 @@
 (function () {
     'use strict';
-    angular.module('sampleapp').directive('sample1Blade11Blade', [sample1Blade11Blade]);
+    angular.module('sampleapp')
+        .directive('sample1Blade11Blade', [sample1Blade11Blade]);
     function sample1Blade11Blade() {
         return {
             replace: true,

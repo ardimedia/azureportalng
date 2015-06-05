@@ -19,9 +19,11 @@ var AzurePortalNg;
         //#region Company
         LgtbcDataService2.prototype.setCompanies = function () {
             var that = this;
-            return _super.prototype.getData.call(this, '/api/lgtbc/CompaniesGetAll').success(function (data, status, headers, config) {
+            return _super.prototype.getData.call(this, '/api/lgtbc/CompaniesGetAll')
+                .success(function (data, status, headers, config) {
                 that.companies = angular.fromJson(data);
-            }).error(function (data, status, headers, config) {
+            })
+                .error(function (data, status, headers, config) {
             });
         };
         return LgtbcDataService2;
@@ -31,7 +33,8 @@ var AzurePortalNg;
     //#region Angular Registration
     (function () {
         'use strict';
-        angular.module('lgtbc').service('lgtbcDataService2', ['$http', '$q', LgtbcDataService2]);
+        angular.module('lgtbc')
+            .service('lgtbcDataService2', ['$http', '$q', LgtbcDataService2]);
     })();
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=lgtbcDataService.js.map

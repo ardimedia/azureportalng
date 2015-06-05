@@ -25,10 +25,10 @@ var AzurePortalNg;
         TileSize.getTileSizes = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'TileSize.getTileSizes\' called.', [this]);
             var tileSizes = Array();
-            tileSizes.push(new TileSize(0 /* small */, 90, 90));
-            tileSizes.push(new TileSize(1 /* mini */, 180, 90));
-            tileSizes.push(new TileSize(2 /* normal */, 180, 180));
-            tileSizes.push(new TileSize(3 /* herowide */, 540, 360));
+            tileSizes.push(new TileSize(TileSizes.small, 90, 90));
+            tileSizes.push(new TileSize(TileSizes.mini, 180, 90));
+            tileSizes.push(new TileSize(TileSizes.normal, 180, 180));
+            tileSizes.push(new TileSize(TileSizes.herowide, 540, 360));
             return tileSizes;
         };
         return TileSize;
@@ -44,7 +44,7 @@ var AzurePortalNg;
             this.portalService = portalService;
             this.title = title;
             this.bladePath = bladePath;
-            this.tileSize = 2 /* normal */;
+            this.tileSize = TileSizes.normal;
         }
         //#endregion
         //#region Methods
@@ -61,6 +61,7 @@ var AzurePortalNg;
     var Tiles = (function () {
         function Tiles() {
             //#region Properties
+            this.showTiles = true;
             this.tiles = new Array();
             this.hideTileIfOnlyOne = true; // not yet evaluated in HTML, but this is the standard behavior
             this.tileSizes = TileSize.getTileSizes();

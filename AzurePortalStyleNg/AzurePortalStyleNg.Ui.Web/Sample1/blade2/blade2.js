@@ -1,6 +1,7 @@
 (function () {
     'use strict';
-    angular.module('sampleapp').controller('blade2', ['$scope', '$http', 'bladeService', blade2]);
+    angular.module('sampleapp')
+        .controller('blade2', ['$scope', '$http', 'bladeService', blade2]);
     function blade2($scope, $http, bladeService) {
         /* jshint validthis: true */
         var vm = this;
@@ -24,8 +25,7 @@
         function navigateTo(id) {
             bladeService.addBladePath(id);
         }
-        function dummy() {
-        }
+        function dummy() { }
     }
 })();
 //# sourceMappingURL=blade2.js.map
