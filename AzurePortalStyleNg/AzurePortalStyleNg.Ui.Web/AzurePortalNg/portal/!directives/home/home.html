@@ -5,7 +5,7 @@
         <div class="fxs-panorama-homearea" ng-class="{collapsed: !vm.portalService.panorama.startboard.tiles.showTiles}">
             <header class="fxs-pannable" ng-class="{collapsed: !vm.portalService.panorama.startboard.tiles.showTiles}">
                 <h1 class="fxs-panorama-title fxs-pannable">{{vm.title}}</h1>
-                <div class="fxs-avatarmenu-target fxs-avatarmenu" ng-class="{collapsed: vm.tiles.length === 1}">
+                <div class="fxs-avatarmenu-target fxs-avatarmenu" ng-class="{collapsed: !vm.portalService.panorama.startboard.tiles.showTiles}">
                     <a class="fxs-avatarmenu-header" href="/Account/Manage">
                         <img alt="" src="/Content/images/avatar.jpg" />
                         <div class="fxs-avatarmenu-username">{{vm.user.name}}</div>
@@ -13,7 +13,7 @@
                     </a>
                 </div>
             </header>
-            <div class="fxs-startboard-target fxs-startboard fx-rightClick" ng-class="{collapsed: vm.tiles.length === 1}">
+            <div class="fxs-startboard-target fxs-startboard fx-rightClick" ng-class="{collapsed: !vm.portalService.panorama.startboard.tiles.showTiles}">
                 <div class="fxs-startboard-layout fxs-flowlayout">
                     <div class="fxs-flowlayout-childcontainer">
                         <section data-ng-repeat="tile in vm.tiles track by $index" class="fxs-tile fx-rightClick fxs-flowlayout-element" data-ng-class="{'fxs-tilesize-normal':tile.size=='normal', 'fxs-tilesize-mini':tile.size=='mini', 'fxs-tilesize-herowide':tile.size=='herowide'}" data-ng-style="{'left': tile.left, 'top': tile.top}">
