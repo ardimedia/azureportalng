@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://azureportalstyleng.org/v1/schema",
+    "title": "navgrid blade",
+    "description": "Define a blade for a navigation gird",
+    "type": "object",
+
+    "definitions": {
+        "navGrid": {
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "subTitle": {
+                    "type": "string"
+                },
+                "contentTitle": {
+                    "type": "string"
+                },
+                "contentSubTitle": {
+                    "type": "string"
+                },
+                "isNavGrid": {
+                    "type": "boolean"
+                },
+                "navGrid": {
+                    "$ref": "#/definitions/navGrid"
+                }
+            },
+            "type": "object"
+        },
+        "navGrid": {
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/navGridItem"
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "navGridItem": {
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "This is the title of one navigational item."
+
+                },
+                "bladePath": {
+                    "type": "string",
+                    "description": "This is the blade path, which will be shown, when the item is selected."
+                }
+            },
+            "type": "object"
+        }
+    },
+
+    "allOf": [
+        {
+            "$ref": "#/definitions/navGrid"
+        }
+    ]
+}

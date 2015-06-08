@@ -1,0 +1,11 @@
+﻿{
+    "$schema": "/AzurePortalNg/$schema/navgrid.json?reload",
+    "title": "Aktienregister",
+    "subTitle": "Als Excel exportieren",
+    "isNavGrid": true,
+    "navGrid": {
+        "items": [
+            { "title": "Als Excel exportieren", "bladePath": "/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html" }
+        ]
+    }
+}
