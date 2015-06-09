@@ -19,7 +19,9 @@
                     </div>
                 </div>
             </td>
-            <td tabindex="0" role="gridcell" data-activatable="true" data-grid-cell-activated="false">{{item.title}}</td>
+            <td tabindex="0" role="gridcell" data-activatable="true" data-grid-cell-activated="false">
+                <a ng-href="{{item.hrefPath}}" target="_blank" style="color:black">{{item.title}}</a>
+            </td>
         </tr>
     </tbody>
 </table>
