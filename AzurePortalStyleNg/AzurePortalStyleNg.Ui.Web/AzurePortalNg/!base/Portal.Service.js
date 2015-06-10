@@ -14,9 +14,10 @@ var AzurePortalNg;
             this.$http = $injector.get('$http');
             this.$httpBackend = $injector.get('$httpBackend');
             this.$q = $injector.get('$q');
-            ;
             this.$window = $injector.get('$window');
-            ;
+            this.$rootScope = $injector.get('$rootScope');
+            //this.$scope = $injector.get('$scope');
+            //this.ngDialog = $injector.get('ngDialog');
             this.panorama = new AzurePortalNg.Panorama('');
             this.bladeService = new AzurePortalNg.BladeService(this);
         }

@@ -12,15 +12,18 @@
 
         /** Panorama, containing the Startboard and other visual elements. */
         panorama: Panorama;
-        /** Contains all blades with are available for display. */
-        bladeService: BladeService;
 
+        ngDialog: NgDialog.INgDialog;
+
+        /* Services */
+        bladeService: AzurePortalNg.BladeService;
         $http: angular.IHttpService;
         $httpBackend: angular.IHttpBackendService;
         $injector: angular.auto.IInjectorService
         $q: angular.IQService;
         $window: angular.IWindowService;
-
+        $rootScope: angular.IRootScopeService;
+        $scope: angular.IScope;
 
         //#region Setup Debugging
 
@@ -38,8 +41,11 @@
 
             this.$http = $injector.get('$http');
             this.$httpBackend = $injector.get('$httpBackend');
-            this.$q = $injector.get('$q');;
-            this.$window = $injector.get('$window');;
+            this.$q = $injector.get('$q');
+            this.$window = $injector.get('$window');
+            this.$rootScope = $injector.get('$rootScope');
+            //this.$scope = $injector.get('$scope');
+            //this.ngDialog = $injector.get('ngDialog');
 
             this.panorama = new Panorama('');
             this.bladeService = new BladeService(this);

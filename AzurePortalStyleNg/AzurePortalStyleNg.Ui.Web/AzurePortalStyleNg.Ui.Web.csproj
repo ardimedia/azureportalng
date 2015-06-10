@@ -992,6 +992,7 @@
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-sanitize.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\ngdialog\ngdialog.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AzurePortalNg\!!schema\" />

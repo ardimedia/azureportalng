@@ -34,6 +34,12 @@
 
         //#endregion
 
+        //#region Entity
+
+        entity: any;
+
+        //#endregion
+
         //#region Grid
 
         isNavGrid: boolean = false;
@@ -137,8 +143,9 @@
         }
 
         navigateTo(path: string) {
-            this.portalService.bladeService.clearLevel(2);
-            this.portalService.bladeService.addBladeOld(path);
+            throw new Error('[azureportalng] \'navigateTo\' is an abstract function. Define one in the derived class.');
+            //this.portalService.bladeService.clearLevel(2);
+            //this.portalService.bladeService.addBladeOld(path);
         }
 
         bladeClose() {

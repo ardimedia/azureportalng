@@ -14,6 +14,11 @@
         parameter: AzurePortalNg.IParameter;
     }
 
+    export interface IBladeParameter {
+        action: string;
+        id: number|string;
+    }
+
     export interface IBlade$Scope extends angular.IScope {
         formblade: any;
     }
@@ -55,6 +60,8 @@
         //#region Properties
 
         bladeUrls: Array<Blade> = new Array<Blade>();
+
+        parameter: AzurePortalNg.IBladeParameter;
 
         private portalService: PortalService;
 
@@ -201,5 +208,4 @@
     })();
 
     //#endregion
-
 }

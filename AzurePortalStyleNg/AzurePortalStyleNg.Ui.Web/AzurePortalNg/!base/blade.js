@@ -98,8 +98,9 @@ var AzurePortalNg;
             this.blade.navGrid = this.navGrid;
         };
         Blade.prototype.navigateTo = function (path) {
-            this.portalService.bladeService.clearLevel(2);
-            this.portalService.bladeService.addBladeOld(path);
+            throw new Error('[azureportalng] \'navigateTo\' is an abstract function. Define one in the derived class.');
+            //this.portalService.bladeService.clearLevel(2);
+            //this.portalService.bladeService.addBladeOld(path);
         };
         Blade.prototype.bladeClose = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.', [this]);
