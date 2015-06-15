@@ -29,7 +29,7 @@ var AzurePortalNg;
             return;
         };
         return ListViewModel;
-    })(AzurePortalNg.BladeBase);
+    })(AzurePortalNg.BladeData);
     AzurePortalNg.ListViewModel = ListViewModel;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=BladeList.js.map

@@ -1,18 +1,27 @@
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
     //#region Class Definition: Panorama
-    var Panorama = (function () {
+    var Panorama = (function (_super) {
+        __extends(Panorama, _super);
         //#endregion
         //#region Constructors
-        function Panorama(title) {
+        function Panorama(title, portalService) {
+            _super.call(this, portalService);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Panorama\' constructor called.', [this, title]);
             this.title = title;
-            this.avatarMenu = new AzurePortalNg.AvatarMenu();
-            this.startboard = new AzurePortalNg.Startboard();
+            this.portalService.panorama = this;
+            this.avatarMenu = new AzurePortalNg.AvatarMenu(this.portalService);
+            this.startboard = new AzurePortalNg.Startboard(this.portalService);
         }
         return Panorama;
-    })();
+    })(AzurePortalNg.UserControlBase);
     AzurePortalNg.Panorama = Panorama;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Panorama.js.map

@@ -20,7 +20,7 @@ var AzurePortalNg;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.', [this, portalService, path, title, subtitle, width]);
         }
         return DetailViewModel;
-    })(AzurePortalNg.BladeBase);
+    })(AzurePortalNg.BladeData);
     AzurePortalNg.DetailViewModel = DetailViewModel;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=BladeDetail.js.map

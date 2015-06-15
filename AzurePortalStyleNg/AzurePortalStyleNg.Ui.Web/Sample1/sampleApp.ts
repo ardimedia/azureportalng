@@ -2,7 +2,12 @@
 
 (function () {
     'use strict';
-    angular.module('sampleapp', ['azureportalng', 'ngMockE2E']);
+    var app = angular.module('sampleapp', ['azureportalng', 'ngMockE2E']);
+
+    app.config([function (): void {
+        AzurePortalNg.Debug.isEnabled = true;
+        AzurePortalNg.Debug.isWithObjects = false;
+    }]);
 
     //------------------------------------------------------------------------------------------------------------
     // TODO: 2015-04-25/hp: The sample should define the test environment ($httpBackend) here.
@@ -12,7 +17,6 @@
     //    .run(function ($httpBackend) {
     //    $httpBackend.whenGET(/\/AzurePortalNg\/.*/).passThrough();
     //});
-
 })();
 
 //#endregion

@@ -7,7 +7,7 @@ PREPARE NUGET:
 > Register NuGet API-KEY (get the API key from nuget.com)
 ------------------------------------------------------------------------------------------------------------
 DEPLOY BY COMMAND TO nuget.com
-> C:\!App\NuGet\nuget push D:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web\!!Out-Nuget\AzurePortalStyleNg.0.1.21-beta.nupkg
+> C:\!App\NuGet\nuget push D:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web\!!Out-Nuget\AzurePortalStyleNg.0.1.22-beta.nupkg
 ------------------------------------------------------------------------------------------------------------
 DEPLOY VIA WEB SITE
 > https://www.nuget.org/packages/AzurePortalStyleNg

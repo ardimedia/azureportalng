@@ -3,7 +3,7 @@
 
     //#region Class Definition: Startboard
 
-    export class Startboard {
+    export class Startboard extends UserControlBase {
 
         //#region Properties
 
@@ -13,8 +13,10 @@
 
         //#region Constructors
 
-        constructor() {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.', [this]);
+        constructor(portalService: PortalService) {
+            super(portalService);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Startboard\' constructor called.', [this]);
+
             this.tiles = new Tiles();
         }
 

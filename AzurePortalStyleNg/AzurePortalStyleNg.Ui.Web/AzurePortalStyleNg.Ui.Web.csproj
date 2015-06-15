@@ -953,15 +953,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="AzurePortalNg\!base\Blade.Service.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\UserControlBase.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\BladeArea.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\Debug.ts" />
+    <TypeScriptCompile Include="Sample1\!data\Customer.ts" />
     <TypeScriptCompile Include="Sample1\blade11\blade11.ts" />
     <TypeScriptCompile Include="Sample1\blade11\blade11blade.ts" />
     <TypeScriptCompile Include="Sample1\blade1\blade1blade.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!baseservice\DataService.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!baseservice\lgtbcDataService.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!baseservice\TypeLite.Net4.d.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\Portal.Service.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\PortalService.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\Startboard.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\UserAccount.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\Blade.ts" />
@@ -969,11 +971,11 @@
     <TypeScriptCompile Include="AzurePortalNg\!base\Panorama.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\PortalShell.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\Tile.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\BladeBase.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\BladeData.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\BladeDetail.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\BladeList.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!directives\dirtyflag\dirtyflag.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\app.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\azureportalng.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\blade\blade.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\home\home.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\navgrid\navgrid.ts" />

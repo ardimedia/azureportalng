@@ -15,10 +15,7 @@ var Sample1;
         //#region Constructors
         function SampleShell(portalService) {
             _super.call(this, 'SAMPLE', portalService);
-            AzurePortalNg.Debug.isEnabled = true;
-            AzurePortalNg.Debug.isWithObjects = false;
             this.portalService.panorama.startboard.tiles.showTiles = true;
-            console.log(this.portalService.panorama.startboard.tiles.showTiles);
             this.portalService.panorama.avatarMenu.userAccount = new AzurePortalNg.UserAccount('useraccount@mail.com', 'first', 'last');
             this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('NAV', '/Sample1/nav/nav.html', portalService));
             this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('blade1', '/Sample1/blade1/blade1.html', portalService));
@@ -32,8 +29,8 @@ var Sample1;
         //#region Methods
         SampleShell.prototype.httpTestData = function () {
             var customers = new Array();
-            customers.push(new Customer('Harry', 'Lewis'));
-            customers.push(new Customer('Eva', 'Barker'));
+            customers.push(new Sample1.Customer('Harry', 'Lewis'));
+            customers.push(new Sample1.Customer('Eva', 'Barker'));
             this.portalService.$httpBackend.whenGET(/\/AzurePortalNg\/.*/).passThrough();
             this.portalService.$httpBackend.whenGET(/\/Sample1\/.*/).passThrough();
             this.portalService.$httpBackend.whenGET('/customers')
@@ -41,13 +38,6 @@ var Sample1;
         };
         return SampleShell;
     })(AzurePortalNg.PortalShell);
-    var Customer = (function () {
-        function Customer(firstName, lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-        }
-        return Customer;
-    })();
     //#endregion
     //#region Angular Registration
     (function () {

@@ -13,11 +13,8 @@
 
         constructor(portalService: AzurePortalNg.PortalService) {
             super('SAMPLE', portalService);
-            AzurePortalNg.Debug.isEnabled = true;
-            AzurePortalNg.Debug.isWithObjects = false;
 
             this.portalService.panorama.startboard.tiles.showTiles = true;
-            console.log(this.portalService.panorama.startboard.tiles.showTiles);
 
             this.portalService.panorama.avatarMenu.userAccount = new AzurePortalNg.UserAccount('useraccount@mail.com', 'first', 'last');
 
@@ -36,9 +33,9 @@
         //#region Methods
 
         httpTestData() {
-            var customers: Array<Customer> = new Array<Customer>();
-            customers.push(new Customer('Harry', 'Lewis'));
-            customers.push(new Customer('Eva', 'Barker'));
+            var customers: Array<Sample1.Customer> = new Array<Sample1.Customer>();
+            customers.push(new Sample1.Customer('Harry', 'Lewis'));
+            customers.push(new Sample1.Customer('Eva', 'Barker'));
 
             this.portalService.$httpBackend.whenGET(/\/AzurePortalNg\/.*/).passThrough();
             this.portalService.$httpBackend.whenGET(/\/Sample1\/.*/).passThrough();
@@ -48,10 +45,6 @@
         }
 
         //#endregion
-    }
-
-    class Customer {
-        constructor(public firstName, public lastName) { }
     }
 
     //#endregion
@@ -65,5 +58,4 @@
 
 
     //#endregion
-
 }

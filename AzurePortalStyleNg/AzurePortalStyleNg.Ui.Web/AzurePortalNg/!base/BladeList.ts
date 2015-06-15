@@ -3,7 +3,7 @@
 
     //#region Class Definition: ListViewModel
 
-    export class ListViewModel extends BladeBase {
+    export class ListViewModel extends BladeData {
 
         //#region Properties
 

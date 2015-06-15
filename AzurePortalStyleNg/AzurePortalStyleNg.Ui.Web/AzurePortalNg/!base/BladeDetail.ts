@@ -3,7 +3,7 @@
 
     //#region Class Definition: DetailViewModel
 
-    export class DetailViewModel extends BladeBase {
+    export class DetailViewModel extends BladeData {
 
         //#region Properties
 

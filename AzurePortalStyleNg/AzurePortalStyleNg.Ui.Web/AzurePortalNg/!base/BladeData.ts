@@ -1,13 +1,13 @@
 ﻿module AzurePortalNg {
     'use strict';
 
-    //#region Class Definition: BaseViewModel
+    //#region Class Definition: BladeData
 
-    export class BladeBase extends Blade {
+    export class BladeData extends Blade {
 
         //#region Properties
 
-        portalService: PortalService;
+        //portalService: PortalService;
 
         //#endregion
 
@@ -16,6 +16,7 @@
         constructor(portalService: PortalService, path: string, title: string, subtitle: string, width: number = 300) {
             super(portalService, path, title, subtitle, width);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel\' constructor called.', [this, portalService, path, title, subtitle, width]);
+
             this.blade = this;
         }
 
@@ -27,7 +28,7 @@
 
         getDataList(): angular.IHttpPromise<any> {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel.getDataList\' called.', [this]);
-            var that: BladeBase = this;
+            var that = this;
 
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';

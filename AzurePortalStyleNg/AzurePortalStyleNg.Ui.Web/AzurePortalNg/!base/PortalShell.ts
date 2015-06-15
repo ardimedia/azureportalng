@@ -3,12 +3,9 @@
 
     //#region Class Definition: PortalShell
 
-    export class PortalShell {
+    export class PortalShell extends UserControlBase {
 
         //#region Properties
-
-        /** PortalService, xxx. */
-        portalService: PortalService;
 
         //#region OLD LAYOUT PROPERTIES --> OBSOLETE
 
@@ -32,11 +29,13 @@
         //#region Constructors
 
         constructor(title: string, portalService: PortalService) {
+            super(portalService);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell\' constructor called.', [this, title, portalService]);
-            this.portalService = portalService;
 
-            this.portalService.panorama = new Panorama(title);
-            this.portalService.bladeService = new BladeService(portalService);
+            this.portalService = portalService;
+            this.portalService.portalShell = this;
+            this.portalService.panorama = new Panorama(title, this.portalService);
+            this.portalService.bladeService = new BladeArea(portalService);
 
             this.initialize();
         }
@@ -54,10 +53,10 @@
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell.setObsoleteLayoutProperites\' called.', [this]);
             this.title = this.portalService.panorama.title;
             this.tiles = this.portalService.panorama.startboard.tiles.tiles;
-            this.blades = this.portalService.bladeService.bladeUrls;
+            this.blades = this.portalService.bladeService.blades;
 
             var bladeServiceOLD = this.portalService.$injector.get('bladeService');
-            bladeServiceOLD.blades = this.portalService.bladeService.bladeUrls;
+            bladeServiceOLD.blades = this.portalService.bladeService.blades;
 
             if (this.portalService.panorama.avatarMenu.userAccount != undefined) {
                 this.user = {
@@ -67,7 +66,7 @@
             }
 
             if (this.portalService.bladeService != null) {
-                this.portalService.bladeService.bladeUrls.forEach(function (blade) {
+                this.portalService.bladeService.blades.forEach(function (blade) {
                     blade.setObsoleteLayoutProperites();
                 });
             }

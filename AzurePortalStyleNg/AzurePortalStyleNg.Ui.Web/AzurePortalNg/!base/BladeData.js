@@ -7,14 +7,14 @@ var __extends = this.__extends || function (d, b) {
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
-    //#region Class Definition: BaseViewModel
-    var BladeBase = (function (_super) {
-        __extends(BladeBase, _super);
+    //#region Class Definition: BladeData
+    var BladeData = (function (_super) {
+        __extends(BladeData, _super);
         //#region Properties
         //portalService: PortalService;
         //#endregion
         //#region Constructor
-        function BladeBase(portalService, path, title, subtitle, width) {
+        function BladeData(portalService, path, title, subtitle, width) {
             if (width === void 0) { width = 300; }
             _super.call(this, portalService, path, title, subtitle, width);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel\' constructor called.', [this, portalService, path, title, subtitle, width]);
@@ -23,7 +23,7 @@ var AzurePortalNg;
         //#endregion
         //#region Methods
         //#region GetDataList
-        BladeBase.prototype.getDataList = function () {
+        BladeData.prototype.getDataList = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel.getDataList\' called.', [this]);
             var that = this;
             that.statusbar = 'Daten laden...';
@@ -38,11 +38,11 @@ var AzurePortalNg;
                 that.setObsoleteLayoutProperites();
             });
         };
-        BladeBase.prototype.onGetDataList = function () {
+        BladeData.prototype.onGetDataList = function () {
             throw new Error('DEVELOPER: [onGetDataList] is an abstract function. Define one in the derived class.');
         };
-        return BladeBase;
+        return BladeData;
     })(AzurePortalNg.Blade);
-    AzurePortalNg.BladeBase = BladeBase;
+    AzurePortalNg.BladeData = BladeData;
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=BladeBase.js.map
+//# sourceMappingURL=BladeData.js.map

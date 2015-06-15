@@ -3,7 +3,7 @@
 
     //#region Class Definition: Panorama
 
-    export class Panorama {
+    export class Panorama extends UserControlBase {
 
         //#region Properties
 
@@ -16,12 +16,15 @@
 
         //#region Constructors
 
-        constructor(title: string) {
+        constructor(title: string, portalService: PortalService) {
+            super(portalService);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Panorama\' constructor called.', [this, title]);
-            this.title = title;
 
-            this.avatarMenu = new AvatarMenu();
-            this.startboard = new Startboard();
+            this.title = title;
+            this.portalService.panorama = this;
+
+            this.avatarMenu = new AvatarMenu(this.portalService);
+            this.startboard = new Startboard(this.portalService);
         }
 
         //#endregion

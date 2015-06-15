@@ -16,7 +16,7 @@
         ngDialog: NgDialog.INgDialog;
 
         /* Services */
-        bladeService: AzurePortalNg.BladeService;
+        bladeService: AzurePortalNg.BladeArea;
         $http: angular.IHttpService;
         $httpBackend: angular.IHttpBackendService;
         $injector: angular.auto.IInjectorService
@@ -46,9 +46,6 @@
             this.$rootScope = $injector.get('$rootScope');
             //this.$scope = $injector.get('$scope');
             //this.ngDialog = $injector.get('ngDialog');
-
-            this.panorama = new Panorama('');
-            this.bladeService = new BladeService(this);
         }
 
         //#endregion

@@ -115,7 +115,7 @@ var LgtbcNav = (function (_super) {
         this.setObsoleteLayoutProperites();
     }
     return LgtbcNav;
-})(AzurePortalNg.BladeBase);
+})(AzurePortalNg.BladeData);
 //#endregion
 //#region Angular Registration
 (function () {

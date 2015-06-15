@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>AzurePortalStyleNg</id>
-    <version>0.1.21-beta</version>
+    <version>0.1.22-beta</version>
     <authors>Harry Pfleger - Infoware</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Framework for building web sites based on the Azure Portal Layout.</description>
@@ -15,8 +15,8 @@
     </frameworkAssemblies>
   </metadata>
   <files>
-    <file src="AzurePortalNg\app.js" target="content\Scripts\AzurePortalNg\app.js" />
-    <file src="AzurePortalNg\app.js.map" target="content\Scripts\AzurePortalNg\app.js.map" />
+    <file src="AzurePortalNg\azureportalng.js" target="content\Scripts\AzurePortalNg\azureportalng.js" />
+    <file src="AzurePortalNg\azureportalng.js.map" target="content\Scripts\AzurePortalNg\azureportalng.js.map" />
 
     <file src="AzurePortalNg\portal\!directives\blade\blade.html" target="content\AzurePortalNg\portal\!directives\blade\blade.html" />
     <file src="AzurePortalNg\portal\!directives\blade\blade.js" target="content\Scripts\AzurePortalNg\portal\!directives\blade\blade.js" />
@@ -30,32 +30,42 @@
     <file src="AzurePortalNg\portal\!services\bladeService.js" target="content\Scripts\AzurePortalNg\portal\!services\bladeService.js" />
     <file src="AzurePortalNg\portal\!services\bladeService.js.map" target="content\Scripts\AzurePortalNg\portal\!services\bladeService.js.map" />
 
-    <file src="AzurePortalNg\!base\blade.Service.ts" target="content\Scripts\AzurePortalNg\!base\blade.Service.ts"></file>
-    <file src="AzurePortalNg\!base\blade.Service.js" target="content\Scripts\AzurePortalNg\!base\blade.Service.js"></file>
-    <file src="AzurePortalNg\!base\portal.Service.ts" target="content\Scripts\AzurePortalNg\!base\portal.Service.ts"></file>
-    <file src="AzurePortalNg\!base\portal.Service.js" target="content\Scripts\AzurePortalNg\!base\portal.Service.js"></file>
     <file src="AzurePortalNg\!base\avatarMenu.ts" target="content\Scripts\AzurePortalNg\!base\avatarMenu.ts"></file>
     <file src="AzurePortalNg\!base\avatarMenu.js" target="content\Scripts\AzurePortalNg\!base\avatarMenu.js"></file>
+
     <file src="AzurePortalNg\!base\blade.ts" target="content\Scripts\AzurePortalNg\!base\blade.ts"></file>
     <file src="AzurePortalNg\!base\blade.js" target="content\Scripts\AzurePortalNg\!base\blade.js"></file>
-    <file src="AzurePortalNg\!base\debug.ts" target="content\Scripts\AzurePortalNg\!base\debug.ts"></file>
-    <file src="AzurePortalNg\!base\debug.js" target="content\Scripts\AzurePortalNg\!base\debug.js"></file>
-    <file src="AzurePortalNg\!base\panorama.ts" target="content\Scripts\AzurePortalNg\!base\panorama.ts"></file>
-    <file src="AzurePortalNg\!base\panorama.js" target="content\Scripts\AzurePortalNg\!base\panorama.js"></file>
-    <file src="AzurePortalNg\!base\portalShell.ts" target="content\Scripts\AzurePortalNg\!base\portalShell.ts"></file>
-    <file src="AzurePortalNg\!base\portalShell.js" target="content\Scripts\AzurePortalNg\!base\portalShell.js"></file>
-    <file src="AzurePortalNg\!base\startboard.ts" target="content\Scripts\AzurePortalNg\!base\startboard.ts"></file>
-    <file src="AzurePortalNg\!base\startboard.js" target="content\Scripts\AzurePortalNg\!base\startboard.js"></file>
-    <file src="AzurePortalNg\!base\tile.ts" target="content\Scripts\AzurePortalNg\!base\tile.ts"></file>
-    <file src="AzurePortalNg\!base\tile.js" target="content\Scripts\AzurePortalNg\!base\tile.js"></file>
-    <file src="AzurePortalNg\!base\userAccount.ts" target="content\Scripts\AzurePortalNg\!base\userAccount.ts"></file>
-    <file src="AzurePortalNg\!base\userAccount.js" target="content\Scripts\AzurePortalNg\!base\userAccount.js"></file>
-    <file src="AzurePortalNg\!base\bladeBase.ts" target="content\Scripts\AzurePortalNg\!base\bladeBase.ts"></file>
-    <file src="AzurePortalNg\!base\bladeBase.js" target="content\Scripts\AzurePortalNg\!base\bladeBase.js"></file>
+    <file src="AzurePortalNg\!base\bladeArea.ts" target="content\Scripts\AzurePortalNg\!base\bladeArea.ts"></file>
+    <file src="AzurePortalNg\!base\bladeArea.js" target="content\Scripts\AzurePortalNg\!base\bladeArea.js"></file>
+    <file src="AzurePortalNg\!base\bladeData.ts" target="content\Scripts\AzurePortalNg\!base\bladeData.ts"></file>
+    <file src="AzurePortalNg\!base\bladeData.js" target="content\Scripts\AzurePortalNg\!base\bladeData.js"></file>
     <file src="AzurePortalNg\!base\bladeDetail.ts" target="content\Scripts\AzurePortalNg\!base\bladeDetail.ts"></file>
     <file src="AzurePortalNg\!base\bladeDetail.js" target="content\Scripts\AzurePortalNg\!base\bladeDetail.js"></file>
     <file src="AzurePortalNg\!base\bladeList.ts" target="content\Scripts\AzurePortalNg\!base\bladeList.ts"></file>
     <file src="AzurePortalNg\!base\bladeList.js" target="content\Scripts\AzurePortalNg\!base\bladeList.js"></file>
+
+    <file src="AzurePortalNg\!base\debug.ts" target="content\Scripts\AzurePortalNg\!base\debug.ts"></file>
+    <file src="AzurePortalNg\!base\debug.js" target="content\Scripts\AzurePortalNg\!base\debug.js"></file>
+
+    <file src="AzurePortalNg\!base\panorama.ts" target="content\Scripts\AzurePortalNg\!base\panorama.ts"></file>
+    <file src="AzurePortalNg\!base\panorama.js" target="content\Scripts\AzurePortalNg\!base\panorama.js"></file>
+
+    <file src="AzurePortalNg\!base\portalService.ts" target="content\Scripts\AzurePortalNg\!base\portalService.ts"></file>
+    <file src="AzurePortalNg\!base\portalService.js" target="content\Scripts\AzurePortalNg\!base\portalService.js"></file>
+    <file src="AzurePortalNg\!base\portalShell.ts" target="content\Scripts\AzurePortalNg\!base\portalShell.ts"></file>
+    <file src="AzurePortalNg\!base\portalShell.js" target="content\Scripts\AzurePortalNg\!base\portalShell.js"></file>
+
+    <file src="AzurePortalNg\!base\startboard.ts" target="content\Scripts\AzurePortalNg\!base\startboard.ts"></file>
+    <file src="AzurePortalNg\!base\startboard.js" target="content\Scripts\AzurePortalNg\!base\startboard.js"></file>
+
+    <file src="AzurePortalNg\!base\tile.ts" target="content\Scripts\AzurePortalNg\!base\tile.ts"></file>
+    <file src="AzurePortalNg\!base\tile.js" target="content\Scripts\AzurePortalNg\!base\tile.js"></file>
+
+    <file src="AzurePortalNg\!base\userAccount.ts" target="content\Scripts\AzurePortalNg\!base\userAccount.ts"></file>
+    <file src="AzurePortalNg\!base\userAccount.js" target="content\Scripts\AzurePortalNg\!base\userAccount.js"></file>
+
+    <file src="AzurePortalNg\!base\userControlBase.ts" target="content\Scripts\AzurePortalNg\!base\!userControlBase.ts"></file>  <!-- Change file name due to ordering -->
+    <file src="AzurePortalNg\!base\userControlBase.js" target="content\Scripts\AzurePortalNg\!base\!userControlBase.js"></file>  <!-- Change file name due to ordering -->
 
     <file src="AzurePortalNg\!directives\dialog\dialog.js" target="content\Scripts\AzurePortalNg\!directives\dialog\dialog.js" />
     <file src="AzurePortalNg\!directives\dialog\dialog.js.map" target="content\Scripts\AzurePortalNg\!directives\dialog\dialog.js.map" />

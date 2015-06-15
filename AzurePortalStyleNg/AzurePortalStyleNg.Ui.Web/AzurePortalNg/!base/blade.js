@@ -1,8 +1,15 @@
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
     //#region Class Definition: Blade
-    var Blade = (function () {
+    var Blade = (function (_super) {
+        __extends(Blade, _super);
         //#endregion
         //#endregion
         //#region Constructor
@@ -10,6 +17,7 @@ var AzurePortalNg;
             if (title === void 0) { title = ''; }
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 200; }
+            _super.call(this, portalService);
             //#region Chrome
             this.title = '';
             this.subTitle = '';
@@ -49,7 +57,6 @@ var AzurePortalNg;
             this.commandSave = this.onCommandSave;
             this.commandSaveText = '';
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' constructor called.', [this, portalService, path, title, subtitle, width]);
-            this.portalService = portalService;
             this.path = path;
             this.title = title;
             this.subTitle = subtitle;
@@ -107,7 +114,7 @@ var AzurePortalNg;
             this.portalService.bladeService.clear(this.path);
         };
         return Blade;
-    })();
+    })(AzurePortalNg.UserControlBase);
     AzurePortalNg.Blade = Blade;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Blade.js.map

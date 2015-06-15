@@ -85,7 +85,7 @@
 
 //#region Class Definition
 
-class LgtbcNav extends AzurePortalNg.BladeBase {
+class LgtbcNav extends AzurePortalNg.BladeData {
 
     //#region Properties
 

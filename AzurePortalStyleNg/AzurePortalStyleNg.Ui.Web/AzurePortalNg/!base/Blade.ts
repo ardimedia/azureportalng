@@ -3,14 +3,12 @@
 
     //#region Class Definition: Blade
 
-    export class Blade {
+    export class Blade extends UserControlBase {
 
         //#region Properties
 
         path: string;
-        blade: Blade;
-
-        portalService: PortalService;
+        blade: Blade;   // obsolete, can be removed when all html files have removed their references to 'blade'
 
         //#region Chrome
 
@@ -30,6 +28,7 @@
         //#endregion
 
         //#region Search
+
         searchString: string = '';
 
         //#endregion
@@ -79,8 +78,9 @@
         //#region Constructor
 
         constructor(portalService: PortalService, path: string, title: string = '', subtitle: string = '', width: number = 200) {
+            super(portalService);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' constructor called.', [this, portalService, path, title, subtitle, width]);
-            this.portalService = portalService;
+
             this.path = path;
             this.title = title;
             this.subTitle = subtitle;

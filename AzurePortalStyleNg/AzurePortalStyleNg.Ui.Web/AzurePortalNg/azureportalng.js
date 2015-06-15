@@ -1,5 +1,6 @@
 (function () {
     'use strict';
+    // Register module
     var app = angular.module('azureportalng', []);
 })();
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=azureportalng.js.map

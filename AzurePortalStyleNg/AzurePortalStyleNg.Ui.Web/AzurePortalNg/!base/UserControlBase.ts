@@ -3,19 +3,19 @@
 
     //#region Class Definition: AvatarMenu
 
-    export class AvatarMenu extends UserControlBase {
+    export class UserControlBase {
 
         //#region Properties
 
-        userAccount: UserAccount;
+        portalService: PortalService;
 
         //#endregion
 
         //#region Constructors
 
         constructor(portalService: PortalService) {
-            super(portalService);
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.', [this]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'UserControlBase\' constructor called.', [this, portalService]);
+            this.portalService = portalService;
         }
 
         //#endregion
