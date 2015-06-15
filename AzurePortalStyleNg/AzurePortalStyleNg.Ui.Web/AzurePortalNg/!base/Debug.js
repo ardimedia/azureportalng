@@ -1,3 +1,9 @@
+//#region Make sure console.log is working in any case, even IE9
+if (typeof console !== 'object')
+    window.console = {};
+if (typeof console.log !== 'object')
+    window.console.log = function () { };
+//#endregion
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';

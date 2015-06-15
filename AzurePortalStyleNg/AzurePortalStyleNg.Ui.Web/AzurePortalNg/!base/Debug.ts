@@ -1,4 +1,11 @@
-﻿module AzurePortalNg {
+﻿//#region Make sure console.log is working in any case, even IE9
+
+if (typeof console !== 'object') window.console = <any>{};
+if (typeof console.log !== 'object') window.console.log = function () { };
+
+//#endregion
+
+module AzurePortalNg {
     'use strict';
 
     //#region Class Definition: Debug
