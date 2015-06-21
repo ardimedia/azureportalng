@@ -1,21 +1,15 @@
 ﻿module AzurePortalNg {
     'use strict';
 
-    //#region Class Definition: ListViewModel
+    //#region Class Definition: BladeList
 
-    export class ListViewModel extends BladeData {
-
-        //#region Properties
-
-        listItems: Array<any>;
-
-        //#endregion
+    export class BladeList extends BladeData {
 
         //#region Constructor
 
         constructor(portalService: PortalService, path: string, title: string, subtitle: string = '', width: number = 200) {
             super(portalService, path, title, subtitle, width);
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'ListViewModel\' constructor called.', [this, portalService, path, title, subtitle, width]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList\' constructor called.', [this, portalService, path, title, subtitle, width]);
         }
 
         //#endregion
@@ -23,14 +17,16 @@
         //#region Methods
 
         activate(): angular.IHttpPromise<any> {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'ListViewModel.activate\' called.', [this]);
-            var that: ListViewModel = this;
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.activate\' called.', [this]);
+            //var that = this;
 
-            return super.getDataList().success(function (data: any) {
-                that.listItems = data;
-            });
+            return super.getDataList()
 
-            return;
+            //return super.getDataList().success(function (data: any) {
+            //    that.listItems = data;
+            //});
+
+            //return;
         }
 
         //#endregion

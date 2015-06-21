@@ -114,6 +114,13 @@ var LgtbcNav = (function (_super) {
         this.initialize();
         this.setObsoleteLayoutProperites();
     }
+    //#endregion
+    //#region Methods
+    LgtbcNav.prototype.onNavigateTo = function (path) {
+        AzurePortalNg.Debug.write('[sample1-debug] \'LgtbcNav.onNavigateTo\' called.', [this, path]);
+        //this.portalService.bladeService.clearLevel(2);
+        //this.portalService.bladeService.addBladeOld(path);
+    };
     return LgtbcNav;
 })(AzurePortalNg.BladeData);
 //#endregion

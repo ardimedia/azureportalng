@@ -7,20 +7,20 @@ var __extends = this.__extends || function (d, b) {
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
-    //#region Class Definition: DetailViewModel
-    var DetailViewModel = (function (_super) {
-        __extends(DetailViewModel, _super);
+    //#region Class Definition: BladeDetail
+    var BladeDetail = (function (_super) {
+        __extends(BladeDetail, _super);
         //#region Properties
         //#endregion
         //#region Constructor
-        function DetailViewModel(portalService, path, title, subtitle, width) {
+        function BladeDetail(portalService, path, title, subtitle, width) {
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 200; }
             _super.call(this, portalService, path, title, subtitle, width);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.', [this, portalService, path, title, subtitle, width]);
         }
-        return DetailViewModel;
+        return BladeDetail;
     })(AzurePortalNg.BladeData);
-    AzurePortalNg.DetailViewModel = DetailViewModel;
+    AzurePortalNg.BladeDetail = BladeDetail;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=BladeDetail.js.map

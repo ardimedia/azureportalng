@@ -7,7 +7,7 @@
 
         //#region Properties
 
-        //portalService: PortalService;
+        listItems: Array<any> = new Array<any>();
 
         //#endregion
 
@@ -24,6 +24,15 @@
 
         //#region Methods
 
+        setObsoleteLayoutProperites() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.setObsoleteLayoutProperites\' called.', [this]);
+
+            if (this.listItems.length !== 0) {
+                this.blade.navGrid.items = this.listItems; //--> do not uncomment, otherwise nav html pages will no longer work.
+            }
+            super.setObsoleteLayoutProperites();
+        }
+
         //#region GetDataList
 
         getDataList(): angular.IHttpPromise<any> {
@@ -33,7 +42,8 @@
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';
 
-            return this.onGetDataList().success(function (data: any) {
+            return that.onGetDataList().success(function (data: any) {
+                that.listItems = data;
                 that.statusbar = '';
                 that.statusbarClass = '';
                 that.setObsoleteLayoutProperites();

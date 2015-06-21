@@ -130,6 +130,12 @@ class LgtbcNav extends AzurePortalNg.BladeData {
     //#endregion
 
     //#region Methods
+
+    onNavigateTo(path: string) {
+        AzurePortalNg.Debug.write('[sample1-debug] \'LgtbcNav.onNavigateTo\' called.', [this, path]);
+        //this.portalService.bladeService.clearLevel(2);
+        //this.portalService.bladeService.addBladeOld(path);
+    }
     //#endregion
 }
 

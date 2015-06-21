@@ -36,7 +36,7 @@ var Sample1;
             return this.portalService.$http({ method: 'GET', url: '/customers' });
         };
         return Blade1;
-    })(AzurePortalNg.ListViewModel);
+    })(AzurePortalNg.BladeList);
     //#endregion
     //#region Angular Registration
     (function () {

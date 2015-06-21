@@ -62,7 +62,7 @@ var AzurePortalNg;
             this.subTitle = subtitle;
             this.width.width = width + 'px';
             this.widthStackLayout.width = width - 50 + 'px';
-            this.navGrid.navigateTo = this.navigateTo;
+            this.navGrid.navigateTo = this.onNavigateTo;
             this.navGrid.portalService = this.portalService;
         }
         //#endregion
@@ -104,8 +104,8 @@ var AzurePortalNg;
             this.blade.isNavGrid = this.isNavGrid;
             this.blade.navGrid = this.navGrid;
         };
-        Blade.prototype.navigateTo = function (path) {
-            throw new Error('[azureportalng] \'navigateTo\' is an abstract function. Define one in the derived class.');
+        Blade.prototype.onNavigateTo = function (path) {
+            throw new Error('[azureportalng] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
             //this.portalService.bladeService.clearLevel(2);
             //this.portalService.bladeService.addBladeOld(path);
         };

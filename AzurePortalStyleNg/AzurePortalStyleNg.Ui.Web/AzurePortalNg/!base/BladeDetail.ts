@@ -1,9 +1,9 @@
 ﻿module AzurePortalNg {
     'use strict';
 
-    //#region Class Definition: DetailViewModel
+    //#region Class Definition: BladeDetail
 
-    export class DetailViewModel extends BladeData {
+    export class BladeDetail extends BladeData {
 
         //#region Properties
 

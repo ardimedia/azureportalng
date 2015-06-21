@@ -10,25 +10,33 @@ var AzurePortalNg;
     //#region Class Definition: BladeData
     var BladeData = (function (_super) {
         __extends(BladeData, _super);
-        //#region Properties
-        //portalService: PortalService;
         //#endregion
         //#region Constructor
         function BladeData(portalService, path, title, subtitle, width) {
             if (width === void 0) { width = 300; }
             _super.call(this, portalService, path, title, subtitle, width);
+            //#region Properties
+            this.listItems = new Array();
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel\' constructor called.', [this, portalService, path, title, subtitle, width]);
             this.blade = this;
         }
         //#endregion
         //#region Methods
+        BladeData.prototype.setObsoleteLayoutProperites = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.setObsoleteLayoutProperites\' called.', [this]);
+            if (this.listItems.length !== 0) {
+                this.blade.navGrid.items = this.listItems; //--> do not uncomment, otherwise nav html pages will no longer work.
+            }
+            _super.prototype.setObsoleteLayoutProperites.call(this);
+        };
         //#region GetDataList
         BladeData.prototype.getDataList = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel.getDataList\' called.', [this]);
             var that = this;
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';
-            return this.onGetDataList().success(function (data) {
+            return that.onGetDataList().success(function (data) {
+                that.listItems = data;
                 that.statusbar = '';
                 that.statusbarClass = '';
                 that.setObsoleteLayoutProperites();

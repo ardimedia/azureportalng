@@ -3,7 +3,7 @@
 
     //#region Class Definition
 
-    class Blade1 extends AzurePortalNg.ListViewModel {
+    class Blade1 extends AzurePortalNg.BladeList {
 
         //#region Properties
 
