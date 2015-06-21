@@ -1,37 +1,31 @@
-﻿(function () {
+(function () {
     'use strict';
-
     angular.module('sampleapp')
-        .controller('blade2', ['$scope', '$http', 'bladeService', blade2]);
-
-    function blade2($scope, $http, bladeService) {
+        .controller('blade21', ['$scope', '$http', 'bladeService', blade21]);
+    function blade21($scope, $http, bladeService) {
         /* jshint validthis: true */
         var vm = this;
-
         vm.blade = {
-            title: 'Blade-2',
-            subTitle: 'First Blade',
+            title: 'Blade 2-1',
+            subTitle: 'Second Blade',
             isCommandDocument: true,
             commandDocument: dummy,
             isNavGrid: true,
-            statusbar: 'blade1-bar',
+            statusbar: 'status bar of Blade 2-1',
             navGrid: {
                 items: [
-                    { title: 'Blade 2-1', bladePath: '/Sample1/blade21/blade21.html' },
-                    { title: 'Blade 1', bladePath: '/Sample1/blade1/blade1.html' },
+                    { title: 'Menu 1', bladePath: '/Sample1/nav1/nav1.html' },
+                    { title: 'Menu 2', bladePath: '/Sample1/blade2/blade2.html' },
                     { title: '', bladePath: '' },
                     { title: 'no path', bladePath: '' },
                 ]
             }
         };
-
         vm.blade.navGrid.navigateTo = navigateTo;
-
-        function navigateTo(path: string) {
-            bladeService.clearLevel(2);
+        function navigateTo(path) {
             bladeService.addBladePath(path);
         }
-
         function dummy() { }
     }
 })();
+//# sourceMappingURL=blade21.js.map

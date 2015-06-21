@@ -15,28 +15,20 @@ var AzurePortalNg;
         function BladeData(portalService, path, title, subtitle, width) {
             if (width === void 0) { width = 300; }
             _super.call(this, portalService, path, title, subtitle, width);
-            //#region Properties
-            this.listItems = new Array();
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel\' constructor called.', [this, portalService, path, title, subtitle, width]);
+            this.items = new Array();
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData\' constructor called.', [this, portalService, path, title, subtitle, width]);
             this.blade = this;
         }
         //#endregion
         //#region Methods
-        BladeData.prototype.setObsoleteLayoutProperites = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.setObsoleteLayoutProperites\' called.', [this]);
-            if (this.listItems.length !== 0) {
-                this.blade.navGrid.items = this.listItems; //--> do not uncomment, otherwise nav html pages will no longer work.
-            }
-            _super.prototype.setObsoleteLayoutProperites.call(this);
-        };
         //#region GetDataList
         BladeData.prototype.getDataList = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel.getDataList\' called.', [this]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.getDataList\' called.', [this]);
             var that = this;
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';
             return that.onGetDataList().success(function (data) {
-                that.listItems = data;
+                that.items = data;
                 that.statusbar = '';
                 that.statusbarClass = '';
                 that.setObsoleteLayoutProperites();
@@ -48,6 +40,15 @@ var AzurePortalNg;
         };
         BladeData.prototype.onGetDataList = function () {
             throw new Error('DEVELOPER: [onGetDataList] is an abstract function. Define one in the derived class.');
+        };
+        //#endregion
+        BladeData.prototype.setObsoleteLayoutProperites = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.setObsoleteLayoutProperites\' called.', [this]);
+            if (this.items.length !== 0) {
+                this.blade.navGrid.items = this.items; //--> do not uncomment, otherwise nav html pages will no longer work.
+            }
+            this.blade.isNavGrid = this.isNavGrid;
+            _super.prototype.setObsoleteLayoutProperites.call(this);
         };
         return BladeData;
     })(AzurePortalNg.Blade);

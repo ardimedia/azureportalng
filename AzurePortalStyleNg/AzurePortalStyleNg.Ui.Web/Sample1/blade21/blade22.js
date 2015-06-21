@@ -21,7 +21,7 @@
                 ]
             }
         };
-        vm.blade.navGrid.navigateTo = navigateTo;
+        vm.blade.navigateTo = navigateTo;
         function navigateTo(id) {
             bladeService.addBladePath(id);
         }

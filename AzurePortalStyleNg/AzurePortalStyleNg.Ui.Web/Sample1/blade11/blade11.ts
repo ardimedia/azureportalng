@@ -16,7 +16,7 @@
 
             this.isCommandNew = true;
 
-            this.initialize();
+            this.activate();
             this.setObsoleteLayoutProperites();
         }
 
@@ -25,7 +25,7 @@
         //#region Methods - Overrides for Blade
 
         protected onCommandNew(): void {
-            this.portalService.bladeService.addBlade(this.path, '/Sample1/blade2/blade2.html');
+            this.portalService.bladeArea.addBlade(this.path, '/Sample1/blade2/blade2.html');
         }
 
         //#endregion

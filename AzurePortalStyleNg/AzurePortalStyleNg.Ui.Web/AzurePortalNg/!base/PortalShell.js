@@ -19,7 +19,7 @@ var AzurePortalNg;
             this.portalService = portalService;
             this.portalService.portalShell = this;
             this.portalService.panorama = new AzurePortalNg.Panorama(title, this.portalService);
-            this.portalService.bladeService = new AzurePortalNg.BladeArea(portalService);
+            this.portalService.bladeArea = new AzurePortalNg.BladeArea(portalService);
             this.initialize();
         }
         //#endregion
@@ -32,17 +32,17 @@ var AzurePortalNg;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalShell.setObsoleteLayoutProperites\' called.', [this]);
             this.title = this.portalService.panorama.title;
             this.tiles = this.portalService.panorama.startboard.tiles.tiles;
-            this.blades = this.portalService.bladeService.blades;
+            this.blades = this.portalService.bladeArea.blades;
             var bladeServiceOLD = this.portalService.$injector.get('bladeService');
-            bladeServiceOLD.blades = this.portalService.bladeService.blades;
+            bladeServiceOLD.blades = this.portalService.bladeArea.blades;
             if (this.portalService.panorama.avatarMenu.userAccount != undefined) {
                 this.user = {
                     name: this.portalService.panorama.avatarMenu.userAccount.name,
                     emailaddress: this.portalService.panorama.avatarMenu.userAccount.userName
                 };
             }
-            if (this.portalService.bladeService != null) {
-                this.portalService.bladeService.blades.forEach(function (blade) {
+            if (this.portalService.bladeArea != null) {
+                this.portalService.bladeArea.blades.forEach(function (blade) {
                     blade.setObsoleteLayoutProperites();
                 });
             }

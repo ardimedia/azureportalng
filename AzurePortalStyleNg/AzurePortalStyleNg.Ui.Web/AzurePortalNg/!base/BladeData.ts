@@ -7,7 +7,9 @@
 
         //#region Properties
 
-        listItems: Array<any> = new Array<any>();
+        item: any;
+
+        items: Array<any> = new Array<any>();
 
         //#endregion
 
@@ -15,7 +17,7 @@
 
         constructor(portalService: PortalService, path: string, title: string, subtitle: string, width: number = 300) {
             super(portalService, path, title, subtitle, width);
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel\' constructor called.', [this, portalService, path, title, subtitle, width]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData\' constructor called.', [this, portalService, path, title, subtitle, width]);
 
             this.blade = this;
         }
@@ -24,26 +26,17 @@
 
         //#region Methods
 
-        setObsoleteLayoutProperites() {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.setObsoleteLayoutProperites\' called.', [this]);
-
-            if (this.listItems.length !== 0) {
-                this.blade.navGrid.items = this.listItems; //--> do not uncomment, otherwise nav html pages will no longer work.
-            }
-            super.setObsoleteLayoutProperites();
-        }
-
         //#region GetDataList
 
         getDataList(): angular.IHttpPromise<any> {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BaseViewModel.getDataList\' called.', [this]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.getDataList\' called.', [this]);
             var that = this;
 
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';
 
             return that.onGetDataList().success(function (data: any) {
-                that.listItems = data;
+                that.items = data;
                 that.statusbar = '';
                 that.statusbarClass = '';
                 that.setObsoleteLayoutProperites();
@@ -59,6 +52,18 @@
         }
 
         //#endregion
+
+        setObsoleteLayoutProperites() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.setObsoleteLayoutProperites\' called.', [this]);
+
+            if (this.items.length !== 0) {
+                this.blade.navGrid.items = this.items; //--> do not uncomment, otherwise nav html pages will no longer work.
+            }
+
+            this.blade.isNavGrid = this.isNavGrid;
+
+            super.setObsoleteLayoutProperites();
+        }
 
         //#endregion
     }

@@ -39,7 +39,7 @@
                     <li ng-show="vm.blade.isCommandSearch">
                         <a data-ng-click="vm.blade.commandSearch()" class="fxs-commandBar-item" href="#"
                            data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
-                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandSearchText  || 'suchen'}}</div>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandSearchText || 'suchen'}}</div>
                             <div class="fxs-commandBar-item-icon" data-bind="image: icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
                                     <g>
@@ -247,6 +247,9 @@
                                             <div data-ng-if="vm.blade.isInnerHtml">
                                                 <div ng-transclude></div>
                                             </div>
+
+                                            <!-- nav -->
+                                            <div data-ng-if="vm.isNav" data-nav data-view-model="vm"></div>
 
                                             <!-- navGrid -->
                                             <div data-ng-if="vm.blade.isNavGrid" data-nav-grid data-view-model="vm.blade.navGrid"></div>

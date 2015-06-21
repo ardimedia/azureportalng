@@ -19,8 +19,7 @@
             this.isCommandSave = true;
             this.commandSaveText = 'Blade-2';
 
-            this.initialize();
-            this.setObsoleteLayoutProperites();
+            this.activate();
         }
 
         //#endregion
@@ -28,11 +27,11 @@
         //#region Methods - Overrides for Blade
 
         protected onCommandNew(): void {
-            this.portalService.bladeService.addBlade(this.path, '/Sample1/blade11/blade11.html');
+            this.portalService.bladeArea.addBlade(this.path, '/Sample1/blade11/blade11.html');
         }
 
         protected onCommandSave(): void {
-            this.portalService.bladeService.addBlade(this.path, '/Sample1/blade2/blade2.html');
+            this.portalService.bladeArea.addBlade(this.path, '/Sample1/blade2/blade2.html');
         }
 
         //#endregion

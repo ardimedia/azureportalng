@@ -14,14 +14,14 @@ var Sample1;
         //#endregion
         //#region Constructors
         function SampleShell(portalService) {
-            _super.call(this, 'SAMPLE', portalService);
+            _super.call(this, 'SAMPLE 1', portalService);
             this.portalService.panorama.startboard.tiles.showTiles = true;
             this.portalService.panorama.avatarMenu.userAccount = new AzurePortalNg.UserAccount('useraccount@mail.com', 'first', 'last');
-            this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('NAV', '/Sample1/nav/nav.html', portalService));
-            this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('blade1', '/Sample1/blade1/blade1.html', portalService));
-            this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('blade2', '/Sample1/blade2/blade2.html', portalService));
-            this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('blade11', '/Sample1/blade11/blade11.html', portalService));
-            this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('blade22', '/Sample1/blade22/blade22.html', portalService));
+            this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Navigation 1', '/Sample1/nav1/nav1.html', portalService));
+            this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Blade 1', '/Sample1/blade1/blade1.html', portalService));
+            this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Blade 2', '/Sample1/blade2/blade2.html', portalService));
+            this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Blade 1-1', '/Sample1/blade11/blade11.html', portalService));
+            this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Blade 2-1', '/Sample1/blade21/blade21.html', portalService));
             this.setObsoleteLayoutProperites();
             this.httpTestData();
         }

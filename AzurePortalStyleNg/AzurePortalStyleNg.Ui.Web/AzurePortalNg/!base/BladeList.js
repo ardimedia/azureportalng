@@ -19,8 +19,8 @@ var AzurePortalNg;
         }
         //#endregion
         //#region Methods
-        BladeList.prototype.activate = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.activate\' called.', [this]);
+        BladeList.prototype.onActivate = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.onActivate\' called.', [this]);
             //var that = this;
             return _super.prototype.getDataList.call(this);
             //return super.getDataList().success(function (data: any) {

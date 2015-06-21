@@ -6,7 +6,7 @@
         /* jshint validthis: true */
         var vm = this;
         vm.blade = {
-            title: 'Blade 2',
+            title: 'Blade-2',
             subTitle: 'First Blade',
             isCommandDocument: true,
             commandDocument: dummy,
@@ -14,16 +14,17 @@
             statusbar: 'blade1-bar',
             navGrid: {
                 items: [
-                    { title: 'blade22', bladePath: '/Sample1/blade22/blade22.html' },
-                    { title: 'blade1', bladePath: '/Sample1/blade1/blade1.html' },
+                    { title: 'Blade 2-1', bladePath: '/Sample1/blade21/blade21.html' },
+                    { title: 'Blade 1', bladePath: '/Sample1/blade1/blade1.html' },
                     { title: '', bladePath: '' },
                     { title: 'no path', bladePath: '' },
                 ]
             }
         };
         vm.blade.navGrid.navigateTo = navigateTo;
-        function navigateTo(id) {
-            bladeService.addBladePath(id);
+        function navigateTo(path) {
+            bladeService.clearLevel(2);
+            bladeService.addBladePath(path);
         }
         function dummy() { }
     }

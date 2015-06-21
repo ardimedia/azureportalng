@@ -18,80 +18,159 @@ var AzurePortalNg;
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 200; }
             _super.call(this, portalService);
-            //#region Chrome
-            this.title = '';
-            this.subTitle = '';
-            this.isInnerHtml = true;
-            this.width = { 'width': '100px' };
-            this.widthStackLayout = { 'width': '50px' };
-            //#endregion
-            //#region Statusbar
-            this.statusbar = '';
-            this.statusbarClass = '';
-            //#endregion
-            //#region Search
-            this.searchString = '';
-            //#endregion
-            //#region Grid
-            this.isNavGrid = false;
+            /** Obsolete */
             this.navGrid = {
                 portalService: null,
                 items: [],
-                navigateTo: function (path) {
-                    //this.portalService.bladeService.cle.clearLevel(2);
-                    this.portalService.bladeService.addBlade('', path);
-                }
+                navigateTo: function (path) { }
             };
+            this.title = '';
+            this.subTitle = '';
+            this.width = { 'width': '100px' };
+            this.widthStackLayout = { 'width': '50px' };
+            this.isInnerHtml = true;
+            this.statusbar = '';
+            this.statusbarClass = '';
+            this.searchString = '';
             //#endregion
             //#region Commands
+            this.isCommandBrowse = false;
+            this.commandBrowse = function () { this.onCommandBrowse(); };
+            this.commandBrowseText = '';
             this.isCommandCancel = false;
-            this.commandCancel = this.onCommandCancel;
+            this.commandCancel = function () { this.onCommandCancel(); };
             this.commandCancelText = '';
+            this.isCommandCopy = false;
+            this.commandCopy = function () { this.onCommandCopy(); };
+            this.commandCopyText = '';
             this.isCommandDelete = false;
-            this.commandDelete = this.onCommandDelete;
+            this.commandDelete = function () { this.onCommandDelete(); };
             this.commandDeleteText = '';
+            this.isCommandDocument = false;
+            this.commandDocument = function () { this.onCommandDocument(); };
+            this.commandDocumentText = '';
+            this.isCommandDocument2 = false;
+            this.commandDocument2 = function () { this.onCommandDocument2(); };
+            this.commandDocument2Text = '';
+            this.isCommandDocument3 = false;
+            this.commandDocument3 = function () { this.onCommandDocument3(); };
+            this.commandDocument3Text = '';
+            this.isCommandDocument4 = false;
+            this.commandDocument4 = function () { this.onCommandDocument4(); };
+            this.commandDocument4Text = '';
+            this.isCommandDocument5 = false;
+            this.commandDocument5 = function () { this.onCommandDocument5(); };
+            this.commandDocument5Text = '';
             this.isCommandNew = false;
             this.commandNew = function () { this.onCommandNew(); };
             this.commandNewText = '';
+            this.isCommandOrder = false;
+            this.commandOrder = function () { this.onCommandOrder(); };
+            this.commandOrderText = '';
+            this.isCommandRestart = false;
+            this.commandRestart = function () { this.onCommandRestart(); };
+            this.commandRestartText = '';
             this.isCommandSave = false;
-            this.commandSave = this.onCommandSave;
+            this.commandSave = function () { this.onCommandSave(); };
             this.commandSaveText = '';
+            this.isCommandSearch = false;
+            this.commandSearch = function () { this.onCommandSearch(); };
+            this.commandSearchText = '';
+            this.isCommandStart = false;
+            this.commandStart = function () { this.onCommandStart(); };
+            this.commandStartText = '';
+            this.isCommandStop = false;
+            this.commandStop = function () { this.onCommandStop(); };
+            this.commandStopText = '';
+            this.isCommandSwap = false;
+            this.commandSwap = function () { this.onCommandSwap(); };
+            this.commandSwapText = '';
+            this.navigateTo = function (path) {
+                AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, path]);
+                this.onNavigateTo(path);
+            };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' constructor called.', [this, portalService, path, title, subtitle, width]);
+            this.blade = this;
             this.path = path;
             this.title = title;
             this.subTitle = subtitle;
             this.width.width = width + 'px';
             this.widthStackLayout.width = width - 50 + 'px';
-            this.navGrid.navigateTo = this.onNavigateTo;
-            this.navGrid.portalService = this.portalService;
         }
         //#endregion
         //#region Methods
         //#region Commands
+        Blade.prototype.onCommandBrowse = function () {
+            throw new Error('[azureportalng] \'onCommandBrowse\' is an abstract function. Define one in the derived class.');
+        };
         Blade.prototype.onCommandCancel = function () {
             throw new Error('[azureportalng] \'onCommandCancel\' is an abstract function. Define one in the derived class.');
+        };
+        Blade.prototype.onCommandCopy = function () {
+            throw new Error('[azureportalng] \'onCommandCopy\' is an abstract function. Define one in the derived class.');
         };
         Blade.prototype.onCommandDelete = function () {
             throw new Error('[azureportalng] \'onCommandDelete\' is an abstract function. Define one in the derived class.');
         };
+        Blade.prototype.onCommandDocument = function () {
+            throw new Error('[azureportalng] \'onCommandDocument\' is an abstract function. Define one in the derived class.');
+        };
+        Blade.prototype.onCommandDocument2 = function () {
+            throw new Error('[azureportalng] \'onCommandDocument2\' is an abstract function. Define one in the derived class.');
+        };
+        Blade.prototype.onCommandDocument3 = function () {
+            throw new Error('[azureportalng] \'onCommandDocument3\' is an abstract function. Define one in the derived class.');
+        };
+        Blade.prototype.onCommandDocument4 = function () {
+            throw new Error('[azureportalng] \'onCommandDocument4\' is an abstract function. Define one in the derived class.');
+        };
+        Blade.prototype.onCommandDocument5 = function () {
+            throw new Error('[azureportalng] \'onCommandDocument5\' is an abstract function. Define one in the derived class.');
+        };
         Blade.prototype.onCommandNew = function () {
             throw new Error('[azureportalng] \'onCommandNew\' is an abstract function. Define one in the derived class.');
+        };
+        Blade.prototype.onCommandOrder = function () {
+            throw new Error('[azureportalng] \'onCommandOrder\' is an abstract function. Define one in the derived class.');
+        };
+        Blade.prototype.onCommandRestart = function () {
+            throw new Error('[azureportalng] \'onCommandRestart\' is an abstract function. Define one in the derived class.');
         };
         Blade.prototype.onCommandSave = function () {
             throw new Error('[azureportalng] \'onCommandSave\' is an abstract function. Define one in the derived class.');
         };
+        Blade.prototype.onCommandSearch = function () {
+            throw new Error('[azureportalng] \'onCommandSearch\' is an abstract function. Define one in the derived class.');
+        };
+        Blade.prototype.onCommandStart = function () {
+            throw new Error('[azureportalng] \'onCommandStart\' is an abstract function. Define one in the derived class.');
+        };
+        Blade.prototype.onCommandStop = function () {
+            throw new Error('[azureportalng] \'onCommandStop\' is an abstract function. Define one in the derived class.');
+        };
+        Blade.prototype.onCommandSwap = function () {
+            throw new Error('[azureportalng] \'onCommandSwap\' is an abstract function. Define one in the derived class.');
+        };
         //#endregion
-        Blade.prototype.initialize = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.initialize\' called.', [this]);
-            this.activate();
+        //#region Blade
+        Blade.prototype.activate = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.', [this]);
+            this.onActivate();
             this.setObsoleteLayoutProperites();
         };
-        Blade.prototype.activate = function () {
-            this.onActivate();
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.', [this]);
-        };
         Blade.prototype.onActivate = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden, you could override this.', [this]);
         };
+        Blade.prototype.onNavigateTo = function (path) {
+            throw new Error('[azureportalng] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
+        };
+        Blade.prototype.bladeClose = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.', [this]);
+            this.portalService.bladeArea.clearPath(this.path);
+        };
+        //#endregion
+        //#region OBSOLETE - can be removed when all html files have removed their references to 'blade'
+        /** Obsolete */
         Blade.prototype.setObsoleteLayoutProperites = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.setObsoleteLayoutProperites\' called.', [this]);
             this.blade.title = this.title;
@@ -101,17 +180,6 @@ var AzurePortalNg;
             this.blade.isCommandDelete = this.isCommandDelete;
             this.blade.isCommandNew = this.isCommandNew;
             this.blade.isCommandSave = this.isCommandSave;
-            this.blade.isNavGrid = this.isNavGrid;
-            this.blade.navGrid = this.navGrid;
-        };
-        Blade.prototype.onNavigateTo = function (path) {
-            throw new Error('[azureportalng] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
-            //this.portalService.bladeService.clearLevel(2);
-            //this.portalService.bladeService.addBladeOld(path);
-        };
-        Blade.prototype.bladeClose = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.', [this]);
-            this.portalService.bladeService.clear(this.path);
         };
         return Blade;
     })(AzurePortalNg.UserControlBase);

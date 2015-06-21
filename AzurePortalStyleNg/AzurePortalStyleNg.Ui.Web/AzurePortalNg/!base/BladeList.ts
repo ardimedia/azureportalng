@@ -16,8 +16,8 @@
 
         //#region Methods
 
-        activate(): angular.IHttpPromise<any> {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.activate\' called.', [this]);
+        onActivate(): angular.IHttpPromise<any> {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.onActivate\' called.', [this]);
             //var that = this;
 
             return super.getDataList()

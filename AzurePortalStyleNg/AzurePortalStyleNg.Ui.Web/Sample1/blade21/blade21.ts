@@ -2,23 +2,23 @@
     'use strict';
 
     angular.module('sampleapp')
-        .controller('blade22', ['$scope', '$http', 'bladeService', blade22]);
+        .controller('blade21', ['$scope', '$http', 'bladeService', blade21]);
 
-    function blade22($scope, $http, bladeService) {
+    function blade21($scope, $http, bladeService) {
         /* jshint validthis: true */
         var vm = this;
 
         vm.blade = {
-            title: 'Blade 22',
+            title: 'Blade 2-1',
             subTitle: 'Second Blade',
             isCommandDocument: true,
             commandDocument: dummy,
             isNavGrid: true,
-            statusbar: 'blade22-bar',
+            statusbar: 'status bar of Blade 2-1',
             navGrid: {
                 items: [
-                    { title: 'Menu 1', bladePath: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html' },
-                    { title: 'Menu 2', bladePath: '/AzurePortalNgSampleAmms/bergbahnenevent/blades/exportexcel/exportexcel.html', roles: 'lgtbc-admin' },
+                    { title: 'Menu 1', bladePath: '/Sample1/nav1/nav1.html' },
+                    { title: 'Menu 2', bladePath: '/Sample1/blade2/blade2.html' },
                     { title: '', bladePath: '' },
                     { title: 'no path', bladePath: '' },
                 ]
@@ -27,8 +27,8 @@
 
         vm.blade.navGrid.navigateTo = navigateTo;
 
-        function navigateTo(id) {
-            bladeService.addBladePath(id);
+        function navigateTo(path: string) {
+            bladeService.addBladePath(path);
         }
 
         function dummy() { }

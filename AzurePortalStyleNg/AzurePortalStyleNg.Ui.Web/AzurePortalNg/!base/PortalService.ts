@@ -7,16 +7,15 @@
 
         //#region Properties
 
-        /** PortalShell, containing xxx. */
-        portalShell: PortalShell;
+        // Visual components
+        portalShell: AzurePortalNg.PortalShell;
+        panorama: AzurePortalNg.Panorama;
+        bladeArea: AzurePortalNg.BladeArea;
 
-        /** Panorama, containing the Startboard and other visual elements. */
-        panorama: Panorama;
-
+        // Dialogs
         ngDialog: NgDialog.INgDialog;
 
-        /* Services */
-        bladeService: AzurePortalNg.BladeArea;
+        // Services
         $http: angular.IHttpService;
         $httpBackend: angular.IHttpBackendService;
         $injector: angular.auto.IInjectorService
@@ -25,11 +24,8 @@
         $rootScope: angular.IRootScopeService;
         $scope: angular.IScope;
 
-        //#region Setup Debugging
-
+        // Debugging
         debug: Debug = new Debug();
-
-        //#endregion
 
         //#endregion
 
@@ -37,28 +33,27 @@
 
         constructor($injector: angular.auto.IInjectorService) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [this, $injector]);
-            this.$injector = $injector;
 
+            this.$injector = $injector;
             this.$http = $injector.get('$http');
             this.$httpBackend = $injector.get('$httpBackend');
             this.$q = $injector.get('$q');
             this.$window = $injector.get('$window');
             this.$rootScope = $injector.get('$rootScope');
-            //this.$scope = $injector.get('$scope');
-            //this.ngDialog = $injector.get('ngDialog');
         }
 
         //#endregion
 
-        //#region Methods
+        ////#region Methods
 
-        initialize(portalShell: PortalShell) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService.initialize\' called.', [this, portalShell]);
-            this.portalShell = portalShell;
-            this.portalShell.setObsoleteLayoutProperites();
-        }
+        //initialize(portalShell: PortalShell) {
+        //    console.log('****************************');
+        //    AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService.initialize\' called.', [this, portalShell]);
+        //    this.portalShell = portalShell;
+        //    this.portalShell.setObsoleteLayoutProperites();
+        //}
 
-        //#endregion
+        ////#endregion
     }
 
     //#endregion
@@ -71,5 +66,4 @@
     })();
 
     //#endregion
-
 }
