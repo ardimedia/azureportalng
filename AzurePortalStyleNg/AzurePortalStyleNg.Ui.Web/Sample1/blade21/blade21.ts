@@ -1,36 +1,49 @@
-﻿(function () {
+﻿module Sample1 {
     'use strict';
 
-    angular.module('sampleapp')
-        .controller('blade21', ['$scope', '$http', 'bladeService', blade21]);
+    //#region Class Definition
 
-    function blade21($scope, $http, bladeService) {
-        /* jshint validthis: true */
-        var vm = this;
+    class Blade21 extends AzurePortalNg.BladeList {
 
-        vm.blade = {
-            title: 'Blade 2-1',
-            subTitle: 'Second Blade',
-            isCommandDocument: true,
-            commandDocument: dummy,
-            isNavGrid: true,
-            statusbar: 'status bar of Blade 2-1',
-            navGrid: {
-                items: [
-                    { title: 'Menu 1', bladePath: '/Sample1/nav1/nav1.html' },
-                    { title: 'Menu 2', bladePath: '/Sample1/blade2/blade2.html' },
-                    { title: '', bladePath: '' },
-                    { title: 'no path', bladePath: '' },
-                ]
-            }
-        };
+        //#region Constructors
 
-        vm.blade.navGrid.navigateTo = navigateTo;
+        constructor(portalService: AzurePortalNg.PortalService) {
+            super(portalService, '/Sample1/blade21/blade21.html', 'Blade 2-1', 'TypeScript based', 315);
 
-        function navigateTo(path: string) {
-            bladeService.addBladePath(path);
+            this.isCommandNew = true;
+            this.commandNewText = 'Blade 2';
+
+            this.statusbar = 'Blade 2-1...';
         }
 
-        function dummy() { }
+        //#endregion
+
+        //#region Methods - Overrides for Blade
+
+        protected onCommandNew(): void {
+            this.portalService.bladeArea.addBlade(this.path, '/Sample1/blade2/blade2.html');
+        }
+
+        //#endregion
+
+        //#region Data Access
+
+        protected onGetDataList(): angular.IHttpPromise<any> {
+            return this.portalService.$http({ method: 'GET', url: '/customers' });
+        }
+
+        //#endregion
     }
-})();
+
+    //#endregion
+
+    //#region Angular Registration
+
+    (function () {
+        'use strict';
+        angular.module('sampleapp').controller('blade21', ['azurePortalNg.portalService', Blade21]);
+    })();
+
+    //#endregion
+
+}

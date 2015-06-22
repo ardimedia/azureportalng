@@ -79,10 +79,10 @@
 
         //#region Methods
 
-
         setFirstBlade(path: string): Blade {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.setFirstBlade\' called.', [this, path]);
             this.clearAll();
+            this.portalService.panorama.isVisible = false;
             return this.addBlade('', path);
         }
 
@@ -102,7 +102,7 @@
 
             this.blades.forEach(function (blade) {
                 if (blade.path === path) {
-                    throw new Error('[azureportalng] path: \'' + path + '\' could not be added. It is allready add.');
+                    throw new Error('[azureportalng] path: \'' + path + '\' could not be added. It is already add.');
                 };
             });
 
@@ -128,9 +128,11 @@
         clearAll(): void {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearAll\' called.', [this]);
             this.blades.length = 0;
+            this.showPanorama();
         }
 
         clearPath(path: string): void {
+            console.log(this);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearPath\' called.', [this, path]);
             var that = this;
             var isremoved = that.blades.some(function (blade, index) {
@@ -144,16 +146,20 @@
                 AzurePortalNg.Debug.write('>>> bladeUrls:', [that.blades]);
                 throw new Error('[azureportalng] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
             }
+            this.showPanorama();
         }
 
         clearLevel(level: number) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearLevel\' called.', [this, level]);
             if (level == 0) { level = 1; }
             this.blades.length = level - 1;
+            this.showPanorama();
         }
 
         clearLastLevel() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearLastLevel\' called.', [this]);
             this.clearLevel(this.blades.length);
+            this.showPanorama();
         }
 
         protected clearChild(path: string): void {
@@ -177,6 +183,11 @@
             }
         }
 
+        protected showPanorama() {
+            if (this.blades.length === 0) {
+                this.portalService.panorama.isVisible = true;
+            }
+        }
         //#endregion
 
         //#region OBSOLETE

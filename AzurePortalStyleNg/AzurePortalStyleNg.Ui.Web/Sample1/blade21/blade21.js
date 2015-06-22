@@ -1,31 +1,39 @@
-(function () {
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var Sample1;
+(function (Sample1) {
     'use strict';
-    angular.module('sampleapp')
-        .controller('blade21', ['$scope', '$http', 'bladeService', blade21]);
-    function blade21($scope, $http, bladeService) {
-        /* jshint validthis: true */
-        var vm = this;
-        vm.blade = {
-            title: 'Blade 2-1',
-            subTitle: 'Second Blade',
-            isCommandDocument: true,
-            commandDocument: dummy,
-            isNavGrid: true,
-            statusbar: 'status bar of Blade 2-1',
-            navGrid: {
-                items: [
-                    { title: 'Menu 1', bladePath: '/Sample1/nav1/nav1.html' },
-                    { title: 'Menu 2', bladePath: '/Sample1/blade2/blade2.html' },
-                    { title: '', bladePath: '' },
-                    { title: 'no path', bladePath: '' },
-                ]
-            }
-        };
-        vm.blade.navGrid.navigateTo = navigateTo;
-        function navigateTo(path) {
-            bladeService.addBladePath(path);
+    //#region Class Definition
+    var Blade21 = (function (_super) {
+        __extends(Blade21, _super);
+        //#region Constructors
+        function Blade21(portalService) {
+            _super.call(this, portalService, '/Sample1/blade21/blade21.html', 'Blade 2-1', 'TypeScript based', 315);
+            this.isCommandNew = true;
+            this.commandNewText = 'Blade 2';
+            this.statusbar = 'Blade 2-1...';
         }
-        function dummy() { }
-    }
-})();
+        //#endregion
+        //#region Methods - Overrides for Blade
+        Blade21.prototype.onCommandNew = function () {
+            this.portalService.bladeArea.addBlade(this.path, '/Sample1/blade2/blade2.html');
+        };
+        //#endregion
+        //#region Data Access
+        Blade21.prototype.onGetDataList = function () {
+            return this.portalService.$http({ method: 'GET', url: '/customers' });
+        };
+        return Blade21;
+    })(AzurePortalNg.BladeList);
+    //#endregion
+    //#region Angular Registration
+    (function () {
+        'use strict';
+        angular.module('sampleapp').controller('blade21', ['azurePortalNg.portalService', Blade21]);
+    })();
+})(Sample1 || (Sample1 = {}));
 //# sourceMappingURL=blade21.js.map

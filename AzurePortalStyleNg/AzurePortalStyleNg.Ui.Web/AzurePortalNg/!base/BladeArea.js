@@ -48,6 +48,7 @@ var AzurePortalNg;
         BladeArea.prototype.setFirstBlade = function (path) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.setFirstBlade\' called.', [this, path]);
             this.clearAll();
+            this.portalService.panorama.isVisible = false;
             return this.addBlade('', path);
         };
         BladeArea.prototype.addBlade = function (senderPath, path) {
@@ -66,7 +67,7 @@ var AzurePortalNg;
             this.clearChild(senderPath);
             this.blades.forEach(function (blade) {
                 if (blade.path === path) {
-                    throw new Error('[azureportalng] path: \'' + path + '\' could not be added. It is allready add.');
+                    throw new Error('[azureportalng] path: \'' + path + '\' could not be added. It is already add.');
                 }
                 ;
             });
@@ -87,8 +88,10 @@ var AzurePortalNg;
         BladeArea.prototype.clearAll = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearAll\' called.', [this]);
             this.blades.length = 0;
+            this.showPanorama();
         };
         BladeArea.prototype.clearPath = function (path) {
+            console.log(this);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearPath\' called.', [this, path]);
             var that = this;
             var isremoved = that.blades.some(function (blade, index) {
@@ -102,6 +105,7 @@ var AzurePortalNg;
                 AzurePortalNg.Debug.write('>>> bladeUrls:', [that.blades]);
                 throw new Error('[azureportalng] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
             }
+            this.showPanorama();
         };
         BladeArea.prototype.clearLevel = function (level) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearLevel\' called.', [this, level]);
@@ -109,9 +113,12 @@ var AzurePortalNg;
                 level = 1;
             }
             this.blades.length = level - 1;
+            this.showPanorama();
         };
         BladeArea.prototype.clearLastLevel = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearLastLevel\' called.', [this]);
             this.clearLevel(this.blades.length);
+            this.showPanorama();
         };
         BladeArea.prototype.clearChild = function (path) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearChild\' called.', [this, path]);
@@ -130,6 +137,11 @@ var AzurePortalNg;
             if (!isremoved) {
                 AzurePortalNg.Debug.write('>>> bladeUrls:', [that.blades]);
                 throw new Error('[azureportalng] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
+            }
+        };
+        BladeArea.prototype.showPanorama = function () {
+            if (this.blades.length === 0) {
+                this.portalService.panorama.isVisible = true;
             }
         };
         //#endregion

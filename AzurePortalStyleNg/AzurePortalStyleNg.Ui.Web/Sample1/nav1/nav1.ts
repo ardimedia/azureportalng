@@ -1,41 +1,41 @@
-﻿//#region Class Definition
-
-class Nav1 extends AzurePortalNg.BladeNav {
-
-    //#region Constructors
-
-    constructor(portalService: AzurePortalNg.PortalService) {
-        super(portalService, '/Sample1/nav1/nav1.html', 'Navigation 1', 'Sample 1', 315);
-        AzurePortalNg.Debug.write('[sample1-debug] \'Nav1\' constructor called.', [this]);
-
-        this.navItems = [
-            new AzurePortalNg.BladeNavItem('Blade 1', '/Sample1/blade1/blade1.html', ''),
-            new AzurePortalNg.BladeNavItem('Blade 2', '/Sample1/blade2/blade2.html', ''),
-        ];
-
-        this.activate();
-    }
-
-    //#endregion
-
-    //#region Methods
-
-    //onNavigateTo(path: string) {
-    //    AzurePortalNg.Debug.write('[sample1-debug] \'Nav1.onNavigateTo\' called.', [this, path]);
-    //    //this.portalService.bladeService.clearLevel(2);
-    //    //this.portalService.bladeService.addBladeOld(path);
-    //}
-
-    //#endregion
-}
-
-//#endregion
-
-//#region Angular Registration
-
-(function () {
+﻿(function () {
     'use strict';
-    angular.module('sampleapp').controller('nav1', ['azurePortalNg.portalService', Nav1]);
-})();
 
-//#endregion
+    angular.module('sampleapp').controller('nav1', ['$scope', '$http', 'bladeService', nav1]);
+
+    function nav1($scope, $http, bladeService) {
+        /* jshint validthis: true */
+        var vm = this;
+
+        vm.blade = {
+            title: 'Navigation 1',
+            subTitle: 'JavaScript based',
+            isNavGrid: true,
+            statusbar: 'Nav 1...',
+            navGrid: {
+                items: [
+                    { title: 'Navigation 1', bladePath: '/Sample1/nav1/nav1.html' },
+                    { title: 'Navigation 2', bladePath: '/Sample1/nav2/nav2.html' },
+                    { title: 'Blade 1', bladePath: '/Sample1/blade1/blade1.html' },
+                    { title: 'Blade 1-1', bladePath: '/Sample1/blade11/blade11.html' },
+                    { title: 'Blade 2', bladePath: '/Sample1/blade2/blade2.html' },
+                    { title: 'Blade 2-1', bladePath: '/Sample1/blade21/blade21.html' },
+                    { title: 'List 1', bladePath: '/Sample1/list1/list1.html' },
+                    { title: 'Detail 1', bladePath: '/Sample1/detail1/detail1.html' },
+                    {}, // empty line
+                    { title: 'no path' }, // line with not link
+                    { title: 'go to microsoft.com', hrefPath: 'http://www.microsoft.com' }, // line with external link
+                ]
+            }
+        };
+
+        vm.blade.navGrid.navigateTo = navigateTo;
+
+        function navigateTo(path: string) {
+            bladeService.clearLevel(2);
+            bladeService.addBladePath(path);
+        }
+
+        function dummy() { }
+    }
+})();

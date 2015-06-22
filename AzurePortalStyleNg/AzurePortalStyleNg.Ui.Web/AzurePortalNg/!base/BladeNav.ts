@@ -45,7 +45,7 @@
 
         //#region Constructor
 
-        constructor(public title: string, public bladePath: string, public hrefPath: string = "", public roles: string = "", public isVisible: boolean = true) {
+        constructor(public title: string = '', public bladePath: string = '', public hrefPath: string = "", public roles: string = "", public isVisible: boolean = true) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeNavItem\' constructor called.', [this, title, bladePath, hrefPath, roles, isVisible]);
         }
 

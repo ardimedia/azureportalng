@@ -49,7 +49,7 @@ var AzurePortalNg;
         //#endregion
         //#region Methods
         Tile.prototype.clicked = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'clicked\' called.', [this]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Tile.clicked\' called.', [this]);
             var blade = this.portalService.bladeArea.setFirstBlade(this.bladePath);
             blade.activate();
         };

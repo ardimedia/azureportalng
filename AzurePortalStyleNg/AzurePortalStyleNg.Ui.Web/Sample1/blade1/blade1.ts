@@ -1,59 +1,38 @@
-﻿module Sample1 {
+﻿(function () {
     'use strict';
 
-    //#region Class Definition
+    angular.module('sampleapp').controller('blade1', ['$scope', '$http', 'bladeService', blade1]);
 
-    class Blade1 extends AzurePortalNg.BladeList {
+    function blade1($scope, $http, bladeService) {
+        /* jshint validthis: true */
+        var vm = this;
 
-        //#region Properties
+        vm.blade = {
+            title: 'Blade 1',
+            subTitle: 'JavaScript based',
+            isCommandDocument: true,
+            commandDocument: onCommandDocument,
+            commandDocumentText: 'Blade 1-1',
+            isNavGrid: true,
+            statusbar: 'Blade 1...',
+            navGrid: {
+                items: [
+                    { title: 'Navigation 1', bladePath: '/Sample1/nav1/nav1.html' },
+                    { title: 'Blade 2', bladePath: '/Sample1/blade2/blade2.html' },
+                    { title: '', bladePath: '' },
+                    { title: 'no path', bladePath: '' },
+                ]
+            }
+        };
 
-        //#endregion
+        vm.blade.navGrid.navigateTo = navigateTo;
 
-        //#region Constructors
-
-        constructor(portalService: AzurePortalNg.PortalService) {
-            super(portalService, '/Sample1/blade1/blade1.html', 'Blade-1', 'subtitle', 315);
-
-            this.isCommandNew = true;
-            this.commandNewText = 'Blade-11';
-            this.isCommandSave = true;
-            this.commandSaveText = 'Blade-2';
-
-            this.activate();
+        function navigateTo(path: string) {
+            bladeService.addBladePath(path);
         }
 
-        //#endregion
-
-        //#region Methods - Overrides for Blade
-
-        protected onCommandNew(): void {
-            this.portalService.bladeArea.addBlade(this.path, '/Sample1/blade11/blade11.html');
+        function onCommandDocument() {
+            bladeService.addBladePath('/Sample1/blade11/blade11.html');
         }
-
-        protected onCommandSave(): void {
-            this.portalService.bladeArea.addBlade(this.path, '/Sample1/blade2/blade2.html');
-        }
-
-        //#endregion
-
-        //#region Data Access
-
-        protected onGetDataList(): angular.IHttpPromise<any> {
-            return this.portalService.$http({ method: 'GET', url: '/customers' });
-        }
-
-        //#endregion
     }
-
-    //#endregion
-
-    //#region Angular Registration
-
-    (function () {
-        'use strict';
-        angular.module('sampleapp').controller('blade1', ['azurePortalNg.portalService', Blade1]);
-    })();
-
-    //#endregion
-
-}
+})();

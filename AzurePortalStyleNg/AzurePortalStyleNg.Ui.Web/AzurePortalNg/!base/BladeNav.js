@@ -40,6 +40,8 @@ var AzurePortalNg;
     var BladeNavItem = (function () {
         //#region Constructor
         function BladeNavItem(title, bladePath, hrefPath, roles, isVisible) {
+            if (title === void 0) { title = ''; }
+            if (bladePath === void 0) { bladePath = ''; }
             if (hrefPath === void 0) { hrefPath = ""; }
             if (roles === void 0) { roles = ""; }
             if (isVisible === void 0) { isVisible = true; }

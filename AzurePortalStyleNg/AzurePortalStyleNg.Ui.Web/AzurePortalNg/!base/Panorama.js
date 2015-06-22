@@ -14,6 +14,7 @@ var AzurePortalNg;
         //#region Constructors
         function Panorama(title, portalService) {
             _super.call(this, portalService);
+            this.isVisible = true;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Panorama\' constructor called.', [this, title]);
             this.title = title;
             this.portalService.panorama = this;

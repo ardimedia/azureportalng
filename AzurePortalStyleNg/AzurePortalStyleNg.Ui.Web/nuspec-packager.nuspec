@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>AzurePortalStyleNg</id>
-    <version>0.1.30-beta</version>
+    <version>0.1.33-beta</version>
     <authors>Harry Pfleger - Infoware</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Framework for building web sites based on the Azure Portal Layout.</description>
@@ -18,18 +18,6 @@
     <file src="AzurePortalNg\azureportalng.js" target="content\Scripts\AzurePortalNg\azureportalng.js" />
     <file src="AzurePortalNg\azureportalng.js.map" target="content\Scripts\AzurePortalNg\azureportalng.js.map" />
 
-    <file src="AzurePortalNg\portal\!directives\blade\blade.html" target="content\AzurePortalNg\portal\!directives\blade\blade.html" />
-    <file src="AzurePortalNg\portal\!directives\blade\blade.js" target="content\Scripts\AzurePortalNg\portal\!directives\blade\blade.js" />
-    <file src="AzurePortalNg\portal\!directives\blade\blade.js.map" target="contentScript\\AzurePortalNg\portal\!directives\blade\blade.js.map" />
-    <file src="AzurePortalNg\portal\!directives\home\home.html" target="content\AzurePortalNg\portal\!directives\home\home.html" />
-    <file src="AzurePortalNg\portal\!directives\home\home.js" target="content\Scripts\AzurePortalNg\portal\!directives\home\home.js" />
-    <file src="AzurePortalNg\portal\!directives\home\home.js.map" target="content\Scripts\AzurePortalNg\portal\!directives\home\home.js.map" />
-    <file src="AzurePortalNg\portal\!directives\navgrid\navgrid.html" target="content\AzurePortalNg\portal\!directives\navgrid\navgrid.html" />
-    <file src="AzurePortalNg\portal\!directives\navgrid\navgrid.js" target="content\Scripts\AzurePortalNg\portal\!directives\navgrid\navgrid.js" />
-    <file src="AzurePortalNg\portal\!directives\navgrid\navgrid.js.map" target="content\Scripts\AzurePortalNg\portal\!directives\navgrid\navgrid.js.map" />
-    <file src="AzurePortalNg\portal\!services\bladeService.js" target="content\Scripts\AzurePortalNg\portal\!services\bladeService.js" />
-    <file src="AzurePortalNg\portal\!services\bladeService.js.map" target="content\Scripts\AzurePortalNg\portal\!services\bladeService.js.map" />
-
     <file src="AzurePortalNg\!base\avatarMenu.ts" target="content\Scripts\AzurePortalNg\!base\avatarMenu.ts"></file>
     <file src="AzurePortalNg\!base\avatarMenu.js" target="content\Scripts\AzurePortalNg\!base\avatarMenu.js"></file>
 
@@ -43,6 +31,8 @@
     <file src="AzurePortalNg\!base\bladeDetail.js" target="content\Scripts\AzurePortalNg\!base\bladeDetail.js"></file>
     <file src="AzurePortalNg\!base\bladeList.ts" target="content\Scripts\AzurePortalNg\!base\bladeList.ts"></file>
     <file src="AzurePortalNg\!base\bladeList.js" target="content\Scripts\AzurePortalNg\!base\bladeList.js"></file>
+    <file src="AzurePortalNg\!base\bladeNav.ts" target="content\Scripts\AzurePortalNg\!base\bladeNav.ts"></file>
+    <file src="AzurePortalNg\!base\bladeNav.js" target="content\Scripts\AzurePortalNg\!base\bladeNav.js"></file>
 
     <file src="AzurePortalNg\!base\debug.ts" target="content\Scripts\AzurePortalNg\!base\debug.ts"></file>
     <file src="AzurePortalNg\!base\debug.js" target="content\Scripts\AzurePortalNg\!base\debug.js"></file>
@@ -69,6 +59,21 @@
 
     <file src="AzurePortalNg\!directives\dialog\dialog.js" target="content\Scripts\AzurePortalNg\!directives\dialog\dialog.js" />
     <file src="AzurePortalNg\!directives\dialog\dialog.js.map" target="content\Scripts\AzurePortalNg\!directives\dialog\dialog.js.map" />
+
+    <file src="AzurePortalNg\portal\!directives\blade\blade.html" target="content\AzurePortalNg\portal\!directives\blade\blade.html" />
+    <file src="AzurePortalNg\portal\!directives\blade\blade.js" target="content\Scripts\AzurePortalNg\portal\!directives\blade\blade.js" />
+    <file src="AzurePortalNg\portal\!directives\blade\blade.js.map" target="contentScript\\AzurePortalNg\portal\!directives\blade\blade.js.map" />
+    <file src="AzurePortalNg\portal\!directives\home\home.html" target="content\AzurePortalNg\portal\!directives\home\home.html" />
+    <file src="AzurePortalNg\portal\!directives\home\home.js" target="content\Scripts\AzurePortalNg\portal\!directives\home\home.js" />
+    <file src="AzurePortalNg\portal\!directives\home\home.js.map" target="content\Scripts\AzurePortalNg\portal\!directives\home\home.js.map" />
+    <file src="AzurePortalNg\portal\!directives\nav\nav.html" target="content\AzurePortalNg\portal\!directives\nav\nav.html" />
+    <file src="AzurePortalNg\portal\!directives\nav\nav.js" target="content\Scripts\AzurePortalNg\portal\!directives\nav\nav.js" />
+    <file src="AzurePortalNg\portal\!directives\nav\nav.js.map" target="content\Scripts\AzurePortalNg\portal\!directives\nav\nav.js.map" />
+    <file src="AzurePortalNg\portal\!directives\navgrid\navgrid.html" target="content\AzurePortalNg\portal\!directives\navgrid\navgrid.html" />
+    <file src="AzurePortalNg\portal\!directives\navgrid\navgrid.js" target="content\Scripts\AzurePortalNg\portal\!directives\navgrid\navgrid.js" />
+    <file src="AzurePortalNg\portal\!directives\navgrid\navgrid.js.map" target="content\Scripts\AzurePortalNg\portal\!directives\navgrid\navgrid.js.map" />
+    <!--<file src="AzurePortalNg\portal\!services\bladeService.js" target="content\Scripts\AzurePortalNg\portal\!services\bladeService.js" />-->
+    <!--<file src="AzurePortalNg\portal\!services\bladeService.js.map" target="content\Scripts\AzurePortalNg\portal\!services\bladeService.js.map" />-->
 
     <file src="Scripts\typings\ngdialog\ngdialog.d.ts" target="content\Scripts\typings\ngdialog\ngdialog.d.ts" />
 

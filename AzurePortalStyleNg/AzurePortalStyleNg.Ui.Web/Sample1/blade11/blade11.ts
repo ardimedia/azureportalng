@@ -12,12 +12,12 @@
         //#region Constructors
 
         constructor(portalService: AzurePortalNg.PortalService) {
-            super(portalService, '/Sample1/blade11/blade11.html', 'Blade-11', 'subtitle', 315);
+            super(portalService, '/Sample1/blade11/blade11.html', 'Blade 1-1', 'TypeScript based', 315);
 
             this.isCommandNew = true;
+            this.commandNewText = 'Blade 2';
 
-            this.activate();
-            this.setObsoleteLayoutProperites();
+            this.statusbar = 'Blade 1-1...';
         }
 
         //#endregion

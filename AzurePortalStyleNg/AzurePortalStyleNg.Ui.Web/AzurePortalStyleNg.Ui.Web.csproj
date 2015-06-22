@@ -156,12 +156,15 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="Properties\PublishProfiles\TEMP.pubxml" />
-    <Content Include="Sample1\blade11\blade11.html" />
     <Content Include="Sample1\blade21\blade21.html" />
-    <Content Include="Sample1\blade2\blade2.html" />
+    <Content Include="Sample1\blade11\blade11.html" />
     <Content Include="Sample1\blade1\blade1.html" />
-    <Content Include="Sample1\index.html" />
+    <Content Include="Sample1\detail1\detail1.html" />
+    <Content Include="Sample1\list1\list1.html" />
     <Content Include="Sample1\nav1\nav1.html" />
+    <Content Include="Sample1\blade2\blade2.html" />
+    <Content Include="Sample1\index.html" />
+    <Content Include="Sample1\nav2\nav2.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -171,6 +174,8 @@
     <Content Include="Scripts\angular-csp.css" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
+    <Content Include="Scripts\angular-message-format.js" />
+    <Content Include="Scripts\angular-message-format.min.js" />
     <Content Include="Scripts\angular-messages.js" />
     <Content Include="Scripts\angular-messages.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -935,6 +940,7 @@
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\angular-resource.min.js.map" />
     <Content Include="Scripts\angular-messages.min.js.map" />
+    <Content Include="Scripts\angular-message-format.min.js.map" />
     <Content Include="Scripts\angular-loader.min.js.map" />
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
@@ -960,9 +966,11 @@
     <TypeScriptCompile Include="AzurePortalNg\!base\Debug.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\nav\nav.ts" />
     <TypeScriptCompile Include="Sample1\!data\Customer.ts" />
+    <TypeScriptCompile Include="Sample1\blade21\blade21.ts" />
+    <TypeScriptCompile Include="Sample1\blade21\blade21blade.ts" />
     <TypeScriptCompile Include="Sample1\blade11\blade11.ts" />
     <TypeScriptCompile Include="Sample1\blade11\blade11blade.ts" />
-    <TypeScriptCompile Include="Sample1\blade1\blade1blade.ts" />
+    <TypeScriptCompile Include="Sample1\blade2\blade2blade.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!baseservice\DataService.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!baseservice\lgtbcDataService.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!baseservice\TypeLite.Net4.d.ts" />
@@ -983,10 +991,14 @@
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\home\home.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\navgrid\navgrid.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!services\bladeService.ts" />
-    <TypeScriptCompile Include="Sample1\blade21\blade21.ts" />
-    <TypeScriptCompile Include="Sample1\blade2\blade2.ts" />
     <TypeScriptCompile Include="Sample1\blade1\blade1.ts" />
+    <TypeScriptCompile Include="Sample1\detail1\detail1.ts" />
+    <TypeScriptCompile Include="Sample1\detail1\detail1blade.ts" />
+    <TypeScriptCompile Include="Sample1\list1\list1.ts" />
+    <TypeScriptCompile Include="Sample1\list1\list1blade.ts" />
     <TypeScriptCompile Include="Sample1\nav1\nav1.ts" />
+    <TypeScriptCompile Include="Sample1\blade2\blade2.ts" />
+    <TypeScriptCompile Include="Sample1\nav2\nav2.ts" />
     <TypeScriptCompile Include="Sample1\sampleApp.ts" />
     <TypeScriptCompile Include="Sample1\sampleShell.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />

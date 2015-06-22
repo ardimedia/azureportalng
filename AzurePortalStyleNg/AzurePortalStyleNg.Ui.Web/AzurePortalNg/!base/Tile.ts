@@ -83,7 +83,7 @@
         //#region Methods
 
         clicked() {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'clicked\' called.', [this]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Tile.clicked\' called.', [this]);
             var blade = <Blade>this.portalService.bladeArea.setFirstBlade(this.bladePath);
             blade.activate();
         }

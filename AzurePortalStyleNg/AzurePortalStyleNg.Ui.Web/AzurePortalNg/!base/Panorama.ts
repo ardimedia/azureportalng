@@ -8,6 +8,7 @@
         //#region Properties
 
         title: string;
+        isVisible: boolean = true;
 
         avatarMenu: AvatarMenu;
         startboard: Startboard;

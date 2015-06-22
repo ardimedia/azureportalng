@@ -2,7 +2,7 @@
     <div class="fxs-portal-top-bar fxs-portal-appbar"></div>
     <div id="azureportalscroll" class="fxs-portal-content fxs-panorama">
 
-        <div class="fxs-panorama-homearea" ng-class="{collapsed: !vm.portalService.panorama.startboard.tiles.showTiles}">
+        <div class="fxs-panorama-homearea" ng-class="{collapsed: !vm.portalService.panorama.startboard.tiles.showTiles}" ng-show="vm.portalService.panorama.isVisible">
             <header class="fxs-pannable" ng-class="{collapsed: !vm.portalService.panorama.startboard.tiles.showTiles}">
                 <h1 class="fxs-panorama-title fxs-pannable">{{vm.title}}</h1>
                 <div class="fxs-avatarmenu-target fxs-avatarmenu" ng-class="{collapsed: !vm.portalService.panorama.startboard.tiles.showTiles}">

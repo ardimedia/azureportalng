@@ -14,10 +14,10 @@ var Sample1;
         //#endregion
         //#region Constructors
         function Blade11(portalService) {
-            _super.call(this, portalService, '/Sample1/blade11/blade11.html', 'Blade-11', 'subtitle', 315);
+            _super.call(this, portalService, '/Sample1/blade11/blade11.html', 'Blade 1-1', 'TypeScript based', 315);
             this.isCommandNew = true;
-            this.activate();
-            this.setObsoleteLayoutProperites();
+            this.commandNewText = 'Blade 2';
+            this.statusbar = 'Blade 1-1...';
         }
         //#endregion
         //#region Methods - Overrides for Blade
