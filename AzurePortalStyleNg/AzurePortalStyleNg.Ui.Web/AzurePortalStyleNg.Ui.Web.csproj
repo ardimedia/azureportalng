@@ -97,6 +97,7 @@
       <DependentUpon>portallayout.css</DependentUpon>
     </Content>
     <Content Include="!Readme.txt" />
+    <Content Include="!Tests\BladeListTest.html" />
     <Content Include="AzurePortalNg\!directives\dialog\!Readme.txt" />
     <Content Include="AzurePortalNg\!directives\dialog\dialog.js" />
     <Content Include="AzurePortalNg\!directives\dialog\style.css">
@@ -960,6 +961,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="!Tests\BladeListTest.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\BladeNav.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\UserControlBase.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\BladeArea.ts" />

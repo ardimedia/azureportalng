@@ -132,7 +132,6 @@
         }
 
         clearPath(path: string): void {
-            console.log(this);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearPath\' called.', [this, path]);
             var that = this;
             var isremoved = that.blades.some(function (blade, index) {

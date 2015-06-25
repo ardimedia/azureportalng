@@ -10,22 +10,26 @@
         constructor(portalService: AzurePortalNg.PortalService) {
             super(portalService, '/Sample1/list1/list1.html', 'List-1', 'TypeScript based', 315);
 
-            this.isCommandNew = true;
-            this.commandNewText = 'Detail-1';
+            //this.isCommandNew = true;
+            //this.commandNewText = 'Detail-1';
 
             this.statusbar = 'List-1...';
 
             this.activate();
-            console.log(this);
         }
 
         //#endregion
 
         //#region Methods - Overrides for Blade
 
-        protected onCommandNew(): void {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'List1.onCommandNew\' called.', [this]);
+        onCommandNew(): void {
+            AzurePortalNg.Debug.write('[sample1-debug] \'List1.onCommandNew\' called.', [this]);
             this.portalService.bladeArea.addBlade(this.path, '/Sample1/detail1/detail1.html');
+        }
+
+        onNavigateTo(id: number) {
+            AzurePortalNg.Debug.write('[sample1-debug] \'List1.onNavigateTo\' called.', [this, id]);
+            console.log(id);
         }
 
         //#endregion
@@ -50,5 +54,4 @@
     })();
 
     //#endregion
-
 }

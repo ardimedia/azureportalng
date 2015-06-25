@@ -32,8 +32,10 @@ var Sample1;
         //#region Methods
         SampleShell.prototype.httpTestData = function () {
             var customers = new Array();
-            customers.push(new Sample1.Customer('Harry', 'Lewis'));
-            customers.push(new Sample1.Customer('Eva', 'Barker'));
+            customers.push(new Sample1.Customer(1001, 'Harry', 'Sleeper'));
+            customers.push(new Sample1.Customer(1002, 'Eva', 'Cooker'));
+            customers.push(new Sample1.Customer(1003, 'Niklas', 'Soccer'));
+            customers.push(new Sample1.Customer(1004, 'Julia', 'Singer'));
             this.portalService.$httpBackend.whenGET(/\/AzurePortalNg\/.*/).passThrough();
             this.portalService.$httpBackend.whenGET(/\/Sample1\/.*/).passThrough();
             this.portalService.$httpBackend.whenGET('/customers')

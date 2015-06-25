@@ -47,7 +47,6 @@
         ////#region Methods
 
         //initialize(portalShell: PortalShell) {
-        //    console.log('****************************');
         //    AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService.initialize\' called.', [this, portalShell]);
         //    this.portalShell = portalShell;
         //    this.portalShell.setObsoleteLayoutProperites();

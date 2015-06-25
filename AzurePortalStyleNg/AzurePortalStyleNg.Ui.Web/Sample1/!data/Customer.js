@@ -3,7 +3,8 @@ var Sample1;
     'use strict';
     //#region Class Definition
     var Customer = (function () {
-        function Customer(firstName, lastName) {
+        function Customer(customerPkId, firstName, lastName) {
+            this.customerPkId = customerPkId;
             this.firstName = firstName;
             this.lastName = lastName;
         }

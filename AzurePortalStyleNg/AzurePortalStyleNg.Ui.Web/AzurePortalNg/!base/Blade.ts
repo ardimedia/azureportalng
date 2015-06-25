@@ -217,12 +217,12 @@
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden, you could override this.', [this]);
         }
 
-        navigateTo = function (path: string) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, path]);
-            this.onNavigateTo(path);
+        navigateTo = function (pathOrId: string|number) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, pathOrId]);
+            this.onNavigateTo(pathOrId);
         }
 
-        onNavigateTo(path: string): void {
+        onNavigateTo(pathOrId: string|number): void {
             throw new Error('[azureportalng] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
         }
 

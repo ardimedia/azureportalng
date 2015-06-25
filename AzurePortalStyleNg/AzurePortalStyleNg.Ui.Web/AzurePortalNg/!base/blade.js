@@ -85,9 +85,9 @@ var AzurePortalNg;
             this.isCommandSwap = false;
             this.commandSwap = function () { this.onCommandSwap(); };
             this.commandSwapText = '';
-            this.navigateTo = function (path) {
-                AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, path]);
-                this.onNavigateTo(path);
+            this.navigateTo = function (pathOrId) {
+                AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, pathOrId]);
+                this.onNavigateTo(pathOrId);
             };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' constructor called.', [this, portalService, path, title, subtitle, width]);
             this.blade = this;
@@ -161,7 +161,7 @@ var AzurePortalNg;
         Blade.prototype.onActivate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden, you could override this.', [this]);
         };
-        Blade.prototype.onNavigateTo = function (path) {
+        Blade.prototype.onNavigateTo = function (pathOrId) {
             throw new Error('[azureportalng] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
         };
         Blade.prototype.bladeClose = function () {

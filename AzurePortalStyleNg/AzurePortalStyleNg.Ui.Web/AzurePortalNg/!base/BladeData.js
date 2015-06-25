@@ -31,11 +31,11 @@ var AzurePortalNg;
                 that.items = data;
                 that.statusbar = '';
                 that.statusbarClass = '';
-                that.setObsoleteLayoutProperites();
+                //that.setObsoleteLayoutProperites();
             }).error(function (data, status, headers, config) {
                 that.statusbar = 'FEHLER: ' + data;
                 that.statusbarClass = 'message-info message-off';
-                that.setObsoleteLayoutProperites();
+                //that.setObsoleteLayoutProperites();
             });
         };
         BladeData.prototype.onGetDataList = function () {
@@ -43,7 +43,7 @@ var AzurePortalNg;
         };
         //#endregion
         BladeData.prototype.setObsoleteLayoutProperites = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.setObsoleteLayoutProperites\' called.', [this]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.setObsoleteLayoutProperites\' called.', [this]);
             if (this.items.length !== 0) {
                 this.blade.navGrid.items = this.items; //--> do not uncomment, otherwise nav html pages will no longer work.
             }
