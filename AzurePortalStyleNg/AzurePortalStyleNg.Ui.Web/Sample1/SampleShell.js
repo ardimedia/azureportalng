@@ -50,3 +50,4 @@ var Sample1;
         angular.module('sampleapp').controller('sampleShell', ['azurePortalNg.portalService', SampleShell]);
     })();
 })(Sample1 || (Sample1 = {}));
+//# sourceMappingURL=sampleShell.js.map

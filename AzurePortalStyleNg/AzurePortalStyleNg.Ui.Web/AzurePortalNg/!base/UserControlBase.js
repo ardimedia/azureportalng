@@ -13,3 +13,4 @@ var AzurePortalNg;
     })();
     AzurePortalNg.UserControlBase = UserControlBase;
 })(AzurePortalNg || (AzurePortalNg = {}));
+//# sourceMappingURL=UserControlBase.js.map

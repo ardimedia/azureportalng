@@ -12,3 +12,4 @@ var Sample1;
     })();
     Sample1.Customer = Customer;
 })(Sample1 || (Sample1 = {}));
+//# sourceMappingURL=Customer.js.map

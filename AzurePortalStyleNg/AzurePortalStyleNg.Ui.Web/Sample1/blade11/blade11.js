@@ -38,3 +38,4 @@ var Sample1;
         angular.module('sampleapp').controller('blade11', ['azurePortalNg.portalService', Blade11]);
     })();
 })(Sample1 || (Sample1 = {}));
+//# sourceMappingURL=blade11.js.map

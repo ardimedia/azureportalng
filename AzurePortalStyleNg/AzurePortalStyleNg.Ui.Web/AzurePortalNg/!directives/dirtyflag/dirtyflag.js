@@ -35,3 +35,4 @@
 //    }
 //    app.directive(DirtyFlag.directiveId, ['personmanager', (pm) => new DirtyFlag(pm)]);
 //} 
+//# sourceMappingURL=dirtyflag.js.map

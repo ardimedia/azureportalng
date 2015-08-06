@@ -26,3 +26,4 @@ var AzurePortalNg;
         angular.module('azureportalng').service('azurePortalNg.portalService', ['$injector', AzurePortalNg.PortalService]);
     })();
 })(AzurePortalNg || (AzurePortalNg = {}));
+//# sourceMappingURL=PortalService.js.map
