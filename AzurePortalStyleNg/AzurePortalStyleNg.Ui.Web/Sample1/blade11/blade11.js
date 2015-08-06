@@ -1,4 +1,4 @@
-var __extends = this.__extends || function (d, b) {
+var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
@@ -38,4 +38,3 @@ var Sample1;
         angular.module('sampleapp').controller('blade11', ['azurePortalNg.portalService', Blade11]);
     })();
 })(Sample1 || (Sample1 = {}));
-//# sourceMappingURL=blade11.js.map

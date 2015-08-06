@@ -1,5 +1,5 @@
 //#region Class Definition
-var __extends = this.__extends || function (d, b) {
+var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
@@ -35,4 +35,3 @@ var Nav2 = (function (_super) {
     angular.module('sampleapp').controller('nav2', ['azurePortalNg.portalService', Nav2]);
 })();
 //#endregion
-//# sourceMappingURL=nav2.js.map

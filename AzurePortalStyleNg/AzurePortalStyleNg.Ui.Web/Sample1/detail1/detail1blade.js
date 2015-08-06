@@ -11,4 +11,3 @@
         };
     }
 })();
-//# sourceMappingURL=detail1blade.js.map
