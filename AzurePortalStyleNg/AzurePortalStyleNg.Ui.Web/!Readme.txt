@@ -7,7 +7,8 @@ SETUP NUGET
 ------------------------------------------------------------------------------------------------------------
 DEPLOY BY COMMAND TO nuget.com
 > nuget.exe pack ..\AzurePortalStyleNg.Ui.Web\nuspec-packager.nuspec -OutputDirectory ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget
-> nuget.exe push ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget/AzurePortalStyleNg.0.1.36-beta.nupkg
+> nuget.exe push ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget\AzurePortalStyleNg.0.1.40-beta.nupkg
+> COPY ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget\AzurePortalStyleNg.0.1.40-beta.nupkg \\SVRDEV01\Drive-D\_Data\NuGet\Release
 ------------------------------------------------------------------------------------------------------------
 DEPLOY VIA WEB SITE
 > https://www.nuget.org/packages/AzurePortalStyleNg

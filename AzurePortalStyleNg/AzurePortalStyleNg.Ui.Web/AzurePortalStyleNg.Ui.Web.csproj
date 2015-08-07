@@ -147,9 +147,6 @@
     <Content Include="!Design\!libmixin.css.map">
       <DependentUpon>!libmixin.css</DependentUpon>
     </Content>
-    <Content Include="nuspec-packager.nuspec">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="AzurePortalNg\!directives\dialog\style.css.map">
       <DependentUpon>style.css</DependentUpon>
     </Content>
@@ -264,6 +261,7 @@
     <Content Include="wwwroot\lib\jquery\src\var\support.js" />
     <Content Include="wwwroot\lib\jquery\src\var\toString.js" />
     <Content Include="wwwroot\lib\jquery\src\wrap.js" />
+    <Content Include="nuspec-packager.nuspec" />
     <None Include="Properties\PublishProfiles\TEMP.pubxml" />
     <Content Include="Sample1\blade21\blade21.html" />
     <Content Include="Sample1\blade11\blade11.html" />
