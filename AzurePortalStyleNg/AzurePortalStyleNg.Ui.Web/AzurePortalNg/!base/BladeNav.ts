@@ -31,7 +31,7 @@
         onNavigateTo(path: string) {
             AzurePortalNg.Debug.write('[sample1-debug] \'BladeNav.onNavigateTo\' called.', [this, path]);
             //this.portalService.bladeArea.clearLevel(2);
-            this.portalService.bladeArea.addBlade(this.blade.path, path);
+            this.portalService.bladeArea.addBlade(path, this.blade.path);
         }
 
         //#endregion

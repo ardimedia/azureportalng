@@ -10,15 +10,19 @@ var AzurePortalNg;
     //#region Class Definition: BladeDetail
     var BladeDetail = (function (_super) {
         __extends(BladeDetail, _super);
-        //#region Properties
-        //#endregion
         //#region Constructor
         function BladeDetail(portalService, path, title, subtitle, width) {
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 200; }
             _super.call(this, portalService, path, title, subtitle, width);
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.', [this, portalService, path, title, subtitle, width]);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeDetail\' constructor called.', [this, portalService, path, title, subtitle, width]);
         }
+        //#endregion
+        //#region Methods
+        BladeDetail.prototype.onActivate = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeDetail.onActivate\' called.', [this]);
+            return _super.prototype.getDataDetail.call(this);
+        };
         return BladeDetail;
     })(AzurePortalNg.BladeData);
     AzurePortalNg.BladeDetail = BladeDetail;

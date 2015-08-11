@@ -1,7 +1,7 @@
 //#region Register Angular Module
 (function () {
     'use strict';
-    var app = angular.module('sampleapp', ['azureportalng', 'ngMockE2E']);
+    var app = angular.module('sampleapp', ['azureportalng', 'ngResource', 'ngDialog', 'ngMockE2E']);
     app.config([function () {
             AzurePortalNg.Debug.isEnabled = true;
             AzurePortalNg.Debug.isWithObjects = false;

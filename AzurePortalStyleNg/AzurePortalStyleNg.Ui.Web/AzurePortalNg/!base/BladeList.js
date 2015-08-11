@@ -18,6 +18,13 @@ var AzurePortalNg;
             _super.call(this, portalService, path, title, subtitle, width);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList\' constructor called.', [this, portalService, path, title, subtitle, width]);
         }
+        Object.defineProperty(BladeList.prototype, "filterFor", {
+            get: function () {
+                return this._filterFor;
+            },
+            enumerable: true,
+            configurable: true
+        });
         //#endregion
         //#region Methods
         BladeList.prototype.onActivate = function () {
@@ -25,6 +32,7 @@ var AzurePortalNg;
             return _super.prototype.getDataList.call(this);
         };
         BladeList.prototype.onFilter = function (actual, expected) {
+            this._filterFor = expected;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.filter\' called.', [this, actual, expected]);
             //console.log(actual);
             //console.log(expected);

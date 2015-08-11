@@ -7,7 +7,14 @@
 
         //#region Properties
 
-        filterFor: string;
+        //filterFor: string;
+
+        private _filterFor: string;
+
+        get filterFor(): string {
+            return this._filterFor;
+        }
+
 
         //#endregion
 
@@ -29,6 +36,8 @@
         }
 
         onFilter(actual: Object, expected: string): boolean {
+            this._filterFor = expected;
+
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.filter\' called.', [this, actual, expected]);
 
             //console.log(actual);

@@ -3,29 +3,54 @@
 
     //#region Class Definition: PortalService
 
-    export class PortalService {
+    export class PortalService implements ng.IModule {
 
         //#region Properties
 
-        // Visual components
+        //#region ng.IModule properties
+
+        animation;
+        config;
+        constant;
+        controller;
+        directive;
+        factory;
+        filter;
+        provider;
+        run;
+        service;
+        value;
+        decorator;
+        name;
+        requires;
+
+        //#endregion
+
+        //#region Visual components
+
         portalShell: AzurePortalNg.PortalShell;
         panorama: AzurePortalNg.Panorama;
         bladeArea: AzurePortalNg.BladeArea;
 
-        // Dialogs
+        //#endregion
+
+        //#region Dialogs
+
         ngDialog: NgDialog.INgDialog;
 
-        // Services
+        //#endregion
+
+        //#region Services
+
         $http: angular.IHttpService;
         $httpBackend: angular.IHttpBackendService;
         $injector: angular.auto.IInjectorService
         $q: angular.IQService;
-        $window: angular.IWindowService;
-        $rootScope: angular.IRootScopeService;
         $scope: angular.IScope;
+        $rootScope: angular.IRootScopeService;
+        $window: angular.IWindowService;
 
-        // Debugging
-        debug: Debug = new Debug();
+        //#endregion
 
         //#endregion
 
@@ -35,16 +60,21 @@
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [this, $injector]);
 
             this.$injector = $injector;
+
             this.$http = $injector.get('$http');
             this.$httpBackend = $injector.get('$httpBackend');
             this.$q = $injector.get('$q');
-            this.$window = $injector.get('$window');
+            //this.$scope = $injector.get('$scope');
             this.$rootScope = $injector.get('$rootScope');
+            this.$window = $injector.get('$window');
+
+            this.bladeArea = $injector.get('azurePortalNg.bladeArea');
+            this.ngDialog = $injector.get('ngDialog');
         }
 
         //#endregion
 
-        ////#region Methods
+        //#region Methods
 
         //initialize(portalShell: PortalShell) {
         //    AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService.initialize\' called.', [this, portalShell]);
@@ -52,7 +82,7 @@
         //    this.portalShell.setObsoleteLayoutProperites();
         //}
 
-        ////#endregion
+        //#endregion
     }
 
     //#endregion

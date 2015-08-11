@@ -30,7 +30,7 @@ var AzurePortalNg;
         BladeNav.prototype.onNavigateTo = function (path) {
             AzurePortalNg.Debug.write('[sample1-debug] \'BladeNav.onNavigateTo\' called.', [this, path]);
             //this.portalService.bladeArea.clearLevel(2);
-            this.portalService.bladeArea.addBlade(this.blade.path, path);
+            this.portalService.bladeArea.addBlade(path, this.blade.path);
         };
         return BladeNav;
     })(AzurePortalNg.BladeData);

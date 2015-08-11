@@ -51,16 +51,18 @@ module AzurePortalNg {
             }
         }
 
-        static write(text: string, objects?: Array<any>) {
-            if (Debug.isEnabled) {
-                console.log(text);
+        static write(debugLine: string, objects?: Array<any>): boolean {
+            if (Debug.isEnabled && Debug.isInKeys(debugLine)) {
+                console.log(debugLine);
 
                 if (objects !== undefined && Debug.isWithObjects) {
                     objects.forEach(function (item) {
                         console.log(item);
                     });
                 }
+                return true;
             }
+            return false;
         }
 
         /** Extract the key (e.g. [azureportal] from a string */
@@ -78,6 +80,17 @@ module AzurePortalNg {
             }
 
             return extractKey;
+        }
+
+        /** Extract the key (e.g. [azureportal] from a string */
+        static isInKeys(debugLine: string): boolean {
+            var key: string = Debug.extractKey(debugLine);
+
+            if (Debug.keys.indexOf(key) != -1) {
+                return true;
+            }
+
+            return false;
         }
 
         //#endregion

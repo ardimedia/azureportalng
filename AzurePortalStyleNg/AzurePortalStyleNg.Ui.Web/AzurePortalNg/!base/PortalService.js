@@ -4,17 +4,19 @@ var AzurePortalNg;
     //#region Class Definition: PortalService
     var PortalService = (function () {
         //#endregion
+        //#endregion
         //#region Constructors
         function PortalService($injector) {
-            // Debugging
-            this.debug = new AzurePortalNg.Debug();
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [this, $injector]);
             this.$injector = $injector;
             this.$http = $injector.get('$http');
             this.$httpBackend = $injector.get('$httpBackend');
             this.$q = $injector.get('$q');
-            this.$window = $injector.get('$window');
+            //this.$scope = $injector.get('$scope');
             this.$rootScope = $injector.get('$rootScope');
+            this.$window = $injector.get('$window');
+            this.bladeArea = $injector.get('azurePortalNg.bladeArea');
+            this.ngDialog = $injector.get('ngDialog');
         }
         return PortalService;
     })();

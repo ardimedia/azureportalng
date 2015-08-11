@@ -4,52 +4,52 @@
     //#region Interface Defintions
 
     /** Obsolete? Check if needed... */
-    export interface IParameter {
-        action: string; // selected, new
-        id?: number;
-    }
+    //export interface IParameter {
+    //    action: string; // selected, new
+    //    id?: number;
+    //}
 
-    export interface IBlade {
-        blade: any;
-        parameter: AzurePortalNg.IParameter;
-    }
+    //export interface IBlade {
+    //    blade: any;
+    //    parameter: AzurePortalNg.IParameter;
+    //}
 
-    export interface IBladeParameter {
-        action: string;
-        id: number|string;
-    }
+    //export interface IBladeParameter {
+    //    action: string;
+    //    id: number|string;
+    //}
 
-    export interface IBlade$Scope extends angular.IScope {
-        formblade: any;
-    }
+    //export interface IBlade$Scope extends angular.IScope {
+    //    formblade: any;
+    //}
 
     //#endregion
 
     //#region Enum Definition: BladeCommands
 
-    export enum BladeCommands {
-        Cancel,
-        Delete,
-        New,
-        Save
-    }
+    //export enum BladeCommands {
+    //    Cancel,
+    //    Delete,
+    //    New,
+    //    Save
+    //}
 
     //#endregion
 
     //#region Class Definition: BladeCommand
 
-    export class BladeCommand {
+    //export class BladeCommand {
 
-        //#region Properties
+    //    //#region Properties
 
-        bladeUrls: Array<Blade> = new Array<Blade>();
+    //    bladeUrls: Array<Blade> = new Array<Blade>();
 
-        isVisible: boolean = false;
-        isEnabled: boolean = false;
-        text: string = '';
+    //    isVisible: boolean = false;
+    //    isEnabled: boolean = false;
+    //    text: string = '';
 
-        //#endregion
-    }
+    //    //#endregion
+    //}
 
     //#endregion
 
@@ -61,7 +61,7 @@
 
         blades: Array<AzurePortalNg.Blade> = new Array<AzurePortalNg.Blade>();
 
-        parameter: AzurePortalNg.IBladeParameter;
+        //parameter: AzurePortalNg.IBladeParameter;
 
         //#endregion
 
@@ -82,45 +82,50 @@
         setFirstBlade(path: string): Blade {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.setFirstBlade\' called.', [this, path]);
             this.clearAll();
-            this.portalService.panorama.isVisible = false;
-            return this.addBlade('', path);
+            this.hidePanorama();
+            return this.addBlade(path);
         }
 
-        addBlade(senderPath: string, path: string): Blade {
+        addBlade(path: string, senderPath: string = ''): Blade {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.addBlade\' called.', [this, senderPath, path]);
             var that = this;
             if (path === undefined || path === '') { return; }
-            if (that.portalService.$window.document === undefined) {
-                throw new Error('[azureportalng] [this.$window.document] undefined.');
-            }
-            var portalcontent = that.portalService.$window.document.getElementById('azureportalscroll');
-            if (portalcontent === null) {
-                throw new Error('[azureportalng] HTML eLement with ID [azureportalscroll] not found. Maybe it is to early to call function \'BladeArea.addBlade\'.');
-            }
 
+            if (that.portalService.$window !== undefined) {
+                if (that.portalService.$window.document === undefined) {
+                    throw new Error('[AzurePortalNg.BladeArea] \'this.$window.document\' undefined.');
+                }
+
+                var portalcontent = that.portalService.$window.document.getElementById('azureportalscroll');
+                if (portalcontent === null) {
+                    throw new Error('[AzurePortalNg.BladeArea] HTML element with ID [azureportalscroll] not found. Maybe it is to early to call function \'BladeArea.addBlade\'.');
+                }
+            }
             this.clearChild(senderPath);
 
             this.blades.forEach(function (blade) {
                 if (blade.path === path) {
-                    throw new Error('[azureportalng] path: \'' + path + '\' could not be added. It is already add.');
+                    throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' could not be added. It is already add.');
                 };
             });
 
-            var blade = new Blade(that.portalService, path);
+            var blade = new Blade(that.portalService, path, '');
             that.blades.push(blade);
 
-            that.portalService.$window.setTimeout(function () {
-                var azureportalblades = that.portalService.$window.document.getElementsByClassName('azureportalblade');
+            if (that.portalService.$window !== undefined) {
+                that.portalService.$window.setTimeout(function () {
+                    var azureportalblades = that.portalService.$window.document.getElementsByClassName('azureportalblade');
 
-                var i = that.blades.length - 1;
+                    var i = that.blades.length - 1;
 
-                // HACK: Sometime azureportalblades[i].offsetLeft is undefined.
-                //       So now if it is, the user has to scroll on its own.
-                if (azureportalblades[i] !== undefined && (<any>azureportalblades[i]).offsetLeft !== undefined) {
-                    var sl = (<any>azureportalblades[i]).offsetLeft - 30;
-                    portalcontent.scrollLeft = sl;
-                }
-            }, 250);
+                    // HACK: Sometime azureportalblades[i].offsetLeft is undefined.
+                    //       So now if it is, the user has to scroll on its own.
+                    if (azureportalblades[i] !== undefined && (<any>azureportalblades[i]).offsetLeft !== undefined) {
+                        var sl = (<any>azureportalblades[i]).offsetLeft - 30;
+                        portalcontent.scrollLeft = sl;
+                    }
+                }, 250);
+            }
 
             return blade;
         }
@@ -128,7 +133,7 @@
         clearAll(): void {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearAll\' called.', [this]);
             this.blades.length = 0;
-            this.showPanorama();
+            this.showPanoramaIfNoBlades();
         }
 
         clearPath(path: string): void {
@@ -143,22 +148,26 @@
             });
             if (!isremoved) {
                 AzurePortalNg.Debug.write('>>> bladeUrls:', [that.blades]);
-                throw new Error('[azureportalng] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
+                throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
             }
-            this.showPanorama();
+            this.showPanoramaIfNoBlades();
         }
 
         clearLevel(level: number) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearLevel\' called.', [this, level]);
+            if (this.blades.length < level) {
+                //throw new Error('[AzurePortalNg.BladeArea] level: \'' + level + '\' could not be cleard, since only \'' + this.blades.length + '\' available.');
+            }
+
             if (level == 0) { level = 1; }
             this.blades.length = level - 1;
-            this.showPanorama();
+            this.showPanoramaIfNoBlades();
         }
 
         clearLastLevel() {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearLastLevel\' called.', [this]);
             this.clearLevel(this.blades.length);
-            this.showPanorama();
+            this.showPanoramaIfNoBlades();
         }
 
         protected clearChild(path: string): void {
@@ -178,15 +187,26 @@
             });
             if (!isremoved) {
                 AzurePortalNg.Debug.write('>>> bladeUrls:', [that.blades]);
-                throw new Error('[azureportalng] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
+                throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
             }
         }
 
-        protected showPanorama() {
+        protected showPanoramaIfNoBlades() {
             if (this.blades.length === 0) {
-                this.portalService.panorama.isVisible = true;
+                if (this.portalService.panorama !== undefined) {
+                    {
+                        this.portalService.panorama.isVisible = true;
+                    }
+                }
             }
         }
+
+        protected hidePanorama() {
+            if (this.portalService.panorama !== undefined) {
+                this.portalService.panorama.isVisible = false;
+            }
+        }
+
         //#endregion
 
         //#region OBSOLETE
@@ -204,7 +224,7 @@
             var that = this;
             if (path === undefined || path == '') { return; }
 
-            var blade = new Blade(that.portalService, path);
+            var blade = new Blade(that.portalService, path, '');
             that.blades.push(blade);
 
             var portalcontent = that.portalService.$window.document.getElementById('azureportalscroll');

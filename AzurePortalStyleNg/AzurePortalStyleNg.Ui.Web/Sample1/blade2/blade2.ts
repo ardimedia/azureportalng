@@ -27,11 +27,11 @@
         //#region Methods - Overrides for Blade
 
         protected onCommandNew(): void {
-            this.portalService.bladeArea.addBlade(this.path, '/Sample1/blade21/blade21.html');
+            this.portalService.bladeArea.addBlade('/Sample1/blade21/blade21.html', this.path);
         }
 
         protected onCommandSave(): void {
-            this.portalService.bladeArea.addBlade(this.path, '/Sample1/blade1/blade1.html');
+            this.portalService.bladeArea.addBlade('/Sample1/blade1/blade1.html', this.path);
         }
 
         //#endregion

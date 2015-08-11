@@ -24,10 +24,10 @@ var Sample1;
         //#endregion
         //#region Methods - Overrides for Blade
         Blade2.prototype.onCommandNew = function () {
-            this.portalService.bladeArea.addBlade(this.path, '/Sample1/blade21/blade21.html');
+            this.portalService.bladeArea.addBlade('/Sample1/blade21/blade21.html', this.path);
         };
         Blade2.prototype.onCommandSave = function () {
-            this.portalService.bladeArea.addBlade(this.path, '/Sample1/blade1/blade1.html');
+            this.portalService.bladeArea.addBlade('/Sample1/blade1/blade1.html', this.path);
         };
         //#endregion
         //#region Data Access

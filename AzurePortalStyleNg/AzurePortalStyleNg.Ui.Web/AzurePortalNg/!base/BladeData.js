@@ -13,11 +13,14 @@ var AzurePortalNg;
         //#endregion
         //#region Constructor
         function BladeData(portalService, path, title, subtitle, width) {
+            if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 300; }
             _super.call(this, portalService, path, title, subtitle, width);
+            //#region Properties
+            this.item = null;
             this.items = new Array();
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData\' constructor called.', [this, portalService, path, title, subtitle, width]);
-            this.blade = this;
+            //this.blade = this;
         }
         //#endregion
         //#region Methods
@@ -31,17 +34,36 @@ var AzurePortalNg;
                 that.items = data;
                 that.statusbar = '';
                 that.statusbarClass = '';
-                //that.setObsoleteLayoutProperites();
             }).error(function (data, status, headers, config) {
                 that.statusbar = 'FEHLER: ' + data;
                 that.statusbarClass = 'message-info message-off';
-                //that.setObsoleteLayoutProperites();
             });
         };
         BladeData.prototype.onGetDataList = function () {
-            throw new Error('DEVELOPER: [onGetDataList] is an abstract function. Define one in the derived class.');
+            throw new Error('[AzurePortalNg.BladeData] \'onGetDataList\' is an abstract function. Define one in the derived class.');
         };
         //#endregion
+        //#region GetDataDetail
+        BladeData.prototype.getDataDetail = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.getDataDetail\' called.', [this]);
+            var that = this;
+            that.statusbar = 'Daten laden...';
+            that.statusbarClass = '';
+            return that.onGetDataDetail().success(function (data) {
+                that.items = data;
+                that.statusbar = '';
+                that.statusbarClass = '';
+            }).error(function (data, status, headers, config) {
+                that.statusbar = 'FEHLER: ' + data;
+                that.statusbarClass = 'message-info message-off';
+            });
+        };
+        BladeData.prototype.onGetDataDetail = function () {
+            throw new Error('[AzurePortalNg.BladeArea] \'onGetDataDetail\' is an abstract function. Define one in the derived class.');
+        };
+        //#endregion
+        //#region setObsoleteLayoutProperites (override)
+        /** Obsolete */
         BladeData.prototype.setObsoleteLayoutProperites = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.setObsoleteLayoutProperites\' called.', [this]);
             if (this.items.length !== 0) {

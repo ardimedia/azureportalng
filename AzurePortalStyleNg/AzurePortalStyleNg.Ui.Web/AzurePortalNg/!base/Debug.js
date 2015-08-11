@@ -32,15 +32,17 @@ var AzurePortalNg;
                 Debug.isEnabled = false;
             }
         };
-        Debug.write = function (text, objects) {
-            if (Debug.isEnabled) {
-                console.log(text);
+        Debug.write = function (debugLine, objects) {
+            if (Debug.isEnabled && Debug.isInKeys(debugLine)) {
+                console.log(debugLine);
                 if (objects !== undefined && Debug.isWithObjects) {
                     objects.forEach(function (item) {
                         console.log(item);
                     });
                 }
+                return true;
             }
+            return false;
         };
         /** Extract the key (e.g. [azureportal] from a string */
         Debug.extractKey = function (text) {
@@ -54,6 +56,14 @@ var AzurePortalNg;
                 }
             }
             return extractKey;
+        };
+        /** Extract the key (e.g. [azureportal] from a string */
+        Debug.isInKeys = function (debugLine) {
+            var key = Debug.extractKey(debugLine);
+            if (Debug.keys.indexOf(key) != -1) {
+                return true;
+            }
+            return false;
         };
         //#region Properties
         Debug.isEnabled = false;

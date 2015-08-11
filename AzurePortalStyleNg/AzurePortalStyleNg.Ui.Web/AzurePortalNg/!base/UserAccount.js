@@ -40,7 +40,7 @@ var AzurePortalNg;
                 return this._name;
             },
             set: function (value) {
-                throw new Error('[azureportalng] \'name\' is a calculated value from \'firsName\' and \'lastName\'. Assignment not allowed.');
+                throw new Error('[AzurePortalNg.UserAccount] \'name\' is a calculated value from \'firsName\' and \'lastName\'. Assignment not allowed.');
                 this._name = value;
             },
             enumerable: true,

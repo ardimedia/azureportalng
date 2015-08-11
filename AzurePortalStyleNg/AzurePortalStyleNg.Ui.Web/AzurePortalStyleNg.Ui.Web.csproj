@@ -1086,6 +1086,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="!Tests\AzurePortalNg\!base\BladeDataTest.ts" />
+    <TypeScriptCompile Include="!Tests\AzurePortalNg\!base\AvatarMenuTest.ts" />
+    <TypeScriptCompile Include="!Tests\AzurePortalNg\!base\BladeAreaTest.ts" />
+    <TypeScriptCompile Include="!Tests\AzurePortalNg\!base\BladeListTest.ts" />
+    <TypeScriptCompile Include="!Tests\AzurePortalNg\!base\PortalServiceTest.ts" />
+    <TypeScriptCompile Include="!Tests\AzurePortalNg\!base\BladeTest.ts" />
+    <TypeScriptCompile Include="!Tests\AzurePortalNg\!base\UserControlBaseTest.ts" />
+    <TypeScriptCompile Include="!Tests\AzurePortalNg\!base\BladeDetailTest.ts" />
     <TypeScriptCompile Include="!Tests\AzurePortalNg\!base\DebugTest.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\BladeNav.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\UserControlBase.ts" />

@@ -24,7 +24,7 @@
 
         onCommandNew(): void {
             AzurePortalNg.Debug.write('[sample1-debug] \'List1.onCommandNew\' called.', [this]);
-            this.portalService.bladeArea.addBlade(this.path, '/Sample1/detail1/detail1.html');
+            this.portalService.bladeArea.addBlade('/Sample1/detail1/detail1.html', this.path);
         }
 
         onNavigateTo(id: number) {

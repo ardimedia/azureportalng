@@ -22,7 +22,7 @@ var Sample1;
         //#region Methods - Overrides for Blade
         List1.prototype.onCommandNew = function () {
             AzurePortalNg.Debug.write('[sample1-debug] \'List1.onCommandNew\' called.', [this]);
-            this.portalService.bladeArea.addBlade(this.path, '/Sample1/detail1/detail1.html');
+            this.portalService.bladeArea.addBlade('/Sample1/detail1/detail1.html', this.path);
         };
         List1.prototype.onNavigateTo = function (id) {
             AzurePortalNg.Debug.write('[sample1-debug] \'List1.onNavigateTo\' called.', [this, id]);
