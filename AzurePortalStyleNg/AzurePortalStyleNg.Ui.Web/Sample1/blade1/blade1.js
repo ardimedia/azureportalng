@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('sampleapp').controller('blade1', ['$scope', '$http', 'bladeService', blade1]);
+    angular.module('sampleapp').controller('blade1', ['$scope', '$http', 'azurePortalNg.bladeArea', blade1]);
     function blade1($scope, $http, bladeService) {
         /* jshint validthis: true */
         var vm = this;
@@ -30,4 +30,3 @@
         }
     }
 })();
-//# sourceMappingURL=blade1.js.map

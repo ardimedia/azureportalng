@@ -43,4 +43,3 @@ var Sample1;
         angular.module('sampleapp').controller('blade2', ['azurePortalNg.portalService', Blade2]);
     })();
 })(Sample1 || (Sample1 = {}));
-//# sourceMappingURL=blade2.js.map

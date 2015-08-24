@@ -55,8 +55,8 @@
             this.tiles = this.portalService.panorama.startboard.tiles.tiles;
             this.blades = this.portalService.bladeArea.blades;
 
-            var bladeServiceOLD = this.portalService.$injector.get('bladeService');
-            bladeServiceOLD.blades = this.portalService.bladeArea.blades;
+            //var bladeServiceOLD = <AzurePortalNg.Blade>this.portalService.$injector.get('bladeService');
+            //bladeServiceOLD.blades = this.portalService.bladeArea.blades;
 
             if (this.portalService.panorama.avatarMenu.userAccount != undefined) {
                 this.user = {

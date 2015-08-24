@@ -112,7 +112,7 @@
 
         //#region Methods
 
-        addTile(tile: Tile) {
+        addTile(tile: Tile): AzurePortalNg.Tile {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Tiles.addTile\' called.', [this, tile]);
             var tileSize = this.tileSizes[tile.tileSize];
             tile.size = TileSizes[tile.tileSize];  // Get CSS Name
@@ -133,6 +133,8 @@
             }
 
             this.tiles.push(tile);
+
+            return tile;
         }
 
         //#endregion

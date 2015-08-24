@@ -11,9 +11,10 @@ LIST PACKAGE
 > nuget list AzurePortalStyleNg -AllVersions -Prerelease -Source ardimedia.com
 ------------------------------------------------------------------------------------------------------------
 DEPLOY BY COMMAND TO nuget.com
-> nuget.exe pack ..\AzurePortalStyleNg.Ui.Web\nuspec-packager.nuspec -OutputDirectory ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget
-> nuget.exe push ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget\AzurePortalStyleNg.0.1.41-beta.nupkg
-> COPY ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget\AzurePortalStyleNg.0.1.41-beta.nupkg \\SVRDEV01\Drive-D\_Data\NuGet\Release
+> CD C:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\.nuget
+> .\nuget.exe pack ..\AzurePortalStyleNg.Ui.Web\nuspec-packager.nuspec -OutputDirectory ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget
+> COPY ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget\AzurePortalStyleNg.0.1.44-beta.nupkg \\SVRDEV01\Drive-D\_Data\NuGet\Release
+> .\nuget.exe push ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget\AzurePortalStyleNg.0.1.44-beta.nupkg
 ------------------------------------------------------------------------------------------------------------
 DEPLOY VIA WEB SITE
 > https://www.nuget.org/packages/AzurePortalStyleNg

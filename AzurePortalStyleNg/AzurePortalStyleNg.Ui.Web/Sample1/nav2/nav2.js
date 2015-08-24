@@ -35,4 +35,3 @@ var Nav2 = (function (_super) {
     angular.module('sampleapp').controller('nav2', ['azurePortalNg.portalService', Nav2]);
 })();
 //#endregion
-//# sourceMappingURL=nav2.js.map

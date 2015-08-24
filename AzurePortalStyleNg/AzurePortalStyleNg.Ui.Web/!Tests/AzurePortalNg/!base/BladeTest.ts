@@ -1,5 +1,7 @@
 ﻿describe('AzurePortalNg.Blade', function () {
 
+    //#region Tests initialize
+
     var sut: AzurePortalNg.Blade;
     var portalService: AzurePortalNg.PortalService;
 
@@ -9,6 +11,8 @@
         portalService = $injector.get('azurePortalNg.portalService');
         sut = new AzurePortalNg.Blade(portalService, 'test-path', 'test-title');
     }));
+
+    //#endregion
 
     //#region Specs for Constructor
 
@@ -134,11 +138,11 @@
 
     //#region bladeClose
 
-    //it("bladeClose - no specs yet", function () {
-    //    sut.bladeClose();
+    it("bladeClose throws exception - path could not be removed", function () {
+        var exception = function () { sut.bladeClose(); };
 
-    //    expect(sut).not.toBe(null);
-    //});
+        expect(exception).toThrow(new Error('[AzurePortalNg.BladeArea] path: \'test-path\' could not be removed, since path not found in bladeUrls.'));
+    });
 
     //#endregion
 

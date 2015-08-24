@@ -14,10 +14,10 @@
     //    parameter: AzurePortalNg.IParameter;
     //}
 
-    //export interface IBladeParameter {
-    //    action: string;
-    //    id: number|string;
-    //}
+    export interface IBladeParameter {
+        action: string;
+        id: number|string;
+    }
 
     //export interface IBlade$Scope extends angular.IScope {
     //    formblade: any;
@@ -61,7 +61,7 @@
 
         blades: Array<AzurePortalNg.Blade> = new Array<AzurePortalNg.Blade>();
 
-        //parameter: AzurePortalNg.IBladeParameter;
+        parameter: AzurePortalNg.IBladeParameter = { id: '', action: '' };
 
         //#endregion
 
@@ -141,7 +141,7 @@
             var that = this;
             var isremoved = that.blades.some(function (blade, index) {
                 if (blade.path === path) {
-                    AzurePortalNg.Debug.write('>>> set bladeUrls.length to: ' + index);
+                    AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearPath\' set bladeUrls.length to: ' + index);
                     that.blades.length = index;
                     return true;
                 }
@@ -175,12 +175,12 @@
             var that = this;
 
             if (path === '') {
-                AzurePortalNg.Debug.write('>>> path is empty, nothing to clear.');
+                AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearChild\' path is empty, nothing to clear.');
                 return;
             }
             var isremoved = that.blades.some(function (blade, index) {
                 if (blade.path === path) {
-                    AzurePortalNg.Debug.write('>>> set bladeUrls.length to: ' + (index + 1));
+                    AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearChild\' set bladeUrls.length to: ' + (index + 1));
                     that.blades.length = index + 1;
                     return true;
                 }
@@ -212,11 +212,13 @@
         //#region OBSOLETE
 
         addBladePath(path: string) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.addBladePath\' called.', [this, path]);
             // Fix issue with old code
             if (this.portalService.$window === undefined) {
                 this.portalService.$window = <any>this.portalService;
             }
-            this.addBladeOld(path);
+            this.addBlade(path);
+            //this.addBladeOld(path);
         }
 
         addBladeOld(path: string) {
@@ -254,11 +256,11 @@
         angular.module('azureportalng').service('azurePortalNg.bladeArea', ['$window', AzurePortalNg.BladeArea]);
     })();
 
-    /** OBSOLETE */
-    (function () {
-        'use strict';
-        angular.module('azureportalng').service('bladeService', ['$window', AzurePortalNg.BladeArea]);
-    })();
+    ///** OBSOLETE */
+    //(function () {
+    //    'use strict';
+    //    angular.module('azureportalng').service('bladeService', ['$window', AzurePortalNg.BladeArea]);
+    //})();
 
     //#endregion
 }

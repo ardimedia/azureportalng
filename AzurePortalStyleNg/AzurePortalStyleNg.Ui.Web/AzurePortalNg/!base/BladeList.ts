@@ -40,10 +40,6 @@
 
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.filter\' called.', [this, actual, expected]);
 
-            //console.log(actual);
-            //console.log(expected);
-
-
             // TESTING:
             // There is a Unit Test available in: BladeListTest.html
 
@@ -154,6 +150,11 @@
                 //console.log('false');
                 return false;
             };
+        }
+
+        onNavigateTo(path: string) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.onNavigateTo\' called.', [this, path]);
+            this.portalService.bladeArea.addBlade(path, this.blade.path);
         }
 
         //#endregion

@@ -7,20 +7,6 @@ var __extends = (this && this.__extends) || function (d, b) {
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
-    //#region Interface Defintions
-    /** Obsolete? Check if needed... */
-    //export interface IParameter {
-    //    action: string; // selected, new
-    //    id?: number;
-    //}
-    //export interface IBlade {
-    //    blade: any;
-    //    parameter: AzurePortalNg.IParameter;
-    //}
-    //export interface IBladeParameter {
-    //    action: string;
-    //    id: number|string;
-    //}
     //export interface IBlade$Scope extends angular.IScope {
     //    formblade: any;
     //}
@@ -46,13 +32,13 @@ var AzurePortalNg;
     //#region Class Definition: BladeArea (could also be named: journey)
     var BladeArea = (function (_super) {
         __extends(BladeArea, _super);
-        //parameter: AzurePortalNg.IBladeParameter;
         //#endregion
         //#region Constructors
         function BladeArea(portalService) {
             _super.call(this, portalService);
             //#region Properties
             this.blades = new Array();
+            this.parameter = { id: '', action: '' };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea\' constructor called.', [this, portalService]);
             this.portalService = portalService;
             this.portalService.bladeArea = this;
@@ -114,7 +100,7 @@ var AzurePortalNg;
             var that = this;
             var isremoved = that.blades.some(function (blade, index) {
                 if (blade.path === path) {
-                    AzurePortalNg.Debug.write('>>> set bladeUrls.length to: ' + index);
+                    AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearPath\' set bladeUrls.length to: ' + index);
                     that.blades.length = index;
                     return true;
                 }
@@ -144,12 +130,12 @@ var AzurePortalNg;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearChild\' called.', [this, path]);
             var that = this;
             if (path === '') {
-                AzurePortalNg.Debug.write('>>> path is empty, nothing to clear.');
+                AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearChild\' path is empty, nothing to clear.');
                 return;
             }
             var isremoved = that.blades.some(function (blade, index) {
                 if (blade.path === path) {
-                    AzurePortalNg.Debug.write('>>> set bladeUrls.length to: ' + (index + 1));
+                    AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.clearChild\' set bladeUrls.length to: ' + (index + 1));
                     that.blades.length = index + 1;
                     return true;
                 }
@@ -176,11 +162,13 @@ var AzurePortalNg;
         //#endregion
         //#region OBSOLETE
         BladeArea.prototype.addBladePath = function (path) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.addBladePath\' called.', [this, path]);
             // Fix issue with old code
             if (this.portalService.$window === undefined) {
                 this.portalService.$window = this.portalService;
             }
-            this.addBladeOld(path);
+            this.addBlade(path);
+            //this.addBladeOld(path);
         };
         BladeArea.prototype.addBladeOld = function (path) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.addBladeOld\' called.', [this, path]);
@@ -211,10 +199,4 @@ var AzurePortalNg;
         'use strict';
         angular.module('azureportalng').service('azurePortalNg.bladeArea', ['$window', AzurePortalNg.BladeArea]);
     })();
-    /** OBSOLETE */
-    (function () {
-        'use strict';
-        angular.module('azureportalng').service('bladeService', ['$window', AzurePortalNg.BladeArea]);
-    })();
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=BladeArea.js.map

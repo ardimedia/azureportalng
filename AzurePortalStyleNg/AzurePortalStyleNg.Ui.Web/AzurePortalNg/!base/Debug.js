@@ -33,7 +33,8 @@ var AzurePortalNg;
             }
         };
         Debug.write = function (debugLine, objects) {
-            if (Debug.isEnabled && Debug.isInKeys(debugLine)) {
+            if ((Debug.isEnabled && Debug.keys.length === 0)
+                || (Debug.isEnabled && Debug.isInKeys(debugLine))) {
                 console.log(debugLine);
                 if (objects !== undefined && Debug.isWithObjects) {
                     objects.forEach(function (item) {
@@ -73,4 +74,3 @@ var AzurePortalNg;
     })();
     AzurePortalNg.Debug = Debug;
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=Debug.js.map

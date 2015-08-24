@@ -84,10 +84,6 @@ var AzurePortalNg;
             this.isCommandSwap = false;
             this.commandSwap = function () { this.onCommandSwap(); };
             this.commandSwapText = '';
-            this.navigateTo = function (pathOrId) {
-                AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, pathOrId]);
-                this.onNavigateTo(pathOrId);
-            };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' constructor called.', [this, portalService, path, title, subtitle, width]);
             this.blade = this;
             this.path = path;
@@ -179,15 +175,19 @@ var AzurePortalNg;
         Blade.prototype.onActivate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden, you could override this.', [this]);
         };
+        Blade.prototype.navigateTo = function (pathOrId) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, pathOrId]);
+            this.onNavigateTo(pathOrId);
+        };
         Blade.prototype.onNavigateTo = function (pathOrId) {
             throw new Error('[AzurePortalNg.Blade] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
         };
-        //bladeClose() {
-        //    AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.', [this]);
-        //    if (this.portalService.bladeArea !== undefined) {
-        //        this.portalService.bladeArea.clearPath(this.path);
-        //    }
-        //}
+        Blade.prototype.bladeClose = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.', [this]);
+            if (this.portalService.bladeArea !== undefined) {
+                this.portalService.bladeArea.clearPath(this.path);
+            }
+        };
         //#endregion
         //#region setObsoleteLayoutProperites (OBSOLETE)
         /** Obsolete */
@@ -218,4 +218,3 @@ var AzurePortalNg;
     })(AzurePortalNg.UserControlBase);
     AzurePortalNg.Blade = Blade;
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=Blade.js.map

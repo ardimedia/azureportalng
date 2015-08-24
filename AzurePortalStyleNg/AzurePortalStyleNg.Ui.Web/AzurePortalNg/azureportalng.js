@@ -8,11 +8,10 @@ var azurePortalNg;
         'ngDialog',
     ]);
     azurePortalNg.config([function () {
-            AzurePortalNg.Debug.enable('[azureportalng-debug]');
-            AzurePortalNg.Debug.isWithObjects = false;
+            //AzurePortalNg.Debug.enable('[azureportalng-debug]');
+            //AzurePortalNg.Debug.isWithObjects = false;
         }]);
     azurePortalNg.run(function () {
         AzurePortalNg.Debug.write('[azureportalng-debug] \'azurePortalNg.run\' executing.', [this]);
     });
 })();
-//# sourceMappingURL=azureportalng.js.map

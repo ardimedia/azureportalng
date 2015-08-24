@@ -87,9 +87,9 @@ var AzurePortalNg;
                 this.columnHeightMax = 0;
             }
             this.tiles.push(tile);
+            return tile;
         };
         return Tiles;
     })();
     AzurePortalNg.Tiles = Tiles;
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=Tile.js.map

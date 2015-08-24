@@ -1,12 +1,12 @@
 (function () {
     'use strict';
-    angular.module('sampleapp').controller('nav1', ['$scope', '$http', 'bladeService', nav1]);
+    angular.module('sampleapp').controller('nav1', ['$scope', '$http', 'azurePortalNg.portalService', nav1]);
     function nav1($scope, $http, bladeService) {
         /* jshint validthis: true */
         var vm = this;
         vm.blade = {
             title: 'Navigation 1',
-            subTitle: 'JavaScript based',
+            subTitle: 'Javascript based',
             isNavGrid: true,
             statusbar: 'Nav 1...',
             navGrid: {
@@ -27,10 +27,9 @@
         };
         vm.blade.navGrid.navigateTo = navigateTo;
         function navigateTo(path) {
-            bladeService.clearLevel(2);
-            bladeService.addBladePath(path);
+            bladeService.bladeArea.clearLevel(2);
+            bladeService.bladeArea.addBlade(path); //.addBladePath(path);
         }
         function dummy() { }
     }
 })();
-//# sourceMappingURL=nav1.js.map

@@ -26,7 +26,9 @@ var Sample1;
         };
         List1.prototype.onNavigateTo = function (id) {
             AzurePortalNg.Debug.write('[sample1-debug] \'List1.onNavigateTo\' called.', [this, id]);
-            console.log(id);
+            this.portalService.bladeArea.parameter.id = id;
+            this.portalService.bladeArea.addBlade('/Sample1/detail1/detail1.html', this.blade.path);
+            this.portalService.$rootScope.$broadcast('bladeService.parameter', this.portalService.bladeArea.parameter);
         };
         //#endregion
         //#region Data Access
@@ -43,4 +45,3 @@ var Sample1;
         angular.module('sampleapp').controller('list1', ['azurePortalNg.portalService', List1]);
     })();
 })(Sample1 || (Sample1 = {}));
-//# sourceMappingURL=list1.js.map

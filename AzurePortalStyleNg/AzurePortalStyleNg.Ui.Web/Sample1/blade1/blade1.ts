@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('sampleapp').controller('blade1', ['$scope', '$http', 'bladeService', blade1]);
+    angular.module('sampleapp').controller('blade1', ['$scope', '$http', 'azurePortalNg.bladeArea', blade1]);
 
-    function blade1($scope, $http, bladeService) {
+    function blade1($scope, $http, bladeService: AzurePortalNg.BladeArea) {
         /* jshint validthis: true */
         var vm = this;
 

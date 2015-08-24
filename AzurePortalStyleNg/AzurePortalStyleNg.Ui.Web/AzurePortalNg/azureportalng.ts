@@ -11,8 +11,8 @@
     ]);
 
     azurePortalNg.config([function (): void {
-        AzurePortalNg.Debug.enable('[azureportalng-debug]');
-        AzurePortalNg.Debug.isWithObjects = false;
+        //AzurePortalNg.Debug.enable('[azureportalng-debug]');
+        //AzurePortalNg.Debug.isWithObjects = false;
     }]);
 
     azurePortalNg.run(function () {

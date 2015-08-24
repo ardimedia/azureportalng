@@ -27,9 +27,11 @@
             this.portalService.bladeArea.addBlade('/Sample1/detail1/detail1.html', this.path);
         }
 
-        onNavigateTo(id: number) {
+        onNavigateTo(id: string) {
             AzurePortalNg.Debug.write('[sample1-debug] \'List1.onNavigateTo\' called.', [this, id]);
-            console.log(id);
+            this.portalService.bladeArea.parameter.id = id;
+            this.portalService.bladeArea.addBlade('/Sample1/detail1/detail1.html', this.blade.path);
+            this.portalService.$rootScope.$broadcast('bladeService.parameter', this.portalService.bladeArea.parameter);
         }
 
         //#endregion

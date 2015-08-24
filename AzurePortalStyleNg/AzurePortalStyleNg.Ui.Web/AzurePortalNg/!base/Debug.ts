@@ -52,7 +52,8 @@ module AzurePortalNg {
         }
 
         static write(debugLine: string, objects?: Array<any>): boolean {
-            if (Debug.isEnabled && Debug.isInKeys(debugLine)) {
+            if ((Debug.isEnabled && Debug.keys.length === 0)
+                || (Debug.isEnabled && Debug.isInKeys(debugLine))) {
                 console.log(debugLine);
 
                 if (objects !== undefined && Debug.isWithObjects) {

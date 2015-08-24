@@ -11,4 +11,3 @@
         };
     }
 })();
-//# sourceMappingURL=list1blade.js.map

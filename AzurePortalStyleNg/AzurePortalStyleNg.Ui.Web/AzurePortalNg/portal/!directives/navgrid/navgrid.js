@@ -22,4 +22,3 @@
         };
     }
 })();
-//# sourceMappingURL=navgrid.js.map

@@ -34,8 +34,6 @@ var AzurePortalNg;
         BladeList.prototype.onFilter = function (actual, expected) {
             this._filterFor = expected;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.filter\' called.', [this, actual, expected]);
-            //console.log(actual);
-            //console.log(expected);
             // TESTING:
             // There is a Unit Test available in: BladeListTest.html
             // Implemenation detail:
@@ -129,8 +127,11 @@ var AzurePortalNg;
             }
             ;
         };
+        BladeList.prototype.onNavigateTo = function (path) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.onNavigateTo\' called.', [this, path]);
+            this.portalService.bladeArea.addBlade(path, this.blade.path);
+        };
         return BladeList;
     })(AzurePortalNg.BladeData);
     AzurePortalNg.BladeList = BladeList;
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=BladeList.js.map

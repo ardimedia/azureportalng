@@ -13,4 +13,3 @@ describe('AzurePortalNg.UserControlBase', function () {
     });
     //#endregion
 });
-//# sourceMappingURL=UserControlBaseTest.js.map

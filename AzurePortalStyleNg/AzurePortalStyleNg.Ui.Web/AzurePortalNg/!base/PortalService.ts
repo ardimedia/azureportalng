@@ -9,6 +9,7 @@
 
         //#region ng.IModule properties
 
+        animate;
         animation;
         config;
         constant;
@@ -61,15 +62,15 @@
 
             this.$injector = $injector;
 
-            this.$http = $injector.get('$http');
-            this.$httpBackend = $injector.get('$httpBackend');
-            this.$q = $injector.get('$q');
+            this.$http = <angular.IHttpService>$injector.get('$http');
+            this.$httpBackend = <angular.IHttpBackendService>$injector.get('$httpBackend');
+            this.$q = <angular.IQService>$injector.get('$q');
             //this.$scope = $injector.get('$scope');
-            this.$rootScope = $injector.get('$rootScope');
-            this.$window = $injector.get('$window');
+            this.$rootScope = <angular.IRootScopeService>$injector.get('$rootScope');
+            this.$window = <angular.IWindowService>$injector.get('$window');
 
-            this.bladeArea = $injector.get('azurePortalNg.bladeArea');
-            this.ngDialog = $injector.get('ngDialog');
+            this.bladeArea = <AzurePortalNg.BladeArea>$injector.get('azurePortalNg.bladeArea');
+            this.ngDialog = <any>$injector.get('ngDialog');
         }
 
         //#endregion

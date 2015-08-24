@@ -28,8 +28,7 @@ var AzurePortalNg;
         //navigateTo(path: string) {
         //}
         BladeNav.prototype.onNavigateTo = function (path) {
-            AzurePortalNg.Debug.write('[sample1-debug] \'BladeNav.onNavigateTo\' called.', [this, path]);
-            //this.portalService.bladeArea.clearLevel(2);
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeNav.onNavigateTo\' called.', [this, path]);
             this.portalService.bladeArea.addBlade(path, this.blade.path);
         };
         return BladeNav;
@@ -56,4 +55,3 @@ var AzurePortalNg;
     })();
     AzurePortalNg.BladeNavItem = BladeNavItem;
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=BladeNav.js.map
