@@ -97,15 +97,15 @@
       <DependentUpon>portallayout.css</DependentUpon>
     </Content>
     <Content Include="!Readme.txt" />
-    <Content Include="SampleOld\!data\Customer.js" />
-    <Content Include="SampleOld\app.js" />
-    <Content Include="SampleOld\app.min.js">
+    <Content Include="SampleJS\!data\Customer.js" />
+    <Content Include="SampleJS\app.js" />
+    <Content Include="SampleJS\app.min.js">
       <DependentUpon>app.js</DependentUpon>
     </Content>
-    <Content Include="SampleOld\blade1\blade1.html" />
-    <Content Include="SampleOld\index.html" />
-    <Content Include="SampleOld\nav1\nav1.html" />
-    <Content Include="SampleOld\sampleShell.js" />
+    <Content Include="SampleJS\blade1\blade1.html" />
+    <Content Include="SampleJS\index.html" />
+    <Content Include="SampleJS\nav1\nav1.html" />
+    <Content Include="SampleJS\sampleShell.js" />
     <Content Include="Scripts\angular-mocks\.bower.json" />
     <Content Include="Scripts\angular-mocks\angular-mocks.js" />
     <Content Include="Scripts\angular-mocks\bower.json" />
@@ -308,8 +308,8 @@
       <DependentUpon>bower.json</DependentUpon>
     </Content>
     <Content Include="bower.json" />
-    <Content Include="Sample1\app.js" />
-    <Content Include="Sample1\app.min.js">
+    <Content Include="SampleTS\app.js" />
+    <Content Include="SampleTS\app.min.js">
       <DependentUpon>app.js</DependentUpon>
     </Content>
     <Content Include="nuspec-packager.nuspec">
@@ -320,13 +320,13 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\TEMP.pubxml" />
-    <Content Include="Sample1\blade21\blade21.html" />
-    <Content Include="Sample1\blade11\blade11.html" />
-    <Content Include="Sample1\detail1\detail1.html" />
-    <Content Include="Sample1\list1\list1.html" />
-    <Content Include="Sample1\blade2\blade2.html" />
-    <Content Include="Sample1\index.html" />
-    <Content Include="Sample1\nav2\nav2.html" />
+    <Content Include="SampleTS\blade21\blade21.html" />
+    <Content Include="SampleTS\blade11\blade11.html" />
+    <Content Include="SampleTS\detail1\detail1.html" />
+    <Content Include="SampleTS\list1\list1.html" />
+    <Content Include="SampleTS\blade2\blade2.html" />
+    <Content Include="SampleTS\index.html" />
+    <Content Include="SampleTS\nav2\nav2.html" />
     <Content Include="tsc.txt" />
     <Content Include="tsd.json" />
     <Content Include="Scripts\angular-resource\.bower.json" />
@@ -348,9 +348,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SampleOld\blade1\blade1.js" />
-    <Content Include="SampleOld\nav1\nav1.js" />
-    <Content Include="SampleOld\sampleApp.js" />
+    <Content Include="SampleJS\blade1\blade1.js" />
+    <Content Include="SampleJS\nav1\nav1.js" />
+    <Content Include="SampleJS\sampleApp.js" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jasmine\jasmine.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
@@ -368,12 +368,12 @@
     <TypeScriptCompile Include="AzurePortalNg\!base\BladeArea.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\Debug.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\nav\nav.ts" />
-    <TypeScriptCompile Include="Sample1\!data\Customer.ts" />
-    <TypeScriptCompile Include="Sample1\blade21\blade21.ts" />
-    <TypeScriptCompile Include="Sample1\blade21\blade21blade.ts" />
-    <TypeScriptCompile Include="Sample1\blade11\blade11.ts" />
-    <TypeScriptCompile Include="Sample1\blade11\blade11blade.ts" />
-    <TypeScriptCompile Include="Sample1\blade2\blade2blade.ts" />
+    <TypeScriptCompile Include="SampleTS\!data\Customer.ts" />
+    <TypeScriptCompile Include="SampleTS\blade21\blade21.ts" />
+    <TypeScriptCompile Include="SampleTS\blade21\blade21blade.ts" />
+    <TypeScriptCompile Include="SampleTS\blade11\blade11.ts" />
+    <TypeScriptCompile Include="SampleTS\blade11\blade11blade.ts" />
+    <TypeScriptCompile Include="SampleTS\blade2\blade2blade.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!baseservice\DataService.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!baseservice\lgtbcDataService.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!baseservice\TypeLite.Net4.d.ts" />
@@ -394,14 +394,14 @@
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\home\home.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\navgrid\navgrid.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!services\bladeService.ts" />
-    <TypeScriptCompile Include="Sample1\detail1\detail1.ts" />
-    <TypeScriptCompile Include="Sample1\detail1\detail1blade.ts" />
-    <TypeScriptCompile Include="Sample1\list1\list1.ts" />
-    <TypeScriptCompile Include="Sample1\list1\list1blade.ts" />
-    <TypeScriptCompile Include="Sample1\blade2\blade2.ts" />
-    <TypeScriptCompile Include="Sample1\nav2\nav2.ts" />
-    <TypeScriptCompile Include="Sample1\sampleApp.ts" />
-    <TypeScriptCompile Include="Sample1\sampleShell.ts" />
+    <TypeScriptCompile Include="SampleTS\detail1\detail1.ts" />
+    <TypeScriptCompile Include="SampleTS\detail1\detail1blade.ts" />
+    <TypeScriptCompile Include="SampleTS\list1\list1.ts" />
+    <TypeScriptCompile Include="SampleTS\list1\list1blade.ts" />
+    <TypeScriptCompile Include="SampleTS\blade2\blade2.ts" />
+    <TypeScriptCompile Include="SampleTS\nav2\nav2.ts" />
+    <TypeScriptCompile Include="SampleTS\sampleApp.ts" />
+    <TypeScriptCompile Include="SampleTS\sampleShell.ts" />
     <TypeScriptCompile Include="Scripts\typings\ngdialog\ngdialog.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\tsd.d.ts" />
   </ItemGroup>

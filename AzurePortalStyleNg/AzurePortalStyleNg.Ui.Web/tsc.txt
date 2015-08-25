@@ -19,3 +19,9 @@ AzurePortalNg/!base/Startboard.ts
 AzurePortalNg/!base/Tile.ts
 AzurePortalNg/!base/UserAccount.ts
 AzurePortalNg/!base/UserControlBase.ts
+
+AzurePortalNg/portal/!services/bladeService.ts
+AzurePortalNg/portal/!directives/home/home.ts
+AzurePortalNg/portal/!directives/blade/blade.ts
+AzurePortalNg/portal/!directives/nav/nav.ts
+AzurePortalNg/portal/!directives/navgrid/navgrid.ts

@@ -55,22 +55,22 @@
         "sourceMaps": false
     },
     {
-        "outputFileName": "Sample1/app.js",
+        "outputFileName": "SampleTS/app.js",
         "inputFiles": [
-            "Sample1/sampleApp.js",
-            "Sample1/sampleShell.js",
-            "Sample1/!data/customer.js",
-            "Sample1/blade11/blade11.js",
-            "Sample1/blade11/blade11blade.js",
-            "Sample1/blade2/blade2.js",
-            "Sample1/blade2/blade2blade.js",
-            "Sample1/blade21/blade21.js",
-            "Sample1/blade21/blade21blade.js",
-            "Sample1/detail1/detail1.js",
-            "Sample1/detail1/detail1blade.js",
-            "Sample1/list1/list1.js",
-            "Sample1/list1/list1blade.js",
-            "Sample1/nav2/nav2.js"
+            "SampleTS/sampleApp.js",
+            "SampleTS/sampleShell.js",
+            "SampleTS/!data/customer.js",
+            "SampleTS/blade11/blade11.js",
+            "SampleTS/blade11/blade11blade.js",
+            "SampleTS/blade2/blade2.js",
+            "SampleTS/blade2/blade2blade.js",
+            "SampleTS/blade21/blade21.js",
+            "SampleTS/blade21/blade21blade.js",
+            "SampleTS/detail1/detail1.js",
+            "SampleTS/detail1/detail1blade.js",
+            "SampleTS/list1/list1.js",
+            "SampleTS/list1/list1blade.js",
+            "SampleTS/nav2/nav2.js"
         ],
         "minify": {
             "enabled": true,
@@ -80,13 +80,13 @@
         "sourceMaps": false
     },
     {
-        "outputFileName": "SampleOld/app.js",
+        "outputFileName": "SampleJs/app.js",
         "inputFiles": [
-            "SampleOld/sampleApp.js",
-            "SampleOld/sampleShell.js",
-            "SampleOld/!data/customer.js",
-            "SampleOld/blade1/blade1.js",
-            "SampleOld/nav1/nav1.js"
+            "SampleJs/sampleApp.js",
+            "SampleJs/sampleShell.js",
+            "SampleJs/!data/customer.js",
+            "SampleJs/blade1/blade1.js",
+            "SampleJs/nav1/nav1.js"
         ],
         "minify": {
             "enabled": true,

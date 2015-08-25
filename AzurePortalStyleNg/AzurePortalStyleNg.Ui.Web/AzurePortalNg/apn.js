@@ -74,7 +74,7 @@ var AzurePortalNg;
     })();
     AzurePortalNg.Debug = Debug;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=Debug.js.map
 var azurePortalNg;
 (function () {
     'use strict';
@@ -92,7 +92,7 @@ var azurePortalNg;
         AzurePortalNg.Debug.write('[azureportalng-debug] \'azurePortalNg.run\' executing.', [this]);
     });
 })();
-
+//# sourceMappingURL=azureportalng.js.map
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
@@ -108,7 +108,7 @@ var AzurePortalNg;
     })();
     AzurePortalNg.UserControlBase = UserControlBase;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=UserControlBase.js.map
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -131,7 +131,7 @@ var AzurePortalNg;
     })(AzurePortalNg.UserControlBase);
     AzurePortalNg.AvatarMenu = AvatarMenu;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=AvatarMenu.js.map
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -334,7 +334,7 @@ var AzurePortalNg;
         angular.module('azureportalng').service('azurePortalNg.bladeArea', ['$window', AzurePortalNg.BladeArea]);
     })();
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=BladeArea.js.map
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -555,7 +555,7 @@ var AzurePortalNg;
     })(AzurePortalNg.UserControlBase);
     AzurePortalNg.Blade = Blade;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=Blade.js.map
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -634,7 +634,7 @@ var AzurePortalNg;
     })(AzurePortalNg.Blade);
     AzurePortalNg.BladeData = BladeData;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=BladeData.js.map
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -672,7 +672,7 @@ var AzurePortalNg;
     })(AzurePortalNg.BladeData);
     AzurePortalNg.BladeDetail = BladeDetail;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=BladeDetail.js.map
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -810,7 +810,7 @@ var AzurePortalNg;
     })(AzurePortalNg.BladeData);
     AzurePortalNg.BladeList = BladeList;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=BladeList.js.map
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -868,7 +868,7 @@ var AzurePortalNg;
     })();
     AzurePortalNg.BladeNavItem = BladeNavItem;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=BladeNav.js.map
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -896,7 +896,7 @@ var AzurePortalNg;
     })(AzurePortalNg.UserControlBase);
     AzurePortalNg.Panorama = Panorama;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=Panorama.js.map
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
@@ -927,7 +927,7 @@ var AzurePortalNg;
         angular.module('azureportalng').service('azurePortalNg.portalService', ['$injector', AzurePortalNg.PortalService]);
     })();
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=PortalService.js.map
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -981,7 +981,7 @@ var AzurePortalNg;
     })(AzurePortalNg.UserControlBase);
     AzurePortalNg.PortalShell = PortalShell;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=PortalShell.js.map
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -1005,7 +1005,7 @@ var AzurePortalNg;
     })(AzurePortalNg.UserControlBase);
     AzurePortalNg.Startboard = Startboard;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=Startboard.js.map
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
@@ -1101,7 +1101,7 @@ var AzurePortalNg;
     })();
     AzurePortalNg.Tiles = Tiles;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=Tile.js.map
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
@@ -1154,7 +1154,7 @@ var AzurePortalNg;
     })();
     AzurePortalNg.UserAccount = UserAccount;
 })(AzurePortalNg || (AzurePortalNg = {}));
-
+//# sourceMappingURL=UserAccount.js.map
 /*
 * ngDialog - easy modals and popup windows
 * http://github.com/likeastore/ngDialog
@@ -1533,7 +1533,7 @@ var AzurePortalNg;
 //        }
 //    }
 //})(); 
-
+//# sourceMappingURL=bladeService.js.map
 (function () {
     'use strict';
     angular.module('azureportalng').directive('azurePortalHome', ['$window', '$interpolate', azurePortalHome]);
@@ -1546,7 +1546,7 @@ var AzurePortalNg;
         };
     }
 })();
-
+//# sourceMappingURL=home.js.map
 (function () {
     'use strict';
     angular.module('azureportalng').directive('azurePortalBlade', ['$window', 'azurePortalNg.portalService', azurePortalBlade]);
@@ -1570,7 +1570,7 @@ var AzurePortalNg;
         };
     }
 })();
-
+//# sourceMappingURL=blade.js.map
 (function () {
     'use strict';
     angular.module('azureportalng').directive('nav', ['$window', nav]);
@@ -1595,7 +1595,7 @@ var AzurePortalNg;
         };
     }
 })();
-
+//# sourceMappingURL=nav.js.map
 (function () {
     'use strict';
     angular.module('azureportalng').directive('navGrid', ['$window', navGrid]);
@@ -1620,4 +1620,4 @@ var AzurePortalNg;
         };
     }
 })();
-
+//# sourceMappingURL=navgrid.js.map
