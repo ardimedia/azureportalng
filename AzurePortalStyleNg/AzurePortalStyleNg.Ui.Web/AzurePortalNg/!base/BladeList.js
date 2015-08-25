@@ -135,3 +135,4 @@ var AzurePortalNg;
     })(AzurePortalNg.BladeData);
     AzurePortalNg.BladeList = BladeList;
 })(AzurePortalNg || (AzurePortalNg = {}));
+//# sourceMappingURL=BladeList.js.map

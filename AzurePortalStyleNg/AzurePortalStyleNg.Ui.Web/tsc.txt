@@ -1,0 +1,21 @@
+﻿-d
+-t ES5
+--out AzurePortalNg/apn.d.ts
+
+Scripts/typings/tsd.d.ts
+AzurePortalNg/azureportalng.ts
+AzurePortalNg/!base/AvatarMenu.ts
+AzurePortalNg/!base/Blade.ts
+AzurePortalNg/!base/BladeArea.ts
+AzurePortalNg/!base/BladeData.ts
+AzurePortalNg/!base/BladeDetail.ts
+AzurePortalNg/!base/BladeList.ts
+AzurePortalNg/!base/BladeNav.ts
+AzurePortalNg/!base/Debug.ts
+AzurePortalNg/!base/Panorama.ts
+AzurePortalNg/!base/PortalService.ts
+AzurePortalNg/!base/PortalShell.ts
+AzurePortalNg/!base/Startboard.ts
+AzurePortalNg/!base/Tile.ts
+AzurePortalNg/!base/UserAccount.ts
+AzurePortalNg/!base/UserControlBase.ts

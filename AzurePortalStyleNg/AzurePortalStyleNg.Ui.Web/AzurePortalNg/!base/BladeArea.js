@@ -70,7 +70,7 @@ var AzurePortalNg;
             this.clearChild(senderPath);
             this.blades.forEach(function (blade) {
                 if (blade.path === path) {
-                    throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' could not be added. It is already add.');
+                    throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' will not be added. It is already added.');
                 }
                 ;
             });
@@ -200,3 +200,4 @@ var AzurePortalNg;
         angular.module('azureportalng').service('azurePortalNg.bladeArea', ['$window', AzurePortalNg.BladeArea]);
     })();
 })(AzurePortalNg || (AzurePortalNg = {}));
+//# sourceMappingURL=BladeArea.js.map

@@ -1,0 +1,98 @@
+﻿[
+    {
+        "outputFileName": "AzurePortalNg/apn.js",
+        "inputFiles": [
+            "AzurePortalNg/!base/Debug.js",
+            "AzurePortalNg/azureportalng.js",
+            "AzurePortalNg/!base/userControlBase.js",
+            "AzurePortalNg/!base/avatarMenu.js",
+            "AzurePortalNg/!base/bladeArea.js",
+            "AzurePortalNg/!base/blade.js",
+            "AzurePortalNg/!base/bladeData.js",
+            "AzurePortalNg/!base/bladeDetail.js",
+            "AzurePortalNg/!base/bladeList.js",
+            "AzurePortalNg/!base/bladeNav.js",
+            "AzurePortalNg/!base/panorama.js",
+            "AzurePortalNg/!base/portalService.js",
+            "AzurePortalNg/!base/portalShell.js",
+            "AzurePortalNg/!base/startboard.js",
+            "AzurePortalNg/!base/tile.js",
+            "AzurePortalNg/!base/userAccount.js",
+
+            "AzurePortalNg/!directives/dialog/dialog.js",
+
+            "AzurePortalNg/portal/!services/bladeService.js",
+            "AzurePortalNg/portal/!directives/home/home.js",
+            "AzurePortalNg/portal/!directives/blade/blade.js",
+            "AzurePortalNg/portal/!directives/nav/nav.js",
+            "AzurePortalNg/portal/!directives/navgrid/navgrid.js"
+        ],
+        "minify": {
+            "enabled": true,
+            "termSemicolons": true
+        },
+        "includeInProject": true,
+        "sourceMaps": false
+    },
+    {
+        "outputFileName": "Tests/AzurePortalNg/tests.js",
+        "inputFiles": [
+            "Tests/AzurePortalNg/!base/AvatarMenuTest.js",
+            "Tests/AzurePortalNg/!base/BladeAreaTest.js",
+            "Tests/AzurePortalNg/!base/BladeDataTest.js",
+            "Tests/AzurePortalNg/!base/BladeDetailTest.js",
+            "Tests/AzurePortalNg/!base/BladeListTest.js",
+            "Tests/AzurePortalNg/!base/BladeTest.js",
+            "Tests/AzurePortalNg/!base/DebugTest.js",
+            "Tests/AzurePortalNg/!base/PortalServiceTest.js",
+            "Tests/AzurePortalNg/!base/UserControlBaseTest.js"
+        ],
+        "minify": {
+            "enabled": true,
+            "termSemicolons": true
+        },
+        "includeInProject": true,
+        "sourceMaps": false
+    },
+    {
+        "outputFileName": "Sample1/app.js",
+        "inputFiles": [
+            "Sample1/sampleApp.js",
+            "Sample1/sampleShell.js",
+            "Sample1/!data/customer.js",
+            "Sample1/blade11/blade11.js",
+            "Sample1/blade11/blade11blade.js",
+            "Sample1/blade2/blade2.js",
+            "Sample1/blade2/blade2blade.js",
+            "Sample1/blade21/blade21.js",
+            "Sample1/blade21/blade21blade.js",
+            "Sample1/detail1/detail1.js",
+            "Sample1/detail1/detail1blade.js",
+            "Sample1/list1/list1.js",
+            "Sample1/list1/list1blade.js",
+            "Sample1/nav2/nav2.js"
+        ],
+        "minify": {
+            "enabled": true,
+            "termSemicolons": true
+        },
+        "includeInProject": true,
+        "sourceMaps": false
+    },
+    {
+        "outputFileName": "SampleOld/app.js",
+        "inputFiles": [
+            "SampleOld/sampleApp.js",
+            "SampleOld/sampleShell.js",
+            "SampleOld/!data/customer.js",
+            "SampleOld/blade1/blade1.js",
+            "SampleOld/nav1/nav1.js"
+        ],
+        "minify": {
+            "enabled": true,
+            "termSemicolons": true
+        },
+        "includeInProject": true,
+        "sourceMaps": false
+    }
+]

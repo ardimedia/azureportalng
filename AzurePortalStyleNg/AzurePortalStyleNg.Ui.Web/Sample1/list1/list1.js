@@ -45,3 +45,4 @@ var Sample1;
         angular.module('sampleapp').controller('list1', ['azurePortalNg.portalService', List1]);
     })();
 })(Sample1 || (Sample1 = {}));
+//# sourceMappingURL=list1.js.map

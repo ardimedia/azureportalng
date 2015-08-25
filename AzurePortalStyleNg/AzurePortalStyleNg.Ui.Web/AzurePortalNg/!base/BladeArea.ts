@@ -105,7 +105,7 @@
 
             this.blades.forEach(function (blade) {
                 if (blade.path === path) {
-                    throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' could not be added. It is already add.');
+                    throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' will not be added. It is already added.');
                 };
             });
 
