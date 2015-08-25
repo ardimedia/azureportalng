@@ -17,7 +17,6 @@ describe('AzurePortalNg.PortalService', function () {
         expect(sut.$rootScope).not.toBe(undefined);
         expect(sut.$window).not.toBe(undefined);
         // BE NULL
-        expect(sut.$scope).toBe(undefined);
         expect(sut.animation).toBe(undefined);
         expect(sut.config).toBe(undefined);
         expect(sut.constant).toBe(undefined);
@@ -33,9 +32,9 @@ describe('AzurePortalNg.PortalService', function () {
         expect(sut.service).toBe(undefined);
         expect(sut.value).toBe(undefined);
         // NOT TO BE NULL
-        expect(sut.bladeArea).not.toBe(undefined);
         expect(sut.ngDialog).not.toBe(undefined);
         // BE NULL
+        expect(sut.bladeArea).toBe(undefined);
         expect(sut.panorama).toBe(undefined);
         expect(sut.portalShell).toBe(undefined);
     });

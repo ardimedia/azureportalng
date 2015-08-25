@@ -59,7 +59,7 @@ var AzurePortalNg;
             });
         };
         BladeData.prototype.onGetDataDetail = function () {
-            throw new Error('[AzurePortalNg.BladeArea] \'onGetDataDetail\' is an abstract function. Define one in the derived class.');
+            throw new Error('[AzurePortalNg.BladeData] \'onGetDataDetail\' is an abstract function. Define one in the derived class.');
         };
         //#endregion
         //#region setObsoleteLayoutProperites (override)

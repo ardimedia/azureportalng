@@ -129,7 +129,8 @@ var AzurePortalNg;
         };
         BladeList.prototype.onNavigateTo = function (path) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.onNavigateTo\' called.', [this, path]);
-            this.portalService.bladeArea.addBlade(path, this.blade.path);
+            this.portalService.$rootScope.$broadcast('BladeArea.AddBlade', { path: path, pathSender: this.blade.path });
+            //this.portalService.bladeArea.addBlade(path, this.blade.path);
         };
         return BladeList;
     })(AzurePortalNg.BladeData);

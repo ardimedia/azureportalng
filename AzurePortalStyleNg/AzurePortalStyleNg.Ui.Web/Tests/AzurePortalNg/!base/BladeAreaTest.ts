@@ -61,7 +61,7 @@
     it("clearPath - path not found - throw exception", function () {
         var exception = function () { sut.clearPath('test-path'); };
 
-        expect(exception).toThrow(new Error('[AzurePortalNg.BladeArea] path: \'test-path\' could not be removed, since path not found in bladeUrls.'));
+        expect(exception).toThrow(new Error('[AzurePortalNg.BladeArea.clearPath] path: \'test-path\' could not be removed, since path not found in bladeUrls.'));
     });
 
     //#endregion

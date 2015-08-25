@@ -1,3 +1,6 @@
+/// <reference path="../scripts/typings/angularjs/angular.d.ts" />
+/// <reference path="../scripts/typings/ngdialog/ngdialog.d.ts" />
+// the above lines need to be here, since 'tsc @tsc.txt', which creates apn.d.ts, will have warnings/errors
 var azurePortalNg;
 (function () {
     'use strict';

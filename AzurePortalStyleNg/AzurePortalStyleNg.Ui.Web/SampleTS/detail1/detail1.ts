@@ -22,7 +22,11 @@
         //#region Data Access
 
         protected onGetDataDetail(): angular.IHttpPromise<any> {
-            return this.portalService.$http({ method: 'GET', url: '/customer/1' });
+
+            // TODO: id is undefined, fix that
+            var id = 1001;
+
+            return this.portalService.$http({ method: 'GET', url: '/customer/' + id });
         }
 
         //#endregion
@@ -34,7 +38,7 @@
 
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('detail1', ['azurePortalNg.portalService', Detail1]);
+        angular.module('sampleTsApp').controller('detail1', ['azurePortalNg.portalService', Detail1]);
     })();
 
     //#endregion

@@ -1,0 +1,11 @@
+﻿/// <autosync enabled="true"/>
+/// <reference path="../!package/apn.js" />
+/// <reference path="../AzurePortalNg/!directives/dialog/dialog.js" />
+/// <reference path="../SampleJS/!data/Customer.js" />
+/// <reference path="../SampleJS/app.js" />
+/// <reference path="../SampleJS/blade1/blade1.js" />
+/// <reference path="../SampleJS/nav1/nav1.js" />
+/// <reference path="../samplejs/samplejsapp.js" />
+/// <reference path="../samplejs/samplejsshell.js" />
+/// <reference path="../SampleTS/app.js" />
+/// <reference path="../Tests/AzurePortalNg/tests.js" />

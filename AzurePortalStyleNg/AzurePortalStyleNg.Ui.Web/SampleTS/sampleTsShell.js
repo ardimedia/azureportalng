@@ -1,24 +1,23 @@
-﻿module SampleTS {
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var SampleTS;
+(function (SampleTS) {
     'use strict';
-
     //#region Class Definition
-
-    class SampleShell extends AzurePortalNg.PortalShell {
-
+    var SampleTsShell = (function (_super) {
+        __extends(SampleTsShell, _super);
         //#region Properties
-
         //#endregion
-
         //#region Constructors
-
-        constructor(portalService: AzurePortalNg.PortalService) {
-            super('SAMPLE TypeScript', portalService);
-
+        function SampleTsShell(portalService) {
+            _super.call(this, 'SAMPLE TypeScript', portalService);
             this.portalService.panorama.startboard.tiles.showTiles = true;
-
             this.portalService.panorama.avatarMenu.userAccount = new AzurePortalNg.UserAccount('useraccount@mail.com', 'first', 'last');
-
-            var tile = this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Navigation 2', '/SampleTS/nav2/nav2.html', portalService));
+            var tile = this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Navigation 1', '/SampleTS/nav1/nav1.html', portalService));
             tile.subTitle = 'TypeScript based';
             var tile = this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Blade 1-1', '/SampleTS/blade11/blade11.html', portalService));
             tile.subTitle = 'TypeScript based';
@@ -30,42 +29,37 @@
             tile.subTitle = 'TypeScript based';
             var tile = this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Detail 1', '/SampleTS/detail1/detail1.html', portalService));
             tile.subTitle = 'TypeScript based';
-
             this.setObsoleteLayoutProperites();
-
             this.httpTestData();
         }
-
         //#endregion
-
         //#region Methods
-
-        httpTestData() {
-            var customers: Array<SampleTS.Customer> = new Array<SampleTS.Customer>();
+        SampleTsShell.prototype.httpTestData = function () {
+            var customers = new Array();
             customers.push(new SampleTS.Customer(1001, 'Harry', 'Sleeper'));
             customers.push(new SampleTS.Customer(1002, 'Eva', 'Cooker'));
             customers.push(new SampleTS.Customer(1003, 'Niklas', 'Soccer'));
             customers.push(new SampleTS.Customer(1004, 'Julia', 'Singer'));
-
             this.portalService.$httpBackend.whenGET(/\/AzurePortalNg\/.*/).passThrough();
             this.portalService.$httpBackend.whenGET(/\/SampleTS\/.*/).passThrough();
-
             this.portalService.$httpBackend.whenGET('/customers')
                 .respond(customers);
-        }
-
-        //#endregion
-    }
-
+            this.portalService.$httpBackend.whenGET('/customer/1001')
+                .respond(customers[0]);
+            this.portalService.$httpBackend.whenGET('/customer/1002')
+                .respond(customers[1]);
+            this.portalService.$httpBackend.whenGET('/customer/1003')
+                .respond(customers[2]);
+            this.portalService.$httpBackend.whenGET('/customer/1004')
+                .respond(customers[3]);
+        };
+        return SampleTsShell;
+    })(AzurePortalNg.PortalShell);
     //#endregion
-
     //#region Angular Registration
-
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('sampleShell', ['azurePortalNg.portalService', SampleShell]);
+        angular.module('sampleTsApp').controller('sampleShell', ['azurePortalNg.portalService', SampleTsShell]);
     })();
-
-
-    //#endregion
-}
+})(SampleTS || (SampleTS = {}));
+//# sourceMappingURL=sampleTsShell.js.map

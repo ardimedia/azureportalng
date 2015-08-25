@@ -31,7 +31,8 @@ TYPESCRIPT d.ts
 ------------------------------------------------------------------------------------------------------------
 > Edit @tsc.txt
   > make sure all necessary *.ts files are included
-> Generate apn.d.ts (apn.d.ts cannot be included in VS Solution, otherwise compile errors)
+> Generate apn.d.ts (set apn.d.ts 'Build Action' to 'None')
+  > cd C:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web
   > tsc @tsc.txt
 ============================================================================================================
 

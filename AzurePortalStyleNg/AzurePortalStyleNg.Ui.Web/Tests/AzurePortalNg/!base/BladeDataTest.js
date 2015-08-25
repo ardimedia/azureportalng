@@ -26,7 +26,7 @@ describe('AzurePortalNg.BladeData', function () {
     //#region getDataList
     it("getDataDetail throws expection", function () {
         var exception = function () { sut.getDataDetail(); };
-        expect(exception).toThrow(new Error('[AzurePortalNg.BladeArea] \'onGetDataDetail\' is an abstract function. Define one in the derived class.'));
+        expect(exception).toThrow(new Error('[AzurePortalNg.BladeData] \'onGetDataDetail\' is an abstract function. Define one in the derived class.'));
         expect(sut.statusbar).toBe('Daten laden...');
         expect(sut.statusbarClass).toBe('');
     });

@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('sampleJs').controller('nav1', ['$scope', '$http', 'azurePortalNg.portalService', nav1]);
+    angular.module('sampleJsApp').controller('nav1', ['$scope', '$http', 'azurePortalNg.portalService', nav1]);
 
     function nav1($scope, $http, bladeService) {
         /* jshint validthis: true */

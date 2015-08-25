@@ -1,6 +1,7 @@
 ﻿[
+    // !Package/apn.js
     {
-        "outputFileName": "AzurePortalNg/apn.js",
+        "outputFileName": "!Package/apn.js",
         "inputFiles": [
             "AzurePortalNg/!base/Debug.js",
             "AzurePortalNg/azureportalng.js",
@@ -34,6 +35,8 @@
         "includeInProject": true,
         "sourceMaps": false
     },
+
+    // Tests/AzurePortalNg/tests.js
     {
         "outputFileName": "Tests/AzurePortalNg/tests.js",
         "inputFiles": [
@@ -54,11 +57,13 @@
         "includeInProject": true,
         "sourceMaps": false
     },
+
+    // SampleTS/app.js
     {
         "outputFileName": "SampleTS/app.js",
         "inputFiles": [
-            "SampleTS/sampleApp.js",
-            "SampleTS/sampleShell.js",
+            "SampleTS/sampleTsApp.js",
+            "SampleTS/sampleTsShell.js",
             "SampleTS/!data/customer.js",
             "SampleTS/blade11/blade11.js",
             "SampleTS/blade11/blade11blade.js",
@@ -70,7 +75,7 @@
             "SampleTS/detail1/detail1blade.js",
             "SampleTS/list1/list1.js",
             "SampleTS/list1/list1blade.js",
-            "SampleTS/nav2/nav2.js"
+            "SampleTS/nav1/nav1.js"
         ],
         "minify": {
             "enabled": true,
@@ -79,11 +84,13 @@
         "includeInProject": true,
         "sourceMaps": false
     },
+
+    // SampleJs/app.js
     {
         "outputFileName": "SampleJs/app.js",
         "inputFiles": [
-            "SampleJs/sampleApp.js",
-            "SampleJs/sampleShell.js",
+            "SampleJs/sampleJsApp.js",
+            "SampleJs/sampleJsShell.js",
             "SampleJs/!data/customer.js",
             "SampleJs/blade1/blade1.js",
             "SampleJs/nav1/nav1.js"

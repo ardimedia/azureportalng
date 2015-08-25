@@ -9,11 +9,11 @@ var SampleJs;
 (function (SampleJs) {
     'use strict';
 
-    var SampleShell = (function (_super) {
-        __extends(SampleShell, _super);
+    var SampleTsShell = (function (_super) {
+        __extends(SampleTsShell, _super);
 
         //#region Class Definition
-        function SampleShell(portalService) {
+        function SampleTsShell(portalService) {
             _super.call(this, 'SAMPLE JavaScript', portalService);
             this.portalService.panorama.startboard.tiles.showTiles = true;
             this.portalService.panorama.avatarMenu.userAccount = new AzurePortalNg.UserAccount('useraccount@mail.com', 'first', 'last');
@@ -30,7 +30,7 @@ var SampleJs;
         //#endregion
 
         //#region Methods
-        SampleShell.prototype.httpTestData = function () {
+        SampleTsShell.prototype.httpTestData = function () {
             var customers = new Array();
             customers.push(new SampleJs.Customer(1001, 'Harry', 'Sleeper'));
             customers.push(new SampleJs.Customer(1002, 'Eva', 'Cooker'));
@@ -43,13 +43,13 @@ var SampleJs;
         };
         //#endregion
 
-        return SampleShell;
+        return SampleTsShell;
     })(AzurePortalNg.PortalShell);
 
     //#region Angular Registration
     (function () {
         'use strict';
-        angular.module('sampleJs').controller('sampleShell', ['azurePortalNg.portalService', SampleShell]);
+        angular.module('sampleJsApp').controller('sampleShell', ['azurePortalNg.portalService', SampleTsShell]);
     })();
     //#endregion
 

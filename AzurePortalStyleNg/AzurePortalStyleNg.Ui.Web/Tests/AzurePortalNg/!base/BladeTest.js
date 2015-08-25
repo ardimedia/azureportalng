@@ -110,7 +110,7 @@ describe('AzurePortalNg.Blade', function () {
     //#region bladeClose
     it("bladeClose throws exception - path could not be removed", function () {
         var exception = function () { sut.bladeClose(); };
-        expect(exception).toThrow(new Error('[AzurePortalNg.BladeArea] path: \'test-path\' could not be removed, since path not found in bladeUrls.'));
+        expect(exception).toThrow(new Error('[AzurePortalNg.Blade] path: \'test-path\' could not be removed, since no this.portalService.bladeArea available.'));
     });
     //#endregion
     //#endregion

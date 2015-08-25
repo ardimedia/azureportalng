@@ -166,7 +166,7 @@ var AzurePortalNg;
             throw new Error('[AzurePortalNg.Blade] \'onCommandSwap\' is an abstract function. Define one in the derived class.');
         };
         //#endregion
-        //#region Functions
+        //#region Methods
         Blade.prototype.activate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.', [this]);
             this.onActivate();
@@ -186,6 +186,9 @@ var AzurePortalNg;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.', [this]);
             if (this.portalService.bladeArea !== undefined) {
                 this.portalService.bladeArea.clearPath(this.path);
+            }
+            else {
+                throw new Error('[AzurePortalNg.Blade] path: \'' + this.path + '\' could not be removed, since no this.portalService.bladeArea available.');
             }
         };
         //#endregion

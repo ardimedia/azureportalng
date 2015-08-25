@@ -10120,7 +10120,7 @@ function $HttpProvider() {
   var data = element(by.binding('data'));
   var fetchBtn = element(by.id('fetchbtn'));
   var sampleGetBtn = element(by.id('samplegetbtn'));
-  var sampleJsonpBtn = element(by.id('samplejsonpbtn'));
+  var sampleJsApponpBtn = element(by.id('samplejsonpbtn'));
   var invalidJsonpBtn = element(by.id('invalidjsonpbtn'));
 
   it('should make an xhr GET request', function() {
@@ -10132,7 +10132,7 @@ function $HttpProvider() {
 
 // Commented out due to flakes. See https://github.com/angular/angular.js/issues/9185
 // it('should make a JSONP request to angularjs.org', function() {
-//   sampleJsonpBtn.click();
+//   sampleJsApponpBtn.click();
 //   fetchBtn.click();
 //   expect(status.getText()).toMatch('200');
 //   expect(data.getText()).toMatch(/Super Hero!/);

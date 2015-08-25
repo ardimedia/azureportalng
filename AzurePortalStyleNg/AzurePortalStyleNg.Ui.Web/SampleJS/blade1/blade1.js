@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('sampleJs').controller('blade1', ['$scope', '$http', 'azurePortalNg.bladeArea', blade1]);
+    angular.module('sampleJsApp').controller('blade1', ['$scope', '$http', 'azurePortalNg.bladeArea', blade1]);
 
     function blade1($scope, $http, bladeService) {
         /* jshint validthis: true */

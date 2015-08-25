@@ -12,11 +12,12 @@ var AzurePortalNg;
             this.$http = $injector.get('$http');
             this.$httpBackend = $injector.get('$httpBackend');
             this.$q = $injector.get('$q');
-            //this.$scope = $injector.get('$scope');
             this.$rootScope = $injector.get('$rootScope');
             this.$window = $injector.get('$window');
-            this.bladeArea = $injector.get('azurePortalNg.bladeArea');
             this.ngDialog = $injector.get('ngDialog');
+            //this.bladeArea = <AzurePortalNg.BladeArea>$injector.get('azurePortalNg.bladeArea');
+            //this.bladeArea.portalService = this;
+            //this.bladeArea = new BladeArea(this);
         }
         return PortalService;
     })();

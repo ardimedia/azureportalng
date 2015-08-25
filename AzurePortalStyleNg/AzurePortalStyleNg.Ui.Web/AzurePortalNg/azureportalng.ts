@@ -1,4 +1,8 @@
-﻿var azurePortalNg: ng.IModule;
+﻿/// <reference path="../scripts/typings/angularjs/angular.d.ts" />
+/// <reference path="../scripts/typings/ngdialog/ngdialog.d.ts" />
+// the above lines need to be here, since 'tsc @tsc.txt', which creates apn.d.ts, will have warnings/errors
+
+var azurePortalNg: ng.IModule;
 
 (function () {
     'use strict';

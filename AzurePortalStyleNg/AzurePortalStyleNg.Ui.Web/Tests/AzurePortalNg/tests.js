@@ -57,7 +57,7 @@ describe('AzurePortalNg.BladeArea', function () {
     //#region clearPath
     it("clearPath - path not found - throw exception", function () {
         var exception = function () { sut.clearPath('test-path'); };
-        expect(exception).toThrow(new Error('[AzurePortalNg.BladeArea] path: \'test-path\' could not be removed, since path not found in bladeUrls.'));
+        expect(exception).toThrow(new Error('[AzurePortalNg.BladeArea.clearPath] path: \'test-path\' could not be removed, since path not found in bladeUrls.'));
     });
     //#endregion
     //#region clearLevel
@@ -107,7 +107,7 @@ describe('AzurePortalNg.BladeData', function () {
     //#region getDataList
     it("getDataDetail throws expection", function () {
         var exception = function () { sut.getDataDetail(); };
-        expect(exception).toThrow(new Error('[AzurePortalNg.BladeArea] \'onGetDataDetail\' is an abstract function. Define one in the derived class.'));
+        expect(exception).toThrow(new Error('[AzurePortalNg.BladeData] \'onGetDataDetail\' is an abstract function. Define one in the derived class.'));
         expect(sut.statusbar).toBe('Daten laden...');
         expect(sut.statusbarClass).toBe('');
     });
@@ -277,7 +277,7 @@ describe('AzurePortalNg.Blade', function () {
     //#region bladeClose
     it("bladeClose throws exception - path could not be removed", function () {
         var exception = function () { sut.bladeClose(); };
-        expect(exception).toThrow(new Error('[AzurePortalNg.BladeArea] path: \'test-path\' could not be removed, since path not found in bladeUrls.'));
+        expect(exception).toThrow(new Error('[AzurePortalNg.Blade] path: \'test-path\' could not be removed, since no this.portalService.bladeArea available.'));
     });
     //#endregion
     //#endregion
@@ -443,7 +443,6 @@ describe('AzurePortalNg.PortalService', function () {
         expect(sut.$rootScope).not.toBe(undefined);
         expect(sut.$window).not.toBe(undefined);
         // BE NULL
-        expect(sut.$scope).toBe(undefined);
         expect(sut.animation).toBe(undefined);
         expect(sut.config).toBe(undefined);
         expect(sut.constant).toBe(undefined);
@@ -459,9 +458,9 @@ describe('AzurePortalNg.PortalService', function () {
         expect(sut.service).toBe(undefined);
         expect(sut.value).toBe(undefined);
         // NOT TO BE NULL
-        expect(sut.bladeArea).not.toBe(undefined);
         expect(sut.ngDialog).not.toBe(undefined);
         // BE NULL
+        expect(sut.bladeArea).toBe(undefined);
         expect(sut.panorama).toBe(undefined);
         expect(sut.portalShell).toBe(undefined);
     });

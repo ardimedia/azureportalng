@@ -33,7 +33,7 @@ var SampleTS;
     //#region Angular Registration
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('blade21', ['azurePortalNg.portalService', Blade21]);
+        angular.module('sampleTsApp').controller('blade21', ['azurePortalNg.portalService', Blade21]);
     })();
 })(SampleTS || (SampleTS = {}));
 //# sourceMappingURL=blade21.js.map

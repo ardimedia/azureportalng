@@ -35,7 +35,7 @@ var SampleTS;
     //#region Angular Registration
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('blade11', ['azurePortalNg.portalService', Blade11]);
+        angular.module('sampleTsApp').controller('blade11', ['azurePortalNg.portalService', Blade11]);
     })();
 })(SampleTS || (SampleTS = {}));
 //# sourceMappingURL=blade11.js.map

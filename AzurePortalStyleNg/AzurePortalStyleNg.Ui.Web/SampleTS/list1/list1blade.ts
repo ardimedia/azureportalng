@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('sampleapp').directive('list1Blade', [list1Blade]);
+    angular.module('sampleTsApp').directive('list1Blade', [list1Blade]);
 
     function list1Blade() {
         return {

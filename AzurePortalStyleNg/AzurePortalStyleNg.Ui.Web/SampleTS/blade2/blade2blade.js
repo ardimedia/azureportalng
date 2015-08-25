@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('sampleapp').directive('blade2Blade', [blade2Blade]);
+    angular.module('sampleTsApp').directive('blade2Blade', [blade2Blade]);
     function blade2Blade() {
         return {
             replace: true,

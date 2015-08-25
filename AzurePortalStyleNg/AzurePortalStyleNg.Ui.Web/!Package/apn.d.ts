@@ -1,3 +1,5 @@
+/// <reference path="../Scripts/typings/angularjs/angular.d.ts" />
+/// <reference path="../Scripts/typings/ngdialog/ngdialog.d.ts" />
 declare var azurePortalNg: ng.IModule;
 declare module AzurePortalNg {
     class AvatarMenu extends UserControlBase {

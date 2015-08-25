@@ -75,6 +75,9 @@ var AzurePortalNg;
     AzurePortalNg.Debug = Debug;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Debug.js.map
+/// <reference path="../scripts/typings/angularjs/angular.d.ts" />
+/// <reference path="../scripts/typings/ngdialog/ngdialog.d.ts" />
+// the above lines need to be here, since 'tsc @tsc.txt', which creates apn.d.ts, will have warnings/errors
 var azurePortalNg;
 (function () {
     'use strict';
@@ -170,12 +173,18 @@ var AzurePortalNg;
         //#region Constructors
         function BladeArea(portalService) {
             _super.call(this, portalService);
-            //#region Properties
             this.blades = new Array();
             this.parameter = { id: '', action: '' };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea\' constructor called.', [this, portalService]);
+            var that = this;
+            // Set dependencies
             this.portalService = portalService;
             this.portalService.bladeArea = this;
+            //#region AddEventListeners
+            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, parameter) {
+                that.addBlade(parameter.path, parameter.pathSender);
+            });
+            //#endregion
         }
         //#endregion
         //#region Methods
@@ -241,7 +250,7 @@ var AzurePortalNg;
             });
             if (!isremoved) {
                 AzurePortalNg.Debug.write('>>> bladeUrls:', [that.blades]);
-                throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
+                throw new Error('[AzurePortalNg.BladeArea.clearPath] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
             }
             this.showPanoramaIfNoBlades();
         };
@@ -276,7 +285,7 @@ var AzurePortalNg;
             });
             if (!isremoved) {
                 AzurePortalNg.Debug.write('>>> bladeUrls:', [that.blades]);
-                throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
+                throw new Error('[AzurePortalNg.BladeArea.clearChild] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
             }
         };
         BladeArea.prototype.showPanoramaIfNoBlades = function () {
@@ -503,7 +512,7 @@ var AzurePortalNg;
             throw new Error('[AzurePortalNg.Blade] \'onCommandSwap\' is an abstract function. Define one in the derived class.');
         };
         //#endregion
-        //#region Functions
+        //#region Methods
         Blade.prototype.activate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.', [this]);
             this.onActivate();
@@ -523,6 +532,9 @@ var AzurePortalNg;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.', [this]);
             if (this.portalService.bladeArea !== undefined) {
                 this.portalService.bladeArea.clearPath(this.path);
+            }
+            else {
+                throw new Error('[AzurePortalNg.Blade] path: \'' + this.path + '\' could not be removed, since no this.portalService.bladeArea available.');
             }
         };
         //#endregion
@@ -617,7 +629,7 @@ var AzurePortalNg;
             });
         };
         BladeData.prototype.onGetDataDetail = function () {
-            throw new Error('[AzurePortalNg.BladeArea] \'onGetDataDetail\' is an abstract function. Define one in the derived class.');
+            throw new Error('[AzurePortalNg.BladeData] \'onGetDataDetail\' is an abstract function. Define one in the derived class.');
         };
         //#endregion
         //#region setObsoleteLayoutProperites (override)
@@ -804,7 +816,8 @@ var AzurePortalNg;
         };
         BladeList.prototype.onNavigateTo = function (path) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.onNavigateTo\' called.', [this, path]);
-            this.portalService.bladeArea.addBlade(path, this.blade.path);
+            this.portalService.$rootScope.$broadcast('BladeArea.AddBlade', { path: path, pathSender: this.blade.path });
+            //this.portalService.bladeArea.addBlade(path, this.blade.path);
         };
         return BladeList;
     })(AzurePortalNg.BladeData);
@@ -838,11 +851,10 @@ var AzurePortalNg;
         }
         //#endregion
         //#region Methods
-        //navigateTo(path: string) {
-        //}
         BladeNav.prototype.onNavigateTo = function (path) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeNav.onNavigateTo\' called.', [this, path]);
-            this.portalService.bladeArea.addBlade(path, this.blade.path);
+            this.portalService.$rootScope.$broadcast('BladeArea.AddBlade', { path: path, pathSender: this.blade.path });
+            //this.portalService.bladeArea.addBlade(path, this.blade.path);
         };
         return BladeNav;
     })(AzurePortalNg.BladeData);
@@ -911,11 +923,12 @@ var AzurePortalNg;
             this.$http = $injector.get('$http');
             this.$httpBackend = $injector.get('$httpBackend');
             this.$q = $injector.get('$q');
-            //this.$scope = $injector.get('$scope');
             this.$rootScope = $injector.get('$rootScope');
             this.$window = $injector.get('$window');
-            this.bladeArea = $injector.get('azurePortalNg.bladeArea');
             this.ngDialog = $injector.get('ngDialog');
+            //this.bladeArea = <AzurePortalNg.BladeArea>$injector.get('azurePortalNg.bladeArea');
+            //this.bladeArea.portalService = this;
+            //this.bladeArea = new BladeArea(this);
         }
         return PortalService;
     })();

@@ -47,7 +47,6 @@
         $httpBackend: angular.IHttpBackendService;
         $injector: angular.auto.IInjectorService
         $q: angular.IQService;
-        $scope: angular.IScope;
         $rootScope: angular.IRootScopeService;
         $window: angular.IWindowService;
 
@@ -65,12 +64,14 @@
             this.$http = <angular.IHttpService>$injector.get('$http');
             this.$httpBackend = <angular.IHttpBackendService>$injector.get('$httpBackend');
             this.$q = <angular.IQService>$injector.get('$q');
-            //this.$scope = $injector.get('$scope');
             this.$rootScope = <angular.IRootScopeService>$injector.get('$rootScope');
             this.$window = <angular.IWindowService>$injector.get('$window');
 
-            this.bladeArea = <AzurePortalNg.BladeArea>$injector.get('azurePortalNg.bladeArea');
             this.ngDialog = <any>$injector.get('ngDialog');
+
+            //this.bladeArea = <AzurePortalNg.BladeArea>$injector.get('azurePortalNg.bladeArea');
+            //this.bladeArea.portalService = this;
+            //this.bladeArea = new BladeArea(this);
         }
 
         //#endregion

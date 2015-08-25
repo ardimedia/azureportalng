@@ -41,7 +41,7 @@
 
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('blade21', ['azurePortalNg.portalService', Blade21]);
+        angular.module('sampleTsApp').controller('blade21', ['azurePortalNg.portalService', Blade21]);
     })();
 
     //#endregion

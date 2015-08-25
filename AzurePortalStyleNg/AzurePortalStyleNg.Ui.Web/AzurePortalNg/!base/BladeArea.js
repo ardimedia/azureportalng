@@ -36,12 +36,18 @@ var AzurePortalNg;
         //#region Constructors
         function BladeArea(portalService) {
             _super.call(this, portalService);
-            //#region Properties
             this.blades = new Array();
             this.parameter = { id: '', action: '' };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea\' constructor called.', [this, portalService]);
+            var that = this;
+            // Set dependencies
             this.portalService = portalService;
             this.portalService.bladeArea = this;
+            //#region AddEventListeners
+            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, parameter) {
+                that.addBlade(parameter.path, parameter.pathSender);
+            });
+            //#endregion
         }
         //#endregion
         //#region Methods
@@ -107,7 +113,7 @@ var AzurePortalNg;
             });
             if (!isremoved) {
                 AzurePortalNg.Debug.write('>>> bladeUrls:', [that.blades]);
-                throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
+                throw new Error('[AzurePortalNg.BladeArea.clearPath] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
             }
             this.showPanoramaIfNoBlades();
         };
@@ -142,7 +148,7 @@ var AzurePortalNg;
             });
             if (!isremoved) {
                 AzurePortalNg.Debug.write('>>> bladeUrls:', [that.blades]);
-                throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
+                throw new Error('[AzurePortalNg.BladeArea.clearChild] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
             }
         };
         BladeArea.prototype.showPanoramaIfNoBlades = function () {

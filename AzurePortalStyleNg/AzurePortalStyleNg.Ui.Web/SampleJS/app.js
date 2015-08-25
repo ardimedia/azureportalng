@@ -2,7 +2,7 @@
 
 (function () {
     'use strict';
-    var app = angular.module('sampleJs', ['azureportalng', 'ngResource', 'ngDialog', 'ngMockE2E']);
+    var app = angular.module('sampleJsApp', ['azureportalng', 'ngResource', 'ngDialog', 'ngMockE2E']);
 
     app.config([function () {
         AzurePortalNg.Debug.isEnabled = true;
@@ -13,7 +13,7 @@
     // TODO: 2015-04-25/hp: The sample should define the test environment ($httpBackend) here.
     //                      At the moment it is defined in 'sampleShell.ts'.
     //------------------------------------------------------------------------------------------------------------
-    //angular.module('sampleJs', ['ngMockE2E'])
+    //angular.module('sampleJsApp', ['ngMockE2E'])
     //    .run(function ($httpBackend) {
     //    $httpBackend.whenGET(/\/AzurePortalNg\/.*/).passThrough();
     //});
@@ -32,11 +32,11 @@ var SampleJs;
 (function (SampleJs) {
     'use strict';
 
-    var SampleShell = (function (_super) {
-        __extends(SampleShell, _super);
+    var SampleTsShell = (function (_super) {
+        __extends(SampleTsShell, _super);
 
         //#region Class Definition
-        function SampleShell(portalService) {
+        function SampleTsShell(portalService) {
             _super.call(this, 'SAMPLE JavaScript', portalService);
             this.portalService.panorama.startboard.tiles.showTiles = true;
             this.portalService.panorama.avatarMenu.userAccount = new AzurePortalNg.UserAccount('useraccount@mail.com', 'first', 'last');
@@ -53,7 +53,7 @@ var SampleJs;
         //#endregion
 
         //#region Methods
-        SampleShell.prototype.httpTestData = function () {
+        SampleTsShell.prototype.httpTestData = function () {
             var customers = new Array();
             customers.push(new SampleJs.Customer(1001, 'Harry', 'Sleeper'));
             customers.push(new SampleJs.Customer(1002, 'Eva', 'Cooker'));
@@ -66,13 +66,13 @@ var SampleJs;
         };
         //#endregion
 
-        return SampleShell;
+        return SampleTsShell;
     })(AzurePortalNg.PortalShell);
 
     //#region Angular Registration
     (function () {
         'use strict';
-        angular.module('sampleJs').controller('sampleShell', ['azurePortalNg.portalService', SampleShell]);
+        angular.module('sampleJsApp').controller('sampleShell', ['azurePortalNg.portalService', SampleTsShell]);
     })();
     //#endregion
 
@@ -96,7 +96,7 @@ var SampleJs;
 (function () {
     'use strict';
 
-    angular.module('sampleJs').controller('blade1', ['$scope', '$http', 'azurePortalNg.bladeArea', blade1]);
+    angular.module('sampleJsApp').controller('blade1', ['$scope', '$http', 'azurePortalNg.bladeArea', blade1]);
 
     function blade1($scope, $http, bladeService) {
         /* jshint validthis: true */
@@ -135,7 +135,7 @@ var SampleJs;
 (function () {
     'use strict';
 
-    angular.module('sampleJs').controller('nav1', ['$scope', '$http', 'azurePortalNg.portalService', nav1]);
+    angular.module('sampleJsApp').controller('nav1', ['$scope', '$http', 'azurePortalNg.portalService', nav1]);
 
     function nav1($scope, $http, bladeService) {
         /* jshint validthis: true */

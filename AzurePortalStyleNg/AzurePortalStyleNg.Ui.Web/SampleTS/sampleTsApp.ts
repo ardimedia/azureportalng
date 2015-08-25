@@ -2,9 +2,9 @@
 
 (function () {
     'use strict';
-    var app = angular.module('sampleJs', ['azureportalng', 'ngResource', 'ngDialog', 'ngMockE2E']);
+    var app = angular.module('sampleTsApp', ['azureportalng', 'ngResource', 'ngDialog', 'ngMockE2E']);
 
-    app.config([function () {
+    app.config([function (): void {
         AzurePortalNg.Debug.isEnabled = true;
         AzurePortalNg.Debug.isWithObjects = false;
     }]);
@@ -13,7 +13,7 @@
     // TODO: 2015-04-25/hp: The sample should define the test environment ($httpBackend) here.
     //                      At the moment it is defined in 'sampleShell.ts'.
     //------------------------------------------------------------------------------------------------------------
-    //angular.module('sampleJs', ['ngMockE2E'])
+    //angular.module('sampleTsApp', ['ngMockE2E'])
     //    .run(function ($httpBackend) {
     //    $httpBackend.whenGET(/\/AzurePortalNg\/.*/).passThrough();
     //});

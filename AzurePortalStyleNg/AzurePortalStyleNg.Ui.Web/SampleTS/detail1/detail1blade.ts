@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('sampleapp').directive('detail1Blade', [detail1Blade]);
+    angular.module('sampleTsApp').directive('detail1Blade', [detail1Blade]);
 
     function detail1Blade() {
         return {

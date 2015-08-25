@@ -20,7 +20,9 @@ var SampleTS;
         //#endregion
         //#region Data Access
         Detail1.prototype.onGetDataDetail = function () {
-            return this.portalService.$http({ method: 'GET', url: '/customer/1' });
+            // TODO: id is undefined, fix that
+            var id = 1001;
+            return this.portalService.$http({ method: 'GET', url: '/customer/' + id });
         };
         return Detail1;
     })(AzurePortalNg.BladeDetail);
@@ -28,7 +30,7 @@ var SampleTS;
     //#region Angular Registration
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('detail1', ['azurePortalNg.portalService', Detail1]);
+        angular.module('sampleTsApp').controller('detail1', ['azurePortalNg.portalService', Detail1]);
     })();
 })(SampleTS || (SampleTS = {}));
 //# sourceMappingURL=detail1.js.map

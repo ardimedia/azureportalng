@@ -1,6 +1,6 @@
 ﻿-d
 -t ES5
---out AzurePortalNg/apn.d.ts
+--out !Package/apn.d.ts
 
 Scripts/typings/tsd.d.ts
 AzurePortalNg/azureportalng.ts

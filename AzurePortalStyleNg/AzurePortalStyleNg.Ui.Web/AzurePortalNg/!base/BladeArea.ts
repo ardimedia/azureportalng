@@ -59,6 +59,8 @@
 
         //#region Properties
 
+        private listener1;
+
         blades: Array<AzurePortalNg.Blade> = new Array<AzurePortalNg.Blade>();
 
         parameter: AzurePortalNg.IBladeParameter = { id: '', action: '' };
@@ -70,9 +72,19 @@
         constructor(portalService: PortalService) {
             super(portalService);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea\' constructor called.', [this, portalService]);
+            var that = this;
 
+            // Set dependencies
             this.portalService = portalService;
             this.portalService.bladeArea = this;
+
+            //#region AddEventListeners
+
+            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event: ng.IAngularEvent, parameter: { path: string, pathSender: string }) {
+                that.addBlade(parameter.path, parameter.pathSender);
+            });
+
+            //#endregion
         }
 
         //#endregion
@@ -148,7 +160,7 @@
             });
             if (!isremoved) {
                 AzurePortalNg.Debug.write('>>> bladeUrls:', [that.blades]);
-                throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
+                throw new Error('[AzurePortalNg.BladeArea.clearPath] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
             }
             this.showPanoramaIfNoBlades();
         }
@@ -187,7 +199,7 @@
             });
             if (!isremoved) {
                 AzurePortalNg.Debug.write('>>> bladeUrls:', [that.blades]);
-                throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
+                throw new Error('[AzurePortalNg.BladeArea.clearChild] path: \'' + path + '\' could not be removed, since path not found in bladeUrls.');
             }
         }
 
@@ -255,12 +267,6 @@
         'use strict';
         angular.module('azureportalng').service('azurePortalNg.bladeArea', ['$window', AzurePortalNg.BladeArea]);
     })();
-
-    ///** OBSOLETE */
-    //(function () {
-    //    'use strict';
-    //    angular.module('azureportalng').service('bladeService', ['$window', AzurePortalNg.BladeArea]);
-    //})();
 
     //#endregion
 }

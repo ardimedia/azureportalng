@@ -15,9 +15,9 @@
         </frameworkAssemblies>
     </metadata>
     <files>
-        <file src="AzurePortalNg\apn.js" target="content\Scripts\AzurePortalNg\apn.js" />
-        <file src="AzurePortalNg\apn.min.js" target="content\Scripts\AzurePortalNg\apn.min.js" />
-        <file src="AzurePortalNg\apn.d.ts" target="content\Scripts\AzurePortalNg\apn.d.ts" />
+        <file src="!Package\apn.js" target="content\Scripts\AzurePortalNg\apn.js" />
+        <file src="!Package\apn.min.js" target="content\Scripts\AzurePortalNg\apn.min.js" />
+        <file src="!Package\apn.d.ts" target="content\Scripts\AzurePortalNg\apn.d.ts" />
         <file src="Scripts\typings\ngdialog\ngdialog.d.ts" target="content\Scripts\typings\ngdialog\ngdialog.d.ts" />
 
         <file src="AzurePortalNg\portal\!directives\blade\blade.html" target="content\AzurePortalNg\portal\!directives\blade\blade.html" />

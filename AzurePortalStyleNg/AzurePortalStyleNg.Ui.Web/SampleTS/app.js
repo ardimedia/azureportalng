@@ -1,7 +1,7 @@
 ﻿//#region Register Angular Module
 (function () {
     'use strict';
-    var app = angular.module('sampleapp', ['azureportalng', 'ngResource', 'ngDialog', 'ngMockE2E']);
+    var app = angular.module('sampleTsApp', ['azureportalng', 'ngResource', 'ngDialog', 'ngMockE2E']);
     app.config([function () {
             AzurePortalNg.Debug.isEnabled = true;
             AzurePortalNg.Debug.isWithObjects = false;
@@ -10,13 +10,13 @@
     // TODO: 2015-04-25/hp: The sample should define the test environment ($httpBackend) here.
     //                      At the moment it is defined in 'sampleShell.ts'.
     //------------------------------------------------------------------------------------------------------------
-    //angular.module('sampleapp', ['ngMockE2E'])
+    //angular.module('sampleTsApp', ['ngMockE2E'])
     //    .run(function ($httpBackend) {
     //    $httpBackend.whenGET(/\/AzurePortalNg\/.*/).passThrough();
     //});
 })();
 //#endregion
-//# sourceMappingURL=sampleApp.js.map
+//# sourceMappingURL=sampleTsApp.js.map
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -27,16 +27,16 @@ var SampleTS;
 (function (SampleTS) {
     'use strict';
     //#region Class Definition
-    var SampleShell = (function (_super) {
-        __extends(SampleShell, _super);
+    var SampleTsShell = (function (_super) {
+        __extends(SampleTsShell, _super);
         //#region Properties
         //#endregion
         //#region Constructors
-        function SampleShell(portalService) {
+        function SampleTsShell(portalService) {
             _super.call(this, 'SAMPLE TypeScript', portalService);
             this.portalService.panorama.startboard.tiles.showTiles = true;
             this.portalService.panorama.avatarMenu.userAccount = new AzurePortalNg.UserAccount('useraccount@mail.com', 'first', 'last');
-            var tile = this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Navigation 2', '/SampleTS/nav2/nav2.html', portalService));
+            var tile = this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Navigation 1', '/SampleTS/nav1/nav1.html', portalService));
             tile.subTitle = 'TypeScript based';
             var tile = this.portalService.panorama.startboard.tiles.addTile(new AzurePortalNg.Tile('Blade 1-1', '/SampleTS/blade11/blade11.html', portalService));
             tile.subTitle = 'TypeScript based';
@@ -53,7 +53,7 @@ var SampleTS;
         }
         //#endregion
         //#region Methods
-        SampleShell.prototype.httpTestData = function () {
+        SampleTsShell.prototype.httpTestData = function () {
             var customers = new Array();
             customers.push(new SampleTS.Customer(1001, 'Harry', 'Sleeper'));
             customers.push(new SampleTS.Customer(1002, 'Eva', 'Cooker'));
@@ -63,17 +63,25 @@ var SampleTS;
             this.portalService.$httpBackend.whenGET(/\/SampleTS\/.*/).passThrough();
             this.portalService.$httpBackend.whenGET('/customers')
                 .respond(customers);
+            this.portalService.$httpBackend.whenGET('/customer/1001')
+                .respond(customers[0]);
+            this.portalService.$httpBackend.whenGET('/customer/1002')
+                .respond(customers[1]);
+            this.portalService.$httpBackend.whenGET('/customer/1003')
+                .respond(customers[2]);
+            this.portalService.$httpBackend.whenGET('/customer/1004')
+                .respond(customers[3]);
         };
-        return SampleShell;
+        return SampleTsShell;
     })(AzurePortalNg.PortalShell);
     //#endregion
     //#region Angular Registration
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('sampleShell', ['azurePortalNg.portalService', SampleShell]);
+        angular.module('sampleTsApp').controller('sampleShell', ['azurePortalNg.portalService', SampleTsShell]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=sampleShell.js.map
+//# sourceMappingURL=sampleTsShell.js.map
 var SampleTS;
 (function (SampleTS) {
     'use strict';
@@ -126,13 +134,13 @@ var SampleTS;
     //#region Angular Registration
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('blade11', ['azurePortalNg.portalService', Blade11]);
+        angular.module('sampleTsApp').controller('blade11', ['azurePortalNg.portalService', Blade11]);
     })();
 })(SampleTS || (SampleTS = {}));
 //# sourceMappingURL=blade11.js.map
 (function () {
     'use strict';
-    angular.module('sampleapp').directive('blade11Blade', [blade11Blade]);
+    angular.module('sampleTsApp').directive('blade11Blade', [blade11Blade]);
     function blade11Blade() {
         return {
             replace: true,
@@ -186,13 +194,13 @@ var SampleTS;
     //#region Angular Registration
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('blade2', ['azurePortalNg.portalService', Blade2]);
+        angular.module('sampleTsApp').controller('blade2', ['azurePortalNg.portalService', Blade2]);
     })();
 })(SampleTS || (SampleTS = {}));
 //# sourceMappingURL=blade2.js.map
 (function () {
     'use strict';
-    angular.module('sampleapp').directive('blade2Blade', [blade2Blade]);
+    angular.module('sampleTsApp').directive('blade2Blade', [blade2Blade]);
     function blade2Blade() {
         return {
             replace: true,
@@ -239,13 +247,13 @@ var SampleTS;
     //#region Angular Registration
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('blade21', ['azurePortalNg.portalService', Blade21]);
+        angular.module('sampleTsApp').controller('blade21', ['azurePortalNg.portalService', Blade21]);
     })();
 })(SampleTS || (SampleTS = {}));
 //# sourceMappingURL=blade21.js.map
 (function () {
     'use strict';
-    angular.module('sampleapp').directive('blade21Blade', [blade21Blade]);
+    angular.module('sampleTsApp').directive('blade21Blade', [blade21Blade]);
     function blade21Blade() {
         return {
             replace: true,
@@ -279,7 +287,9 @@ var SampleTS;
         //#endregion
         //#region Data Access
         Detail1.prototype.onGetDataDetail = function () {
-            return this.portalService.$http({ method: 'GET', url: '/customer/1' });
+            // TODO: id is undefined, fix that
+            var id = 1001;
+            return this.portalService.$http({ method: 'GET', url: '/customer/' + id });
         };
         return Detail1;
     })(AzurePortalNg.BladeDetail);
@@ -287,13 +297,13 @@ var SampleTS;
     //#region Angular Registration
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('detail1', ['azurePortalNg.portalService', Detail1]);
+        angular.module('sampleTsApp').controller('detail1', ['azurePortalNg.portalService', Detail1]);
     })();
 })(SampleTS || (SampleTS = {}));
 //# sourceMappingURL=detail1.js.map
 (function () {
     'use strict';
-    angular.module('sampleapp').directive('detail1Blade', [detail1Blade]);
+    angular.module('sampleTsApp').directive('detail1Blade', [detail1Blade]);
     function detail1Blade() {
         return {
             replace: true,
@@ -320,9 +330,8 @@ var SampleTS;
         //#region Constructors
         function List1(portalService) {
             _super.call(this, portalService, '/SampleTS/list1/list1.html', 'List-1', 'TypeScript based', 315);
-            //this.isCommandNew = true;
-            //this.commandNewText = 'Detail-1';
-            this.statusbar = 'List-1...';
+            this.isCommandNew = true;
+            this.commandNewText = 'new';
             this.activate();
         }
         //#endregion
@@ -349,13 +358,13 @@ var SampleTS;
     //#region Angular Registration
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('list1', ['azurePortalNg.portalService', List1]);
+        angular.module('sampleTsApp').controller('list1', ['azurePortalNg.portalService', List1]);
     })();
 })(SampleTS || (SampleTS = {}));
 //# sourceMappingURL=list1.js.map
 (function () {
     'use strict';
-    angular.module('sampleapp').directive('list1Blade', [list1Blade]);
+    angular.module('sampleTsApp').directive('list1Blade', [list1Blade]);
     function list1Blade() {
         return {
             replace: true,
@@ -378,10 +387,10 @@ var Nav2 = (function (_super) {
     __extends(Nav2, _super);
     //#region Constructors
     function Nav2(portalService) {
-        _super.call(this, portalService, '/SampleTS/nav2/nav2.html', 'Navigation 2', 'TypeScript based', 315);
+        _super.call(this, portalService, '/SampleTS/nav1/nav1.html', 'Navigation 1', 'TypeScript based', 315);
         AzurePortalNg.Debug.write('[sampleTS-debug] \'Nav2\' constructor called.', [this]);
         this.navItems = [
-            new AzurePortalNg.BladeNavItem('Navigation 2', '/SampleTS/nav2/nav2.html'),
+            new AzurePortalNg.BladeNavItem('Navigation 1', '/SampleTS/nav1/nav1.html'),
             new AzurePortalNg.BladeNavItem('Blade 1-1', '/SampleTS/blade11/blade11.html'),
             new AzurePortalNg.BladeNavItem('Blade 2', '/SampleTS/blade2/blade2.html'),
             new AzurePortalNg.BladeNavItem('Blade 2-1', '/SampleTS/blade21/blade21.html'),
@@ -391,7 +400,7 @@ var Nav2 = (function (_super) {
             new AzurePortalNg.BladeNavItem('no path'),
             new AzurePortalNg.BladeNavItem('go to microsoft.com', null, 'http://www.microsoft.com'),
         ];
-        this.statusbar = 'Nav 2...';
+        this.statusbar = 'Nav 1 loaded.';
     }
     return Nav2;
 })(AzurePortalNg.BladeNav);
@@ -399,7 +408,7 @@ var Nav2 = (function (_super) {
 //#region Angular Registration
 (function () {
     'use strict';
-    angular.module('sampleapp').controller('nav2', ['azurePortalNg.portalService', Nav2]);
+    angular.module('sampleTsApp').controller('nav2', ['azurePortalNg.portalService', Nav2]);
 })();
 //#endregion
-//# sourceMappingURL=nav2.js.map
+//# sourceMappingURL=nav1.js.map

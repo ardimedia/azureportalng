@@ -10,10 +10,8 @@
         constructor(portalService: AzurePortalNg.PortalService) {
             super(portalService, '/SampleTS/list1/list1.html', 'List-1', 'TypeScript based', 315);
 
-            //this.isCommandNew = true;
-            //this.commandNewText = 'Detail-1';
-
-            this.statusbar = 'List-1...';
+            this.isCommandNew = true;
+            this.commandNewText = 'new';
 
             this.activate();
         }
@@ -52,7 +50,7 @@
 
     (function () {
         'use strict';
-        angular.module('sampleapp').controller('list1', ['azurePortalNg.portalService', List1]);
+        angular.module('sampleTsApp').controller('list1', ['azurePortalNg.portalService', List1]);
     })();
 
     //#endregion
