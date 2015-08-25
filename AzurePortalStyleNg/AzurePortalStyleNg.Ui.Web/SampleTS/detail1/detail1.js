@@ -15,9 +15,10 @@ var SampleTS;
             _super.call(this, portalService, '/SampleTS/detail1/detail1.html', 'Detail-1', 'TypeScript based', 315);
             this.isCommandSave = true;
             this.commandSaveText = 'speichern';
+            this.activate();
         }
         //#endregion
-        //#region Data Access
+        //#region Methods
         Detail1.prototype.onGetDataDetail = function () {
             var customer = this.portalService.parameter.item;
             if (this.portalService.parameter.action === 'new') {

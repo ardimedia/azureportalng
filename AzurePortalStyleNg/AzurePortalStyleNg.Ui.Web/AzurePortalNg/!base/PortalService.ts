@@ -1,11 +1,11 @@
 ﻿module AzurePortalNg {
     'use strict';
 
-    //#region Interface Defintions
+    //#region Interface IBladeParameter
 
     export interface IBladeParameter {
         action: string;
-        item: any;
+        item?: any;
         itemId: number;
     }
 
@@ -17,7 +17,7 @@
 
         //#region Properties
 
-        parameter: AzurePortalNg.IBladeParameter = { action: 'none', item: null, itemId: 0 };
+        parameter: AzurePortalNg.IBladeParameter = { action: 'none', itemId: 0 };
 
         //#region ng.IModule properties
 

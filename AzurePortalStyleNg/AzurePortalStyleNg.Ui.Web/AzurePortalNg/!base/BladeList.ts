@@ -18,7 +18,6 @@
 
         onActivate(): angular.IHttpPromise<any> {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.onActivate\' called.', [this]);
-
             return super.getDataList()
         }
 

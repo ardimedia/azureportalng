@@ -169,7 +169,7 @@ var AzurePortalNg;
         Blade.prototype.activate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.', [this]);
             this.onActivate();
-            this.setObsoleteLayoutProperites();
+            //this.setObsoleteLayoutProperites();
         };
         Blade.prototype.onActivate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden, you could override this.', [this]);

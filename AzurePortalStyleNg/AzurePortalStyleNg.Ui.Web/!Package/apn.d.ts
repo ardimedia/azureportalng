@@ -202,7 +202,7 @@ declare module AzurePortalNg {
 declare module AzurePortalNg {
     interface IBladeParameter {
         action: string;
-        item: any;
+        item?: any;
         itemId: number;
     }
     class PortalService implements ng.IModule {

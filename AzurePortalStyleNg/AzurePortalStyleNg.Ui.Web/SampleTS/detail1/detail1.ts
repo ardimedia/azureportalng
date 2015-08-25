@@ -12,11 +12,13 @@
 
             this.isCommandSave = true;
             this.commandSaveText = 'speichern';
+
+            this.activate();
         }
 
         //#endregion
 
-        //#region Data Access
+        //#region Methods
 
         onGetDataDetail(): angular.IHttpPromise<any> {
             var customer: SampleTS.Customer = this.portalService.parameter.item;

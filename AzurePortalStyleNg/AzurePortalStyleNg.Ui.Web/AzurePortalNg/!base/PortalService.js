@@ -9,7 +9,7 @@ var AzurePortalNg;
         //#region Constructors
         function PortalService($injector) {
             //#region Properties
-            this.parameter = { action: 'none', item: null, itemId: 0 };
+            this.parameter = { action: 'none', itemId: 0 };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [this, $injector]);
             this.$injector = $injector;
             this.$http = $injector.get('$http');

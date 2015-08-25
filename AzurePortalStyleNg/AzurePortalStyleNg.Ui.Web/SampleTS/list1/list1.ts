@@ -12,6 +12,8 @@
 
             this.isCommandNew = true;
             this.commandNewText = 'neu';
+
+            this.activate();
         }
 
         //#endregion
@@ -36,8 +38,6 @@
 
         onGetDataList(): angular.IHttpPromise<any> {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'List1.onGetDataList\' called.', [this]);
-
-            console.log('list1');
 
             return this.portalService.$http({ method: 'GET', url: '/customers' });
         }

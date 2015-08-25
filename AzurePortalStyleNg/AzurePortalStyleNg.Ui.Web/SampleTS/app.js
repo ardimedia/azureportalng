@@ -281,9 +281,10 @@ var SampleTS;
             _super.call(this, portalService, '/SampleTS/detail1/detail1.html', 'Detail-1', 'TypeScript based', 315);
             this.isCommandSave = true;
             this.commandSaveText = 'speichern';
+            this.activate();
         }
         //#endregion
-        //#region Data Access
+        //#region Methods
         Detail1.prototype.onGetDataDetail = function () {
             var customer = this.portalService.parameter.item;
             if (this.portalService.parameter.action === 'new') {
@@ -336,6 +337,7 @@ var SampleTS;
             _super.call(this, portalService, '/SampleTS/list1/list1.html', 'List-1', 'TypeScript based', 315);
             this.isCommandNew = true;
             this.commandNewText = 'neu';
+            this.activate();
         }
         //#endregion
         //#region Methods
@@ -353,7 +355,6 @@ var SampleTS;
         };
         List1.prototype.onGetDataList = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'List1.onGetDataList\' called.', [this]);
-            console.log('list1');
             return this.portalService.$http({ method: 'GET', url: '/customers' });
         };
         return List1;

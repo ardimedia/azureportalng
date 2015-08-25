@@ -507,7 +507,7 @@ var AzurePortalNg;
         Blade.prototype.activate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.', [this]);
             this.onActivate();
-            this.setObsoleteLayoutProperites();
+            //this.setObsoleteLayoutProperites();
         };
         Blade.prototype.onActivate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden, you could override this.', [this]);
@@ -584,11 +584,11 @@ var AzurePortalNg;
             //#region Add BladeArea.AddBlade event listener
             this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, param) {
                 if (param.path === that.blade.path) {
-                    that.onActivate();
+                    that.activate();
                 }
             });
             //#endregion
-            this.activate();
+            //this.activate();
         }
         //#endregion
         //#region Methods
@@ -668,7 +668,6 @@ var AzurePortalNg;
         //#region Methods
         BladeDetail.prototype.onActivate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeDetail.onActivate\' called.', [this]);
-            console.log('onActivate');
             return _super.prototype.getDataDetail.call(this);
         };
         return BladeDetail;
@@ -878,7 +877,7 @@ var AzurePortalNg;
         //#region Constructors
         function PortalService($injector) {
             //#region Properties
-            this.parameter = { action: 'none', item: null, itemId: 0 };
+            this.parameter = { action: 'none', itemId: 0 };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [this, $injector]);
             this.$injector = $injector;
             this.$http = $injector.get('$http');

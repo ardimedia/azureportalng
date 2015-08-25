@@ -15,6 +15,7 @@ var SampleTS;
             _super.call(this, portalService, '/SampleTS/list1/list1.html', 'List-1', 'TypeScript based', 315);
             this.isCommandNew = true;
             this.commandNewText = 'neu';
+            this.activate();
         }
         //#endregion
         //#region Methods
@@ -32,7 +33,6 @@ var SampleTS;
         };
         List1.prototype.onGetDataList = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'List1.onGetDataList\' called.', [this]);
-            console.log('list1');
             return this.portalService.$http({ method: 'GET', url: '/customers' });
         };
         return List1;

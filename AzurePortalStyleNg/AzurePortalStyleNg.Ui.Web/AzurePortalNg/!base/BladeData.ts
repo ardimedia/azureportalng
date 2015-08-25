@@ -27,13 +27,13 @@
 
             this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, param: AzurePortalNg.IAddBladeEventArgs) {
                 if (param.path === that.blade.path) {
-                    that.onActivate();
+                    that.activate();
                 }
             });
 
             //#endregion
 
-            this.activate();
+            //this.activate();
         }
 
         //#endregion

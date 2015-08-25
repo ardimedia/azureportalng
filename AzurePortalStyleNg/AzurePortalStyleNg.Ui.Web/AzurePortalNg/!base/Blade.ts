@@ -217,7 +217,7 @@
         activate(): void {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.', [this]);
             this.onActivate();
-            this.setObsoleteLayoutProperites();
+            //this.setObsoleteLayoutProperites();
         }
 
         onActivate(): void {
