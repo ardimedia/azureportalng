@@ -1,11 +1,23 @@
 ﻿module AzurePortalNg {
     'use strict';
 
+    //#region Interface Defintions
+
+    export interface IBladeParameter {
+        action: string;
+        item: any;
+        itemId: number;
+    }
+
+    //#endregion
+
     //#region Class Definition: PortalService
 
     export class PortalService implements ng.IModule {
 
         //#region Properties
+
+        parameter: AzurePortalNg.IBladeParameter = { action: 'none', item: null, itemId: 0 };
 
         //#region ng.IModule properties
 
@@ -35,13 +47,13 @@
 
         //#endregion
 
-        //#region Dialogs
+        //#region NgDialogs
 
         ngDialog: NgDialog.INgDialog;
 
         //#endregion
 
-        //#region Services
+        //#region Angluar Services
 
         $http: angular.IHttpService;
         $httpBackend: angular.IHttpBackendService;
@@ -68,10 +80,6 @@
             this.$window = <angular.IWindowService>$injector.get('$window');
 
             this.ngDialog = <any>$injector.get('ngDialog');
-
-            //this.bladeArea = <AzurePortalNg.BladeArea>$injector.get('azurePortalNg.bladeArea');
-            //this.bladeArea.portalService = this;
-            //this.bladeArea = new BladeArea(this);
         }
 
         //#endregion

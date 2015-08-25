@@ -3,6 +3,7 @@
     'use strict';
     var app = angular.module('sampleTsApp', ['azureportalng', 'ngResource', 'ngDialog', 'ngMockE2E']);
     app.config([function () {
+            //AzurePortalNg.Debug.enable('[samplets-debug]');
             AzurePortalNg.Debug.isEnabled = true;
             AzurePortalNg.Debug.isWithObjects = false;
         }]);
@@ -29,8 +30,6 @@ var SampleTS;
     //#region Class Definition
     var SampleTsShell = (function (_super) {
         __extends(SampleTsShell, _super);
-        //#region Properties
-        //#endregion
         //#region Constructors
         function SampleTsShell(portalService) {
             _super.call(this, 'SAMPLE TypeScript', portalService);
@@ -277,19 +276,24 @@ var SampleTS;
     //#region Class Definition
     var Detail1 = (function (_super) {
         __extends(Detail1, _super);
-        //#region Properties
-        //#endregion
         //#region Constructors
         function Detail1(portalService) {
             _super.call(this, portalService, '/SampleTS/detail1/detail1.html', 'Detail-1', 'TypeScript based', 315);
-            this.statusbar = 'Detail-1...';
+            this.isCommandSave = true;
+            this.commandSaveText = 'speichern';
         }
         //#endregion
         //#region Data Access
         Detail1.prototype.onGetDataDetail = function () {
-            // TODO: id is undefined, fix that
-            var id = 1001;
-            return this.portalService.$http({ method: 'GET', url: '/customer/' + id });
+            var customer = this.portalService.parameter.item;
+            if (this.portalService.parameter.action === 'new') {
+                this.item = customer;
+                return null;
+            }
+            else {
+                console.log('Detail1');
+                return this.portalService.$http({ method: 'GET', url: '/customer/' + customer.customerPkId });
+            }
         };
         return Detail1;
     })(AzurePortalNg.BladeDetail);
@@ -331,25 +335,25 @@ var SampleTS;
         function List1(portalService) {
             _super.call(this, portalService, '/SampleTS/list1/list1.html', 'List-1', 'TypeScript based', 315);
             this.isCommandNew = true;
-            this.commandNewText = 'new';
-            this.activate();
+            this.commandNewText = 'neu';
         }
         //#endregion
-        //#region Methods - Overrides for Blade
+        //#region Methods
         List1.prototype.onCommandNew = function () {
-            AzurePortalNg.Debug.write('[sampleTS-debug] \'List1.onCommandNew\' called.', [this]);
-            this.portalService.bladeArea.addBlade('/SampleTS/detail1/detail1.html', this.path);
+            AzurePortalNg.Debug.write('[samplets-debug] \'List1.onCommandNew\' called.', [this]);
+            this.portalService.parameter.action = 'new';
+            this.portalService.parameter.item = new SampleTS.Customer(0, 'firstName', 'lastName');
+            this.portalService.bladeArea.raiseAddBladeEvent({ path: '/SampleTS/detail1/detail1.html', pathSender: this.blade.path });
         };
-        List1.prototype.onNavigateTo = function (id) {
-            AzurePortalNg.Debug.write('[sampleTS-debug] \'List1.onNavigateTo\' called.', [this, id]);
-            this.portalService.bladeArea.parameter.id = id;
-            this.portalService.bladeArea.addBlade('/SampleTS/detail1/detail1.html', this.blade.path);
-            this.portalService.$rootScope.$broadcast('bladeService.parameter', this.portalService.bladeArea.parameter);
+        List1.prototype.onNavigateTo = function (customer) {
+            AzurePortalNg.Debug.write('[samplets-debug] \'List1.onNavigateTo\' called.', [this, customer]);
+            this.portalService.parameter.action = 'selected';
+            this.portalService.parameter.item = customer;
+            this.portalService.bladeArea.raiseAddBladeEvent({ path: '/SampleTS/detail1/detail1.html', pathSender: this.blade.path });
         };
-        //#endregion
-        //#region Data Access
         List1.prototype.onGetDataList = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'List1.onGetDataList\' called.', [this]);
+            console.log('list1');
             return this.portalService.$http({ method: 'GET', url: '/customers' });
         };
         return List1;
@@ -376,39 +380,50 @@ var SampleTS;
     }
 })();
 //# sourceMappingURL=list1blade.js.map
-//#region Class Definition
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var Nav2 = (function (_super) {
-    __extends(Nav2, _super);
-    //#region Constructors
-    function Nav2(portalService) {
-        _super.call(this, portalService, '/SampleTS/nav1/nav1.html', 'Navigation 1', 'TypeScript based', 315);
-        AzurePortalNg.Debug.write('[sampleTS-debug] \'Nav2\' constructor called.', [this]);
-        this.navItems = [
-            new AzurePortalNg.BladeNavItem('Navigation 1', '/SampleTS/nav1/nav1.html'),
-            new AzurePortalNg.BladeNavItem('Blade 1-1', '/SampleTS/blade11/blade11.html'),
-            new AzurePortalNg.BladeNavItem('Blade 2', '/SampleTS/blade2/blade2.html'),
-            new AzurePortalNg.BladeNavItem('Blade 2-1', '/SampleTS/blade21/blade21.html'),
-            new AzurePortalNg.BladeNavItem('List 1', '/SampleTS/list1/list1.html'),
-            new AzurePortalNg.BladeNavItem('Detail 1', '/SampleTS/detail1/detail1.html'),
-            new AzurePortalNg.BladeNavItem(),
-            new AzurePortalNg.BladeNavItem('no path'),
-            new AzurePortalNg.BladeNavItem('go to microsoft.com', null, 'http://www.microsoft.com'),
-        ];
-        this.statusbar = 'Nav 1 loaded.';
-    }
-    return Nav2;
-})(AzurePortalNg.BladeNav);
-//#endregion
-//#region Angular Registration
-(function () {
-    'use strict';
-    angular.module('sampleTsApp').controller('nav2', ['azurePortalNg.portalService', Nav2]);
-})();
-//#endregion
+var SampleTS;
+(function (SampleTS) {
+    //#region Class Definition
+    var Nav1 = (function (_super) {
+        __extends(Nav1, _super);
+        //#region Constructors
+        function Nav1(portalService) {
+            _super.call(this, portalService, '/SampleTS/nav1/nav1.html', 'Navigation 1', 'TypeScript based', 315);
+            AzurePortalNg.Debug.write('[samplets-debug] \'Nav1\' constructor called.', [this]);
+            this.navItems = [
+                new AzurePortalNg.BladeNavItem('Navigation 1', '/SampleTS/nav1/nav1.html'),
+                new AzurePortalNg.BladeNavItem('Blade 1-1', '/SampleTS/blade11/blade11.html'),
+                new AzurePortalNg.BladeNavItem('Blade 2', '/SampleTS/blade2/blade2.html'),
+                new AzurePortalNg.BladeNavItem('Blade 2-1', '/SampleTS/blade21/blade21.html'),
+                new AzurePortalNg.BladeNavItem('List 1', '/SampleTS/list1/list1.html'),
+                new AzurePortalNg.BladeNavItem('Detail 1', '/SampleTS/detail1/detail1.html'),
+                new AzurePortalNg.BladeNavItem(),
+                new AzurePortalNg.BladeNavItem('no path'),
+                new AzurePortalNg.BladeNavItem('go to microsoft.com', null, 'http://www.microsoft.com'),
+            ];
+            this.statusbar = 'Nav 1 loaded.';
+        }
+        //#endregion
+        //#region Methods
+        Nav1.prototype.onNavigateTo = function (path) {
+            AzurePortalNg.Debug.write('[samplets-debug] \'Nav1.onNavigateTo\' called.', [this, path]);
+            if (path === '') {
+                return;
+            }
+            this.portalService.bladeArea.raiseAddBladeEvent({ path: path, pathSender: this.blade.path });
+        };
+        return Nav1;
+    })(AzurePortalNg.BladeNav);
+    //#endregion
+    //#region Angular Registration
+    (function () {
+        'use strict';
+        angular.module('sampleTsApp').controller('nav1', ['azurePortalNg.portalService', Nav1]);
+    })();
+})(SampleTS || (SampleTS = {}));
 //# sourceMappingURL=nav1.js.map

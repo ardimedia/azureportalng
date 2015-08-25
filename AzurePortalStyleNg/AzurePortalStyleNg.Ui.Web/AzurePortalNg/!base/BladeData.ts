@@ -7,6 +7,8 @@
 
         //#region Properties
 
+        listener1: Function;
+
         item: any = null;
 
         items: Array<any> = new Array<any>();
@@ -19,7 +21,19 @@
             super(portalService, path, title, subtitle, width);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData\' constructor called.', [this, portalService, path, title, subtitle, width]);
 
-            //this.blade = this;
+            var that = this;
+
+            //#region Add BladeArea.AddBlade event listener
+
+            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, param: AzurePortalNg.IAddBladeEventArgs) {
+                if (param.path === that.blade.path) {
+                    that.onActivate();
+                }
+            });
+
+            //#endregion
+
+            this.activate();
         }
 
         //#endregion
@@ -45,7 +59,7 @@
             });
         }
 
-        protected onGetDataList(): angular.IHttpPromise<any> {
+        onGetDataList(): angular.IHttpPromise<any> {
             throw new Error('[AzurePortalNg.BladeData] \'onGetDataList\' is an abstract function. Define one in the derived class.');
         }
 
@@ -61,7 +75,7 @@
             that.statusbarClass = '';
 
             return that.onGetDataDetail().success(function (data: any) {
-                that.items = data;
+                that.item = data;
                 that.statusbar = '';
                 that.statusbarClass = '';
             }).error(function (data: any, status: any, headers: any, config: any) {
@@ -70,7 +84,7 @@
             });
         }
 
-        protected onGetDataDetail(): angular.IHttpPromise<any> {
+        onGetDataDetail(): angular.IHttpPromise<any> {
             throw new Error('[AzurePortalNg.BladeData] \'onGetDataDetail\' is an abstract function. Define one in the derived class.');
         }
 
@@ -83,7 +97,7 @@
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.setObsoleteLayoutProperites\' called.', [this]);
 
             if (this.items.length !== 0) {
-                this.blade.navGrid.items = this.items; //--> do not uncomment, otherwise nav html pages will no longer work.
+                this.blade.navGrid.items = this.items; //--> needed, otherwise nav html pages will no longer work.
             }
 
             this.blade.isNavGrid = this.isNavGrid;

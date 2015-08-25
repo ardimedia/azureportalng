@@ -5,6 +5,7 @@
     var app = angular.module('sampleTsApp', ['azureportalng', 'ngResource', 'ngDialog', 'ngMockE2E']);
 
     app.config([function (): void {
+        //AzurePortalNg.Debug.enable('[samplets-debug]');
         AzurePortalNg.Debug.isEnabled = true;
         AzurePortalNg.Debug.isWithObjects = false;
     }]);

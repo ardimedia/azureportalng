@@ -10,19 +10,24 @@ var SampleTS;
     //#region Class Definition
     var Detail1 = (function (_super) {
         __extends(Detail1, _super);
-        //#region Properties
-        //#endregion
         //#region Constructors
         function Detail1(portalService) {
             _super.call(this, portalService, '/SampleTS/detail1/detail1.html', 'Detail-1', 'TypeScript based', 315);
-            this.statusbar = 'Detail-1...';
+            this.isCommandSave = true;
+            this.commandSaveText = 'speichern';
         }
         //#endregion
         //#region Data Access
         Detail1.prototype.onGetDataDetail = function () {
-            // TODO: id is undefined, fix that
-            var id = 1001;
-            return this.portalService.$http({ method: 'GET', url: '/customer/' + id });
+            var customer = this.portalService.parameter.item;
+            if (this.portalService.parameter.action === 'new') {
+                this.item = customer;
+                return null;
+            }
+            else {
+                console.log('Detail1');
+                return this.portalService.$http({ method: 'GET', url: '/customer/' + customer.customerPkId });
+            }
         };
         return Detail1;
     })(AzurePortalNg.BladeDetail);

@@ -320,9 +320,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="bundleconfig.json" />
-    <None Include="nuspec-packager.oldnuspec">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\PublishProfiles\TEMP.pubxml" />
     <Content Include="SampleTS\blade21\blade21.html" />
     <Content Include="SampleTS\blade11\blade11.html" />

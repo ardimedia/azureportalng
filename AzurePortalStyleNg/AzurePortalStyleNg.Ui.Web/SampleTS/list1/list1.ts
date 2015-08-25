@@ -11,33 +11,34 @@
             super(portalService, '/SampleTS/list1/list1.html', 'List-1', 'TypeScript based', 315);
 
             this.isCommandNew = true;
-            this.commandNewText = 'new';
-
-            this.activate();
+            this.commandNewText = 'neu';
         }
 
         //#endregion
 
-        //#region Methods - Overrides for Blade
+        //#region Methods
 
         onCommandNew(): void {
-            AzurePortalNg.Debug.write('[sampleTS-debug] \'List1.onCommandNew\' called.', [this]);
-            this.portalService.bladeArea.addBlade('/SampleTS/detail1/detail1.html', this.path);
+            AzurePortalNg.Debug.write('[samplets-debug] \'List1.onCommandNew\' called.', [this]);
+
+            this.portalService.parameter.action = 'new';
+            this.portalService.parameter.item = new SampleTS.Customer(0, 'firstName', 'lastName');
+            this.portalService.bladeArea.raiseAddBladeEvent({ path: '/SampleTS/detail1/detail1.html', pathSender: this.blade.path });
         }
 
-        onNavigateTo(id: string) {
-            AzurePortalNg.Debug.write('[sampleTS-debug] \'List1.onNavigateTo\' called.', [this, id]);
-            this.portalService.bladeArea.parameter.id = id;
-            this.portalService.bladeArea.addBlade('/SampleTS/detail1/detail1.html', this.blade.path);
-            this.portalService.$rootScope.$broadcast('bladeService.parameter', this.portalService.bladeArea.parameter);
+        onNavigateTo(customer: SampleTS.Customer) {
+            AzurePortalNg.Debug.write('[samplets-debug] \'List1.onNavigateTo\' called.', [this, customer]);
+
+            this.portalService.parameter.action = 'selected';
+            this.portalService.parameter.item = customer;
+            this.portalService.bladeArea.raiseAddBladeEvent({ path: '/SampleTS/detail1/detail1.html', pathSender: this.blade.path });
         }
 
-        //#endregion
-
-        //#region Data Access
-
-        protected onGetDataList(): angular.IHttpPromise<any> {
+        onGetDataList(): angular.IHttpPromise<any> {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'List1.onGetDataList\' called.', [this]);
+
+            console.log('list1');
+
             return this.portalService.$http({ method: 'GET', url: '/customers' });
         }
 

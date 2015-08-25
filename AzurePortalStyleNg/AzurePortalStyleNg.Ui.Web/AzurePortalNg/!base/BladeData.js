@@ -16,11 +16,18 @@ var AzurePortalNg;
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 300; }
             _super.call(this, portalService, path, title, subtitle, width);
-            //#region Properties
             this.item = null;
             this.items = new Array();
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData\' constructor called.', [this, portalService, path, title, subtitle, width]);
-            //this.blade = this;
+            var that = this;
+            //#region Add BladeArea.AddBlade event listener
+            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, param) {
+                if (param.path === that.blade.path) {
+                    that.onActivate();
+                }
+            });
+            //#endregion
+            this.activate();
         }
         //#endregion
         //#region Methods
@@ -50,7 +57,7 @@ var AzurePortalNg;
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';
             return that.onGetDataDetail().success(function (data) {
-                that.items = data;
+                that.item = data;
                 that.statusbar = '';
                 that.statusbarClass = '';
             }).error(function (data, status, headers, config) {
@@ -67,7 +74,7 @@ var AzurePortalNg;
         BladeData.prototype.setObsoleteLayoutProperites = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.setObsoleteLayoutProperites\' called.', [this]);
             if (this.items.length !== 0) {
-                this.blade.navGrid.items = this.items; //--> do not uncomment, otherwise nav html pages will no longer work.
+                this.blade.navGrid.items = this.items; //--> needed, otherwise nav html pages will no longer work.
             }
             this.blade.isNavGrid = this.isNavGrid;
             _super.prototype.setObsoleteLayoutProperites.call(this);

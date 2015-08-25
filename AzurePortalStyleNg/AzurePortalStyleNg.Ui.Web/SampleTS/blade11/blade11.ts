@@ -24,7 +24,7 @@
 
         //#region Methods - Overrides for Blade
 
-        protected onCommandNew(): void {
+        onCommandNew(): void {
             this.portalService.bladeArea.addBlade('/SampleTS/blade2/blade2.html', this.path);
         }
 
@@ -32,7 +32,7 @@
 
         //#region Data Access
 
-        protected onGetDataList(): angular.IHttpPromise<any> {
+        onGetDataList(): angular.IHttpPromise<any> {
             return this.portalService.$http({ method: 'GET', url: '/customers' });
         }
 

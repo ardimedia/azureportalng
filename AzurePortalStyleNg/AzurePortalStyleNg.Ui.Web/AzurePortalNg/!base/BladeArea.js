@@ -7,29 +7,8 @@ var __extends = (this && this.__extends) || function (d, b) {
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
-    //export interface IBlade$Scope extends angular.IScope {
-    //    formblade: any;
-    //}
     //#endregion
-    //#region Enum Definition: BladeCommands
-    //export enum BladeCommands {
-    //    Cancel,
-    //    Delete,
-    //    New,
-    //    Save
-    //}
-    //#endregion
-    //#region Class Definition: BladeCommand
-    //export class BladeCommand {
-    //    //#region Properties
-    //    bladeUrls: Array<Blade> = new Array<Blade>();
-    //    isVisible: boolean = false;
-    //    isEnabled: boolean = false;
-    //    text: string = '';
-    //    //#endregion
-    //}
-    //#endregion
-    //#region Class Definition: BladeArea (could also be named: journey)
+    //#region Class Definition: BladeArea
     var BladeArea = (function (_super) {
         __extends(BladeArea, _super);
         //#endregion
@@ -37,7 +16,6 @@ var AzurePortalNg;
         function BladeArea(portalService) {
             _super.call(this, portalService);
             this.blades = new Array();
-            this.parameter = { id: '', action: '' };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea\' constructor called.', [this, portalService]);
             var that = this;
             // Set dependencies
@@ -51,16 +29,21 @@ var AzurePortalNg;
         }
         //#endregion
         //#region Methods
+        BladeArea.prototype.raiseAddBladeEvent = function (args) {
+            this.portalService.$rootScope.$broadcast('BladeArea.AddBlade', args);
+        };
         BladeArea.prototype.setFirstBlade = function (path) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.setFirstBlade\' called.', [this, path]);
             this.clearAll();
             this.hidePanorama();
             return this.addBlade(path);
         };
+        /** obsolete */
         BladeArea.prototype.addBlade = function (path, senderPath) {
             if (senderPath === void 0) { senderPath = ''; }
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.addBlade\' called.', [this, senderPath, path]);
             var that = this;
+            //#region Verify
             if (path === undefined || path === '') {
                 return;
             }
@@ -73,15 +56,23 @@ var AzurePortalNg;
                     throw new Error('[AzurePortalNg.BladeArea] HTML element with ID [azureportalscroll] not found. Maybe it is to early to call function \'BladeArea.addBlade\'.');
                 }
             }
+            //#endregion
+            //#region Clear all children of the parent path
             this.clearChild(senderPath);
+            //#endregion
+            //#region Make sure the blade is not yet show
             this.blades.forEach(function (blade) {
                 if (blade.path === path) {
                     throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' will not be added. It is already added.');
                 }
                 ;
             });
+            //#endregion
+            //#region Show the blade
             var blade = new AzurePortalNg.Blade(that.portalService, path, '');
             that.blades.push(blade);
+            //#endregion
+            //#region Position the blade
             if (that.portalService.$window !== undefined) {
                 that.portalService.$window.setTimeout(function () {
                     var azureportalblades = that.portalService.$window.document.getElementsByClassName('azureportalblade');
@@ -94,6 +85,7 @@ var AzurePortalNg;
                     }
                 }, 250);
             }
+            //#endregion
             return blade;
         };
         BladeArea.prototype.clearAll = function () {

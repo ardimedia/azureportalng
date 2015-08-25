@@ -144,29 +144,8 @@ var __extends = (this && this.__extends) || function (d, b) {
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
-    //export interface IBlade$Scope extends angular.IScope {
-    //    formblade: any;
-    //}
     //#endregion
-    //#region Enum Definition: BladeCommands
-    //export enum BladeCommands {
-    //    Cancel,
-    //    Delete,
-    //    New,
-    //    Save
-    //}
-    //#endregion
-    //#region Class Definition: BladeCommand
-    //export class BladeCommand {
-    //    //#region Properties
-    //    bladeUrls: Array<Blade> = new Array<Blade>();
-    //    isVisible: boolean = false;
-    //    isEnabled: boolean = false;
-    //    text: string = '';
-    //    //#endregion
-    //}
-    //#endregion
-    //#region Class Definition: BladeArea (could also be named: journey)
+    //#region Class Definition: BladeArea
     var BladeArea = (function (_super) {
         __extends(BladeArea, _super);
         //#endregion
@@ -174,7 +153,6 @@ var AzurePortalNg;
         function BladeArea(portalService) {
             _super.call(this, portalService);
             this.blades = new Array();
-            this.parameter = { id: '', action: '' };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea\' constructor called.', [this, portalService]);
             var that = this;
             // Set dependencies
@@ -188,16 +166,21 @@ var AzurePortalNg;
         }
         //#endregion
         //#region Methods
+        BladeArea.prototype.raiseAddBladeEvent = function (args) {
+            this.portalService.$rootScope.$broadcast('BladeArea.AddBlade', args);
+        };
         BladeArea.prototype.setFirstBlade = function (path) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.setFirstBlade\' called.', [this, path]);
             this.clearAll();
             this.hidePanorama();
             return this.addBlade(path);
         };
+        /** obsolete */
         BladeArea.prototype.addBlade = function (path, senderPath) {
             if (senderPath === void 0) { senderPath = ''; }
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea.addBlade\' called.', [this, senderPath, path]);
             var that = this;
+            //#region Verify
             if (path === undefined || path === '') {
                 return;
             }
@@ -210,15 +193,23 @@ var AzurePortalNg;
                     throw new Error('[AzurePortalNg.BladeArea] HTML element with ID [azureportalscroll] not found. Maybe it is to early to call function \'BladeArea.addBlade\'.');
                 }
             }
+            //#endregion
+            //#region Clear all children of the parent path
             this.clearChild(senderPath);
+            //#endregion
+            //#region Make sure the blade is not yet show
             this.blades.forEach(function (blade) {
                 if (blade.path === path) {
                     throw new Error('[AzurePortalNg.BladeArea] path: \'' + path + '\' will not be added. It is already added.');
                 }
                 ;
             });
+            //#endregion
+            //#region Show the blade
             var blade = new AzurePortalNg.Blade(that.portalService, path, '');
             that.blades.push(blade);
+            //#endregion
+            //#region Position the blade
             if (that.portalService.$window !== undefined) {
                 that.portalService.$window.setTimeout(function () {
                     var azureportalblades = that.portalService.$window.document.getElementsByClassName('azureportalblade');
@@ -231,6 +222,7 @@ var AzurePortalNg;
                     }
                 }, 250);
             }
+            //#endregion
             return blade;
         };
         BladeArea.prototype.clearAll = function () {
@@ -370,7 +362,6 @@ var AzurePortalNg;
             this.isInnerHtml = true;
             this.statusbar = '';
             this.statusbarClass = '';
-            this.searchString = '';
             /** Obsolete */
             this.navGrid = {
                 portalService: null,
@@ -521,11 +512,11 @@ var AzurePortalNg;
         Blade.prototype.onActivate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden, you could override this.', [this]);
         };
-        Blade.prototype.navigateTo = function (pathOrId) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, pathOrId]);
-            this.onNavigateTo(pathOrId);
+        Blade.prototype.navigateTo = function (arg) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, arg]);
+            this.onNavigateTo(arg);
         };
-        Blade.prototype.onNavigateTo = function (pathOrId) {
+        Blade.prototype.onNavigateTo = function (arg) {
             throw new Error('[AzurePortalNg.Blade] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
         };
         Blade.prototype.bladeClose = function () {
@@ -586,11 +577,18 @@ var AzurePortalNg;
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 300; }
             _super.call(this, portalService, path, title, subtitle, width);
-            //#region Properties
             this.item = null;
             this.items = new Array();
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData\' constructor called.', [this, portalService, path, title, subtitle, width]);
-            //this.blade = this;
+            var that = this;
+            //#region Add BladeArea.AddBlade event listener
+            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, param) {
+                if (param.path === that.blade.path) {
+                    that.onActivate();
+                }
+            });
+            //#endregion
+            this.activate();
         }
         //#endregion
         //#region Methods
@@ -620,7 +618,7 @@ var AzurePortalNg;
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';
             return that.onGetDataDetail().success(function (data) {
-                that.items = data;
+                that.item = data;
                 that.statusbar = '';
                 that.statusbarClass = '';
             }).error(function (data, status, headers, config) {
@@ -637,7 +635,7 @@ var AzurePortalNg;
         BladeData.prototype.setObsoleteLayoutProperites = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.setObsoleteLayoutProperites\' called.', [this]);
             if (this.items.length !== 0) {
-                this.blade.navGrid.items = this.items; //--> do not uncomment, otherwise nav html pages will no longer work.
+                this.blade.navGrid.items = this.items; //--> needed, otherwise nav html pages will no longer work.
             }
             this.blade.isNavGrid = this.isNavGrid;
             _super.prototype.setObsoleteLayoutProperites.call(this);
@@ -659,25 +657,18 @@ var AzurePortalNg;
     //#region Class Definition: BladeDetail
     var BladeDetail = (function (_super) {
         __extends(BladeDetail, _super);
-        //#endregion
         //#region Constructor
         function BladeDetail(portalService, path, title, subtitle, width) {
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 200; }
             _super.call(this, portalService, path, title, subtitle, width);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeDetail\' constructor called.', [this, portalService, path, title, subtitle, width]);
-            var that = this;
-            this.listener1 = this.blade.portalService.$rootScope.$on('bladeService.parameter', function (event, parameter) {
-                console.log(that.portalService.bladeArea.parameter);
-                that.onActivate();
-            });
-            console.log(this.portalService.bladeArea.parameter);
-            that.onActivate();
         }
         //#endregion
         //#region Methods
         BladeDetail.prototype.onActivate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeDetail.onActivate\' called.', [this]);
+            console.log('onActivate');
             return _super.prototype.getDataDetail.call(this);
         };
         return BladeDetail;
@@ -697,7 +688,6 @@ var AzurePortalNg;
     //#region Class Definition: BladeList
     var BladeList = (function (_super) {
         __extends(BladeList, _super);
-        //#endregion
         //#region Constructor
         function BladeList(portalService, path, title, subtitle, width) {
             if (subtitle === void 0) { subtitle = ''; }
@@ -705,13 +695,6 @@ var AzurePortalNg;
             _super.call(this, portalService, path, title, subtitle, width);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList\' constructor called.', [this, portalService, path, title, subtitle, width]);
         }
-        Object.defineProperty(BladeList.prototype, "filterFor", {
-            get: function () {
-                return this._filterFor;
-            },
-            enumerable: true,
-            configurable: true
-        });
         //#endregion
         //#region Methods
         BladeList.prototype.onActivate = function () {
@@ -719,16 +702,14 @@ var AzurePortalNg;
             return _super.prototype.getDataList.call(this);
         };
         BladeList.prototype.onFilter = function (actual, expected) {
-            this._filterFor = expected;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.filter\' called.', [this, actual, expected]);
-            // TESTING:
-            // There is a Unit Test available in: BladeListTest.html
-            // Implemenation detail:
+            //#region Documentation
             // > onFilter will be called for each item in an array
             // > If the item is an native type (string, number), the filter will be called with the native type in the parameter 'actual'
             // > If the item is an object, the filter will be called with each property of the object in the parameter 'actual'
             // > If the item is an object, the filter will also be called with the object in the parameter 'actual'
-            //#region Functions
+            //#endregion
+            //#region Helper functions
             // Implemenation detail:
             // > We must implement the functions in code, since onFilter is not called within the scope of this class (this. not working).
             // Function to convert 'number' to 'string'
@@ -737,20 +718,14 @@ var AzurePortalNg;
             };
             // Function which figures out, if the 'expected' value is found in the 'actual' value
             var valueFound = function (actual, expected) {
-                //var foundCounter = 0;
                 expectedSplitted.forEach(function (expectedItem, index) {
                     if (actual.toLowerCase().indexOf(expectedItem) > -1) {
-                        //console.log('value \'' + expectedItem + '\' found in \'' + actual + '\'');
                         expectedSplitted[index] = ''; // expected has been found, initialize it now
                     }
-                    else {
-                    }
                 });
-                //return foundCounter;
             };
             // Function to process an object
             var processObject = function (actual) {
-                var foundCounter = 0;
                 for (var actualProperty in actual) {
                     if (actual.hasOwnProperty(actualProperty)) {
                         var actualValue = actual[actualProperty];
@@ -761,25 +736,23 @@ var AzurePortalNg;
                             if (actualValue.indexOf('object:') > -1) {
                                 continue;
                             }
-                            if (valueFound(actualValue, expected)) {
-                                foundCounter++;
-                            }
+                            valueFound(actualValue, expected);
                         }
                     }
                     else {
                         // Process inherited properties
-                        foundCounter = foundCounter + processObject(actual[actualProperty]);
+                        processObject(actual[actualProperty]);
                     }
                 }
-                //console.log('counter: ' + foundCounter);
-                return foundCounter;
             };
             //#endregion
+            //#region Initialize
             // Prepare 'expected' value
             expected = expected.toLowerCase();
-            // If the number of items in expectedSplitted is the same as the foundCounter,
-            // all searched words have been found in the object
-            var expectedSplitted = expected.split(' '); // Split the search string into its parts if separated by blanks
+            // Split the search string into its parts if separated by blanks
+            var expectedSplitted = expected.split(' ');
+            //#endregion
+            //#region Process depending on type
             // Process property, typeof 'object'
             if (typeof actual == 'object') {
                 processObject(actual);
@@ -792,32 +765,24 @@ var AzurePortalNg;
             if (typeof actual == 'string') {
                 valueFound(actual, expected);
             }
-            // Verify if all expected  has been found
-            var allFound = true;
-            var count = 0;
+            //#endregion
+            //#region Verify if all expected has been found
+            var foundCount = 0;
             expectedSplitted.forEach(function (expectedItem) {
                 if (expectedItem === '') {
-                    //console.log('expectedItem is empty');
-                    count++;
-                }
-                else {
+                    foundCount++;
                 }
             });
-            //console.log('coutn: ' + count + ' | expectedSplitted.length: ' + expectedSplitted.length);
-            if (count === expectedSplitted.length) {
-                //console.log('true');
+            //#endregion
+            //#region Return result
+            if (foundCount === expectedSplitted.length) {
                 return true;
             }
             else {
-                //console.log('false');
                 return false;
             }
             ;
-        };
-        BladeList.prototype.onNavigateTo = function (path) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.onNavigateTo\' called.', [this, path]);
-            this.portalService.$rootScope.$broadcast('BladeArea.AddBlade', { path: path, pathSender: this.blade.path });
-            //this.portalService.bladeArea.addBlade(path, this.blade.path);
+            //#endregion
         };
         return BladeList;
     })(AzurePortalNg.BladeData);
@@ -849,13 +814,6 @@ var AzurePortalNg;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeNav\' constructor called.', [this, portalService, path, title, subtitle, width]);
             _super.prototype.onNavigateTo = this.navigateTo;
         }
-        //#endregion
-        //#region Methods
-        BladeNav.prototype.onNavigateTo = function (path) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeNav.onNavigateTo\' called.', [this, path]);
-            this.portalService.$rootScope.$broadcast('BladeArea.AddBlade', { path: path, pathSender: this.blade.path });
-            //this.portalService.bladeArea.addBlade(path, this.blade.path);
-        };
         return BladeNav;
     })(AzurePortalNg.BladeData);
     AzurePortalNg.BladeNav = BladeNav;
@@ -912,12 +870,15 @@ var AzurePortalNg;
 var AzurePortalNg;
 (function (AzurePortalNg) {
     'use strict';
+    //#endregion
     //#region Class Definition: PortalService
     var PortalService = (function () {
         //#endregion
         //#endregion
         //#region Constructors
         function PortalService($injector) {
+            //#region Properties
+            this.parameter = { action: 'none', item: null, itemId: 0 };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [this, $injector]);
             this.$injector = $injector;
             this.$http = $injector.get('$http');
@@ -926,9 +887,6 @@ var AzurePortalNg;
             this.$rootScope = $injector.get('$rootScope');
             this.$window = $injector.get('$window');
             this.ngDialog = $injector.get('ngDialog');
-            //this.bladeArea = <AzurePortalNg.BladeArea>$injector.get('azurePortalNg.bladeArea');
-            //this.bladeArea.portalService = this;
-            //this.bladeArea = new BladeArea(this);
         }
         return PortalService;
     })();

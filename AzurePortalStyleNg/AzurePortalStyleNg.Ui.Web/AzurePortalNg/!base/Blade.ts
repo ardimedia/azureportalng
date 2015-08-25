@@ -21,8 +21,6 @@
         statusbar: string = '';
         statusbarClass: string = '';
 
-        searchString: string = '';
-
         //#endregion
 
         //#region Properties Old (OBSOLETE)
@@ -144,74 +142,73 @@
 
         //#region Commands
 
-        protected onCommandBrowse(): void {
+        onCommandBrowse(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandBrowse\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandCancel(): void {
+        onCommandCancel(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandCancel\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandCopy(): void {
+        onCommandCopy(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandCopy\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandDelete(): void {
+        onCommandDelete(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandDelete\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandDocument(): void {
+        onCommandDocument(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandDocument\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandDocument2(): void {
+        onCommandDocument2(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandDocument2\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandDocument3(): void {
+        onCommandDocument3(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandDocument3\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandDocument4(): void {
+        onCommandDocument4(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandDocument4\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandDocument5(): void {
+        onCommandDocument5(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandDocument5\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandNew(): void {
+        onCommandNew(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandNew\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandOrder(): void {
+        onCommandOrder(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandOrder\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandRestart(): void {
+        onCommandRestart(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandRestart\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandSave(): void {
+        onCommandSave(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandSave\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandSearch(): void {
+        onCommandSearch(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandSearch\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandStart(): void {
+        onCommandStart(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandStart\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandStop(): void {
+        onCommandStop(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandStop\' is an abstract function. Define one in the derived class.');
         }
 
-        protected onCommandSwap(): void {
+        onCommandSwap(): void {
             throw new Error('[AzurePortalNg.Blade] \'onCommandSwap\' is an abstract function. Define one in the derived class.');
         }
-
 
         //#endregion
 
@@ -227,12 +224,12 @@
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden, you could override this.', [this]);
         }
 
-        navigateTo(pathOrId: string|number) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, pathOrId]);
-            this.onNavigateTo(pathOrId);
+        navigateTo(arg: any) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, arg]);
+            this.onNavigateTo(arg);
         }
 
-        onNavigateTo(pathOrId: string|number): void {
+        onNavigateTo(arg: any): void {
             throw new Error('[AzurePortalNg.Blade] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
         }
 

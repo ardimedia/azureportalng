@@ -23,13 +23,6 @@ var AzurePortalNg;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeNav\' constructor called.', [this, portalService, path, title, subtitle, width]);
             _super.prototype.onNavigateTo = this.navigateTo;
         }
-        //#endregion
-        //#region Methods
-        BladeNav.prototype.onNavigateTo = function (path) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeNav.onNavigateTo\' called.', [this, path]);
-            this.portalService.$rootScope.$broadcast('BladeArea.AddBlade', { path: path, pathSender: this.blade.path });
-            //this.portalService.bladeArea.addBlade(path, this.blade.path);
-        };
         return BladeNav;
     })(AzurePortalNg.BladeData);
     AzurePortalNg.BladeNav = BladeNav;

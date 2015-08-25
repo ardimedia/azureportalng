@@ -22,16 +22,6 @@
         }
 
         //#endregion
-
-        //#region Methods
-
-        onNavigateTo(path: string) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeNav.onNavigateTo\' called.', [this, path]);
-            this.portalService.$rootScope.$broadcast('BladeArea.AddBlade', { path: path, pathSender: this.blade.path });
-            //this.portalService.bladeArea.addBlade(path, this.blade.path);
-        }
-
-        //#endregion
     }
 
     //#endregion

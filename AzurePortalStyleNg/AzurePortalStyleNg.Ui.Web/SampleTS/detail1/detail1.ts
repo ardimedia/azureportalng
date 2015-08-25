@@ -5,28 +5,28 @@
 
     class Detail1 extends AzurePortalNg.BladeDetail {
 
-        //#region Properties
-
-        //#endregion
-
         //#region Constructors
 
         constructor(portalService: AzurePortalNg.PortalService) {
             super(portalService, '/SampleTS/detail1/detail1.html', 'Detail-1', 'TypeScript based', 315);
 
-            this.statusbar = 'Detail-1...';
+            this.isCommandSave = true;
+            this.commandSaveText = 'speichern';
         }
 
         //#endregion
 
         //#region Data Access
 
-        protected onGetDataDetail(): angular.IHttpPromise<any> {
-
-            // TODO: id is undefined, fix that
-            var id = 1001;
-
-            return this.portalService.$http({ method: 'GET', url: '/customer/' + id });
+        onGetDataDetail(): angular.IHttpPromise<any> {
+            var customer: SampleTS.Customer = this.portalService.parameter.item;
+            if (this.portalService.parameter.action === 'new') {
+                this.item = customer;
+                return null;
+            } else {
+                console.log('Detail1');
+                return this.portalService.$http({ method: 'GET', url: '/customer/' + customer.customerPkId });
+            }
         }
 
         //#endregion

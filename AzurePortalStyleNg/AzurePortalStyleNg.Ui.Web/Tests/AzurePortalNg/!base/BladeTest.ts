@@ -35,7 +35,6 @@
         expect(sut.isInnerHtml).toBe(true);
         expect(sut.statusbar).toBe('');
         expect(sut.statusbarClass).toBe('');
-        expect(sut.searchString).toBe('');
 
         expect(sut.isCommandBrowse).toBe(false);
         expect(sut.isCommandCancel).toBe(false);

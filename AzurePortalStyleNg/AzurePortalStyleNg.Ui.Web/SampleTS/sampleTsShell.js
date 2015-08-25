@@ -10,8 +10,6 @@ var SampleTS;
     //#region Class Definition
     var SampleTsShell = (function (_super) {
         __extends(SampleTsShell, _super);
-        //#region Properties
-        //#endregion
         //#region Constructors
         function SampleTsShell(portalService) {
             _super.call(this, 'SAMPLE TypeScript', portalService);

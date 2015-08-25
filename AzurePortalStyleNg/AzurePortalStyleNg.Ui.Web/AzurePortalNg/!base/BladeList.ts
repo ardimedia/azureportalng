@@ -5,19 +5,6 @@
 
     export class BladeList extends BladeData {
 
-        //#region Properties
-
-        //filterFor: string;
-
-        private _filterFor: string;
-
-        get filterFor(): string {
-            return this._filterFor;
-        }
-
-
-        //#endregion
-
         //#region Constructor
 
         constructor(portalService: PortalService, path: string, title: string, subtitle: string = '', width: number = 200) {
@@ -36,20 +23,18 @@
         }
 
         onFilter(actual: Object, expected: string): boolean {
-            this._filterFor = expected;
-
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.filter\' called.', [this, actual, expected]);
 
-            // TESTING:
-            // There is a Unit Test available in: BladeListTest.html
+            //#region Documentation
 
-            // Implemenation detail:
             // > onFilter will be called for each item in an array
             // > If the item is an native type (string, number), the filter will be called with the native type in the parameter 'actual'
             // > If the item is an object, the filter will be called with each property of the object in the parameter 'actual'
             // > If the item is an object, the filter will also be called with the object in the parameter 'actual'
 
-            //#region Functions
+            //#endregion
+
+            //#region Helper functions
 
             // Implemenation detail:
             // > We must implement the functions in code, since onFilter is not called within the scope of this class (this. not working).
@@ -61,24 +46,16 @@
 
             // Function which figures out, if the 'expected' value is found in the 'actual' value
             var valueFound = function (actual: string, expected: string): void {
-                //var foundCounter = 0;
 
                 expectedSplitted.forEach(function (expectedItem, index): void {
                     if (actual.toLowerCase().indexOf(expectedItem) > -1) {
-                        //console.log('value \'' + expectedItem + '\' found in \'' + actual + '\'');
                         expectedSplitted[index] = '';  // expected has been found, initialize it now
-                    } else {
-                        //console.log('value \'' + expectedItem + '\' not found in \'' + actual + '\'');
                     }
                 });
-
-                //return foundCounter;
             };
 
             // Function to process an object
-            var processObject = function (actual: Object): number {
-                var foundCounter = 0;
-
+            var processObject = function (actual: Object): void {
                 for (var actualProperty in actual) {
                     if (actual.hasOwnProperty(actualProperty)) {
                         var actualValue = actual[actualProperty];
@@ -89,30 +66,28 @@
 
                         if (typeof actualValue == 'string') {
                             if (actualValue.indexOf('object:') > -1) { continue; }
-                            if (valueFound(actualValue, expected)) {
-                                foundCounter++;
-                                //console.log('counter added 1: ' + foundCounter + ' ' + actualProperty + ' ' + actualValue);
-                            }
+                            valueFound(actualValue, expected);
                         }
                     } else {
                         // Process inherited properties
-                        foundCounter = foundCounter + processObject(actual[actualProperty]);
-                        //console.log('counter added 2: ' + foundCounter);
+                        processObject(actual[actualProperty]);
                     }
                 }
-
-                //console.log('counter: ' + foundCounter);
-                return foundCounter;
             }
 
             //#endregion
 
+            //#region Initialize
+
             // Prepare 'expected' value
             expected = expected.toLowerCase();
 
-            // If the number of items in expectedSplitted is the same as the foundCounter,
-            // all searched words have been found in the object
-            var expectedSplitted = expected.split(' ');  // Split the search string into its parts if separated by blanks
+            // Split the search string into its parts if separated by blanks
+            var expectedSplitted = expected.split(' ');
+
+            //#endregion
+
+            //#region Process depending on type
 
             // Process property, typeof 'object'
             if (typeof actual == 'object') {
@@ -129,33 +104,29 @@
                 valueFound(<string>actual, expected);
             }
 
-            // Verify if all expected  has been found
-            var allFound = true;
-            var count = 0;
+            //#endregion
+
+            //#region Verify if all expected has been found
+
+            var foundCount = 0;
 
             expectedSplitted.forEach(function (expectedItem): void {
-                if (expectedItem === '') {
-                    //console.log('expectedItem is empty');
-                    count++;
-                } else {
-                    //console.log('expectedItem not found: ' + expectedItem);
+                if (expectedItem === '') {  // all expectedSplitted.items which have been found, are initialized to '' (see above)
+                    foundCount++;
                 }
             });
 
-            //console.log('coutn: ' + count + ' | expectedSplitted.length: ' + expectedSplitted.length);
-            if (count === expectedSplitted.length) {
-                //console.log('true');
+            //#endregion
+
+            //#region Return result
+
+            if (foundCount === expectedSplitted.length) {
                 return true;
             } else {
-                //console.log('false');
                 return false;
             };
-        }
 
-        onNavigateTo(path: string) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.onNavigateTo\' called.', [this, path]);
-            this.portalService.$rootScope.$broadcast('BladeArea.AddBlade', { path: path, pathSender: this.blade.path });
-            //this.portalService.bladeArea.addBlade(path, this.blade.path);
+            //#endregion
         }
 
         //#endregion

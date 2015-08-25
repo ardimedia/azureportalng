@@ -4,9 +4,6 @@
     //#region Class Definition
 
     class SampleTsShell extends AzurePortalNg.PortalShell {
-        //#region Properties
-
-        //#endregion
 
         //#region Constructors
 
@@ -66,6 +63,7 @@
         }
 
         //#endregion
+
     }
 
     //#endregion
@@ -76,7 +74,6 @@
         'use strict';
         angular.module('sampleTsApp').controller('sampleShell', ['azurePortalNg.portalService', SampleTsShell]);
     })();
-
 
     //#endregion
 }

@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody data-ng-repeat="item in vm.items | filter:vm.filterFor:vm.onFilter" class="azc-grid-groupdata" role="rowgroup">
-            <tr data-ng-click="vm.navigateTo(item.customerPkId);" role="row" aria-selected="false" data-grid-row-activated="false" data-grid-selectable="true" data-grid-focusable="true" data-grid-activateable="true" style="cursor:pointer;">
+            <tr data-ng-click="vm.navigateTo(item);" role="row" aria-selected="false" data-grid-row-activated="false" data-grid-selectable="true" data-grid-focusable="true" data-grid-activateable="true" style="cursor:pointer;">
                 <td role="gridcell" data-activatable="true" data-grid-cell-activated="false">{{item.customerPkId}}</td>
                 <td role="gridcell" data-activatable="true" data-grid-cell-activated="false">{{item.firstName}}</td>
                 <td role="gridcell" data-activatable="true" data-grid-cell-activated="false">{{item.lastName}}</td>

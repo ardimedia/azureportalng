@@ -24,7 +24,6 @@ var AzurePortalNg;
             this.isInnerHtml = true;
             this.statusbar = '';
             this.statusbarClass = '';
-            this.searchString = '';
             /** Obsolete */
             this.navGrid = {
                 portalService: null,
@@ -175,11 +174,11 @@ var AzurePortalNg;
         Blade.prototype.onActivate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden, you could override this.', [this]);
         };
-        Blade.prototype.navigateTo = function (pathOrId) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, pathOrId]);
-            this.onNavigateTo(pathOrId);
+        Blade.prototype.navigateTo = function (arg) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, arg]);
+            this.onNavigateTo(arg);
         };
-        Blade.prototype.onNavigateTo = function (pathOrId) {
+        Blade.prototype.onNavigateTo = function (arg) {
             throw new Error('[AzurePortalNg.Blade] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
         };
         Blade.prototype.bladeClose = function () {

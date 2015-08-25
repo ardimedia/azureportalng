@@ -151,16 +151,56 @@ describe('AzurePortalNg.BladeList', function () {
     });
     //#endregion
     //#region onFilter
-    it("onFilter - find search string", function () {
+    //#region onFilter Number
+    it("onFilter - find search string in an number", function () {
+        var result = sut.onFilter(55, '55');
+        expect(result).toBe(true);
+    });
+    it("onFilter - do not find search string in an number", function () {
+        var result = sut.onFilter(55, '51');
+        expect(result).toBe(false);
+    });
+    it("onFilter - do not find multiple search string in an number", function () {
+        var result = sut.onFilter(55, '51 5');
+        expect(result).toBe(false);
+    });
+    //#endregion
+    //#region onFilter String
+    it("onFilter - find search string in an string", function () {
+        var result = sut.onFilter('55', '55');
+        expect(result).toBe(true);
+    });
+    it("onFilter - do not find search string in an string", function () {
+        var result = sut.onFilter('55', '51');
+        expect(result).toBe(false);
+    });
+    it("onFilter - find multiple search string in an string", function () {
+        var result = sut.onFilter('the house is blue', 'house blue');
+        expect(result).toBe(true);
+    });
+    it("onFilter - do not find multiple search string in an string", function () {
+        var result = sut.onFilter('the house is blue', 'house red');
+        expect(result).toBe(false);
+    });
+    //#endregion
+    //#region onFilter Object
+    it("onFilter - find search string in an object", function () {
         var result = sut.onFilter({ title: 'test-title' }, 'test-title');
         expect(result).toBe(true);
-        expect(sut.filterFor).toBe('test-title');
     });
-    it("onFilter - do not find search string", function () {
+    it("onFilter - do not find search string in an object", function () {
         var result = sut.onFilter({ title: 'test-title' }, 'test-title-not-found');
         expect(result).toBe(false);
-        expect(sut.filterFor).toBe('test-title-not-found');
     });
+    it("onFilter - find multiple search string in an object", function () {
+        var result = sut.onFilter({ title: 'test-title', note: 'blue' }, 'test-title blue');
+        expect(result).toBe(true);
+    });
+    it("onFilter - do not find multiple search string in an object", function () {
+        var result = sut.onFilter({ title: 'test-title', note: 'blue' }, 'test-title red');
+        expect(result).toBe(false);
+    });
+    //#endregion
     //#endregion
     //#endregion
 });
@@ -194,7 +234,6 @@ describe('AzurePortalNg.Blade', function () {
         expect(sut.isInnerHtml).toBe(true);
         expect(sut.statusbar).toBe('');
         expect(sut.statusbarClass).toBe('');
-        expect(sut.searchString).toBe('');
         expect(sut.isCommandBrowse).toBe(false);
         expect(sut.isCommandCancel).toBe(false);
         expect(sut.isCommandCopy).toBe(false);
