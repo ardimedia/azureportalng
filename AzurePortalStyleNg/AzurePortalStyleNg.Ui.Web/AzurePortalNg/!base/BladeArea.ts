@@ -33,10 +33,11 @@
             this.portalService = portalService;
             this.portalService.bladeArea = this;
 
-            //#region AddEventListeners
+            //#region Add BladeArea.AddBlade event listener
 
             this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event: ng.IAngularEvent, parameter: AzurePortalNg.IAddBladeEventArgs) {
-                that.addBlade(parameter.path, parameter.pathSender);
+                var blade = that.addBlade(parameter.path, parameter.pathSender);
+                //blade.activate();
             });
 
             //#endregion

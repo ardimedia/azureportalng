@@ -1,6 +1,10 @@
-﻿/// <reference path="../scripts/typings/angularjs/angular.d.ts" />
+﻿/*
+    The following lines should be here, since 'tsc @tsc.txt', which creates apn.d.ts, will otherwise have warnings/errors
+    But in production code, this is not the right solution, since the typings must be at this location as well, which is not normally the case
+    So for the moment, we have commented out these lines.
+/// <reference path="../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../scripts/typings/ngdialog/ngdialog.d.ts" />
-// the above lines need to be here, since 'tsc @tsc.txt', which creates apn.d.ts, will have warnings/errors
+*/
 
 var azurePortalNg: ng.IModule;
 

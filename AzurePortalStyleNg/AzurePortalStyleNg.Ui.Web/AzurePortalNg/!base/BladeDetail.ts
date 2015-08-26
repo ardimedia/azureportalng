@@ -16,9 +16,9 @@
 
         //#region Methods
 
-        onActivate(): angular.IHttpPromise<any> {
+        onActivate(): void {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeDetail.onActivate\' called.', [this]);
-            return super.getDataDetail()
+            super.getDataDetail()
         }
 
         //#endregion

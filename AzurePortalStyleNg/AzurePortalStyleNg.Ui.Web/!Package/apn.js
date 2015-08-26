@@ -75,9 +75,13 @@ var AzurePortalNg;
     AzurePortalNg.Debug = Debug;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Debug.js.map
+/*
+    The following lines should be here, since 'tsc @tsc.txt', which creates apn.d.ts, will otherwise have warnings/errors
+    But in production code, this is not the right solution, since the typings must be at this location as well, which is not normally the case
+    So for the moment, we have commented out these lines.
 /// <reference path="../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../scripts/typings/ngdialog/ngdialog.d.ts" />
-// the above lines need to be here, since 'tsc @tsc.txt', which creates apn.d.ts, will have warnings/errors
+*/
 var azurePortalNg;
 (function () {
     'use strict';
@@ -158,9 +162,10 @@ var AzurePortalNg;
             // Set dependencies
             this.portalService = portalService;
             this.portalService.bladeArea = this;
-            //#region AddEventListeners
+            //#region Add BladeArea.AddBlade event listener
             this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, parameter) {
-                that.addBlade(parameter.path, parameter.pathSender);
+                var blade = that.addBlade(parameter.path, parameter.pathSender);
+                //blade.activate();
             });
             //#endregion
         }
@@ -588,7 +593,6 @@ var AzurePortalNg;
                 }
             });
             //#endregion
-            //this.activate();
         }
         //#endregion
         //#region Methods
@@ -617,14 +621,21 @@ var AzurePortalNg;
             var that = this;
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';
-            return that.onGetDataDetail().success(function (data) {
-                that.item = data;
+            var onGetDataDetail = that.onGetDataDetail();
+            if (onGetDataDetail === null) {
                 that.statusbar = '';
                 that.statusbarClass = '';
-            }).error(function (data, status, headers, config) {
-                that.statusbar = 'FEHLER: ' + data;
-                that.statusbarClass = 'message-info message-off';
-            });
+            }
+            else {
+                onGetDataDetail.success(function (data) {
+                    that.item = data;
+                    that.statusbar = '';
+                    that.statusbarClass = '';
+                }).error(function (data, status, headers, config) {
+                    that.statusbar = 'FEHLER: ' + data;
+                    that.statusbarClass = 'message-info message-off';
+                });
+            }
         };
         BladeData.prototype.onGetDataDetail = function () {
             throw new Error('[AzurePortalNg.BladeData] \'onGetDataDetail\' is an abstract function. Define one in the derived class.');
@@ -668,7 +679,7 @@ var AzurePortalNg;
         //#region Methods
         BladeDetail.prototype.onActivate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeDetail.onActivate\' called.', [this]);
-            return _super.prototype.getDataDetail.call(this);
+            _super.prototype.getDataDetail.call(this);
         };
         return BladeDetail;
     })(AzurePortalNg.BladeData);

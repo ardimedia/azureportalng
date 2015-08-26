@@ -1,5 +1,3 @@
-/// <reference path="../Scripts/typings/angularjs/angular.d.ts" />
-/// <reference path="../Scripts/typings/ngdialog/ngdialog.d.ts" />
 declare var azurePortalNg: ng.IModule;
 declare module AzurePortalNg {
     class AvatarMenu extends UserControlBase {
@@ -141,7 +139,7 @@ declare module AzurePortalNg {
         constructor(portalService: PortalService, path: string, title: string, subtitle?: string, width?: number);
         getDataList(): angular.IHttpPromise<any>;
         onGetDataList(): angular.IHttpPromise<any>;
-        getDataDetail(): angular.IHttpPromise<any>;
+        getDataDetail(): void;
         onGetDataDetail(): angular.IHttpPromise<any>;
         /** Obsolete */
         setObsoleteLayoutProperites(): void;
@@ -150,7 +148,7 @@ declare module AzurePortalNg {
 declare module AzurePortalNg {
     class BladeDetail extends BladeData {
         constructor(portalService: PortalService, path: string, title: string, subtitle?: string, width?: number);
-        onActivate(): angular.IHttpPromise<any>;
+        onActivate(): void;
     }
 }
 declare module AzurePortalNg {

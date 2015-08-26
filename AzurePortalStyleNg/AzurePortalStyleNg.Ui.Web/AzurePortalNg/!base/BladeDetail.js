@@ -21,7 +21,7 @@ var AzurePortalNg;
         //#region Methods
         BladeDetail.prototype.onActivate = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeDetail.onActivate\' called.', [this]);
-            return _super.prototype.getDataDetail.call(this);
+            _super.prototype.getDataDetail.call(this);
         };
         return BladeDetail;
     })(AzurePortalNg.BladeData);

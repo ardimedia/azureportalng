@@ -32,8 +32,6 @@
             });
 
             //#endregion
-
-            //this.activate();
         }
 
         //#endregion
@@ -67,21 +65,28 @@
 
         //#region GetDataDetail
 
-        getDataDetail(): angular.IHttpPromise<any> {
+        getDataDetail(): void {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.getDataDetail\' called.', [this]);
             var that = this;
 
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';
 
-            return that.onGetDataDetail().success(function (data: any) {
-                that.item = data;
+            var onGetDataDetail = that.onGetDataDetail();
+
+            if (onGetDataDetail === null) {
                 that.statusbar = '';
                 that.statusbarClass = '';
-            }).error(function (data: any, status: any, headers: any, config: any) {
-                that.statusbar = 'FEHLER: ' + data;
-                that.statusbarClass = 'message-info message-off';
-            });
+            } else {
+                onGetDataDetail.success(function (data: any) {
+                    that.item = data;
+                    that.statusbar = '';
+                    that.statusbarClass = '';
+                }).error(function (data: any, status: any, headers: any, config: any) {
+                    that.statusbar = 'FEHLER: ' + data;
+                    that.statusbarClass = 'message-info message-off';
+                });
+            }
         }
 
         onGetDataDetail(): angular.IHttpPromise<any> {

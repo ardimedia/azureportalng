@@ -27,7 +27,6 @@ var AzurePortalNg;
                 }
             });
             //#endregion
-            //this.activate();
         }
         //#endregion
         //#region Methods
@@ -56,14 +55,21 @@ var AzurePortalNg;
             var that = this;
             that.statusbar = 'Daten laden...';
             that.statusbarClass = '';
-            return that.onGetDataDetail().success(function (data) {
-                that.item = data;
+            var onGetDataDetail = that.onGetDataDetail();
+            if (onGetDataDetail === null) {
                 that.statusbar = '';
                 that.statusbarClass = '';
-            }).error(function (data, status, headers, config) {
-                that.statusbar = 'FEHLER: ' + data;
-                that.statusbarClass = 'message-info message-off';
-            });
+            }
+            else {
+                onGetDataDetail.success(function (data) {
+                    that.item = data;
+                    that.statusbar = '';
+                    that.statusbarClass = '';
+                }).error(function (data, status, headers, config) {
+                    that.statusbar = 'FEHLER: ' + data;
+                    that.statusbarClass = 'message-info message-off';
+                });
+            }
         };
         BladeData.prototype.onGetDataDetail = function () {
             throw new Error('[AzurePortalNg.BladeData] \'onGetDataDetail\' is an abstract function. Define one in the derived class.');
