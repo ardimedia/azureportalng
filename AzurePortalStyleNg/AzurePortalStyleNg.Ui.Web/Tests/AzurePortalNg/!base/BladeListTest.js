@@ -13,10 +13,10 @@ describe('AzurePortalNg.BladeList', function () {
     //#endregion
     //#region Specs for Functions
     //#region activate
-    it("activate - throw exception, since getDataList() is abstract", function () {
-        var exception = function () { sut.activate(); };
-        expect(exception).toThrow(new Error('[AzurePortalNg.BladeData] \'onGetDataList\' is an abstract function. Define one in the derived class.'));
-    });
+    //it("activate - throw exception, since getDataList() is abstract", function () {
+    //    var exception = function () { sut.activate(); };
+    //    expect(exception).toThrow(new Error('[AzurePortalNg.BladeData] \'onGetDataList\' is an abstract function. Define one in the derived class.'));
+    //});
     //#endregion
     //#region onFilter
     //#region onFilter Number
@@ -72,4 +72,3 @@ describe('AzurePortalNg.BladeList', function () {
     //#endregion
     //#endregion
 });
-//# sourceMappingURL=BladeListTest.js.map

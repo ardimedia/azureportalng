@@ -1,5 +1,4 @@
 ﻿module AzurePortalNg {
-    'use strict';
 
     //#region Class Definition: Blade
 
@@ -8,6 +7,8 @@
         //#region Properties
 
         //#region Properties
+
+        listener1: Function;
 
         path: string;
 
@@ -20,21 +21,6 @@
 
         statusbar: string = '';
         statusbarClass: string = '';
-
-        //#endregion
-
-        //#region Properties Old (OBSOLETE)
-
-        /** Obsolete */
-        blade: Blade;
-        /** Obsolete */
-        isNavGrid: boolean;
-        /** Obsolete */
-        navGrid = {
-            portalService: null,
-            items: [],
-            navigateTo: function (path: string) { }
-        };
 
         //#endregion
 
@@ -110,6 +96,21 @@
 
         //#endregion
 
+        //#region OBSOLETE
+
+        /** Obsolete */
+        blade: Blade;
+        /** Obsolete */
+        isNavGrid: boolean;
+        /** Obsolete */
+        navGrid = {
+            portalService: null,
+            items: [],
+            navigateTo: function (path: string) { }
+        };
+
+        //#endregion
+
         //#endregion
 
         //#region Constructor
@@ -117,6 +118,7 @@
         constructor(portalService: PortalService, path: string, title: string, subtitle: string = '', width: number = 200) {
             super(portalService);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' constructor called.', [this, portalService, path, title, subtitle, width]);
+            var that = this;
 
             this.blade = this;
             this.path = path;
@@ -134,11 +136,61 @@
             if (!width && width !== 0) { throw new Error('[AzurePortalNg.Blade] constructor parameter \'width\' must be a number when provided.'); }
 
             if (width < 50) { throw new Error('[AzurePortalNg.Blade] constructor parameter \'width\' must be at least 50.'); }
+
+            //#region Add BladeArea.AddBlade event listener
+
+            /** OBSOLETE: remove when all OBSOLETE code has been removed */
+            if (portalService instanceof PortalService == false) {
+                return;
+            }
+            /** OBSOLETE: end */
+
+            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, args: AzurePortalNg.IAddBladeEventArgs) {
+                AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' BladeArea.AddBlade event processing.', [this, event, args]);
+                if (args.path === that.blade.path) {
+                    that.activate();
+                }
+            });
+
+            //#endregion
         }
 
         //#endregion
 
         //#region Methods
+
+        //#region Methods
+
+        activate(): void {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called. You could override this, but proably you should call super.activate().', [this]);
+            this.onActivate();
+        }
+
+        onActivate(): void {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden. You could override this.', [this]);
+        }
+
+        navigateTo(arg: any) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called. You should not override this, use onNavigateTo instead.', [this, arg]);
+            this.onNavigateTo(arg);
+        }
+
+        onNavigateTo(arg: any): void {
+            throw new Error('[AzurePortalNg.Blade] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
+        }
+
+        /** close blade. */
+        close() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.close\' called.', [this]);
+
+            if (this.portalService.bladeArea !== undefined) {
+                this.portalService.bladeArea.clearPath(this.path);
+            } else {
+                throw new Error('[AzurePortalNg.Blade] path: \'' + this.path + '\' could not be removed, since no \'this.portalService.bladeArea\' available.');
+            }
+        }
+
+        //#endregion
 
         //#region Commands
 
@@ -212,40 +264,7 @@
 
         //#endregion
 
-        //#region Methods
-
-        activate(): void {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.', [this]);
-            this.onActivate();
-            //this.setObsoleteLayoutProperites();
-        }
-
-        onActivate(): void {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden, you could override this.', [this]);
-        }
-
-        navigateTo(arg: any) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, arg]);
-            this.onNavigateTo(arg);
-        }
-
-        onNavigateTo(arg: any): void {
-            throw new Error('[AzurePortalNg.Blade] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
-        }
-
-        bladeClose() {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.', [this]);
-
-            if (this.portalService.bladeArea !== undefined) {
-                this.portalService.bladeArea.clearPath(this.path);
-            } else {
-                throw new Error('[AzurePortalNg.Blade] path: \'' + this.path + '\' could not be removed, since no this.portalService.bladeArea available.');
-            }
-        }
-
-        //#endregion
-
-        //#region setObsoleteLayoutProperites (OBSOLETE)
+        //#region OBSOLETE
 
         /** Obsolete */
         setObsoleteLayoutProperites() {
@@ -274,6 +293,10 @@
             this.blade.isCommandSwap = this.isCommandSwap;
         }
 
+        /** Obsolete */
+        bladeClose() {
+            this.close();
+        }
         //#endregion
 
         //#endregion

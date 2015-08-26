@@ -18,7 +18,7 @@
             navGrid: {
                 items: [
                     { title: 'Navigation 1', bladePath: '/SampleJs/nav1/nav1.html' },
-                    { title: 'Blade 2', bladePath: '/SampleJs/blade2/blade2.html' },
+                    { title: 'Blade 1', bladePath: '/SampleJs/blade1/blade1.html' },
                     { title: '', bladePath: '' },
                     { title: 'no path', bladePath: '' },
                 ]

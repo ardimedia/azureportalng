@@ -22,11 +22,11 @@
 
     //#region activate
 
-    it("activate - throw exception, since getDataList() is abstract", function () {
-        var exception = function () { sut.activate(); };
+    //it("activate - throw exception, since getDataList() is abstract", function () {
+    //    var exception = function () { sut.activate(); };
 
-        expect(exception).toThrow(new Error('[AzurePortalNg.BladeData] \'onGetDataList\' is an abstract function. Define one in the derived class.'));
-    });
+    //    expect(exception).toThrow(new Error('[AzurePortalNg.BladeData] \'onGetDataList\' is an abstract function. Define one in the derived class.'));
+    //});
 
     //#endregion
 

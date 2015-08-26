@@ -163,9 +163,14 @@ var AzurePortalNg;
             this.portalService = portalService;
             this.portalService.bladeArea = this;
             //#region Add BladeArea.AddBlade event listener
-            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, parameter) {
-                var blade = that.addBlade(parameter.path, parameter.pathSender);
-                //blade.activate();
+            /** OBSOLETE: remove when all OBSOLETE code has been removed */
+            if (portalService instanceof AzurePortalNg.PortalService == false) {
+                return;
+            }
+            /** OBSOLETE: end */
+            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, args) {
+                AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea\' BladeArea.AddBlade event processing.', [this, event, args]);
+                that.addBlade(args.path, args.pathSender);
             });
             //#endregion
         }
@@ -349,7 +354,6 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
-    'use strict';
     //#region Class Definition: Blade
     var Blade = (function (_super) {
         __extends(Blade, _super);
@@ -367,12 +371,6 @@ var AzurePortalNg;
             this.isInnerHtml = true;
             this.statusbar = '';
             this.statusbarClass = '';
-            /** Obsolete */
-            this.navGrid = {
-                portalService: null,
-                items: [],
-                navigateTo: function (path) { }
-            };
             //#endregion
             //#region Commands
             this.isCommandBrowse = false;
@@ -426,7 +424,14 @@ var AzurePortalNg;
             this.isCommandSwap = false;
             this.commandSwap = function () { this.onCommandSwap(); };
             this.commandSwapText = '';
+            /** Obsolete */
+            this.navGrid = {
+                portalService: null,
+                items: [],
+                navigateTo: function (path) { }
+            };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' constructor called.', [this, portalService, path, title, subtitle, width]);
+            var that = this;
             this.blade = this;
             this.path = path;
             this.title = title;
@@ -452,9 +457,48 @@ var AzurePortalNg;
             if (width < 50) {
                 throw new Error('[AzurePortalNg.Blade] constructor parameter \'width\' must be at least 50.');
             }
+            //#region Add BladeArea.AddBlade event listener
+            /** OBSOLETE: remove when all OBSOLETE code has been removed */
+            if (portalService instanceof AzurePortalNg.PortalService == false) {
+                return;
+            }
+            /** OBSOLETE: end */
+            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, args) {
+                AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' BladeArea.AddBlade event processing.', [this, event, args]);
+                if (args.path === that.blade.path) {
+                    that.activate();
+                }
+            });
+            //#endregion
         }
         //#endregion
         //#region Methods
+        //#region Methods
+        Blade.prototype.activate = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called. You could override this, but proably you should call super.activate().', [this]);
+            this.onActivate();
+        };
+        Blade.prototype.onActivate = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden. You could override this.', [this]);
+        };
+        Blade.prototype.navigateTo = function (arg) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called. You should not override this, use onNavigateTo instead.', [this, arg]);
+            this.onNavigateTo(arg);
+        };
+        Blade.prototype.onNavigateTo = function (arg) {
+            throw new Error('[AzurePortalNg.Blade] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
+        };
+        /** close blade. */
+        Blade.prototype.close = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.close\' called.', [this]);
+            if (this.portalService.bladeArea !== undefined) {
+                this.portalService.bladeArea.clearPath(this.path);
+            }
+            else {
+                throw new Error('[AzurePortalNg.Blade] path: \'' + this.path + '\' could not be removed, since no \'this.portalService.bladeArea\' available.');
+            }
+        };
+        //#endregion
         //#region Commands
         Blade.prototype.onCommandBrowse = function () {
             throw new Error('[AzurePortalNg.Blade] \'onCommandBrowse\' is an abstract function. Define one in the derived class.');
@@ -508,33 +552,7 @@ var AzurePortalNg;
             throw new Error('[AzurePortalNg.Blade] \'onCommandSwap\' is an abstract function. Define one in the derived class.');
         };
         //#endregion
-        //#region Methods
-        Blade.prototype.activate = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.activate\' called.', [this]);
-            this.onActivate();
-            //this.setObsoleteLayoutProperites();
-        };
-        Blade.prototype.onActivate = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.onActivate\' not overriden, you could override this.', [this]);
-        };
-        Blade.prototype.navigateTo = function (arg) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.navigateTo\' called.', [this, arg]);
-            this.onNavigateTo(arg);
-        };
-        Blade.prototype.onNavigateTo = function (arg) {
-            throw new Error('[AzurePortalNg.Blade] \'onNavigateTo\' is an abstract function. Define one in the derived class.');
-        };
-        Blade.prototype.bladeClose = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.bladeClose\' called.', [this]);
-            if (this.portalService.bladeArea !== undefined) {
-                this.portalService.bladeArea.clearPath(this.path);
-            }
-            else {
-                throw new Error('[AzurePortalNg.Blade] path: \'' + this.path + '\' could not be removed, since no this.portalService.bladeArea available.');
-            }
-        };
-        //#endregion
-        //#region setObsoleteLayoutProperites (OBSOLETE)
+        //#region OBSOLETE
         /** Obsolete */
         Blade.prototype.setObsoleteLayoutProperites = function () {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.setObsoleteLayoutProperites\' called.', [this]);
@@ -559,6 +577,10 @@ var AzurePortalNg;
             this.blade.isCommandStop = this.isCommandStop;
             this.blade.isCommandSwap = this.isCommandSwap;
         };
+        /** Obsolete */
+        Blade.prototype.bladeClose = function () {
+            this.close();
+        };
         return Blade;
     })(AzurePortalNg.UserControlBase);
     AzurePortalNg.Blade = Blade;
@@ -572,85 +594,16 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
-    'use strict';
     //#region Class Definition: BladeData
     var BladeData = (function (_super) {
         __extends(BladeData, _super);
-        //#endregion
         //#region Constructor
         function BladeData(portalService, path, title, subtitle, width) {
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 300; }
             _super.call(this, portalService, path, title, subtitle, width);
-            this.item = null;
-            this.items = new Array();
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData\' constructor called.', [this, portalService, path, title, subtitle, width]);
-            var that = this;
-            //#region Add BladeArea.AddBlade event listener
-            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, param) {
-                if (param.path === that.blade.path) {
-                    that.activate();
-                }
-            });
-            //#endregion
         }
-        //#endregion
-        //#region Methods
-        //#region GetDataList
-        BladeData.prototype.getDataList = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.getDataList\' called.', [this]);
-            var that = this;
-            that.statusbar = 'Daten laden...';
-            that.statusbarClass = '';
-            return that.onGetDataList().success(function (data) {
-                that.items = data;
-                that.statusbar = '';
-                that.statusbarClass = '';
-            }).error(function (data, status, headers, config) {
-                that.statusbar = 'FEHLER: ' + data;
-                that.statusbarClass = 'message-info message-off';
-            });
-        };
-        BladeData.prototype.onGetDataList = function () {
-            throw new Error('[AzurePortalNg.BladeData] \'onGetDataList\' is an abstract function. Define one in the derived class.');
-        };
-        //#endregion
-        //#region GetDataDetail
-        BladeData.prototype.getDataDetail = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.getDataDetail\' called.', [this]);
-            var that = this;
-            that.statusbar = 'Daten laden...';
-            that.statusbarClass = '';
-            var onGetDataDetail = that.onGetDataDetail();
-            if (onGetDataDetail === null) {
-                that.statusbar = '';
-                that.statusbarClass = '';
-            }
-            else {
-                onGetDataDetail.success(function (data) {
-                    that.item = data;
-                    that.statusbar = '';
-                    that.statusbarClass = '';
-                }).error(function (data, status, headers, config) {
-                    that.statusbar = 'FEHLER: ' + data;
-                    that.statusbarClass = 'message-info message-off';
-                });
-            }
-        };
-        BladeData.prototype.onGetDataDetail = function () {
-            throw new Error('[AzurePortalNg.BladeData] \'onGetDataDetail\' is an abstract function. Define one in the derived class.');
-        };
-        //#endregion
-        //#region setObsoleteLayoutProperites (override)
-        /** Obsolete */
-        BladeData.prototype.setObsoleteLayoutProperites = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.setObsoleteLayoutProperites\' called.', [this]);
-            if (this.items.length !== 0) {
-                this.blade.navGrid.items = this.items; //--> needed, otherwise nav html pages will no longer work.
-            }
-            this.blade.isNavGrid = this.isNavGrid;
-            _super.prototype.setObsoleteLayoutProperites.call(this);
-        };
         return BladeData;
     })(AzurePortalNg.Blade);
     AzurePortalNg.BladeData = BladeData;
@@ -668,18 +621,58 @@ var AzurePortalNg;
     //#region Class Definition: BladeDetail
     var BladeDetail = (function (_super) {
         __extends(BladeDetail, _super);
+        //#endregion
         //#region Constructor
         function BladeDetail(portalService, path, title, subtitle, width) {
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 200; }
             _super.call(this, portalService, path, title, subtitle, width);
+            //#region Properties
+            this.item = null;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeDetail\' constructor called.', [this, portalService, path, title, subtitle, width]);
+            this.isCommandNew = true;
+            this.commandNewText = 'neu';
+            this.isCommandSave = true;
+            this.commandSaveText = 'speichern';
+            this.isCommandDelete = true;
+            this.commandDeleteText = 'löschen';
+            this.isCommandCancel = true;
+            this.commandCancelText = 'abbrechen';
         }
         //#endregion
         //#region Methods
+        BladeDetail.prototype.activate = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeDetail.activate\' called.', [this]);
+            var that = this;
+            that.statusbar = 'Daten laden...';
+            that.statusbarClass = '';
+            var onActivate = that.onActivate();
+            if (onActivate === null || onActivate === undefined) {
+                that.item = null;
+                that.statusbar = '';
+                that.statusbarClass = '';
+            }
+            else {
+                onActivate.success(function (data) {
+                    that.item = data;
+                    that.statusbar = '';
+                    that.statusbarClass = '';
+                }).error(function (data, status, headers, config) {
+                    that.item = null;
+                    that.statusbar = 'FEHLER: ' + data;
+                    that.statusbarClass = 'message-info message-off';
+                });
+            }
+            that.onActivated();
+        };
         BladeDetail.prototype.onActivate = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeDetail.onActivate\' called.', [this]);
-            _super.prototype.getDataDetail.call(this);
+            throw new Error('[AzurePortalNg.BladeDetail] \'onActivate\' is an abstract function. Define one in the derived class.');
+        };
+        BladeDetail.prototype.onActivated = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'onActivated\' called. You could override this.');
+        };
+        BladeDetail.prototype.onCommandCancel = function () {
+            this.close();
         };
         return BladeDetail;
     })(AzurePortalNg.BladeData);
@@ -698,19 +691,43 @@ var AzurePortalNg;
     //#region Class Definition: BladeList
     var BladeList = (function (_super) {
         __extends(BladeList, _super);
+        //#endregion
         //#region Constructor
         function BladeList(portalService, path, title, subtitle, width) {
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 200; }
             _super.call(this, portalService, path, title, subtitle, width);
+            //#region Properties
+            this.items = [];
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList\' constructor called.', [this, portalService, path, title, subtitle, width]);
+            this.isCommandNew = true;
+            this.commandNewText = 'neu';
         }
         //#endregion
         //#region Methods
-        BladeList.prototype.onActivate = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.onActivate\' called.', [this]);
-            return _super.prototype.getDataList.call(this);
+        BladeList.prototype.activate = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.activate\' called.', [this]);
+            var that = this;
+            that.statusbar = 'Daten laden...';
+            that.statusbarClass = '';
+            var onActivate = that.onActivate();
+            if (onActivate === null || onActivate === undefined) {
+            }
+            else {
+                onActivate.success(function (data) {
+                    that.items = data;
+                    that.statusbar = '';
+                    that.statusbarClass = '';
+                }).error(function (data, status, headers, config) {
+                    that.statusbar = 'FEHLER: ' + data;
+                    that.statusbarClass = 'message-info message-off';
+                });
+            }
         };
+        BladeList.prototype.onActivate = function () {
+            throw new Error('[AzurePortalNg.BladeList] \'onActivate\' is an abstract function. Define one in the derived class.');
+        };
+        //#region Filter
         BladeList.prototype.onFilter = function (actual, expected) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.filter\' called.', [this, actual, expected]);
             //#region Documentation
@@ -793,6 +810,17 @@ var AzurePortalNg;
             }
             ;
             //#endregion
+        };
+        //#endregion
+        //#region OBSOLETE
+        /** Obsolete */
+        BladeList.prototype.setObsoleteLayoutProperites = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.setObsoleteLayoutProperites\' called.', [this]);
+            if (this.items.length !== 0) {
+                this.blade.navGrid.items = this.items; //--> needed, otherwise nav html pages will no longer work.
+            }
+            this.blade.isNavGrid = this.isNavGrid;
+            _super.prototype.setObsoleteLayoutProperites.call(this);
         };
         return BladeList;
     })(AzurePortalNg.BladeData);
@@ -1538,15 +1566,17 @@ var AzurePortalNg;
             templateUrl: '/AzurePortalNg/portal/!directives/blade/blade.html',
             link: function (scope, element, attrs, controller) {
                 AzurePortalNg.Debug.write('[azureportalng-debug] \'directive:azurePortalBlade.link\' called.', [this, portalService]);
+                //#region the following code makes sure, that a function scope.vm.close is available
                 if (scope.vm === undefined) {
                     scope.vm = {};
                 }
-                if (scope.vm.bladeClose === undefined) {
-                    scope.vm.bladeClose = function () {
-                        AzurePortalNg.Debug.write('[azureportalng-debug] \'directive:azurePortalBlade.bladeClose\' called.', [this, portalService]);
+                if (scope.vm.close === undefined) {
+                    scope.vm.close = function () {
+                        AzurePortalNg.Debug.write('[azureportalng-debug] \'directive:azurePortalBlade.close\' called.', [this, portalService]);
                         portalService.bladeArea.clearLastLevel();
                     };
                 }
+                //#endregion
             }
         };
     }

@@ -10,19 +10,43 @@ var AzurePortalNg;
     //#region Class Definition: BladeList
     var BladeList = (function (_super) {
         __extends(BladeList, _super);
+        //#endregion
         //#region Constructor
         function BladeList(portalService, path, title, subtitle, width) {
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 200; }
             _super.call(this, portalService, path, title, subtitle, width);
+            //#region Properties
+            this.items = [];
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList\' constructor called.', [this, portalService, path, title, subtitle, width]);
+            this.isCommandNew = true;
+            this.commandNewText = 'neu';
         }
         //#endregion
         //#region Methods
-        BladeList.prototype.onActivate = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.onActivate\' called.', [this]);
-            return _super.prototype.getDataList.call(this);
+        BladeList.prototype.activate = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.activate\' called.', [this]);
+            var that = this;
+            that.statusbar = 'Daten laden...';
+            that.statusbarClass = '';
+            var onActivate = that.onActivate();
+            if (onActivate === null || onActivate === undefined) {
+            }
+            else {
+                onActivate.success(function (data) {
+                    that.items = data;
+                    that.statusbar = '';
+                    that.statusbarClass = '';
+                }).error(function (data, status, headers, config) {
+                    that.statusbar = 'FEHLER: ' + data;
+                    that.statusbarClass = 'message-info message-off';
+                });
+            }
         };
+        BladeList.prototype.onActivate = function () {
+            throw new Error('[AzurePortalNg.BladeList] \'onActivate\' is an abstract function. Define one in the derived class.');
+        };
+        //#region Filter
         BladeList.prototype.onFilter = function (actual, expected) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.filter\' called.', [this, actual, expected]);
             //#region Documentation
@@ -106,8 +130,18 @@ var AzurePortalNg;
             ;
             //#endregion
         };
+        //#endregion
+        //#region OBSOLETE
+        /** Obsolete */
+        BladeList.prototype.setObsoleteLayoutProperites = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.setObsoleteLayoutProperites\' called.', [this]);
+            if (this.items.length !== 0) {
+                this.blade.navGrid.items = this.items; //--> needed, otherwise nav html pages will no longer work.
+            }
+            this.blade.isNavGrid = this.isNavGrid;
+            _super.prototype.setObsoleteLayoutProperites.call(this);
+        };
         return BladeList;
     })(AzurePortalNg.BladeData);
     AzurePortalNg.BladeList = BladeList;
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=BladeList.js.map

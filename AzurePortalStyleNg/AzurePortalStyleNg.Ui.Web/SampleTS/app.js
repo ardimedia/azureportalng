@@ -278,21 +278,18 @@ var SampleTS;
         __extends(Detail1, _super);
         //#region Constructors
         function Detail1(portalService) {
-            _super.call(this, portalService, '/SampleTS/detail1/detail1.html', 'Detail-1', 'TypeScript based', 315);
-            this.isCommandSave = true;
-            this.commandSaveText = 'speichern';
+            _super.call(this, portalService, '/SampleTS/detail1/detail1.html', 'Detail-1', 'TypeScript based', 415);
             this.activate();
         }
         //#endregion
         //#region Methods
-        Detail1.prototype.onGetDataDetail = function () {
+        Detail1.prototype.onActivate = function () {
             var customer = this.portalService.parameter.item;
             if (this.portalService.parameter.action === 'new') {
                 this.item = customer;
                 return null;
             }
-            else {
-                console.log('Detail1');
+            else if (this.portalService.parameter.action === 'selected') {
                 return this.portalService.$http({ method: 'GET', url: '/customer/' + customer.customerPkId });
             }
         };
@@ -305,7 +302,7 @@ var SampleTS;
         angular.module('sampleTsApp').controller('detail1', ['azurePortalNg.portalService', Detail1]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=detail1.js.map
+//# sourceMappingURL=Detail1.js.map
 (function () {
     'use strict';
     angular.module('sampleTsApp').directive('detail1Blade', [detail1Blade]);
@@ -328,19 +325,20 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var SampleTS;
 (function (SampleTS) {
-    'use strict';
     //#region Class Definition
     var List1 = (function (_super) {
         __extends(List1, _super);
         //#region Constructors
         function List1(portalService) {
             _super.call(this, portalService, '/SampleTS/list1/list1.html', 'List-1', 'TypeScript based', 315);
-            this.isCommandNew = true;
-            this.commandNewText = 'neu';
             this.activate();
         }
         //#endregion
         //#region Methods
+        List1.prototype.onActivate = function () {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'List1.onActivate\' called.', [this]);
+            return this.portalService.$http({ method: 'GET', url: '/customers' });
+        };
         List1.prototype.onCommandNew = function () {
             AzurePortalNg.Debug.write('[samplets-debug] \'List1.onCommandNew\' called.', [this]);
             this.portalService.parameter.action = 'new';
@@ -353,20 +351,15 @@ var SampleTS;
             this.portalService.parameter.item = customer;
             this.portalService.bladeArea.raiseAddBladeEvent({ path: '/SampleTS/detail1/detail1.html', pathSender: this.blade.path });
         };
-        List1.prototype.onGetDataList = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'List1.onGetDataList\' called.', [this]);
-            return this.portalService.$http({ method: 'GET', url: '/customers' });
-        };
         return List1;
     })(AzurePortalNg.BladeList);
     //#endregion
     //#region Angular Registration
     (function () {
-        'use strict';
         angular.module('sampleTsApp').controller('list1', ['azurePortalNg.portalService', List1]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=list1.js.map
+//# sourceMappingURL=List1.js.map
 (function () {
     'use strict';
     angular.module('sampleTsApp').directive('list1Blade', [list1Blade]);

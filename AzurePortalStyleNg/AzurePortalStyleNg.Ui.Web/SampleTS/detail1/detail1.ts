@@ -8,10 +8,7 @@
         //#region Constructors
 
         constructor(portalService: AzurePortalNg.PortalService) {
-            super(portalService, '/SampleTS/detail1/detail1.html', 'Detail-1', 'TypeScript based', 315);
-
-            this.isCommandSave = true;
-            this.commandSaveText = 'speichern';
+            super(portalService, '/SampleTS/detail1/detail1.html', 'Detail-1', 'TypeScript based', 415);
 
             this.activate();
         }
@@ -20,13 +17,13 @@
 
         //#region Methods
 
-        onGetDataDetail(): angular.IHttpPromise<any> {
+        onActivate(): angular.IHttpPromise<any> {
             var customer: SampleTS.Customer = this.portalService.parameter.item;
+
             if (this.portalService.parameter.action === 'new') {
                 this.item = customer;
                 return null;
-            } else {
-                console.log('Detail1');
+            } else if (this.portalService.parameter.action === 'selected') {
                 return this.portalService.$http({ method: 'GET', url: '/customer/' + customer.customerPkId });
             }
         }

@@ -22,9 +22,14 @@ var AzurePortalNg;
             this.portalService = portalService;
             this.portalService.bladeArea = this;
             //#region Add BladeArea.AddBlade event listener
-            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, parameter) {
-                var blade = that.addBlade(parameter.path, parameter.pathSender);
-                //blade.activate();
+            /** OBSOLETE: remove when all OBSOLETE code has been removed */
+            if (portalService instanceof AzurePortalNg.PortalService == false) {
+                return;
+            }
+            /** OBSOLETE: end */
+            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, args) {
+                AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea\' BladeArea.AddBlade event processing.', [this, event, args]);
+                that.addBlade(args.path, args.pathSender);
             });
             //#endregion
         }
@@ -199,4 +204,3 @@ var AzurePortalNg;
         angular.module('azureportalng').service('azurePortalNg.bladeArea', ['$window', AzurePortalNg.BladeArea]);
     })();
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=BladeArea.js.map

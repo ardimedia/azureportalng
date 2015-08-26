@@ -396,9 +396,9 @@
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\home\home.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\navgrid\navgrid.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!services\bladeService.ts" />
-    <TypeScriptCompile Include="SampleTS\detail1\detail1.ts" />
+    <TypeScriptCompile Include="SampleTS\detail1\Detail1.ts" />
     <TypeScriptCompile Include="SampleTS\detail1\detail1blade.ts" />
-    <TypeScriptCompile Include="SampleTS\list1\list1.ts" />
+    <TypeScriptCompile Include="SampleTS\list1\List1.ts" />
     <TypeScriptCompile Include="SampleTS\list1\list1blade.ts" />
     <TypeScriptCompile Include="SampleTS\blade2\blade2.ts" />
     <TypeScriptCompile Include="SampleTS\nav1\nav1.ts" />

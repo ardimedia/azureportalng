@@ -25,4 +25,3 @@ var AzurePortalNg;
     })(AzurePortalNg.UserControlBase);
     AzurePortalNg.Panorama = Panorama;
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=Panorama.js.map

@@ -44,4 +44,3 @@ var SampleTS;
         angular.module('sampleTsApp').controller('nav1', ['azurePortalNg.portalService', Nav1]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=nav1.js.map

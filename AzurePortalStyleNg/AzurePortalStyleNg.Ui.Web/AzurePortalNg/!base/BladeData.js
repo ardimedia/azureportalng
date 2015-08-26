@@ -6,87 +6,17 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
-    'use strict';
     //#region Class Definition: BladeData
     var BladeData = (function (_super) {
         __extends(BladeData, _super);
-        //#endregion
         //#region Constructor
         function BladeData(portalService, path, title, subtitle, width) {
             if (subtitle === void 0) { subtitle = ''; }
             if (width === void 0) { width = 300; }
             _super.call(this, portalService, path, title, subtitle, width);
-            this.item = null;
-            this.items = new Array();
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData\' constructor called.', [this, portalService, path, title, subtitle, width]);
-            var that = this;
-            //#region Add BladeArea.AddBlade event listener
-            this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, param) {
-                if (param.path === that.blade.path) {
-                    that.activate();
-                }
-            });
-            //#endregion
         }
-        //#endregion
-        //#region Methods
-        //#region GetDataList
-        BladeData.prototype.getDataList = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.getDataList\' called.', [this]);
-            var that = this;
-            that.statusbar = 'Daten laden...';
-            that.statusbarClass = '';
-            return that.onGetDataList().success(function (data) {
-                that.items = data;
-                that.statusbar = '';
-                that.statusbarClass = '';
-            }).error(function (data, status, headers, config) {
-                that.statusbar = 'FEHLER: ' + data;
-                that.statusbarClass = 'message-info message-off';
-            });
-        };
-        BladeData.prototype.onGetDataList = function () {
-            throw new Error('[AzurePortalNg.BladeData] \'onGetDataList\' is an abstract function. Define one in the derived class.');
-        };
-        //#endregion
-        //#region GetDataDetail
-        BladeData.prototype.getDataDetail = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.getDataDetail\' called.', [this]);
-            var that = this;
-            that.statusbar = 'Daten laden...';
-            that.statusbarClass = '';
-            var onGetDataDetail = that.onGetDataDetail();
-            if (onGetDataDetail === null) {
-                that.statusbar = '';
-                that.statusbarClass = '';
-            }
-            else {
-                onGetDataDetail.success(function (data) {
-                    that.item = data;
-                    that.statusbar = '';
-                    that.statusbarClass = '';
-                }).error(function (data, status, headers, config) {
-                    that.statusbar = 'FEHLER: ' + data;
-                    that.statusbarClass = 'message-info message-off';
-                });
-            }
-        };
-        BladeData.prototype.onGetDataDetail = function () {
-            throw new Error('[AzurePortalNg.BladeData] \'onGetDataDetail\' is an abstract function. Define one in the derived class.');
-        };
-        //#endregion
-        //#region setObsoleteLayoutProperites (override)
-        /** Obsolete */
-        BladeData.prototype.setObsoleteLayoutProperites = function () {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData.setObsoleteLayoutProperites\' called.', [this]);
-            if (this.items.length !== 0) {
-                this.blade.navGrid.items = this.items; //--> needed, otherwise nav html pages will no longer work.
-            }
-            this.blade.isNavGrid = this.isNavGrid;
-            _super.prototype.setObsoleteLayoutProperites.call(this);
-        };
         return BladeData;
     })(AzurePortalNg.Blade);
     AzurePortalNg.BladeData = BladeData;
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=BladeData.js.map

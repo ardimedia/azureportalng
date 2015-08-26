@@ -1,5 +1,4 @@
 ﻿module SampleTS {
-    'use strict';
 
     //#region Class Definition
 
@@ -10,15 +9,18 @@
         constructor(portalService: AzurePortalNg.PortalService) {
             super(portalService, '/SampleTS/list1/list1.html', 'List-1', 'TypeScript based', 315);
 
-            this.isCommandNew = true;
-            this.commandNewText = 'neu';
-
             this.activate();
         }
 
         //#endregion
 
         //#region Methods
+
+        onActivate() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'List1.onActivate\' called.', [this]);
+
+            return this.portalService.$http({ method: 'GET', url: '/customers' });
+        }
 
         onCommandNew(): void {
             AzurePortalNg.Debug.write('[samplets-debug] \'List1.onCommandNew\' called.', [this]);
@@ -36,12 +38,6 @@
             this.portalService.bladeArea.raiseAddBladeEvent({ path: '/SampleTS/detail1/detail1.html', pathSender: this.blade.path });
         }
 
-        onGetDataList(): angular.IHttpPromise<any> {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'List1.onGetDataList\' called.', [this]);
-
-            return this.portalService.$http({ method: 'GET', url: '/customers' });
-        }
-
         //#endregion
     }
 
@@ -50,7 +46,6 @@
     //#region Angular Registration
 
     (function () {
-        'use strict';
         angular.module('sampleTsApp').controller('list1', ['azurePortalNg.portalService', List1]);
     })();
 

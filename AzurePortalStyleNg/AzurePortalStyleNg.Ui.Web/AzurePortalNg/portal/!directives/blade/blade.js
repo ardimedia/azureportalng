@@ -8,17 +8,18 @@
             templateUrl: '/AzurePortalNg/portal/!directives/blade/blade.html',
             link: function (scope, element, attrs, controller) {
                 AzurePortalNg.Debug.write('[azureportalng-debug] \'directive:azurePortalBlade.link\' called.', [this, portalService]);
+                //#region the following code makes sure, that a function scope.vm.close is available
                 if (scope.vm === undefined) {
                     scope.vm = {};
                 }
-                if (scope.vm.bladeClose === undefined) {
-                    scope.vm.bladeClose = function () {
-                        AzurePortalNg.Debug.write('[azureportalng-debug] \'directive:azurePortalBlade.bladeClose\' called.', [this, portalService]);
+                if (scope.vm.close === undefined) {
+                    scope.vm.close = function () {
+                        AzurePortalNg.Debug.write('[azureportalng-debug] \'directive:azurePortalBlade.close\' called.', [this, portalService]);
                         portalService.bladeArea.clearLastLevel();
                     };
                 }
+                //#endregion
             }
         };
     }
 })();
-//# sourceMappingURL=blade.js.map

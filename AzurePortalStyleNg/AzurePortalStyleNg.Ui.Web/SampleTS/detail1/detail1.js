@@ -12,21 +12,18 @@ var SampleTS;
         __extends(Detail1, _super);
         //#region Constructors
         function Detail1(portalService) {
-            _super.call(this, portalService, '/SampleTS/detail1/detail1.html', 'Detail-1', 'TypeScript based', 315);
-            this.isCommandSave = true;
-            this.commandSaveText = 'speichern';
+            _super.call(this, portalService, '/SampleTS/detail1/detail1.html', 'Detail-1', 'TypeScript based', 415);
             this.activate();
         }
         //#endregion
         //#region Methods
-        Detail1.prototype.onGetDataDetail = function () {
+        Detail1.prototype.onActivate = function () {
             var customer = this.portalService.parameter.item;
             if (this.portalService.parameter.action === 'new') {
                 this.item = customer;
                 return null;
             }
-            else {
-                console.log('Detail1');
+            else if (this.portalService.parameter.action === 'selected') {
                 return this.portalService.$http({ method: 'GET', url: '/customer/' + customer.customerPkId });
             }
         };
@@ -39,4 +36,3 @@ var SampleTS;
         angular.module('sampleTsApp').controller('detail1', ['azurePortalNg.portalService', Detail1]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=detail1.js.map

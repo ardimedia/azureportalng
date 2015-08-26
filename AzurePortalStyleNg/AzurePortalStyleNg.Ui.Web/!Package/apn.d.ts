@@ -7,6 +7,7 @@ declare module AzurePortalNg {
 }
 declare module AzurePortalNg {
     class Blade extends UserControlBase {
+        listener1: Function;
         path: string;
         title: string;
         subTitle: string;
@@ -19,16 +20,6 @@ declare module AzurePortalNg {
         isInnerHtml: boolean;
         statusbar: string;
         statusbarClass: string;
-        /** Obsolete */
-        blade: Blade;
-        /** Obsolete */
-        isNavGrid: boolean;
-        /** Obsolete */
-        navGrid: {
-            portalService: any;
-            items: any[];
-            navigateTo: (path: string) => void;
-        };
         isCommandBrowse: boolean;
         commandBrowse: () => void;
         commandBrowseText: string;
@@ -80,7 +71,23 @@ declare module AzurePortalNg {
         isCommandSwap: boolean;
         commandSwap: () => void;
         commandSwapText: string;
+        /** Obsolete */
+        blade: Blade;
+        /** Obsolete */
+        isNavGrid: boolean;
+        /** Obsolete */
+        navGrid: {
+            portalService: any;
+            items: any[];
+            navigateTo: (path: string) => void;
+        };
         constructor(portalService: PortalService, path: string, title: string, subtitle?: string, width?: number);
+        activate(): void;
+        onActivate(): void;
+        navigateTo(arg: any): void;
+        onNavigateTo(arg: any): void;
+        /** close blade. */
+        close(): void;
         onCommandBrowse(): void;
         onCommandCancel(): void;
         onCommandCopy(): void;
@@ -98,13 +105,10 @@ declare module AzurePortalNg {
         onCommandStart(): void;
         onCommandStop(): void;
         onCommandSwap(): void;
-        activate(): void;
-        onActivate(): void;
-        navigateTo(arg: any): void;
-        onNavigateTo(arg: any): void;
-        bladeClose(): void;
         /** Obsolete */
         setObsoleteLayoutProperites(): void;
+        /** Obsolete */
+        bladeClose(): void;
     }
 }
 declare module AzurePortalNg {
@@ -133,29 +137,28 @@ declare module AzurePortalNg {
 }
 declare module AzurePortalNg {
     class BladeData extends Blade {
-        listener1: Function;
-        item: any;
-        items: Array<any>;
         constructor(portalService: PortalService, path: string, title: string, subtitle?: string, width?: number);
-        getDataList(): angular.IHttpPromise<any>;
-        onGetDataList(): angular.IHttpPromise<any>;
-        getDataDetail(): void;
-        onGetDataDetail(): angular.IHttpPromise<any>;
-        /** Obsolete */
-        setObsoleteLayoutProperites(): void;
     }
 }
 declare module AzurePortalNg {
     class BladeDetail extends BladeData {
+        item: any;
         constructor(portalService: PortalService, path: string, title: string, subtitle?: string, width?: number);
-        onActivate(): void;
+        activate(): void;
+        onActivate(): ng.IHttpPromise<any>;
+        onActivated(): void;
+        onCommandCancel(): void;
     }
 }
 declare module AzurePortalNg {
     class BladeList extends BladeData {
+        items: any[];
         constructor(portalService: PortalService, path: string, title: string, subtitle?: string, width?: number);
+        activate(): void;
         onActivate(): angular.IHttpPromise<any>;
         onFilter(actual: Object, expected: string): boolean;
+        /** Obsolete */
+        setObsoleteLayoutProperites(): void;
     }
 }
 declare module AzurePortalNg {

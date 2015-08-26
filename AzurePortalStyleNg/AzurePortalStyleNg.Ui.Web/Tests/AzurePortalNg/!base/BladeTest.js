@@ -106,12 +106,11 @@ describe('AzurePortalNg.Blade', function () {
         expect(exception).toThrow(new Error('[AzurePortalNg.Blade] \'onNavigateTo\' is an abstract function. Define one in the derived class.'));
     });
     //#endregion
-    //#region bladeClose
-    it("bladeClose throws exception - path could not be removed", function () {
-        var exception = function () { sut.bladeClose(); };
-        expect(exception).toThrow(new Error('[AzurePortalNg.Blade] path: \'test-path\' could not be removed, since no this.portalService.bladeArea available.'));
+    //#region close
+    it("close throws exception - path could not be removed", function () {
+        var exception = function () { sut.close(); };
+        expect(exception).toThrow(new Error('[AzurePortalNg.Blade] path: \'test-path\' could not be removed, since no \'this.portalService.bladeArea\' available.'));
     });
     //#endregion
     //#endregion
 });
-//# sourceMappingURL=BladeTest.js.map

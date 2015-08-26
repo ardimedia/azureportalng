@@ -21,4 +21,3 @@ var AzurePortalNg;
     })(AzurePortalNg.UserControlBase);
     AzurePortalNg.Startboard = Startboard;
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=Startboard.js.map

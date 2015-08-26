@@ -5,21 +5,53 @@
 
     export class BladeList extends BladeData {
 
+        //#region Properties
+
+        items: any[] = [];
+
+        //#endregion
+
         //#region Constructor
 
         constructor(portalService: PortalService, path: string, title: string, subtitle: string = '', width: number = 200) {
             super(portalService, path, title, subtitle, width);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList\' constructor called.', [this, portalService, path, title, subtitle, width]);
+
+            this.isCommandNew = true;
+            this.commandNewText = 'neu';
         }
 
         //#endregion
 
         //#region Methods
 
-        onActivate(): angular.IHttpPromise<any> {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.onActivate\' called.', [this]);
-            return super.getDataList()
+        activate(): void {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.activate\' called.', [this]);
+            var that = this;
+
+            that.statusbar = 'Daten laden...';
+            that.statusbarClass = '';
+
+            var onActivate = that.onActivate();
+
+            if (onActivate === null || onActivate === undefined) {
+            } else {
+                onActivate.success(function (data: any) {
+                    that.items = data;
+                    that.statusbar = '';
+                    that.statusbarClass = '';
+                }).error(function (data: any, status: any, headers: any, config: any) {
+                    that.statusbar = 'FEHLER: ' + data;
+                    that.statusbarClass = 'message-info message-off';
+                });
+            }
         }
+
+        onActivate(): angular.IHttpPromise<any> {
+            throw new Error('[AzurePortalNg.BladeList] \'onActivate\' is an abstract function. Define one in the derived class.');
+        }
+
+        //#region Filter
 
         onFilter(actual: Object, expected: string): boolean {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.filter\' called.', [this, actual, expected]);
@@ -127,6 +159,25 @@
 
             //#endregion
         }
+
+        //#endregion
+
+        //#region OBSOLETE
+
+        /** Obsolete */
+        setObsoleteLayoutProperites() {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeList.setObsoleteLayoutProperites\' called.', [this]);
+
+            if (this.items.length !== 0) {
+                this.blade.navGrid.items = this.items; //--> needed, otherwise nav html pages will no longer work.
+            }
+
+            this.blade.isNavGrid = this.isNavGrid;
+
+            super.setObsoleteLayoutProperites();
+        }
+
+        //#endregion
 
         //#endregion
     }
