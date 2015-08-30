@@ -10,8 +10,8 @@ declare module AzurePortalNg {
         Messages?: string[];
     }
     class Exception {
-        ConvertFromWebApiException(exception: IException): void;
-        onConvertFromWebApiException(exception: IException): void;
+        static ConvertFromWebApiException(exception: IException): void;
+        static onConvertFromWebApiException(exception: IException): void;
     }
 }
 declare var azurePortalNg: ng.IModule;

@@ -16,7 +16,7 @@
     //#endregion
 
     export class Exception {
-        ConvertFromWebApiException(exception: IException): void {
+        static convertFromWebApiException(exception: IException): void {
             //#region Process data to Messages
 
             exception.Messages = [];
@@ -53,10 +53,10 @@
 
             //#endregion
 
-            this.onConvertFromWebApiException(exception);
+            Exception.onConvertFromWebApiException(exception);
         }
 
-        onConvertFromWebApiException(exception: IException): void {
+        static onConvertFromWebApiException(exception: IException): void {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Exception.ConvertFromWebApiException\' not overriden. You could override this.', [this]);
         }
     }

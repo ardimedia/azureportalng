@@ -891,7 +891,7 @@ var AzurePortalNg;
     var Exception = (function () {
         function Exception() {
         }
-        Exception.prototype.ConvertFromWebApiException = function (exception) {
+        Exception.convertFromWebApiException = function (exception) {
             //#region Process data to Messages
             exception.Messages = [];
             var i = 1;
@@ -916,9 +916,9 @@ var AzurePortalNg;
                 exception.Type = 'ValidationsException';
             }
             //#endregion
-            this.onConvertFromWebApiException(exception);
+            Exception.onConvertFromWebApiException(exception);
         };
-        Exception.prototype.onConvertFromWebApiException = function (exception) {
+        Exception.onConvertFromWebApiException = function (exception) {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Exception.ConvertFromWebApiException\' not overriden. You could override this.', [this]);
         };
         return Exception;
