@@ -3,6 +3,9 @@
 --out !Package/apn.d.ts
 
 Scripts/typings/tsd.d.ts
+
+AzurePortalNg/!base/Exception.ts
+
 AzurePortalNg/azureportalng.ts
 AzurePortalNg/!base/AvatarMenu.ts
 AzurePortalNg/!base/Blade.ts

@@ -93,3 +93,4 @@ var AzurePortalNg;
     })();
     AzurePortalNg.Tiles = Tiles;
 })(AzurePortalNg || (AzurePortalNg = {}));
+//# sourceMappingURL=Tile.js.map

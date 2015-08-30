@@ -16,7 +16,18 @@ var AzurePortalNg;
             _super.call(this, portalService, path, title, subtitle, width);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData\' constructor called.', [this, portalService, path, title, subtitle, width]);
         }
+        //#endregion
+        //#region Methods
+        BladeData.prototype.processException = function (data) {
+            var that = this;
+            that.statusbar = data.Message;
+            that.statusbar += ' - ';
+            data.Messages.forEach(function (item) {
+                that.statusbar += item + ' - ';
+            });
+        };
         return BladeData;
     })(AzurePortalNg.Blade);
     AzurePortalNg.BladeData = BladeData;
 })(AzurePortalNg || (AzurePortalNg = {}));
+//# sourceMappingURL=BladeData.js.map

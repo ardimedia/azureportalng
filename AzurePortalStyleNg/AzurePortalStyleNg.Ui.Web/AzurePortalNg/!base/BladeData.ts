@@ -12,6 +12,19 @@
         }
 
         //#endregion
+
+        //#region Methods
+
+        processException(data: IException) {
+            var that = this;
+            that.statusbar = data.Message;
+            that.statusbar += ' - ';
+            data.Messages.forEach(function (item) {
+                that.statusbar += item + ' - ';
+            })
+        }
+
+        //#endregion
     }
 
     //#endregion

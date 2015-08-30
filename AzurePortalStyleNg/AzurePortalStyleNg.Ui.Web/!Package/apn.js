@@ -604,6 +604,16 @@ var AzurePortalNg;
             _super.call(this, portalService, path, title, subtitle, width);
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeData\' constructor called.', [this, portalService, path, title, subtitle, width]);
         }
+        //#endregion
+        //#region Methods
+        BladeData.prototype.processException = function (data) {
+            var that = this;
+            that.statusbar = data.Message;
+            that.statusbar += ' - ';
+            data.Messages.forEach(function (item) {
+                that.statusbar += item + ' - ';
+            });
+        };
         return BladeData;
     })(AzurePortalNg.Blade);
     AzurePortalNg.BladeData = BladeData;
@@ -617,7 +627,6 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
-    'use strict';
     //#region Class Definition: BladeDetail
     var BladeDetail = (function (_super) {
         __extends(BladeDetail, _super);
@@ -648,7 +657,6 @@ var AzurePortalNg;
             that.statusbarClass = '';
             var onActivate = that.onActivate();
             if (onActivate === null || onActivate === undefined) {
-                that.item = null;
                 that.statusbar = '';
                 that.statusbarClass = '';
             }
@@ -877,6 +885,47 @@ var AzurePortalNg;
     AzurePortalNg.BladeNavItem = BladeNavItem;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=BladeNav.js.map
+var AzurePortalNg;
+(function (AzurePortalNg) {
+    //#endregion
+    var Exception = (function () {
+        function Exception() {
+        }
+        Exception.prototype.ConvertFromWebApiException = function (exception) {
+            //#region Process data to Messages
+            exception.Messages = [];
+            var i = 1;
+            while (exception.Data[i + ''] !== undefined) {
+                exception.Messages.push(exception.Data[i + '']);
+                i++;
+            }
+            //#endregion
+            //#region Process DbEntityValidationException
+            if (exception.ExceptionType === 'System.Data.Entity.Validation.DbEntityValidationException') {
+                exception.Type = 'DbEntityValidationException';
+            }
+            //#endregion
+            //#region Process DbUpdateConcurrencyException
+            if (exception.ExceptionType === 'System.Data.Entity.Infrastructure.DbUpdateConcurrencyException') {
+                exception.Type = 'DbUpdateConcurrencyException';
+            }
+            //#endregion
+            //#region Process ValidationsException
+            // ClassName should by ExceptionType
+            if (exception.ClassName === 'Amx.Amms.Application.LgtBc.ValidationsException') {
+                exception.Type = 'ValidationsException';
+            }
+            //#endregion
+            this.onConvertFromWebApiException(exception);
+        };
+        Exception.prototype.onConvertFromWebApiException = function (exception) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Exception.ConvertFromWebApiException\' not overriden. You could override this.', [this]);
+        };
+        return Exception;
+    })();
+    AzurePortalNg.Exception = Exception;
+})(AzurePortalNg || (AzurePortalNg = {}));
+//# sourceMappingURL=Exception.js.map
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }

@@ -353,6 +353,7 @@
     <Content Include="SampleJS\nav1\nav1.js" />
     <Content Include="SampleJS\sampleJsApp.js" />
     <None Include="!Package\apn.d.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\Exception.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jasmine\jasmine.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
@@ -407,7 +408,9 @@
     <TypeScriptCompile Include="Scripts\typings\ngdialog\ngdialog.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\tsd.d.ts" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="!NugetOut\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

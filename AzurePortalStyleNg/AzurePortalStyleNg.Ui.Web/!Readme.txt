@@ -20,6 +20,8 @@ BOWER
 ============================================================================================================
 TYPESCRIPT TYPINGS
 ------------------------------------------------------------------------------------------------------------
+> Install tsd
+  npm install tsd -g
 > Search typings
   > tsd query * | find "angular"
 > Install typings
@@ -38,9 +40,9 @@ TYPESCRIPT d.ts
 
 ============================================================================================================
 DEPLOY TO NUGET
-> UPDATE
-  > bundleconfig.json (save)
-  > d.ts (run tsc @tsc.txt)
+> Prepare
+  > compile (update bower)
+  > compile tsc
 ------------------------------------------------------------------------------------------------------------
 SETUP NUGET
 > nuget.exe should be in the solution folder under .nuget
@@ -52,13 +54,13 @@ LIST PACKAGE
 ------------------------------------------------------------------------------------------------------------
 DEPLOY BY COMMAND
 > CD C:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\.nuget
-> .\nuget.exe pack ..\AzurePortalStyleNg.Ui.Web\nuspec-packager.nuspec -OutputDirectory ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget
+> .\nuget.exe pack ..\AzurePortalStyleNg.Ui.Web\nuspec-packager.nuspec -OutputDirectory ..\AzurePortalStyleNg.Ui.Web\!NugetOut
 > TO ARDIMEDIA:
-  COPY ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget\AzurePortalStyleNg.0.1.47-beta.nupkg \\SVRDEV01\Drive-D\_Data\NuGet\Release
+  COPY ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.1.57-beta.nupkg \\SVRDEV01\Drive-D\_Data\NuGet\Release
 > TO NUGET.ORG
- .\nuget.exe push ..\AzurePortalStyleNg.Ui.Web\!!Out-Nuget\AzurePortalStyleNg.0.1.44-beta.nupkg
+ .\nuget.exe push ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.1.44-beta.nupkg
 ------------------------------------------------------------------------------------------------------------
 DEPLOY VIA WEB SITE
 > https://www.nuget.org/packages/AzurePortalStyleNg
-  C:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web\!!Out-Nuget
+  C:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web\!NugetOut
 ============================================================================================================

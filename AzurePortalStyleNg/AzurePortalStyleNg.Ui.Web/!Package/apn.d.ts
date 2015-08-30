@@ -1,3 +1,19 @@
+declare module AzurePortalNg {
+    /** If a Web Api through an exception, the following interface should be available
+    */
+    interface IException {
+        ExceptionType: string;
+        ClassName: string;
+        Message: string;
+        Data: Object;
+        Type: string;
+        Messages?: string[];
+    }
+    class Exception {
+        ConvertFromWebApiException(exception: IException): void;
+        onConvertFromWebApiException(exception: IException): void;
+    }
+}
 declare var azurePortalNg: ng.IModule;
 declare module AzurePortalNg {
     class AvatarMenu extends UserControlBase {
@@ -138,6 +154,7 @@ declare module AzurePortalNg {
 declare module AzurePortalNg {
     class BladeData extends Blade {
         constructor(portalService: PortalService, path: string, title: string, subtitle?: string, width?: number);
+        processException(data: IException): void;
     }
 }
 declare module AzurePortalNg {

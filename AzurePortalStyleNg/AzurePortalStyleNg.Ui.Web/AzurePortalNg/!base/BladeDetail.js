@@ -36,7 +36,6 @@ var AzurePortalNg;
             that.statusbarClass = '';
             var onActivate = that.onActivate();
             if (onActivate === null || onActivate === undefined) {
-                that.item = null;
                 that.statusbar = '';
                 that.statusbarClass = '';
             }
@@ -66,3 +65,4 @@ var AzurePortalNg;
     })(AzurePortalNg.BladeData);
     AzurePortalNg.BladeDetail = BladeDetail;
 })(AzurePortalNg || (AzurePortalNg = {}));
+//# sourceMappingURL=BladeDetail.js.map

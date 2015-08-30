@@ -13,6 +13,7 @@
             "AzurePortalNg/!base/bladeDetail.js",
             "AzurePortalNg/!base/bladeList.js",
             "AzurePortalNg/!base/bladeNav.js",
+            "AzurePortalNg/!base/exception.js",
             "AzurePortalNg/!base/panorama.js",
             "AzurePortalNg/!base/portalService.js",
             "AzurePortalNg/!base/portalShell.js",
