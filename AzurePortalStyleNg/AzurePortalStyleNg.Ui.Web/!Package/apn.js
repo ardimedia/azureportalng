@@ -891,35 +891,35 @@ var AzurePortalNg;
     var Exception = (function () {
         function Exception() {
         }
-        Exception.convertFromWebApiException = function (exception) {
+        Exception.convertFromWebApiException = function (ex) {
             //#region Process data to Messages
-            exception.Messages = [];
+            ex.Messages = [];
             var i = 1;
-            while (exception.Data[i + ''] !== undefined) {
-                exception.Messages.push(exception.Data[i + '']);
+            while (ex.Data[i + ''] !== undefined) {
+                ex.Messages.push(ex.Data[i + '']);
                 i++;
             }
             //#endregion
             //#region Process DbEntityValidationException
-            if (exception.ExceptionType === 'System.Data.Entity.Validation.DbEntityValidationException') {
-                exception.Type = 'DbEntityValidationException';
+            if (ex.ExceptionType === 'System.Data.Entity.Validation.DbEntityValidationException') {
+                ex.Type = 'DbEntityValidationException';
             }
             //#endregion
             //#region Process DbUpdateConcurrencyException
-            if (exception.ExceptionType === 'System.Data.Entity.Infrastructure.DbUpdateConcurrencyException') {
-                exception.Type = 'DbUpdateConcurrencyException';
+            if (ex.ExceptionType === 'System.Data.Entity.Infrastructure.DbUpdateConcurrencyException') {
+                ex.Type = 'DbUpdateConcurrencyException';
             }
             //#endregion
             //#region Process ValidationsException
             // ClassName should by ExceptionType
-            if (exception.ClassName === 'Amx.Amms.Application.LgtBc.ValidationsException') {
-                exception.Type = 'ValidationsException';
+            if (ex.ClassName === 'Amx.Amms.Application.LgtBc.ValidationsException') {
+                ex.Type = 'ValidationsException';
             }
             //#endregion
-            Exception.onConvertFromWebApiException(exception);
+            Exception.onConvertFromWebApiException(ex);
         };
-        Exception.onConvertFromWebApiException = function (exception) {
-            AzurePortalNg.Debug.write('[azureportalng-debug] \'Exception.ConvertFromWebApiException\' not overriden. You could override this.', [this]);
+        Exception.onConvertFromWebApiException = function (ex) {
+            AzurePortalNg.Debug.write('[azureportalng-debug] \'Exception.convertFromWebApiException\' not overriden. You could override this.', [this]);
         };
         return Exception;
     })();

@@ -20,4 +20,3 @@ var AzurePortalNg;
     })(AzurePortalNg.UserControlBase);
     AzurePortalNg.AvatarMenu = AvatarMenu;
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=AvatarMenu.js.map

@@ -204,4 +204,3 @@ var AzurePortalNg;
         angular.module('azureportalng').service('azurePortalNg.bladeArea', ['$window', AzurePortalNg.BladeArea]);
     })();
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=BladeArea.js.map

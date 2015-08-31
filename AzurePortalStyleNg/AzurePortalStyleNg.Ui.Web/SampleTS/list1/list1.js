@@ -40,4 +40,3 @@ var SampleTS;
         angular.module('sampleTsApp').controller('list1', ['azurePortalNg.portalService', List1]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=List1.js.map
