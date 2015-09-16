@@ -72,3 +72,4 @@ describe('AzurePortalNg.BladeList', function () {
     //#endregion
     //#endregion
 });
+//# sourceMappingURL=BladeListTest.js.map
