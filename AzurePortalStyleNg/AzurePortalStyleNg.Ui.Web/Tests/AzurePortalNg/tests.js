@@ -1,4 +1,4 @@
-﻿describe('AzurePortalNg.AvatarMenu', function () {
+describe('AzurePortalNg.AvatarMenu', function () {
     var sut;
     var portalService;
     beforeEach(angular.mock.module('azureportalng'));

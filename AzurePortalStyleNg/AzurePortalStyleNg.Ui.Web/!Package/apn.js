@@ -1,4 +1,4 @@
-﻿//#region Make sure console.log is working in any case, even IE9
+//#region Make sure console.log is working in any case, even IE9
 if ($('html').hasClass('k-ie9')) {
     if (typeof console !== 'object')
         window.console = {};
@@ -119,8 +119,7 @@ var AzurePortalNg;
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
@@ -142,8 +141,7 @@ var AzurePortalNg;
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
@@ -349,8 +347,7 @@ var AzurePortalNg;
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
@@ -589,8 +586,7 @@ var AzurePortalNg;
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
@@ -622,8 +618,7 @@ var AzurePortalNg;
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
@@ -690,8 +685,7 @@ var AzurePortalNg;
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
@@ -838,8 +832,7 @@ var AzurePortalNg;
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
@@ -929,8 +922,7 @@ var AzurePortalNg;
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
@@ -968,12 +960,14 @@ var AzurePortalNg;
             this.parameter = { action: 'none', itemId: 0 };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [this, $injector]);
             this.$injector = $injector;
+            //this.$scope = $scope;
             this.$http = $injector.get('$http');
             this.$httpBackend = $injector.get('$httpBackend');
             this.$q = $injector.get('$q');
             this.$rootScope = $injector.get('$rootScope');
             this.$window = $injector.get('$window');
             this.ngDialog = $injector.get('ngDialog');
+            this.ngDialog.openConfirm;
         }
         return PortalService;
     })();
@@ -989,8 +983,7 @@ var AzurePortalNg;
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {
@@ -1043,8 +1036,7 @@ var AzurePortalNg;
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var AzurePortalNg;
 (function (AzurePortalNg) {

@@ -12,12 +12,14 @@ var AzurePortalNg;
             this.parameter = { action: 'none', itemId: 0 };
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [this, $injector]);
             this.$injector = $injector;
+            //this.$scope = $scope;
             this.$http = $injector.get('$http');
             this.$httpBackend = $injector.get('$httpBackend');
             this.$q = $injector.get('$q');
             this.$rootScope = $injector.get('$rootScope');
             this.$window = $injector.get('$window');
             this.ngDialog = $injector.get('ngDialog');
+            this.ngDialog.openConfirm;
         }
         return PortalService;
     })();

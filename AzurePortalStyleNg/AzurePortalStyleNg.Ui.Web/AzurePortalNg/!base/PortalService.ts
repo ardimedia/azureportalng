@@ -61,6 +61,7 @@
         $q: angular.IQService;
         $rootScope: angular.IRootScopeService;
         $window: angular.IWindowService;
+        $scope: angular.IScope;
 
         //#endregion
 
@@ -72,6 +73,7 @@
             AzurePortalNg.Debug.write('[azureportalng-debug] \'PortalService\' constructor called.', [this, $injector]);
 
             this.$injector = $injector;
+            //this.$scope = $scope;
 
             this.$http = <angular.IHttpService>$injector.get('$http');
             this.$httpBackend = <angular.IHttpBackendService>$injector.get('$httpBackend');
@@ -80,6 +82,7 @@
             this.$window = <angular.IWindowService>$injector.get('$window');
 
             this.ngDialog = <any>$injector.get('ngDialog');
+            this.ngDialog.openConfirm
         }
 
         //#endregion

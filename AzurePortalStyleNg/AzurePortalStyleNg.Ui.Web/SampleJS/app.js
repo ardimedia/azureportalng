@@ -1,4 +1,4 @@
-﻿//#region Register Angular Module
+//#region Register Angular Module
 
 (function () {
     'use strict';
@@ -167,4 +167,3 @@ var SampleJs;
         function dummy() { }
     }
 })();
-
