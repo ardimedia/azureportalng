@@ -145,6 +145,7 @@
             }
             /** OBSOLETE: end */
 
+            // Register listener1
             this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, args: AzurePortalNg.IAddBladeEventArgs) {
                 AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade\' BladeArea.AddBlade event processing.', [this, event, args]);
                 if (args.path === that.blade.path) {
@@ -182,6 +183,8 @@
         /** close blade. */
         close() {
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Blade.close\' called.', [this]);
+
+            this.listener1(); // Unregister listener1
 
             if (this.portalService.bladeArea !== undefined) {
                 this.portalService.bladeArea.clearPath(this.path);

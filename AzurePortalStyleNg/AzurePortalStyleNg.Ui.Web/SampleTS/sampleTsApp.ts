@@ -6,7 +6,7 @@
 
     app.config([function (): void {
         //AzurePortalNg.Debug.enable('[samplets-debug]');
-        AzurePortalNg.Debug.isEnabled = true;
+        AzurePortalNg.Debug.isEnabled = false;
         AzurePortalNg.Debug.isWithObjects = false;
     }]);
 

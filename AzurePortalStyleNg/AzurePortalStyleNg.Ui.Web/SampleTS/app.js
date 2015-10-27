@@ -4,7 +4,7 @@
     var app = angular.module('sampleTsApp', ['azureportalng', 'ngResource', 'ngDialog', 'ngMockE2E']);
     app.config([function () {
             //AzurePortalNg.Debug.enable('[samplets-debug]');
-            AzurePortalNg.Debug.isEnabled = true;
+            AzurePortalNg.Debug.isEnabled = false;
             AzurePortalNg.Debug.isWithObjects = false;
         }]);
     //------------------------------------------------------------------------------------------------------------
@@ -279,6 +279,7 @@ var SampleTS;
         //#endregion
         //#region Methods
         Detail1.prototype.onActivate = function () {
+            console.log('Detail1.onActivate ' + Date.now());
             var customer = this.portalService.parameter.item;
             if (this.portalService.parameter.action === 'new') {
                 this.item = customer;
@@ -383,12 +384,12 @@ var SampleTS;
             _super.call(this, portalService, '/SampleTS/nav1/nav1.html', 'Navigation 1', 'TypeScript based', 315);
             AzurePortalNg.Debug.write('[samplets-debug] \'Nav1\' constructor called.', [this]);
             this.navItems = [
-                new AzurePortalNg.BladeNavItem('Navigation 1', '/SampleTS/nav1/nav1.html'),
-                new AzurePortalNg.BladeNavItem('Blade 1-1', '/SampleTS/blade11/blade11.html'),
-                new AzurePortalNg.BladeNavItem('Blade 2', '/SampleTS/blade2/blade2.html'),
-                new AzurePortalNg.BladeNavItem('Blade 2-1', '/SampleTS/blade21/blade21.html'),
-                new AzurePortalNg.BladeNavItem('List 1', '/SampleTS/list1/list1.html'),
-                new AzurePortalNg.BladeNavItem('Detail 1', '/SampleTS/detail1/detail1.html'),
+                new AzurePortalNg.BladeNavItem('Navigation 1 (BladeNav)', '/SampleTS/nav1/nav1.html'),
+                new AzurePortalNg.BladeNavItem('Blade 1-1 (BladeList)', '/SampleTS/blade11/blade11.html'),
+                new AzurePortalNg.BladeNavItem('Blade 2 (BladeList)', '/SampleTS/blade2/blade2.html'),
+                new AzurePortalNg.BladeNavItem('Blade 2-1 (BladeList)', '/SampleTS/blade21/blade21.html'),
+                new AzurePortalNg.BladeNavItem('List 1 (BladeList)', '/SampleTS/list1/list1.html'),
+                new AzurePortalNg.BladeNavItem('Detail 1 (BladeDetail)', '/SampleTS/detail1/detail1.html'),
                 new AzurePortalNg.BladeNavItem(),
                 new AzurePortalNg.BladeNavItem('no path'),
                 new AzurePortalNg.BladeNavItem('go to microsoft.com', null, 'http://www.microsoft.com'),

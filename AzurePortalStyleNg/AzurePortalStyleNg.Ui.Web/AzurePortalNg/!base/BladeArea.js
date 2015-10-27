@@ -26,6 +26,7 @@ var AzurePortalNg;
                 return;
             }
             /** OBSOLETE: end */
+            // Register listener1
             this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, args) {
                 AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea\' BladeArea.AddBlade event processing.', [this, event, args]);
                 that.addBlade(args.path, args.pathSender);
@@ -162,6 +163,10 @@ var AzurePortalNg;
                 this.portalService.panorama.isVisible = false;
             }
         };
+        /** You need to call this when BladeArea is no longer used, otherwise the listener does not get removed. */
+        BladeArea.prototype.close = function () {
+            this.listener1(); // Unregister listener1
+        };
         //#endregion
         //#region OBSOLETE
         BladeArea.prototype.addBladePath = function (path) {
@@ -203,4 +208,3 @@ var AzurePortalNg;
         angular.module('azureportalng').service('azurePortalNg.bladeArea', ['$window', AzurePortalNg.BladeArea]);
     })();
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=BladeArea.js.map

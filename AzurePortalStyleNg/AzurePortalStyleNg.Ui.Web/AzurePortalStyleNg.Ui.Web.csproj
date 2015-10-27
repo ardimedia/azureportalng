@@ -21,7 +21,7 @@
     <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\!Vs.Projects\Inofware.GitHub.Projects\</SolutionDir>
-    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
     <RestorePackages>true</RestorePackages>
     <TargetFrameworkProfile />
     <UseGlobalApplicationHostFile />

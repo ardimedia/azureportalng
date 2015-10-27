@@ -41,6 +41,7 @@
             }
             /** OBSOLETE: end */
 
+            // Register listener1
             this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event: ng.IAngularEvent, args: AzurePortalNg.IAddBladeEventArgs) {
                 AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea\' BladeArea.AddBlade event processing.', [this, event, args]);
                 that.addBlade(args.path, args.pathSender);
@@ -206,6 +207,11 @@
             if (this.portalService.panorama !== undefined) {
                 this.portalService.panorama.isVisible = false;
             }
+        }
+
+        /** You need to call this when BladeArea is no longer used, otherwise the listener does not get removed. */
+        close() {
+            this.listener1();  // Unregister listener1
         }
 
         //#endregion

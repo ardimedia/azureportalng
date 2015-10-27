@@ -147,6 +147,8 @@ declare module AzurePortalNg {
         clearChild(path: string): void;
         showPanoramaIfNoBlades(): void;
         hidePanorama(): void;
+        /** You need to call this when BladeArea is no longer used, otherwise the listener does not get removed. */
+        close(): void;
         addBladePath(path: string): void;
         addBladeOld(path: string): void;
     }

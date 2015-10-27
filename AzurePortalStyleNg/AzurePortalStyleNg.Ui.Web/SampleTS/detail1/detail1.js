@@ -17,6 +17,7 @@ var SampleTS;
         //#endregion
         //#region Methods
         Detail1.prototype.onActivate = function () {
+            console.log('Detail1.onActivate ' + Date.now());
             var customer = this.portalService.parameter.item;
             if (this.portalService.parameter.action === 'new') {
                 this.item = customer;
@@ -35,4 +36,3 @@ var SampleTS;
         angular.module('sampleTsApp').controller('detail1', ['azurePortalNg.portalService', Detail1]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=Detail1.js.map

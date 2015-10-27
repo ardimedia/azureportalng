@@ -12,4 +12,3 @@ var SampleTS;
     })();
     SampleTS.Customer = Customer;
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=Customer.js.map

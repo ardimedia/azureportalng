@@ -4,7 +4,7 @@
     var app = angular.module('sampleTsApp', ['azureportalng', 'ngResource', 'ngDialog', 'ngMockE2E']);
     app.config([function () {
             //AzurePortalNg.Debug.enable('[samplets-debug]');
-            AzurePortalNg.Debug.isEnabled = true;
+            AzurePortalNg.Debug.isEnabled = false;
             AzurePortalNg.Debug.isWithObjects = false;
         }]);
     //------------------------------------------------------------------------------------------------------------
@@ -17,4 +17,3 @@
     //});
 })();
 //#endregion
-//# sourceMappingURL=sampleTsApp.js.map
