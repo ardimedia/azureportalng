@@ -166,7 +166,6 @@ var AzurePortalNg;
                 return;
             }
             /** OBSOLETE: end */
-            console.log('BladeArea.constructor');
             // Register listener1
             this.listener1 = that.portalService.$rootScope.$on('BladeArea.AddBlade', function (event, args) {
                 AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeArea\' BladeArea.AddBlade event processing.', [this, event, args]);
@@ -303,6 +302,10 @@ var AzurePortalNg;
             if (this.portalService.panorama !== undefined) {
                 this.portalService.panorama.isVisible = false;
             }
+        };
+        /** You need to call this when BladeArea is no longer used, otherwise the listener does not get removed. */
+        BladeArea.prototype.close = function () {
+            this.listener1(); // Unregister listener1
         };
         //#endregion
         //#region OBSOLETE
@@ -720,18 +723,22 @@ var AzurePortalNg;
             if (onActivate === null || onActivate === undefined) {
             }
             else {
-                onActivate.success(function (data) {
-                    that.items = data;
-                    that.statusbar = '';
-                    that.statusbarClass = '';
-                }).error(function (data, status, headers, config) {
-                    that.statusbar = 'FEHLER: ' + data;
-                    that.statusbarClass = 'message-info message-off';
-                });
+                that.loadItems(onActivate);
             }
         };
         BladeList.prototype.onActivate = function () {
             throw new Error('[AzurePortalNg.BladeList] \'onActivate\' is an abstract function. Define one in the derived class.');
+        };
+        BladeList.prototype.loadItems = function (f) {
+            var that = this;
+            f.success(function (data) {
+                that.items = data;
+                that.statusbar = '';
+                that.statusbarClass = '';
+            }).error(function (data, status, headers, config) {
+                that.statusbar = 'FEHLER: ' + data;
+                that.statusbarClass = 'message-info message-off';
+            });
         };
         //#region Filter
         BladeList.prototype.onFilter = function (actual, expected) {

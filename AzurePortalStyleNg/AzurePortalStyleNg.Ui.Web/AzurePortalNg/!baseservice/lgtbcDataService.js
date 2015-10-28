@@ -36,3 +36,4 @@ var AzurePortalNg;
             .service('lgtbcDataService2', ['$http', '$q', LgtbcDataService2]);
     })();
 })(AzurePortalNg || (AzurePortalNg = {}));
+//# sourceMappingURL=lgtbcDataService.js.map

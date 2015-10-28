@@ -175,6 +175,7 @@ declare module AzurePortalNg {
         constructor(portalService: PortalService, path: string, title: string, subtitle?: string, width?: number);
         activate(): void;
         onActivate(): angular.IHttpPromise<any>;
+        loadItems(f: angular.IHttpPromise<any>): void;
         onFilter(actual: Object, expected: string): boolean;
         /** Obsolete */
         setObsoleteLayoutProperites(): void;

@@ -12,3 +12,4 @@ describe('AzurePortalNg.BladeDetail', function () {
     });
     //#endregion
 });
+//# sourceMappingURL=BladeDetailTest.js.map

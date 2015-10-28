@@ -32,18 +32,22 @@ var AzurePortalNg;
             if (onActivate === null || onActivate === undefined) {
             }
             else {
-                onActivate.success(function (data) {
-                    that.items = data;
-                    that.statusbar = '';
-                    that.statusbarClass = '';
-                }).error(function (data, status, headers, config) {
-                    that.statusbar = 'FEHLER: ' + data;
-                    that.statusbarClass = 'message-info message-off';
-                });
+                that.loadItems(onActivate);
             }
         };
         BladeList.prototype.onActivate = function () {
             throw new Error('[AzurePortalNg.BladeList] \'onActivate\' is an abstract function. Define one in the derived class.');
+        };
+        BladeList.prototype.loadItems = function (f) {
+            var that = this;
+            f.success(function (data) {
+                that.items = data;
+                that.statusbar = '';
+                that.statusbarClass = '';
+            }).error(function (data, status, headers, config) {
+                that.statusbar = 'FEHLER: ' + data;
+                that.statusbarClass = 'message-info message-off';
+            });
         };
         //#region Filter
         BladeList.prototype.onFilter = function (actual, expected) {
@@ -144,3 +148,4 @@ var AzurePortalNg;
     })(AzurePortalNg.BladeData);
     AzurePortalNg.BladeList = BladeList;
 })(AzurePortalNg || (AzurePortalNg = {}));
+//# sourceMappingURL=BladeList.js.map

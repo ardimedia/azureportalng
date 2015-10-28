@@ -50,3 +50,4 @@ var AzurePortalNg;
     })();
     AzurePortalNg.UserAccount = UserAccount;
 })(AzurePortalNg || (AzurePortalNg = {}));
+//# sourceMappingURL=UserAccount.js.map

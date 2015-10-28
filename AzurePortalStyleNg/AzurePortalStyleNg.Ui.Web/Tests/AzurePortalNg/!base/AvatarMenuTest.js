@@ -15,3 +15,4 @@ describe('AzurePortalNg.AvatarMenu', function () {
     });
     //#endregion
 });
+//# sourceMappingURL=AvatarMenuTest.js.map

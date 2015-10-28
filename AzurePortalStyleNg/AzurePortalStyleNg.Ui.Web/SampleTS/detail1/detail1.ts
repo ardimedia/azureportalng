@@ -18,8 +18,6 @@
         //#region Methods
 
         onActivate(): angular.IHttpPromise<any> {
-            console.log('Detail1.onActivate ' + Date.now());
-
             var customer: SampleTS.Customer = this.portalService.parameter.item;
 
             if (this.portalService.parameter.action === 'new') {

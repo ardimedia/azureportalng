@@ -46,3 +46,4 @@ var AzurePortalNg;
     })();
     AzurePortalNg.BladeNavItem = BladeNavItem;
 })(AzurePortalNg || (AzurePortalNg = {}));
+//# sourceMappingURL=BladeNav.js.map

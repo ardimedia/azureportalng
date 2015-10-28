@@ -36,19 +36,32 @@
 
             if (onActivate === null || onActivate === undefined) {
             } else {
-                onActivate.success(function (data: any) {
-                    that.items = data;
-                    that.statusbar = '';
-                    that.statusbarClass = '';
-                }).error(function (data: any, status: any, headers: any, config: any) {
-                    that.statusbar = 'FEHLER: ' + data;
-                    that.statusbarClass = 'message-info message-off';
-                });
+                that.loadItems(onActivate);
+                //onActivate.success(function (data: any) {
+                //    that.items = data;
+                //    that.statusbar = '';
+                //    that.statusbarClass = '';
+                //}).error(function (data: any, status: any, headers: any, config: any) {
+                //    that.statusbar = 'FEHLER: ' + data;
+                //    that.statusbarClass = 'message-info message-off';
+                //});
             }
         }
 
         onActivate(): angular.IHttpPromise<any> {
             throw new Error('[AzurePortalNg.BladeList] \'onActivate\' is an abstract function. Define one in the derived class.');
+        }
+
+        loadItems(f: angular.IHttpPromise<any>): void {
+            var that = this;
+            f.success(function (data: any) {
+                that.items = data;
+                that.statusbar = '';
+                that.statusbarClass = '';
+            }).error(function (data: any, status: any, headers: any, config: any) {
+                that.statusbar = 'FEHLER: ' + data;
+                that.statusbarClass = 'message-info message-off';
+            });
         }
 
         //#region Filter
