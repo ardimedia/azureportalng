@@ -193,8 +193,10 @@ declare module AzurePortalNg {
         hrefPath: string;
         roles: string;
         isVisible: boolean;
-        callback: () => void;
-        constructor(title?: string, bladePath?: string, hrefPath?: string, roles?: string, isVisible?: boolean, callback?: () => void);
+        callback: () => any;
+        bladeNav: AzurePortalNg.BladeNav;
+        constructor(title?: string, bladePath?: string, hrefPath?: string, roles?: string, isVisible?: boolean, callback?: () => any, bladeNav?: AzurePortalNg.BladeNav);
+        onNavItemClick(): void;
     }
 }
 declare module AzurePortalNg {
@@ -231,6 +233,7 @@ declare module AzurePortalNg {
         parameter: AzurePortalNg.IBladeParameter;
         animate: any;
         animation: any;
+        component: any;
         config: any;
         constant: any;
         controller: any;

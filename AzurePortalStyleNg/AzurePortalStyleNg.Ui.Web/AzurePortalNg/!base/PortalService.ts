@@ -23,6 +23,7 @@
 
         animate;
         animation;
+        component;
         config;
         constant;
         controller;
@@ -53,7 +54,7 @@
 
         //#endregion
 
-        //#region Angluar Services
+        //#region Angular Services
 
         $http: angular.IHttpService;
         $httpBackend: angular.IHttpBackendService;

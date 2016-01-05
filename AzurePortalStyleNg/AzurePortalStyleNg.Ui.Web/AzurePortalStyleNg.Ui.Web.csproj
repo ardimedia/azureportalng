@@ -246,8 +246,8 @@
     <Content Include="Scripts\jquery\src\var\support.js" />
     <Content Include="Scripts\jquery\src\var\toString.js" />
     <Content Include="Scripts\jquery\src\wrap.js" />
-    <Content Include="packages.config" />
     <Content Include="package.json" />
+    <Content Include="packages.config" />
     <None Include="Scripts\_references.js" />
     <Content Include="Tests\AzurePortalNg\tests.js" />
     <Content Include="Tests\AzurePortalNg\tests.min.js">
@@ -441,9 +441,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\packages\BuildBundlerMinifier.1.4.99\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildBundlerMinifier.1.4.99\build\BuildBundlerMinifier.targets'))" />
+    <Error Condition="!Exists('..\packages\BuildBundlerMinifier.1.5.135\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildBundlerMinifier.1.5.135\build\BuildBundlerMinifier.targets'))" />
   </Target>
-  <Import Project="..\packages\BuildBundlerMinifier.1.4.99\build\BuildBundlerMinifier.targets" Condition="Exists('..\packages\BuildBundlerMinifier.1.4.99\build\BuildBundlerMinifier.targets')" />
+  <Import Project="..\packages\BuildBundlerMinifier.1.5.135\build\BuildBundlerMinifier.targets" Condition="Exists('..\packages\BuildBundlerMinifier.1.5.135\build\BuildBundlerMinifier.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

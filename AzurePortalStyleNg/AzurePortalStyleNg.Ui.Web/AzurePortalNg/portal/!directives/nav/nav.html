@@ -5,7 +5,7 @@
         <col class="col1">
     </colgroup>
     <tbody class="azc-grid-groupdata" role="rowgroup">
-        <tr data-ng-repeat="item in vm.navItems track by $index" data-ng-click="vm.navigateTo(item.bladePath);" role="row" aria-selected="false" data-grid-row-activated="false" data-grid-selectable="true" data-grid-focusable="true" data-grid-activateable="true" ng-show="item.isVisible" style="cursor:pointer" ng-style="item.style">
+        <tr data-ng-repeat="item in vm.navItems track by $index" data-ng-click="vm.navigateTo(item.bladePath);item.onNavItemClick();" role="row" aria-selected="false" data-grid-row-activated="false" data-grid-selectable="true" data-grid-focusable="true" data-grid-activateable="true" ng-show="item.isVisible" style="cursor:pointer" ng-style="item.style">
             <td class="msportalfx-gridcolumn-asseticon" role="gridcell" data-grid-cell-activated="false">
                 <div class="azc-vivaControl" data-bind='vivaControl: "DEB28B4C-518F-4F70-A817-BF9277606CAB"'>
                     <div data-bind="image: value">

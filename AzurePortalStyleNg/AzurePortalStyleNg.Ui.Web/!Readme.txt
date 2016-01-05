@@ -59,7 +59,7 @@ CD D:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePort
 tsc @tsc.txt
 CD D:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\.nuget
 .\nuget.exe pack ..\AzurePortalStyleNg.Ui.Web\nuspec-packager.nuspec -OutputDirectory ..\AzurePortalStyleNg.Ui.Web\!NugetOut
-COPY ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.1.71-beta.nupkg \\Svrtfs01.ardimedia.com\d$\!Data\NuGet\Packages
+COPY ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.1.74-beta.nupkg \\Svrtfs01.ardimedia.com\d$\!Data\NuGet\Packages
 
 > TO ARDIMEDIA:
 > TO NUGET.ORG

@@ -12,7 +12,7 @@
 
             this.navItems = [
                 new AzurePortalNg.BladeNavItem('Navigation 1 (BladeNav)', '/SampleTS/nav1/nav1.html'),
-                new AzurePortalNg.BladeNavItem('Blade 1-1 (BladeList)', '/SampleTS/blade11/blade11.html'),
+                new AzurePortalNg.BladeNavItem('Blade 1-1 (BladeList)', '/SampleTS/blade11/blade11.html', null, null, true, this.callback1, this),
                 new AzurePortalNg.BladeNavItem('Blade 2 (BladeList)', '/SampleTS/blade2/blade2.html'),
                 new AzurePortalNg.BladeNavItem('Blade 2-1 (BladeList)', '/SampleTS/blade21/blade21.html'),
                 new AzurePortalNg.BladeNavItem('List 1 (BladeList)', '/SampleTS/list1/list1.html'),
@@ -33,6 +33,10 @@
             AzurePortalNg.Debug.write('[samplets-debug] \'Nav1.onNavigateTo\' called.', [this, path]);
             if (path === '') { return; }
             this.portalService.bladeArea.raiseAddBladeEvent({ path: path, pathSender: this.blade.path });
+        }
+
+        callback1() {
+            console.log(this);
         }
 
         //#endregion
