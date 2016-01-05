@@ -43,13 +43,14 @@ var AzurePortalNg;
                     that.item = data;
                     that.statusbar = '';
                     that.statusbarClass = '';
+                    that.onActivated();
                 }).error(function (data, status, headers, config) {
                     that.item = null;
                     that.statusbar = 'FEHLER: ' + data;
                     that.statusbarClass = 'message-info message-off';
+                    that.onActivated();
                 });
             }
-            that.onActivated();
         };
         BladeDetail.prototype.onActivate = function () {
             throw new Error('[AzurePortalNg.BladeDetail] \'onActivate\' is an abstract function. Define one in the derived class.');
@@ -64,4 +65,3 @@ var AzurePortalNg;
     })(AzurePortalNg.BladeData);
     AzurePortalNg.BladeDetail = BladeDetail;
 })(AzurePortalNg || (AzurePortalNg = {}));
-//# sourceMappingURL=BladeDetail.js.map

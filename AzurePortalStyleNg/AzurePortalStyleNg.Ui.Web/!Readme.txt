@@ -54,11 +54,12 @@ LIST PACKAGE
 ------------------------------------------------------------------------------------------------------------
 DEPLOY BY COMMAND
 CLS
-CD C:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web
+D:
+CD D:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web
 tsc @tsc.txt
-CD C:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\.nuget
+CD D:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\.nuget
 .\nuget.exe pack ..\AzurePortalStyleNg.Ui.Web\nuspec-packager.nuspec -OutputDirectory ..\AzurePortalStyleNg.Ui.Web\!NugetOut
-COPY ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.1.69-beta.nupkg \\Svrtfs01\d$\!Data\NuGet\Packages
+COPY ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.1.71-beta.nupkg \\Svrtfs01.ardimedia.com\d$\!Data\NuGet\Packages
 
 > TO ARDIMEDIA:
 > TO NUGET.ORG

@@ -29,18 +29,23 @@ var AzurePortalNg;
     //#region Class Definition: BladeNavItem
     var BladeNavItem = (function () {
         //#region Constructor
-        function BladeNavItem(title, bladePath, hrefPath, roles, isVisible) {
+        function BladeNavItem(title, bladePath, hrefPath, roles, isVisible, callback) {
             if (title === void 0) { title = ''; }
             if (bladePath === void 0) { bladePath = ''; }
             if (hrefPath === void 0) { hrefPath = ""; }
             if (roles === void 0) { roles = ""; }
             if (isVisible === void 0) { isVisible = true; }
+            if (callback === void 0) { callback = function () { }; }
             this.title = title;
             this.bladePath = bladePath;
             this.hrefPath = hrefPath;
             this.roles = roles;
             this.isVisible = isVisible;
+            this.callback = callback;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'BladeNavItem\' constructor called.', [this, title, bladePath, hrefPath, roles, isVisible]);
+            if (callback != null) {
+                callback();
+            }
         }
         return BladeNavItem;
     })();

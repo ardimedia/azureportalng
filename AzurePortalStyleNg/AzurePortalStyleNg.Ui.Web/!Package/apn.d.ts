@@ -193,7 +193,8 @@ declare module AzurePortalNg {
         hrefPath: string;
         roles: string;
         isVisible: boolean;
-        constructor(title?: string, bladePath?: string, hrefPath?: string, roles?: string, isVisible?: boolean);
+        callback: () => void;
+        constructor(title?: string, bladePath?: string, hrefPath?: string, roles?: string, isVisible?: boolean, callback?: () => void);
     }
 }
 declare module AzurePortalNg {

@@ -247,6 +247,7 @@
     <Content Include="Scripts\jquery\src\var\toString.js" />
     <Content Include="Scripts\jquery\src\wrap.js" />
     <Content Include="packages.config" />
+    <Content Include="package.json" />
     <None Include="Scripts\_references.js" />
     <Content Include="Tests\AzurePortalNg\tests.js" />
     <Content Include="Tests\AzurePortalNg\tests.min.js">

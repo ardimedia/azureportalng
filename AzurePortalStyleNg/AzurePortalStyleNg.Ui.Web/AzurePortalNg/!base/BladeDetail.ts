@@ -50,14 +50,14 @@
                     that.item = data;
                     that.statusbar = '';
                     that.statusbarClass = '';
+                    that.onActivated();
                 }).error(function (data: any, status: any, headers: any, config: any) {
                     that.item = null;
                     that.statusbar = 'FEHLER: ' + data;
                     that.statusbarClass = 'message-info message-off';
+                    that.onActivated();
                 });
             }
-
-            that.onActivated();
         }
 
         onActivate(): ng.IHttpPromise<any> {
