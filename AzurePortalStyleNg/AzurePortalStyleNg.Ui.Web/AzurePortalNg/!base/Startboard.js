@@ -17,7 +17,7 @@ var AzurePortalNg;
             this.tiles = new AzurePortalNg.Tiles();
         }
         return Startboard;
-    })(AzurePortalNg.UserControlBase);
+    }(AzurePortalNg.UserControlBase));
     AzurePortalNg.Startboard = Startboard;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Startboard.js.map

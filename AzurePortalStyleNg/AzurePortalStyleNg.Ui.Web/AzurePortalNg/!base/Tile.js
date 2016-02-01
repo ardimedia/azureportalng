@@ -32,7 +32,7 @@ var AzurePortalNg;
             return tileSizes;
         };
         return TileSize;
-    })();
+    }());
     AzurePortalNg.TileSize = TileSize;
     //#endregion
     //#region Class Definition: Tile
@@ -54,7 +54,7 @@ var AzurePortalNg;
             blade.activate();
         };
         return Tile;
-    })();
+    }());
     AzurePortalNg.Tile = Tile;
     //#endregion
     //#region Class Definition: Tiles
@@ -90,7 +90,7 @@ var AzurePortalNg;
             return tile;
         };
         return Tiles;
-    })();
+    }());
     AzurePortalNg.Tiles = Tiles;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Tile.js.map

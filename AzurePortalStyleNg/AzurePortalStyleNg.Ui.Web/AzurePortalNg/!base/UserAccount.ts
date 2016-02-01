@@ -36,7 +36,7 @@
         }
         set name(value: string) {
             throw new Error('[AzurePortalNg.UserAccount] \'name\' is a calculated value from \'firsName\' and \'lastName\'. Assignment not allowed.');
-            this._name = value;
+            //this._name = value;
         }
         //#endregion
 

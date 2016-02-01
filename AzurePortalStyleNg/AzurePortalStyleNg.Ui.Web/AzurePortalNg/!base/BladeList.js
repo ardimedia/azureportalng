@@ -145,7 +145,7 @@ var AzurePortalNg;
             _super.prototype.setObsoleteLayoutProperites.call(this);
         };
         return BladeList;
-    })(AzurePortalNg.BladeData);
+    }(AzurePortalNg.BladeData));
     AzurePortalNg.BladeList = BladeList;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=BladeList.js.map

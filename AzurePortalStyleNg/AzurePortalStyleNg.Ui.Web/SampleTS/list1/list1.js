@@ -32,7 +32,7 @@ var SampleTS;
             this.portalService.bladeArea.raiseAddBladeEvent({ path: '/SampleTS/detail1/detail1.html', pathSender: this.blade.path });
         };
         return List1;
-    })(AzurePortalNg.BladeList);
+    }(AzurePortalNg.BladeList));
     //#endregion
     //#region Angular Registration
     (function () {

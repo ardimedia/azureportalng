@@ -71,7 +71,7 @@ var SampleTS;
                 .respond(customers[3]);
         };
         return SampleTsShell;
-    })(AzurePortalNg.PortalShell);
+    }(AzurePortalNg.PortalShell));
     //#endregion
     //#region Angular Registration
     (function () {
@@ -91,7 +91,7 @@ var SampleTS;
             this.lastName = lastName;
         }
         return Customer;
-    })();
+    }());
     SampleTS.Customer = Customer;
 })(SampleTS || (SampleTS = {}));
 //# sourceMappingURL=Customer.js.map
@@ -126,7 +126,7 @@ var SampleTS;
             return this.portalService.$http({ method: 'GET', url: '/customers' });
         };
         return Blade11;
-    })(AzurePortalNg.BladeList);
+    }(AzurePortalNg.BladeList));
     //#endregion
     //#region Angular Registration
     (function () {
@@ -185,7 +185,7 @@ var SampleTS;
             return this.portalService.$http({ method: 'GET', url: '/customers' });
         };
         return Blade2;
-    })(AzurePortalNg.BladeList);
+    }(AzurePortalNg.BladeList));
     //#endregion
     //#region Angular Registration
     (function () {
@@ -237,7 +237,7 @@ var SampleTS;
             return this.portalService.$http({ method: 'GET', url: '/customers' });
         };
         return Blade21;
-    })(AzurePortalNg.BladeList);
+    }(AzurePortalNg.BladeList));
     //#endregion
     //#region Angular Registration
     (function () {
@@ -289,7 +289,7 @@ var SampleTS;
             }
         };
         return Detail1;
-    })(AzurePortalNg.BladeDetail);
+    }(AzurePortalNg.BladeDetail));
     //#endregion
     //#region Angular Registration
     (function () {
@@ -346,7 +346,7 @@ var SampleTS;
             this.portalService.bladeArea.raiseAddBladeEvent({ path: '/SampleTS/detail1/detail1.html', pathSender: this.blade.path });
         };
         return List1;
-    })(AzurePortalNg.BladeList);
+    }(AzurePortalNg.BladeList));
     //#endregion
     //#region Angular Registration
     (function () {
@@ -408,7 +408,7 @@ var SampleTS;
             console.log(this);
         };
         return Nav1;
-    })(AzurePortalNg.BladeNav);
+    }(AzurePortalNg.BladeNav));
     //#endregion
     //#region Angular Registration
     (function () {

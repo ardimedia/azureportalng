@@ -47,7 +47,7 @@ var AzurePortalNg;
             }
         };
         return PortalShell;
-    })(AzurePortalNg.UserControlBase);
+    }(AzurePortalNg.UserControlBase));
     AzurePortalNg.PortalShell = PortalShell;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=PortalShell.js.map

@@ -9,7 +9,7 @@ var SampleTS;
             this.lastName = lastName;
         }
         return Customer;
-    })();
+    }());
     SampleTS.Customer = Customer;
 })(SampleTS || (SampleTS = {}));
 //# sourceMappingURL=Customer.js.map

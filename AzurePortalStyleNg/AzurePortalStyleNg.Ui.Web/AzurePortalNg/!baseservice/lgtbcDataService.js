@@ -26,7 +26,7 @@ var AzurePortalNg;
             });
         };
         return LgtbcDataService2;
-    })(AzurePortalNg.DataService);
+    }(AzurePortalNg.DataService));
     AzurePortalNg.LgtbcDataService2 = LgtbcDataService2;
     //#endregion
     //#region Angular Registration

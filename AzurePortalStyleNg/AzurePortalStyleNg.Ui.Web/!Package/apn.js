@@ -71,14 +71,14 @@ var AzurePortalNg;
         Debug.isWithObjects = false;
         Debug.keys = new Array();
         return Debug;
-    })();
+    }());
     AzurePortalNg.Debug = Debug;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Debug.js.map
 /*
-    The following lines should be here, since 'tsc @tsc.txt', which creates apn.d.ts, will otherwise have warnings/errors
-    But in production code, this is not the right solution, since the typings must be at this location as well, which is not normally the case
-    So for the moment, we have commented out these lines.
+   The following lines should be here, since 'tsc @tsc.txt', which creates apn.d.ts, will otherwise have warnings/errors
+   But in production code, this is not the right solution, since the typings must be at this location as well, which is not normally the case
+   So for the moment, we have commented out these lines.
 /// <reference path="../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../scripts/typings/ngdialog/ngdialog.d.ts" />
 */
@@ -112,7 +112,7 @@ var AzurePortalNg;
             this.portalService = portalService;
         }
         return UserControlBase;
-    })();
+    }());
     AzurePortalNg.UserControlBase = UserControlBase;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=UserControlBase.js.map
@@ -134,7 +134,7 @@ var AzurePortalNg;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.', [this]);
         }
         return AvatarMenu;
-    })(AzurePortalNg.UserControlBase);
+    }(AzurePortalNg.UserControlBase));
     AzurePortalNg.AvatarMenu = AvatarMenu;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=AvatarMenu.js.map
@@ -339,7 +339,7 @@ var AzurePortalNg;
             }, 250);
         };
         return BladeArea;
-    })(AzurePortalNg.UserControlBase);
+    }(AzurePortalNg.UserControlBase));
     AzurePortalNg.BladeArea = BladeArea;
     //#endregion
     //#region Angular Registration
@@ -586,7 +586,7 @@ var AzurePortalNg;
             this.close();
         };
         return Blade;
-    })(AzurePortalNg.UserControlBase);
+    }(AzurePortalNg.UserControlBase));
     AzurePortalNg.Blade = Blade;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Blade.js.map
@@ -618,7 +618,7 @@ var AzurePortalNg;
             });
         };
         return BladeData;
-    })(AzurePortalNg.Blade);
+    }(AzurePortalNg.Blade));
     AzurePortalNg.BladeData = BladeData;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=BladeData.js.map
@@ -686,7 +686,7 @@ var AzurePortalNg;
             this.close();
         };
         return BladeDetail;
-    })(AzurePortalNg.BladeData);
+    }(AzurePortalNg.BladeData));
     AzurePortalNg.BladeDetail = BladeDetail;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=BladeDetail.js.map
@@ -837,7 +837,7 @@ var AzurePortalNg;
             _super.prototype.setObsoleteLayoutProperites.call(this);
         };
         return BladeList;
-    })(AzurePortalNg.BladeData);
+    }(AzurePortalNg.BladeData));
     AzurePortalNg.BladeList = BladeList;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=BladeList.js.map
@@ -866,7 +866,7 @@ var AzurePortalNg;
             _super.prototype.onNavigateTo = this.navigateTo;
         }
         return BladeNav;
-    })(AzurePortalNg.BladeData);
+    }(AzurePortalNg.BladeData));
     AzurePortalNg.BladeNav = BladeNav;
     //#endregion
     //#region Class Definition: BladeNavItem
@@ -898,7 +898,7 @@ var AzurePortalNg;
             }
         };
         return BladeNavItem;
-    })();
+    }());
     AzurePortalNg.BladeNavItem = BladeNavItem;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=BladeNav.js.map
@@ -939,7 +939,7 @@ var AzurePortalNg;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Exception.convertFromWebApiException\' not overriden. You could override this.', [this]);
         };
         return Exception;
-    })();
+    }());
     AzurePortalNg.Exception = Exception;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Exception.js.map
@@ -966,7 +966,7 @@ var AzurePortalNg;
             this.startboard = new AzurePortalNg.Startboard(this.portalService);
         }
         return Panorama;
-    })(AzurePortalNg.UserControlBase);
+    }(AzurePortalNg.UserControlBase));
     AzurePortalNg.Panorama = Panorama;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Panorama.js.map
@@ -994,7 +994,7 @@ var AzurePortalNg;
             this.ngDialog.openConfirm;
         }
         return PortalService;
-    })();
+    }());
     AzurePortalNg.PortalService = PortalService;
     //#endregion
     //#region Angular Registration
@@ -1053,7 +1053,7 @@ var AzurePortalNg;
             }
         };
         return PortalShell;
-    })(AzurePortalNg.UserControlBase);
+    }(AzurePortalNg.UserControlBase));
     AzurePortalNg.PortalShell = PortalShell;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=PortalShell.js.map
@@ -1076,7 +1076,7 @@ var AzurePortalNg;
             this.tiles = new AzurePortalNg.Tiles();
         }
         return Startboard;
-    })(AzurePortalNg.UserControlBase);
+    }(AzurePortalNg.UserControlBase));
     AzurePortalNg.Startboard = Startboard;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Startboard.js.map
@@ -1114,7 +1114,7 @@ var AzurePortalNg;
             return tileSizes;
         };
         return TileSize;
-    })();
+    }());
     AzurePortalNg.TileSize = TileSize;
     //#endregion
     //#region Class Definition: Tile
@@ -1136,7 +1136,7 @@ var AzurePortalNg;
             blade.activate();
         };
         return Tile;
-    })();
+    }());
     AzurePortalNg.Tile = Tile;
     //#endregion
     //#region Class Definition: Tiles
@@ -1172,7 +1172,7 @@ var AzurePortalNg;
             return tile;
         };
         return Tiles;
-    })();
+    }());
     AzurePortalNg.Tiles = Tiles;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Tile.js.map
@@ -1219,13 +1219,13 @@ var AzurePortalNg;
             },
             set: function (value) {
                 throw new Error('[AzurePortalNg.UserAccount] \'name\' is a calculated value from \'firsName\' and \'lastName\'. Assignment not allowed.');
-                this._name = value;
+                //this._name = value;
             },
             enumerable: true,
             configurable: true
         });
         return UserAccount;
-    })();
+    }());
     AzurePortalNg.UserAccount = UserAccount;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=UserAccount.js.map

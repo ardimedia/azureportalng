@@ -22,7 +22,7 @@ var AzurePortalNg;
             this.ngDialog.openConfirm;
         }
         return PortalService;
-    })();
+    }());
     AzurePortalNg.PortalService = PortalService;
     //#endregion
     //#region Angular Registration

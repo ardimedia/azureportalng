@@ -51,7 +51,7 @@ var SampleTS;
                 .respond(customers[3]);
         };
         return SampleTsShell;
-    })(AzurePortalNg.PortalShell);
+    }(AzurePortalNg.PortalShell));
     //#endregion
     //#region Angular Registration
     (function () {

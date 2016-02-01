@@ -41,13 +41,13 @@ var AzurePortalNg;
             },
             set: function (value) {
                 throw new Error('[AzurePortalNg.UserAccount] \'name\' is a calculated value from \'firsName\' and \'lastName\'. Assignment not allowed.');
-                this._name = value;
+                //this._name = value;
             },
             enumerable: true,
             configurable: true
         });
         return UserAccount;
-    })();
+    }());
     AzurePortalNg.UserAccount = UserAccount;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=UserAccount.js.map

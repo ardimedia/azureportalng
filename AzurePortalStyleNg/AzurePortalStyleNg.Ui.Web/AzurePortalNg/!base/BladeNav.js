@@ -23,7 +23,7 @@ var AzurePortalNg;
             _super.prototype.onNavigateTo = this.navigateTo;
         }
         return BladeNav;
-    })(AzurePortalNg.BladeData);
+    }(AzurePortalNg.BladeData));
     AzurePortalNg.BladeNav = BladeNav;
     //#endregion
     //#region Class Definition: BladeNavItem
@@ -55,7 +55,7 @@ var AzurePortalNg;
             }
         };
         return BladeNavItem;
-    })();
+    }());
     AzurePortalNg.BladeNavItem = BladeNavItem;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=BladeNav.js.map

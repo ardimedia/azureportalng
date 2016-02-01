@@ -2,13 +2,14 @@
   "name": "ASP.NET",
   "private": true,
   "dependencies": {
-    "angular": "^1.4.8",
-    "angular-mocks": "^1.4.8",
-    "angular-resource": "^1.4.8",
-    "jasmine": "^2.4.1",
+    "angular": "1.4.6",
+    "angular-mocks": "1.4.6",
+    "angular-resource": "1.4.6",
+    "jasmine": "2.3.4",
     "jquery": "^2.1.4"
   },
   "resolutions": {
-    "angular": "^1.4.8"
+    "angular": "^1.4.8",
+    "jasmine": "^2.4.1"
   }
 }

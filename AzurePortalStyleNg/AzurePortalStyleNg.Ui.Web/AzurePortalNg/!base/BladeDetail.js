@@ -62,7 +62,7 @@ var AzurePortalNg;
             this.close();
         };
         return BladeDetail;
-    })(AzurePortalNg.BladeData);
+    }(AzurePortalNg.BladeData));
     AzurePortalNg.BladeDetail = BladeDetail;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=BladeDetail.js.map

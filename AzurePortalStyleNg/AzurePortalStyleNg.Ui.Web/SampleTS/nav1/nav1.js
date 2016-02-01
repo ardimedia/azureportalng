@@ -38,7 +38,7 @@ var SampleTS;
             console.log(this);
         };
         return Nav1;
-    })(AzurePortalNg.BladeNav);
+    }(AzurePortalNg.BladeNav));
     //#endregion
     //#region Angular Registration
     (function () {

@@ -71,7 +71,7 @@ var AzurePortalNg;
         Debug.isWithObjects = false;
         Debug.keys = new Array();
         return Debug;
-    })();
+    }());
     AzurePortalNg.Debug = Debug;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Debug.js.map

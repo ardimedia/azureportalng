@@ -35,7 +35,7 @@ var AzurePortalNg;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'Exception.convertFromWebApiException\' not overriden. You could override this.', [this]);
         };
         return Exception;
-    })();
+    }());
     AzurePortalNg.Exception = Exception;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Exception.js.map

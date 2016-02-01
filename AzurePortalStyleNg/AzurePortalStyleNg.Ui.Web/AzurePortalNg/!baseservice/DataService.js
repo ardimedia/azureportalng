@@ -24,7 +24,7 @@ var AzurePortalNg;
             });
         };
         return DataService;
-    })();
+    }());
     AzurePortalNg.DataService = DataService;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=DataService.js.map

@@ -21,7 +21,7 @@ var AzurePortalNg;
             this.startboard = new AzurePortalNg.Startboard(this.portalService);
         }
         return Panorama;
-    })(AzurePortalNg.UserControlBase);
+    }(AzurePortalNg.UserControlBase));
     AzurePortalNg.Panorama = Panorama;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Panorama.js.map

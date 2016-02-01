@@ -27,7 +27,7 @@ var SampleTS;
             }
         };
         return Detail1;
-    })(AzurePortalNg.BladeDetail);
+    }(AzurePortalNg.BladeDetail));
     //#endregion
     //#region Angular Registration
     (function () {

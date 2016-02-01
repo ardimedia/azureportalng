@@ -235,7 +235,7 @@ var AzurePortalNg;
             this.close();
         };
         return Blade;
-    })(AzurePortalNg.UserControlBase);
+    }(AzurePortalNg.UserControlBase));
     AzurePortalNg.Blade = Blade;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=Blade.js.map

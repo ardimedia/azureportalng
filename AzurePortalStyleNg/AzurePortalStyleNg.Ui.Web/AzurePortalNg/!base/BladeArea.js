@@ -199,7 +199,7 @@ var AzurePortalNg;
             }, 250);
         };
         return BladeArea;
-    })(AzurePortalNg.UserControlBase);
+    }(AzurePortalNg.UserControlBase));
     AzurePortalNg.BladeArea = BladeArea;
     //#endregion
     //#region Angular Registration

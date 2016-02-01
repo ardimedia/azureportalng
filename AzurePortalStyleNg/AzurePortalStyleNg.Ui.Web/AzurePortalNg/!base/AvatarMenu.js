@@ -16,7 +16,7 @@ var AzurePortalNg;
             AzurePortalNg.Debug.write('[azureportalng-debug] \'AvatarMenu\' constructor called.', [this]);
         }
         return AvatarMenu;
-    })(AzurePortalNg.UserControlBase);
+    }(AzurePortalNg.UserControlBase));
     AzurePortalNg.AvatarMenu = AvatarMenu;
 })(AzurePortalNg || (AzurePortalNg = {}));
 //# sourceMappingURL=AvatarMenu.js.map
