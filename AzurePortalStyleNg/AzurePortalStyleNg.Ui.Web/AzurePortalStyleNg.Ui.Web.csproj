@@ -98,11 +98,8 @@
     <Content Include="!Design\portallayout.min.css">
       <DependentUpon>portallayout.css</DependentUpon>
     </Content>
-    <Content Include="!Package\apn.js" />
-    <Content Include="!Package\apn.min.js">
-      <DependentUpon>apn.js</DependentUpon>
-    </Content>
     <Content Include="!Readme.txt" />
+    <Content Include="gulpfile.js" />
     <Content Include="SampleJS\!data\Customer.js" />
     <Content Include="SampleJS\app.js" />
     <Content Include="SampleJS\app.min.js">
@@ -112,140 +109,9 @@
     <Content Include="SampleJS\index.html" />
     <Content Include="SampleJS\nav1\nav1.html" />
     <Content Include="SampleJS\sampleJsShell.js" />
-    <Content Include="Scripts\angular-mocks\.bower.json" />
     <Content Include="Scripts\angular-mocks\angular-mocks.js" />
-    <Content Include="Scripts\angular-mocks\bower.json" />
-    <Content Include="Scripts\angular-mocks\ngAnimateMock.js" />
-    <Content Include="Scripts\angular-mocks\ngMock.js" />
-    <Content Include="Scripts\angular-mocks\ngMockE2E.js" />
-    <Content Include="Scripts\angular-mocks\package.json" />
-    <Content Include="Scripts\angular-mocks\README.md" />
-    <Content Include="Scripts\angular-resource\angular-resource.js" />
     <Content Include="Scripts\angular-resource\angular-resource.min.js" />
-    <Content Include="Scripts\angular-resource\index.js" />
-    <Content Include="Scripts\angular\.bower.json" />
-    <Content Include="Scripts\angular\angular-csp.css" />
     <Content Include="Scripts\angular\angular.js" />
-    <Content Include="Scripts\angular\angular.min.js" />
-    <Content Include="Scripts\angular\angular.min.js.gzip" />
-    <Content Include="Scripts\angular\angular.min.js.map" />
-    <Content Include="Scripts\angular\bower.json" />
-    <Content Include="Scripts\angular\index.js" />
-    <Content Include="Scripts\angular\package.json" />
-    <Content Include="Scripts\angular\README.md" />
-    <Content Include="Scripts\jasmine\.bower.json" />
-    <Content Include="Scripts\jasmine\bower.json" />
-    <Content Include="Scripts\jasmine\CONTRIBUTING.md" />
-    <Content Include="Scripts\jasmine\GOALS_2.0.md" />
-    <Content Include="Scripts\jasmine\images\jasmine-horizontal.png" />
-    <Content Include="Scripts\jasmine\images\jasmine-horizontal.svg" />
-    <Content Include="Scripts\jasmine\images\jasmine_favicon.png" />
-    <Content Include="Scripts\jasmine\lib\console\console.js" />
-    <Content Include="Scripts\jasmine\lib\jasmine-core.js" />
-    <Content Include="Scripts\jasmine\lib\jasmine-core\boot.js" />
-    <Content Include="Scripts\jasmine\lib\jasmine-core\example\node_example\lib\jasmine_examples\Player.js" />
-    <Content Include="Scripts\jasmine\lib\jasmine-core\example\node_example\lib\jasmine_examples\Song.js" />
-    <Content Include="Scripts\jasmine\lib\jasmine-core\jasmine-html.js" />
-    <Content Include="Scripts\jasmine\lib\jasmine-core\jasmine.css" />
-    <Content Include="Scripts\jasmine\lib\jasmine-core\jasmine.js" />
-    <Content Include="Scripts\jasmine\lib\jasmine-core\json2.js" />
-    <Content Include="Scripts\jasmine\lib\jasmine-core\node_boot.js" />
-    <Content Include="Scripts\jasmine\MANIFEST.in" />
-    <Content Include="Scripts\jasmine\MIT.LICENSE" />
-    <Content Include="Scripts\jasmine\package.json" />
-    <Content Include="Scripts\jasmine\README.md" />
-    <Content Include="Scripts\jasmine\RELEASE.md" />
-    <Content Include="Scripts\jasmine\requirements.txt" />
-    <Content Include="Scripts\jquery\.bower.json" />
-    <Content Include="Scripts\jquery\bower.json" />
-    <Content Include="Scripts\jquery\dist\jquery.js" />
-    <Content Include="Scripts\jquery\dist\jquery.min.js" />
-    <Content Include="Scripts\jquery\dist\jquery.min.map" />
-    <Content Include="Scripts\jquery\MIT-LICENSE.txt" />
-    <Content Include="Scripts\jquery\src\ajax.js" />
-    <Content Include="Scripts\jquery\src\ajax\jsonp.js" />
-    <Content Include="Scripts\jquery\src\ajax\load.js" />
-    <Content Include="Scripts\jquery\src\ajax\parseJSON.js" />
-    <Content Include="Scripts\jquery\src\ajax\parseXML.js" />
-    <Content Include="Scripts\jquery\src\ajax\script.js" />
-    <Content Include="Scripts\jquery\src\ajax\var\nonce.js" />
-    <Content Include="Scripts\jquery\src\ajax\var\rquery.js" />
-    <Content Include="Scripts\jquery\src\ajax\xhr.js" />
-    <Content Include="Scripts\jquery\src\attributes.js" />
-    <Content Include="Scripts\jquery\src\attributes\attr.js" />
-    <Content Include="Scripts\jquery\src\attributes\classes.js" />
-    <Content Include="Scripts\jquery\src\attributes\prop.js" />
-    <Content Include="Scripts\jquery\src\attributes\support.js" />
-    <Content Include="Scripts\jquery\src\attributes\val.js" />
-    <Content Include="Scripts\jquery\src\callbacks.js" />
-    <Content Include="Scripts\jquery\src\core.js" />
-    <Content Include="Scripts\jquery\src\core\access.js" />
-    <Content Include="Scripts\jquery\src\core\init.js" />
-    <Content Include="Scripts\jquery\src\core\parseHTML.js" />
-    <Content Include="Scripts\jquery\src\core\ready.js" />
-    <Content Include="Scripts\jquery\src\core\var\rsingleTag.js" />
-    <Content Include="Scripts\jquery\src\css.js" />
-    <Content Include="Scripts\jquery\src\css\addGetHookIf.js" />
-    <Content Include="Scripts\jquery\src\css\curCSS.js" />
-    <Content Include="Scripts\jquery\src\css\defaultDisplay.js" />
-    <Content Include="Scripts\jquery\src\css\hiddenVisibleSelectors.js" />
-    <Content Include="Scripts\jquery\src\css\support.js" />
-    <Content Include="Scripts\jquery\src\css\swap.js" />
-    <Content Include="Scripts\jquery\src\css\var\cssExpand.js" />
-    <Content Include="Scripts\jquery\src\css\var\getStyles.js" />
-    <Content Include="Scripts\jquery\src\css\var\isHidden.js" />
-    <Content Include="Scripts\jquery\src\css\var\rmargin.js" />
-    <Content Include="Scripts\jquery\src\css\var\rnumnonpx.js" />
-    <Content Include="Scripts\jquery\src\data.js" />
-    <Content Include="Scripts\jquery\src\data\accepts.js" />
-    <Content Include="Scripts\jquery\src\data\Data.js" />
-    <Content Include="Scripts\jquery\src\data\var\data_priv.js" />
-    <Content Include="Scripts\jquery\src\data\var\data_user.js" />
-    <Content Include="Scripts\jquery\src\deferred.js" />
-    <Content Include="Scripts\jquery\src\deprecated.js" />
-    <Content Include="Scripts\jquery\src\dimensions.js" />
-    <Content Include="Scripts\jquery\src\effects.js" />
-    <Content Include="Scripts\jquery\src\effects\animatedSelector.js" />
-    <Content Include="Scripts\jquery\src\effects\Tween.js" />
-    <Content Include="Scripts\jquery\src\event.js" />
-    <Content Include="Scripts\jquery\src\event\ajax.js" />
-    <Content Include="Scripts\jquery\src\event\alias.js" />
-    <Content Include="Scripts\jquery\src\event\support.js" />
-    <Content Include="Scripts\jquery\src\exports\amd.js" />
-    <Content Include="Scripts\jquery\src\exports\global.js" />
-    <Content Include="Scripts\jquery\src\intro.js" />
-    <Content Include="Scripts\jquery\src\jquery.js" />
-    <Content Include="Scripts\jquery\src\manipulation.js" />
-    <Content Include="Scripts\jquery\src\manipulation\support.js" />
-    <Content Include="Scripts\jquery\src\manipulation\var\rcheckableType.js" />
-    <Content Include="Scripts\jquery\src\manipulation\_evalUrl.js" />
-    <Content Include="Scripts\jquery\src\offset.js" />
-    <Content Include="Scripts\jquery\src\outro.js" />
-    <Content Include="Scripts\jquery\src\queue.js" />
-    <Content Include="Scripts\jquery\src\queue\delay.js" />
-    <Content Include="Scripts\jquery\src\selector-native.js" />
-    <Content Include="Scripts\jquery\src\selector-sizzle.js" />
-    <Content Include="Scripts\jquery\src\selector.js" />
-    <Content Include="Scripts\jquery\src\serialize.js" />
-    <Content Include="Scripts\jquery\src\sizzle\dist\sizzle.js" />
-    <Content Include="Scripts\jquery\src\sizzle\dist\sizzle.min.js" />
-    <Content Include="Scripts\jquery\src\sizzle\dist\sizzle.min.map" />
-    <Content Include="Scripts\jquery\src\traversing.js" />
-    <Content Include="Scripts\jquery\src\traversing\findFilter.js" />
-    <Content Include="Scripts\jquery\src\traversing\var\rneedsContext.js" />
-    <Content Include="Scripts\jquery\src\var\arr.js" />
-    <Content Include="Scripts\jquery\src\var\class2type.js" />
-    <Content Include="Scripts\jquery\src\var\concat.js" />
-    <Content Include="Scripts\jquery\src\var\hasOwn.js" />
-    <Content Include="Scripts\jquery\src\var\indexOf.js" />
-    <Content Include="Scripts\jquery\src\var\pnum.js" />
-    <Content Include="Scripts\jquery\src\var\push.js" />
-    <Content Include="Scripts\jquery\src\var\rnotwhite.js" />
-    <Content Include="Scripts\jquery\src\var\slice.js" />
-    <Content Include="Scripts\jquery\src\var\strundefined.js" />
-    <Content Include="Scripts\jquery\src\var\support.js" />
-    <Content Include="Scripts\jquery\src\var\toString.js" />
-    <Content Include="Scripts\jquery\src\wrap.js" />
     <Content Include="package.json" />
     <Content Include="packages.config" />
     <None Include="Scripts\_references.js" />
@@ -306,10 +172,6 @@
     <Content Include="AzurePortalNg\!directives\dialog\style.css.map">
       <DependentUpon>style.css</DependentUpon>
     </Content>
-    <Content Include=".bowerrc">
-      <DependentUpon>bower.json</DependentUpon>
-    </Content>
-    <Content Include="bower.json" />
     <Content Include="SampleTS\app.js" />
     <Content Include="SampleTS\app.min.js">
       <DependentUpon>app.js</DependentUpon>
@@ -317,7 +179,6 @@
     <Content Include="nuspec-packager.nuspec">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="bundleconfig.json" />
     <None Include="Properties\PublishProfiles\TEMP.pubxml" />
     <Content Include="SampleTS\blade21\blade21.html" />
     <Content Include="SampleTS\blade11\blade11.html" />
@@ -326,13 +187,7 @@
     <Content Include="SampleTS\blade2\blade2.html" />
     <Content Include="SampleTS\index.html" />
     <Content Include="SampleTS\nav1\nav1.html" />
-    <Content Include="tsc.txt" />
-    <Content Include="tsd.json" />
-    <Content Include="Scripts\angular-resource\.bower.json" />
-    <Content Include="Scripts\angular-resource\angular-resource.min.js.map" />
-    <Content Include="Scripts\angular-resource\bower.json" />
-    <Content Include="Scripts\angular-resource\package.json" />
-    <Content Include="Scripts\angular-resource\README.md" />
+    <Content Include="tsconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -350,11 +205,7 @@
     <Content Include="SampleJS\blade1\blade1.js" />
     <Content Include="SampleJS\nav1\nav1.js" />
     <Content Include="SampleJS\sampleJsApp.js" />
-    <None Include="!Package\apn.d.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!base\Exception.ts" />
-    <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\jasmine\jasmine.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Tests\AzurePortalNg\!base\BladeDataTest.ts" />
     <TypeScriptCompile Include="Tests\AzurePortalNg\!base\AvatarMenuTest.ts" />
     <TypeScriptCompile Include="Tests\AzurePortalNg\!base\BladeAreaTest.ts" />
@@ -403,12 +254,8 @@
     <TypeScriptCompile Include="SampleTS\nav1\nav1.ts" />
     <TypeScriptCompile Include="SampleTS\sampleTsApp.ts" />
     <TypeScriptCompile Include="SampleTS\sampleTsShell.ts" />
-    <TypeScriptCompile Include="Scripts\typings\ngdialog\ngdialog.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\tsd.d.ts" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="!NugetOut\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -441,9 +288,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\packages\BuildBundlerMinifier.1.7.141\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildBundlerMinifier.1.7.141\build\BuildBundlerMinifier.targets'))" />
+    <Error Condition="!Exists('..\packages\BuildBundlerMinifier.1.8.147\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildBundlerMinifier.1.8.147\build\BuildBundlerMinifier.targets'))" />
   </Target>
-  <Import Project="..\packages\BuildBundlerMinifier.1.7.141\build\BuildBundlerMinifier.targets" Condition="Exists('..\packages\BuildBundlerMinifier.1.7.141\build\BuildBundlerMinifier.targets')" />
+  <Import Project="..\packages\BuildBundlerMinifier.1.8.147\build\BuildBundlerMinifier.targets" Condition="Exists('..\packages\BuildBundlerMinifier.1.8.147\build\BuildBundlerMinifier.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

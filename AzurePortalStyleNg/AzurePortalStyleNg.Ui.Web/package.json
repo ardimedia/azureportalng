@@ -1,7 +1,21 @@
 {
-  "name": "myproject",
+  "name": "azureportalstyleng",
+  "description": "Azure Portal Style (for angular)",
+  "private": true,
   "version": "1.0.0",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-resource": "^1.5.0",
+    "jquery": "^2.2.1"
+  },
   "devDependencies": {
-    "typescript": "^1.7.5"
+    "angular-mocks": "^1.5.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-typescript": "^2.12.1",
+    "jasmine": "^2.4.1",
+    "merge2": "^1.0.1",
+    "typescript": "^1.9.0-dev.20160310",
+    "typings": "^0.7.7"
   }
 }

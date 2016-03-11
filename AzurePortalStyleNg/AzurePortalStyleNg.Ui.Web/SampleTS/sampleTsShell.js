@@ -59,4 +59,3 @@ var SampleTS;
         angular.module('sampleTsApp').controller('sampleShell', ['azurePortalNg.portalService', SampleTsShell]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=sampleTsShell.js.map

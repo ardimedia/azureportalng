@@ -15,3 +15,6 @@
 /AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/obj/Release
 /AzurePortalStyleNg/packages
 /AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/!NugetOut
+/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/node_modules
+/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/Typings
+/AzurePortalStyleNg/AzurePortalStyleNg.Ui.Web/dest

@@ -17,7 +17,7 @@
     //});
 })();
 //#endregion
-//# sourceMappingURL=sampleTsApp.js.map
+
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -79,7 +79,7 @@ var SampleTS;
         angular.module('sampleTsApp').controller('sampleShell', ['azurePortalNg.portalService', SampleTsShell]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=sampleTsShell.js.map
+
 var SampleTS;
 (function (SampleTS) {
     'use strict';
@@ -94,7 +94,7 @@ var SampleTS;
     }());
     SampleTS.Customer = Customer;
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=Customer.js.map
+
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -134,7 +134,7 @@ var SampleTS;
         angular.module('sampleTsApp').controller('blade11', ['azurePortalNg.portalService', Blade11]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=blade11.js.map
+
 (function () {
     'use strict';
     angular.module('sampleTsApp').directive('blade11Blade', [blade11Blade]);
@@ -148,7 +148,7 @@ var SampleTS;
         };
     }
 })();
-//# sourceMappingURL=blade11blade.js.map
+
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -193,7 +193,7 @@ var SampleTS;
         angular.module('sampleTsApp').controller('blade2', ['azurePortalNg.portalService', Blade2]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=blade2.js.map
+
 (function () {
     'use strict';
     angular.module('sampleTsApp').directive('blade2Blade', [blade2Blade]);
@@ -207,7 +207,7 @@ var SampleTS;
         };
     }
 })();
-//# sourceMappingURL=blade2blade.js.map
+
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -245,7 +245,7 @@ var SampleTS;
         angular.module('sampleTsApp').controller('blade21', ['azurePortalNg.portalService', Blade21]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=blade21.js.map
+
 (function () {
     'use strict';
     angular.module('sampleTsApp').directive('blade21Blade', [blade21Blade]);
@@ -259,7 +259,7 @@ var SampleTS;
         };
     }
 })();
-//# sourceMappingURL=blade21blade.js.map
+
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -297,7 +297,7 @@ var SampleTS;
         angular.module('sampleTsApp').controller('detail1', ['azurePortalNg.portalService', Detail1]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=Detail1.js.map
+
 (function () {
     'use strict';
     angular.module('sampleTsApp').directive('detail1Blade', [detail1Blade]);
@@ -311,7 +311,7 @@ var SampleTS;
         };
     }
 })();
-//# sourceMappingURL=detail1blade.js.map
+
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -353,7 +353,7 @@ var SampleTS;
         angular.module('sampleTsApp').controller('list1', ['azurePortalNg.portalService', List1]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=List1.js.map
+
 (function () {
     'use strict';
     angular.module('sampleTsApp').directive('list1Blade', [list1Blade]);
@@ -367,7 +367,7 @@ var SampleTS;
         };
     }
 })();
-//# sourceMappingURL=list1blade.js.map
+
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -416,4 +416,3 @@ var SampleTS;
         angular.module('sampleTsApp').controller('nav1', ['azurePortalNg.portalService', Nav1]);
     })();
 })(SampleTS || (SampleTS = {}));
-//# sourceMappingURL=nav1.js.map

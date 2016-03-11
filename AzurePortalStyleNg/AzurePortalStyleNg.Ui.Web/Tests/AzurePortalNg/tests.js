@@ -15,7 +15,7 @@ describe('AzurePortalNg.AvatarMenu', function () {
     });
     //#endregion
 });
-//# sourceMappingURL=AvatarMenuTest.js.map
+
 describe('AzurePortalNg.BladeArea', function () {
     var sut;
     var portalService;
@@ -78,7 +78,7 @@ describe('AzurePortalNg.BladeArea', function () {
     //#endregion
     //#endregion
 });
-//# sourceMappingURL=BladeAreaTest.js.map
+
 describe('AzurePortalNg.BladeData', function () {
     var sut;
     var portalService;
@@ -114,7 +114,7 @@ describe('AzurePortalNg.BladeData', function () {
     //#endregion
     //#endregion
 });
-//# sourceMappingURL=BladeDataTest.js.map
+
 describe('AzurePortalNg.BladeDetail', function () {
     var sut;
     var portalService;
@@ -129,7 +129,7 @@ describe('AzurePortalNg.BladeDetail', function () {
     });
     //#endregion
 });
-//# sourceMappingURL=BladeDetailTest.js.map
+
 describe('AzurePortalNg.BladeList', function () {
     var sut;
     var portalService;
@@ -204,7 +204,7 @@ describe('AzurePortalNg.BladeList', function () {
     //#endregion
     //#endregion
 });
-//# sourceMappingURL=BladeListTest.js.map
+
 describe('AzurePortalNg.Blade', function () {
     //#region Tests initialize
     var sut;
@@ -321,7 +321,7 @@ describe('AzurePortalNg.Blade', function () {
     //#endregion
     //#endregion
 });
-//# sourceMappingURL=BladeTest.js.map
+
 describe('AzurePortalNg.Debug', function () {
     beforeEach(function () {
         AzurePortalNg.Debug.isEnabled = false;
@@ -462,7 +462,7 @@ describe('AzurePortalNg.Debug', function () {
     //#endregion
     //#endregion
 });
-//# sourceMappingURL=DebugTest.js.map
+
 describe('AzurePortalNg.PortalService', function () {
     var sut;
     beforeEach(angular.mock.module('azureportalng'));
@@ -505,7 +505,7 @@ describe('AzurePortalNg.PortalService', function () {
     });
     //#endregion
 });
-//# sourceMappingURL=PortalServiceTest.js.map
+
 describe('AzurePortalNg.UserControlBase', function () {
     var sut;
     var portalService;
@@ -521,4 +521,3 @@ describe('AzurePortalNg.UserControlBase', function () {
     });
     //#endregion
 });
-//# sourceMappingURL=UserControlBaseTest.js.map

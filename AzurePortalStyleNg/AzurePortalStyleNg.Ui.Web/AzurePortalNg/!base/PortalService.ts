@@ -50,7 +50,7 @@
 
         //#region NgDialogs
 
-        ngDialog: NgDialog.INgDialog;
+        ngDialog: angular.dialog.IDialogService;
 
         //#endregion
 

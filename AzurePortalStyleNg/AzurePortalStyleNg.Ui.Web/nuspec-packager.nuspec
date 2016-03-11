@@ -2,13 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
     <metadata>
         <id>AzurePortalStyleNg</id>
-        <version>0.1.74-beta</version>
+        <version>0.2.0-beta</version>
         <authors>Harry Pfleger - Infoware</authors>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Framework for building web sites based on the Azure Portal Layout.</description>
         <releaseNotes>Early preview.</releaseNotes>
         <dependencies>
-            <dependency id="angularjs" version="1.4.8" />
+            <dependency id="angularjs" version="1.5.0" />
         </dependencies>
         <frameworkAssemblies>
             <frameworkAssembly assemblyName="System.Web" targetFramework="" />
