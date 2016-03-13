@@ -25,7 +25,7 @@ var AzurePortalNg;
             //#endregion
             //#region Process ValidationsException
             // ClassName should by ExceptionType
-            if (ex.ClassName === 'Amx.Amms.Application.LgtBc.ValidationsException') {
+            if (ex.ClassName.indexOf('ValidationsException') > 0) {
                 ex.Type = 'ValidationsException';
             }
             //#endregion

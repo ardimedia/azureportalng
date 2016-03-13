@@ -157,7 +157,7 @@ var AzurePortalNg;
             //#endregion
             //#region Process ValidationsException
             // ClassName should by ExceptionType
-            if (ex.ClassName === 'Amx.Amms.Application.LgtBc.ValidationsException') {
+            if (ex.ClassName.indexOf('ValidationsException') > 0) {
                 ex.Type = 'ValidationsException';
             }
             //#endregion
@@ -1272,18 +1272,6 @@ var AzurePortalNg;
 //})(); 
 (function () {
     'use strict';
-    angular.module('azureportalng').directive('azurePortalHome', ['$window', '$interpolate', azurePortalHome]);
-    function azurePortalHome($window, $interpolate) {
-        return {
-            scope: { vm: '=options' },
-            templateUrl: '/AzurePortalNg/portal/!directives/home/home.html',
-            link: function (scope, element, attrs, controller) {
-            }
-        };
-    }
-})();
-(function () {
-    'use strict';
     angular.module('azureportalng').directive('azurePortalBlade', ['$window', 'azurePortalNg.portalService', azurePortalBlade]);
     function azurePortalBlade($window, portalService) {
         return {
@@ -1303,6 +1291,18 @@ var AzurePortalNg;
                     };
                 }
                 //#endregion
+            }
+        };
+    }
+})();
+(function () {
+    'use strict';
+    angular.module('azureportalng').directive('azurePortalHome', ['$window', '$interpolate', azurePortalHome]);
+    function azurePortalHome($window, $interpolate) {
+        return {
+            scope: { vm: '=options' },
+            templateUrl: '/AzurePortalNg/portal/!directives/home/home.html',
+            link: function (scope, element, attrs, controller) {
             }
         };
     }

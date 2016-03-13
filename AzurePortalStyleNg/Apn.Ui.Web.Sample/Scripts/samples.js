@@ -165,51 +165,6 @@ var Sample1;
 (function (Sample1) {
     'use strict';
     //#region Class Definition
-    var Blade21 = (function (_super) {
-        __extends(Blade21, _super);
-        //#region Constructors
-        function Blade21(portalService) {
-            _super.call(this, portalService, '/Sample1/blade21/blade21.html', 'Blade 2-1', 'TypeScript based', 315);
-            this.isCommandNew = true;
-            this.commandNewText = 'Blade 2';
-            this.statusbar = 'Blade 2-1...';
-        }
-        //#endregion
-        //#region Methods - Overrides for Blade
-        Blade21.prototype.onCommandNew = function () {
-            this.portalService.bladeArea.addBlade('/Sample1/blade2/blade2.html', this.path);
-        };
-        //#endregion
-        //#region Data Access
-        Blade21.prototype.onGetDataList = function () {
-            return this.portalService.$http({ method: 'GET', url: '/customers' });
-        };
-        return Blade21;
-    }(AzurePortalNg.BladeList));
-    //#endregion
-    //#region Angular Registration
-    (function () {
-        'use strict';
-        angular.module('sample1App').controller('blade21', ['azurePortalNg.portalService', Blade21]);
-    })();
-})(Sample1 || (Sample1 = {}));
-(function () {
-    'use strict';
-    angular.module('sample1App').directive('blade21Blade', [blade21Blade]);
-    function blade21Blade() {
-        return {
-            replace: true,
-            transclude: true,
-            templateUrl: '/AzurePortalNg/portal/!directives/blade/blade.html',
-            controller: 'blade21',
-            controllerAs: 'vm',
-        };
-    }
-})();
-var Sample1;
-(function (Sample1) {
-    'use strict';
-    //#region Class Definition
     var Blade2 = (function (_super) {
         __extends(Blade2, _super);
         //#region Properties
@@ -254,6 +209,51 @@ var Sample1;
             transclude: true,
             templateUrl: '/AzurePortalNg/portal/!directives/blade/blade.html',
             controller: 'blade2',
+            controllerAs: 'vm',
+        };
+    }
+})();
+var Sample1;
+(function (Sample1) {
+    'use strict';
+    //#region Class Definition
+    var Blade21 = (function (_super) {
+        __extends(Blade21, _super);
+        //#region Constructors
+        function Blade21(portalService) {
+            _super.call(this, portalService, '/Sample1/blade21/blade21.html', 'Blade 2-1', 'TypeScript based', 315);
+            this.isCommandNew = true;
+            this.commandNewText = 'Blade 2';
+            this.statusbar = 'Blade 2-1...';
+        }
+        //#endregion
+        //#region Methods - Overrides for Blade
+        Blade21.prototype.onCommandNew = function () {
+            this.portalService.bladeArea.addBlade('/Sample1/blade2/blade2.html', this.path);
+        };
+        //#endregion
+        //#region Data Access
+        Blade21.prototype.onGetDataList = function () {
+            return this.portalService.$http({ method: 'GET', url: '/customers' });
+        };
+        return Blade21;
+    }(AzurePortalNg.BladeList));
+    //#endregion
+    //#region Angular Registration
+    (function () {
+        'use strict';
+        angular.module('sample1App').controller('blade21', ['azurePortalNg.portalService', Blade21]);
+    })();
+})(Sample1 || (Sample1 = {}));
+(function () {
+    'use strict';
+    angular.module('sample1App').directive('blade21Blade', [blade21Blade]);
+    function blade21Blade() {
+        return {
+            replace: true,
+            transclude: true,
+            templateUrl: '/AzurePortalNg/portal/!directives/blade/blade.html',
+            controller: 'blade21',
             controllerAs: 'vm',
         };
     }
