@@ -1,0 +1,25 @@
+﻿<div data-list1-blade>
+    Filter: <input type="text" data-ng-model="vm.filterFor" style="width:80%" />
+    <table class="azc-grid-full azc-grid-multiselectable" aria-readonly="true">
+        <thead>
+            <tr>
+                <th class="azc-grid-unsortablecolumnheader" role="columnheader">
+                    <a><span class="azc-grid-headerlabel">Id</span></a>
+                </th>
+                <th class="azc-grid-unsortablecolumnheader" role="columnheader">
+                    <a><span class="azc-grid-headerlabel">Firstname</span></a>
+                </th>
+                <th class="azc-grid-unsortablecolumnheader" role="columnheader">
+                    <a><span class="azc-grid-headerlabel">Lastname</span></a>
+                </th>
+            </tr>
+        </thead>
+        <tbody data-ng-repeat="item in vm.items | filter:vm.filterFor:vm.onFilter" class="azc-grid-groupdata" role="rowgroup">
+            <tr data-ng-click="vm.navigateTo(item);" role="row" aria-selected="false" data-grid-row-activated="false" data-grid-selectable="true" data-grid-focusable="true" data-grid-activateable="true" style="cursor:pointer;">
+                <td role="gridcell" data-activatable="true" data-grid-cell-activated="false">{{item.customerPkId}}</td>
+                <td role="gridcell" data-activatable="true" data-grid-cell-activated="false">{{item.firstName}}</td>
+                <td role="gridcell" data-activatable="true" data-grid-cell-activated="false">{{item.lastName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

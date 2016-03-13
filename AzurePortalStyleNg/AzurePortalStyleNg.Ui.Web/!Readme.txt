@@ -5,32 +5,33 @@ https://github.com/iwhp/AzurePortalStyleNg
 ============================================================================================================
 
 ============================================================================================================
-DEPLOY TO NUGET
-> Prepare
-  > gulp tsc-release
+COMPILE PROJECXT
+> gulp clean & gulp
 ------------------------------------------------------------------------------------------------------------
 SETUP NUGET
 > nuget.exe should be in the solution folder under .nuget
 > Register NuGet API-KEY (get the API key from nuget.com - only once per machine)
 ------------------------------------------------------------------------------------------------------------
-LIST PACKAGE
-> .\nuget list AzurePortalStyleNg -AllVersions -Prerelease -Source nuget.org
-> .\nuget list AzurePortalStyleNg -AllVersions -Prerelease -Source ardimedia.com
-------------------------------------------------------------------------------------------------------------
-DEPLOY BY COMMAND
+** LIST PACKAGE
 CLS
 D:
 CD D:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web
-gulp tsc-release
+..\.nuget\nuget list AzurePortalStyleNg -AllVersions -Prerelease -Source nuget.org
+..\.nuget\nuget list AzurePortalStyleNg -AllVersions -Prerelease -Source ardimedia.com
+------------------------------------------------------------------------------------------------------------
+** DEPLOY TO ARDIMEDIA
+CLS
+D:
+CD D:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web
+gulp clean & gulp
 CD D:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\.nuget
 .\nuget.exe pack ..\AzurePortalStyleNg.Ui.Web\nuspec-packager.nuspec -OutputDirectory ..\AzurePortalStyleNg.Ui.Web\!NugetOut
-COPY ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.1.74-beta.nupkg \\Svrtfs01.ardimedia.com\d$\!Data\NuGet\Packages
-
-> TO ARDIMEDIA:
-> TO NUGET.ORG
- .\nuget.exe push ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.1.44-beta.nupkg
+COPY ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.2.0-beta.nupkg \\SVRTFS01.ardimedia.com\d$\!Data\NuGet\Packages
 ------------------------------------------------------------------------------------------------------------
-DEPLOY VIA WEB SITE
+** DEPLOY TO NUGET.ORG
+ .\nuget.exe push ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.2.0-beta.nupkg
+------------------------------------------------------------------------------------------------------------
+DEPLOY VIA NUGET.ORG WEB SITE
 > https://www.nuget.org/packages/AzurePortalStyleNg
-  C:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web\!NugetOut
+  D:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePortalStyleNg.Ui.Web\!NugetOut
 ============================================================================================================

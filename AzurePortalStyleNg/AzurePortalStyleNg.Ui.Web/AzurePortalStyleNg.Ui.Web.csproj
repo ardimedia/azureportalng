@@ -100,20 +100,7 @@
     </Content>
     <Content Include="!Readme.txt" />
     <Content Include="gulpfile.js" />
-    <Content Include="SampleJS\!data\Customer.js" />
-    <Content Include="SampleJS\app.js" />
-    <Content Include="SampleJS\app.min.js">
-      <DependentUpon>app.js</DependentUpon>
-    </Content>
-    <Content Include="SampleJS\blade1\blade1.html" />
-    <Content Include="SampleJS\index.html" />
-    <Content Include="SampleJS\nav1\nav1.html" />
-    <Content Include="SampleJS\sampleJsShell.js" />
-    <Content Include="Scripts\angular-mocks\angular-mocks.js" />
-    <Content Include="Scripts\angular-resource\angular-resource.min.js" />
-    <Content Include="Scripts\angular\angular.js" />
     <Content Include="package.json" />
-    <Content Include="packages.config" />
     <None Include="Scripts\_references.js" />
     <Content Include="Tests\AzurePortalNg\tests.js" />
     <Content Include="Tests\AzurePortalNg\tests.min.js">
@@ -136,12 +123,6 @@
     <Content Include="AzurePortalNg\portal\!directives\home\home.html" />
     <Content Include="AzurePortalNg\portal\!directives\nav\nav.html" />
     <Content Include="AzurePortalNg\portal\!directives\navgrid\navgrid.html" />
-    <Content Include="Content\azureportalstyleng.css">
-      <DependentUpon>azureportalstyleng.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\azureportalstyleng.min.css">
-      <DependentUpon>azureportalstyleng.css</DependentUpon>
-    </Content>
     <Content Include="Content\images\apn.png" />
     <Content Include="Content\images\avatar.jpg" />
     <Content Include="index.html" />
@@ -150,9 +131,6 @@
       <DependentUpon>!design.css</DependentUpon>
     </Content>
     <Content Include="Content\azureportalstyleng.scss" />
-    <Content Include="Content\azureportalstyleng.css.map">
-      <DependentUpon>azureportalstyleng.css</DependentUpon>
-    </Content>
     <Content Include="!Design\portallayout.scss" />
     <Content Include="!Design\portallayout.css.map">
       <DependentUpon>portallayout.css</DependentUpon>
@@ -172,40 +150,18 @@
     <Content Include="AzurePortalNg\!directives\dialog\style.css.map">
       <DependentUpon>style.css</DependentUpon>
     </Content>
-    <Content Include="SampleTS\app.js" />
-    <Content Include="SampleTS\app.min.js">
-      <DependentUpon>app.js</DependentUpon>
-    </Content>
     <Content Include="nuspec-packager.nuspec">
       <SubType>Designer</SubType>
     </Content>
     <None Include="Properties\PublishProfiles\TEMP.pubxml" />
-    <Content Include="SampleTS\blade21\blade21.html" />
-    <Content Include="SampleTS\blade11\blade11.html" />
-    <Content Include="SampleTS\detail1\detail1.html" />
-    <Content Include="SampleTS\list1\list1.html" />
-    <Content Include="SampleTS\blade2\blade2.html" />
-    <Content Include="SampleTS\index.html" />
-    <Content Include="SampleTS\nav1\nav1.html" />
+    <Content Include="tsc.txt" />
     <Content Include="tsconfig.json" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SampleJS\blade1\blade1.js" />
-    <Content Include="SampleJS\nav1\nav1.js" />
-    <Content Include="SampleJS\sampleJsApp.js" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\Exception.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\03Exception.ts" />
     <TypeScriptCompile Include="Tests\AzurePortalNg\!base\BladeDataTest.ts" />
     <TypeScriptCompile Include="Tests\AzurePortalNg\!base\AvatarMenuTest.ts" />
     <TypeScriptCompile Include="Tests\AzurePortalNg\!base\BladeAreaTest.ts" />
@@ -215,45 +171,29 @@
     <TypeScriptCompile Include="Tests\AzurePortalNg\!base\UserControlBaseTest.ts" />
     <TypeScriptCompile Include="Tests\AzurePortalNg\!base\BladeDetailTest.ts" />
     <TypeScriptCompile Include="Tests\AzurePortalNg\!base\DebugTest.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\BladeNav.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\UserControlBase.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\BladeArea.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\Debug.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\30BladeNav.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\10UserControlBase.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\20BladeArea.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\01Debug.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\nav\nav.ts" />
-    <TypeScriptCompile Include="SampleTS\!data\Customer.ts" />
-    <TypeScriptCompile Include="SampleTS\blade21\blade21.ts" />
-    <TypeScriptCompile Include="SampleTS\blade21\blade21blade.ts" />
-    <TypeScriptCompile Include="SampleTS\blade11\blade11.ts" />
-    <TypeScriptCompile Include="SampleTS\blade11\blade11blade.ts" />
-    <TypeScriptCompile Include="SampleTS\blade2\blade2blade.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!baseservice\DataService.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!baseservice\lgtbcDataService.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!baseservice\TypeLite.Net4.d.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\PortalService.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\Startboard.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\UserAccount.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\Blade.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\AvatarMenu.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\Panorama.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\PortalShell.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\Tile.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\BladeData.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\BladeDetail.ts" />
-    <TypeScriptCompile Include="AzurePortalNg\!base\BladeList.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\07PortalService.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\13Startboard.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\05UserAccount.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\17Blade.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\12AvatarMenu.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\15Panorama.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\35PortalShell.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\32Tile.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\23BladeData.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\25BladeDetail.ts" />
+    <TypeScriptCompile Include="AzurePortalNg\!base\27BladeList.ts" />
     <TypeScriptCompile Include="AzurePortalNg\!directives\dirtyflag\dirtyflag.ts" />
     <TypeScriptCompile Include="AzurePortalNg\azureportalng.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\blade\blade.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\home\home.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!directives\navgrid\navgrid.ts" />
     <TypeScriptCompile Include="AzurePortalNg\portal\!services\bladeService.ts" />
-    <TypeScriptCompile Include="SampleTS\detail1\Detail1.ts" />
-    <TypeScriptCompile Include="SampleTS\detail1\detail1blade.ts" />
-    <TypeScriptCompile Include="SampleTS\list1\List1.ts" />
-    <TypeScriptCompile Include="SampleTS\list1\list1blade.ts" />
-    <TypeScriptCompile Include="SampleTS\blade2\blade2.ts" />
-    <TypeScriptCompile Include="SampleTS\nav1\nav1.ts" />
-    <TypeScriptCompile Include="SampleTS\sampleTsApp.ts" />
-    <TypeScriptCompile Include="SampleTS\sampleTsShell.ts" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
@@ -288,9 +228,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\packages\BuildBundlerMinifier.1.8.147\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildBundlerMinifier.1.8.147\build\BuildBundlerMinifier.targets'))" />
   </Target>
-  <Import Project="..\packages\BuildBundlerMinifier.1.8.147\build\BuildBundlerMinifier.targets" Condition="Exists('..\packages\BuildBundlerMinifier.1.8.147\build\BuildBundlerMinifier.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

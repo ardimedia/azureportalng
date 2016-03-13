@@ -11,16 +11,13 @@
     "noImplicitAny": false
   },
   "exclude": [
-    //"!Design",
-    "dest",
-    //"Content",
+    "AzurePortalNg2",
+    "dist",
     "Scripts",
-    //"Typings/browser",
+    "Tests",
     "Typings/main",
     "Typings/browser.d.ts",
     "Typings/main.d.ts",
-    //"bin",
     "node_modules"
-    //"obj"
   ]
 }

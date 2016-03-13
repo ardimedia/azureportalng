@@ -15,7 +15,7 @@ var azurePortalNg: ng.IModule;
     azurePortalNg = angular.module('azureportalng', [
     // Angular modules
         'ngResource',
-        'ngDialog',
+        'ngDialog'
     ]);
 
     azurePortalNg.config([function (): void {
@@ -24,6 +24,6 @@ var azurePortalNg: ng.IModule;
     }]);
 
     azurePortalNg.run(function () {
-        AzurePortalNg.Debug.write('[azureportalng-debug] \'azurePortalNg.run\' executing.', [this]);
+        //AzurePortalNg.Debug.write('[azureportalng-debug] \'azurePortalNg.run\' executing.', [this]);
     });
 })();

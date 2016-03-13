@@ -1,11 +1,11 @@
 ﻿@import '!libmixin.scss';
-@import "../AzurePortalNg/!directives/dialog/style";
+@import "../AzurePortalNg/!directives/dialog/style.scss";
 
 html, body {
     @include borderbox0;
     height: 100%;
+    width: 0;
 }
 
 @import 'portallayout.scss';
 @import 'themems.scss';
- 
