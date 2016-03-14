@@ -388,6 +388,9 @@ a {
   color: #00bcf2;
   text-decoration: none; }
 
+.ng-scope {
+  height: 100%; }
+
 .fxs-portal {
   /*height: 100%;*/
   overflow: hidden;

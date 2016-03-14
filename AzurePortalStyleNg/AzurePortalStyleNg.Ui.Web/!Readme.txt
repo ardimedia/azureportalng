@@ -26,10 +26,10 @@ CD D:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\AzurePort
 gulp clean & gulp
 CD D:\!Data\Code\Git.Github\iwhp\AzurePortalStyleNg\AzurePortalStyleNg\.nuget
 .\nuget.exe pack ..\AzurePortalStyleNg.Ui.Web\nuspec-packager.nuspec -OutputDirectory ..\AzurePortalStyleNg.Ui.Web\!NugetOut
-COPY ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.2.0-beta.nupkg \\SVRTFS01.ardimedia.com\d$\!Data\NuGet\Packages
+COPY ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.2.1-beta.nupkg \\SVRTFS01.ardimedia.com\d$\!Data\NuGet\Packages
 ------------------------------------------------------------------------------------------------------------
 ** DEPLOY TO NUGET.ORG
- .\nuget.exe push ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.2.0-beta.nupkg
+ .\nuget.exe push ..\AzurePortalStyleNg.Ui.Web\!NugetOut\AzurePortalStyleNg.0.2.1-beta.nupkg
 ------------------------------------------------------------------------------------------------------------
 DEPLOY VIA NUGET.ORG WEB SITE
 > https://www.nuget.org/packages/AzurePortalStyleNg

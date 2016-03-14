@@ -27,35 +27,6 @@ var azurePortalNg;
         //AzurePortalNg.Debug.write('[azureportalng-debug] \'azurePortalNg.run\' executing.', [this]);
     });
 })();
-var AzurePortalNg;
-(function (AzurePortalNg) {
-    'use strict';
-    var DataService = (function () {
-        //#region Constructor
-        function DataService($http, $q) {
-            this.$http = $http;
-            this.$q = $q;
-        }
-        //#endregion
-        //#region Properties
-        //#endregion
-        //#region Events
-        //#endregion
-        //#region Listener
-        //#endregion
-        //#region Methods
-        DataService.prototype.getData = function (url) {
-            var that = this;
-            return that.$http({ method: 'GET', url: url })
-                .success(function (data, status, headers, config) {
-            })
-                .error(function (data, status, headers, config) {
-            });
-        };
-        return DataService;
-    }());
-    AzurePortalNg.DataService = DataService;
-})(AzurePortalNg || (AzurePortalNg = {}));
 //#region Make sure console.log is working in any case, even IE9
 //if ($('html').hasClass('k-ie9')) {
 //    if (typeof console !== 'object') window.console = <any>{};
@@ -1194,6 +1165,35 @@ var AzurePortalNg;
     }(AzurePortalNg.UserControlBase));
     AzurePortalNg.PortalShell = PortalShell;
 })(AzurePortalNg || (AzurePortalNg = {}));
+var AzurePortalNg;
+(function (AzurePortalNg) {
+    'use strict';
+    var DataService = (function () {
+        //#region Constructor
+        function DataService($http, $q) {
+            this.$http = $http;
+            this.$q = $q;
+        }
+        //#endregion
+        //#region Properties
+        //#endregion
+        //#region Events
+        //#endregion
+        //#region Listener
+        //#endregion
+        //#region Methods
+        DataService.prototype.getData = function (url) {
+            var that = this;
+            return that.$http({ method: 'GET', url: url })
+                .success(function (data, status, headers, config) {
+            })
+                .error(function (data, status, headers, config) {
+            });
+        };
+        return DataService;
+    }());
+    AzurePortalNg.DataService = DataService;
+})(AzurePortalNg || (AzurePortalNg = {}));
 // http://blogs.msdn.com/b/laurieatkinson/archive/2014/08/23/implementing-a-save-warning-in-an-angular-spa.aspx
 //'use strict';
 //module App.Directives {
@@ -1275,9 +1275,12 @@ var AzurePortalNg;
     angular.module('azureportalng').directive('azurePortalBlade', ['$window', 'azurePortalNg.portalService', azurePortalBlade]);
     function azurePortalBlade($window, portalService) {
         return {
-            replace: true,
+            //replace: true,
             transclude: true,
             templateUrl: '/AzurePortalNg/portal/!directives/blade/blade.html',
+            bindings: {
+                vm: '='
+            },
             link: function (scope, element, attrs, controller) {
                 AzurePortalNg.Debug.write('[azureportalng-debug] \'directive:azurePortalBlade.link\' called.', [this, portalService]);
                 //#region the following code makes sure, that a function scope.vm.close is available

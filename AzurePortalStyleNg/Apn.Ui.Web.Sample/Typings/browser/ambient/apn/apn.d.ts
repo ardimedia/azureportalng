@@ -1,13 +1,5 @@
 declare var azurePortalNg: ng.IModule;
 declare module AzurePortalNg {
-    class DataService {
-        $http: angular.IHttpService;
-        $q: angular.IQService;
-        constructor($http: angular.IHttpService, $q: angular.IQService);
-        getData(url: string): angular.IHttpPromise<any[]>;
-    }
-}
-declare module AzurePortalNg {
     class Debug {
         static isEnabled: boolean;
         static isWithObjects: boolean;
@@ -351,5 +343,13 @@ declare module AzurePortalNg {
         constructor(title: string, portalService: PortalService);
         initialize(): void;
         setObsoleteLayoutProperites(): void;
+    }
+}
+declare module AzurePortalNg {
+    class DataService {
+        $http: angular.IHttpService;
+        $q: angular.IQService;
+        constructor($http: angular.IHttpService, $q: angular.IQService);
+        getData(url: string): angular.IHttpPromise<any[]>;
     }
 }

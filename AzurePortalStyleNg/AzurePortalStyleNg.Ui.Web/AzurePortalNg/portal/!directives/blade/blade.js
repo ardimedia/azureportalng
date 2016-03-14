@@ -3,9 +3,12 @@
     angular.module('azureportalng').directive('azurePortalBlade', ['$window', 'azurePortalNg.portalService', azurePortalBlade]);
     function azurePortalBlade($window, portalService) {
         return {
-            replace: true,
+            //replace: true,
             transclude: true,
             templateUrl: '/AzurePortalNg/portal/!directives/blade/blade.html',
+            bindings: {
+                vm: '='
+            },
             link: function (scope, element, attrs, controller) {
                 AzurePortalNg.Debug.write('[azureportalng-debug] \'directive:azurePortalBlade.link\' called.', [this, portalService]);
                 //#region the following code makes sure, that a function scope.vm.close is available

@@ -5,8 +5,9 @@
 
     function azurePortalBlade($window: ng.IWindowService, portalService: AzurePortalNg.PortalService) {
         return {
-            replace: true,
             transclude: true,
+            scope: { vm: '=vm' },
+            restrict: 'E',
             templateUrl: '/AzurePortalNg/portal/!directives/blade/blade.html',
             link: function (scope, element, attrs, controller) {
                 AzurePortalNg.Debug.write('[azureportalng-debug] \'directive:azurePortalBlade.link\' called.', [this, portalService]);
