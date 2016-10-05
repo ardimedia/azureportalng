@@ -1,0 +1,269 @@
+<section data-ng-form="formblade" class="fxs-blade-locked fxs-blade fx-rightClick fxs-bladesize-small" ng-style="vm.blade.width">
+    <header class="fxs-blade-header">
+        <div class="fxs-blade-statusbar-wrapper">
+            <div class="fxs-blade-statusbar">
+                <span ng-class="vm.blade.statusbarClass">{{vm.blade.statusbar}}</span>
+            </div>
+        </div>
+        <div class="fxs-blade-actions">
+            <!--<button title="Pin blade to Startboard" class="fxs-blade-pin" type="button">
+                <svg class="msportal-fx-svg-placeholder" viewBox="0 0 50 50">
+                    <path class="msportalfx-svg-c01" d="M 50 17.8 L 32.2 0 c -0.8 2.6 -0.9 5.2 -0.5 7.7 L 18.6 20.7 c -4 -1.6 -8.8 -2.1 -13 -0.7 l 9.4 9.1 L 0 50 l 21 -15 l 9 8.8 c 1.3 -4.2 0.9 -8.6 -0.7 -12.4 l 13 -13 C 44.8 18.7 47.4 18.6 50 17.8 Z" />
+                </svg>
+            </button>-->
+            <button data-ng-show="vm.blade.isMaximize" title="Maximize" class="fxs-blade-maximizeOrRestore" type="button">
+                <svg class="msportal-fx-svg-placeholder" viewBox="0 0 20 20">
+                    <path class="msportalfx-svg-c01" d="M 3 4 v 12 h 14 V 4 H 3 Z M 5 14 V 6 h 10 v 8 H 5 Z" />
+                </svg>
+            </button>
+            <button data-ng-click="vm.close();" title="Schliessen" class="fxs-blade-close" type="button">
+                <svg class="msportal-fx-svg-placeholder" viewBox="0 0 20 20">
+                    <polygon class="msportalfx-svg-c01" points="16.894,5.414 15.48,4 10.436,9.044 5.414,4.023 4,5.437 9.022,10.458 4.022,15.458 5.436,16.872 10.436,11.872 15.458,16.894 16.872,15.48 11.85,10.458" />
+                </svg>
+            </button>
+        </div>
+        <div class="fxs-blade-title">
+            <div class="fxs-blade-title-text-container">
+                <h2 class="fxs-pannable fxs-blade-title-titleText msportalfx-tooltip-overflow">{{vm.blade.title}}</h2>
+                <h3 class="fxs-pannable msportalfx-tooltip-overflow">{{vm.blade.subTitle}}</h3>
+            </div>
+        </div>
+        <div class="fxs-blade-commandBarContainer">
+            <div class="fxs-commandBar fxs-commandBar-active">
+                <ul class="fxs-commandBar-itemList fxs-commandBar-itemList-canExpand">
+                    <!-- SHOW MORE COMMANDS -->
+                    <li ng-show="vm.blade.isCommandMore" class="fxs-commandBar-item-expandListContainer">
+                        <a title="Fewer" class="fxs-commandBar-item fxs-commandBar-item-expandList" href="" data-bind="click: func._ellipsisCommandHandler, attr: { title: data.ellipsisCommandText }"></a>
+                    </li>
+                    <!-- SERACH -->
+                    <li ng-show="vm.blade.isCommandSearch">
+                        <a data-ng-click="vm.blade.commandSearch()" class="fxs-commandBar-item" href="#"
+                           data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandSearchText || 'suchen'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+                                    <g>
+                                        <path d="M384,192C384,85.969,298.031,0,192,0S0,85.969,0,192s85.969,192,192,192S384,298.031,384,192z M192,336 c-79.406,0-144-64.594-144-144S112.594,48,192,48s144,64.594,144,144S271.406,336,192,336z" />
+                                        <path d="M497.938,430.063L380.469,312.594c-17.5,27.219-40.656,50.375-67.875,67.875l117.469,117.469 c18.75,18.75,49.156,18.75,67.875,0C516.688,479.219,516.688,448.813,497.938,430.063z" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- ORDER -->
+                    <li ng-show="vm.blade.isCommandOrder">
+                        <a data-ng-click="vm.blade.commandOrder()" class="fxs-commandBar-item" href="#"
+                           data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandOrderText  || 'bestellen'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 30.512 24.717" focusable="false">
+                                    <path d="M26.818,16.14l3.607-10.796c0.181-0.519,0.044-0.831-0.102-1.037c-0.374-0.527-1.143-0.532-1.292-0.532L8.646,3.771	L8.102,1.19C7.955,0.581,7.521,0,6.646,0H0.917C0.323,0,0,0.278,0,0.833v1.49C0,2.86,0.322,3,0.938,3h4.837l3.702,15.717	c-0.588,0.623-0.908,1.531-0.908,2.378c0,1.864,1.484,3.582,3.38,3.582c1.79,0,3.132-1.677,3.35-2.677h7.21	c0.218,1,1.305,2.717,3.349,2.717c1.863,0,3.378-1.614,3.378-3.475c0-1.851-1.125-3.492-3.359-3.492c-0.929,0-2.031,0.5-2.543,1.25	h-8.859c-0.643-1-1.521-1.31-2.409-1.345L11.943,17h13.479C26.438,17,26.638,16.63,26.818,16.14z M25.883,19.931	c0.701,0,1.27,0.569,1.27,1.27c0,0.701-0.569,1.27-1.27,1.27s-1.271-0.568-1.271-1.27C24.613,20.5,25.182,19.931,25.883,19.931z	 M13.205,21.201c0,0.709-0.576,1.286-1.283,1.286c-0.709-0.002-1.286-0.577-1.286-1.286s0.577-1.286,1.286-1.286	C12.629,19.915,13.205,20.492,13.205,21.201z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- NEW -->
+                    <li ng-show="vm.blade.isCommandNew">
+                        <a data-ng-click="vm.blade.commandNew()" class="fxs-commandBar-item" href="#"
+                           data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandNewText  || 'neu'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 24 24" focusable="false"> <g> <g> <polygon points="14,21 9,21 9,2 14,2 14,20.87" /> </g> <g> <polygon points="20.87,14 2,14 2,9 21,9 21,14" /> </g> </g> </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- COPY -->
+                    <li ng-show="vm.blade.isCommandCopy">
+                        <a data-ng-click="vm.blade.commandCopy()" class="fxs-commandBar-item" href="#"
+                           data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandCopyText  || 'kopieren'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+                                    <path d="M320,128V0H96L0,96v288h192v128h320V128H320z M96,45.255V96H45.255L96,45.255z M32,352V128h96V32h160v96l-96,96v128H32z M288,173.255V224h-50.745L288,173.255z M480,480H224V256h96v-96h160V480z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- SAVE -->
+                    <li ng-show="vm.blade.isCommandSave">
+                        <a data-ng-click="vm.blade.commandSave()" class="fxs-commandBar-item" href="#"
+                           data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandSaveText  || 'speichern'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 24 24" focusable="false">
+                                    <g>
+                                        <path d="M18.009,0H0v21.002h21V2.993L18.009,0z M17.848,10.284H5.13V1.191h12.718V10.284z" />
+                                        <rect x="12.635" y="2.165" width="3.742" height="7.144" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- DELETE -->
+                    <li ng-show="vm.blade.isCommandDelete">
+                        <a data-ng-click="vm.blade.commandDelete()" class="fxs-commandBar-item" href="#" data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandDeleteText  || 'löschen'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 512 512" enable-background="new 0 0 512 512">
+                                    <!--<path d="M 19.846 6.5 H 5.154 C 4.601 6.5 4.5 6.27 4.5 6 s 0.101 -1.5 0.654 -1.5 h 14.692 C 20.399 4.5 20.5 5.73 20.5 6 S 20.399 6.5 19.846 6.5 Z" />
+                                    <path d="M 14.33 3.5 h -0.011 h -3.723 c -0.402 0 -0.597 -0.13 -0.597 -0.5 c 0.011 -0.36 0.149 -0.5 0.597 -0.5 h 3.686 c 0.402 0 0.717 0.14 0.717 0.5 c 0 0.37 -0.256 0.5 -0.646 0.5 H 14.33 Z" />
+                                    <path d="M 5.5 7.5 v 14 c 0.04 0.82 3.537 1 4.337 1 h 5.862 c 0.8 0 3.761 -0.18 3.801 -1 v -14 H 5.5 Z M 9.542 19.167 c 0.01 0.36 -0.27 0.68 -0.62 0.69 h -0.73 c -0.35 0 -0.63 -0.28 -0.65 -0.65 v -9.37 c -0.01 -0.37 0.542 -0.726 1.023 -0.726 c 0.34 0 0.967 0.316 0.977 0.676 V 19.167 Z M 13.5 19.156 c -0.01 0.36 -0.3 0.64 -0.64 0.64 h -0.74 c -0.35 -0.01 -0.63 -0.33 -0.62 -0.7 v -9.37 c 0.02 -0.37 0.642 -0.655 1.002 -0.635 S 13.51 9.416 13.5 9.786 V 19.156 Z M 17.396 19.151 c -0.01 0.36 -0.3 0.64 -0.64 0.64 h -0.74 c -0.35 -0.01 -0.63 -0.33 -0.62 -0.7 v -9.37 c 0.02 -0.37 0.642 -0.654 1.002 -0.635 c 0.36 0.02 1.008 0.325 0.998 0.695 V 19.151 Z" />-->
+                                    <path d="M96,512h320l32-352H64L96,512z M320,64V0H192v64H32v96l32-32h384l32,32V64H320z M288,64h-64V32h64V64z" />
+                                </svg>
+
+                            </div>
+                        </a>
+                    </li>
+                    <!-- CANCEL -->
+                    <li ng-show="vm.blade.isCommandCancel">
+                        <a data-ng-click="vm.blade.commandCancel()" class="fxs-commandBar-item" href="#" data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandCancelText  || 'abbrechen'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg class="msportal-fx-svg-placeholder" viewBox="0 0 20 20"><polygon points="16.894,5.414 15.48,4 10.436,9.044 5.414,4.023 4,5.437 9.022,10.458 4.022,15.458 5.436,16.872 10.436,11.872 15.458,16.894 16.872,15.48 11.85,10.458" /></svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- BROWSE -->
+                    <li ng-show="vm.blade.isCommandBrowse">
+                        <a data-ng-click="vm.blade.commandBrowse()" class="fxs-commandBar-item" href="#" data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandBrowseText  || 'Browse'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 24 24" focusable="false"> <g> <polygon clip-rule="evenodd" fill-rule="evenodd" points="14.607,2.04 17.727,4.61 8.557,13.31 11.377,16.12 19.987,6.96 22.507,9.48 22.507,2.04" /> <path clip-rule="evenodd" fill-rule="evenodd" d="M 19.507 19.04 h -15 v -14 h 7 v -3 h -7.92 c -1.66 0 -2.09 1.77 -2.08 1.75 c -0.02 -0.74 0.01 11.45 0.02 16.17 c 0 1.09 2.05 2.08 2 2.08 c 0.68 -0.05 12.88 -0.02 17.36 -0.01 c 1 0.01 1.6 -1.46 1.62 -1.4 c -0.02 0.93 0 -6.59 0 -6.59 h -3 V 19.04 Z" /> </g> </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- START -->
+                    <li ng-show="vm.blade.isCommandStart">
+                        <a data-ng-click="vm.blade.commandStart()" class="fxs-commandBar-item fxs-commandBar-itemDisabled" data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandStartText  || 'Start'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 24 24" focusable="false"> <g> <polygon points="20,11.95 6,22 6,2" /> </g> </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- STOP -->
+                    <li ng-show="vm.blade.isCommandStop">
+                        <a data-ng-click="vm.blade.commandStop()" class="fxs-commandBar-item" href="#" data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandStopText  || 'Stop'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 24 24" focusable="false"> <rect x="4" y="4" width="16" height="16" /> </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- RESTART -->
+                    <li ng-show="vm.blade.isCommandRestart">
+                        <a data-ng-click="vm.blade.commandRestart()" class="fxs-commandBar-item" href="#" data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandRestartText  || 'Restart'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 24 24" focusable="false"> <g> <g> <polygon points="3.25,2 11.94,2 11.94,10.17" /> <path d="M 12.6 22 C 7.32 21.91 3 17.53 3 12.19 c 0 -3.12 1.49 -5.86 3.78 -7.58 l 2.08 2.08 c -1.8 1.18 -2.98 3.22 -2.98 5.55 c 0 3.74 3.02 6.81 6.71 6.87 c 3.71 0.06 6.7 -2.9 6.7 -6.63 c 0 -2.37 -1.22 -4.48 -3.06 -5.71 l 2.04 -2.06 c 2.36 1.8 3.73 4.7 3.73 7.88 C 22 17.92 17.9 22.09 12.6 22 Z" /> </g> </g> </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- SWAP -->
+                    <li ng-show="vm.blade.isCommandSwap">
+                        <a data-ng-click="vm.blade.commandSwap()" class="fxs-commandBar-item" href="#" data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandSwapText  || 'Swap'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 24 24" focusable="false"><polygon points="14.047,4.976 8.075,9.769 12.968,10.134 10.7,11.963 4.142,11.488 5.011,4.958 7.279,3.129 6.63,8.004 12.657,2.855 13.663,4.336" /><polygon points="19.927,19.097 17.806,20.715 18.318,16.061 12.026,21.145 10.59,19.38 16.873,14.295 11.98,13.93 14.248,12.101 20.604,12.32" /></svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- DOCUMENT -->
+                    <li ng-show="vm.blade.isCommandDocument">
+                        <a data-ng-click="vm.blade.commandDocument()" class="fxs-commandBar-item" href="#" data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandDocumentText  || 'Dokument'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 100 100" focusable="false">
+                                    <path d="M65.164,11.126H26.033c-2.627,0-4.767,2.141-4.767,4.768v68.213c0,2.63,2.14,4.768,4.767,4.768h47.932	c2.63,0,4.768-2.138,4.768-4.768V25.869L65.164,11.126z M66.289,18.261l5.948,6.463h-5.948V18.261z M74.729,84.106 c0,0.421-0.344,0.765-0.765,0.765H26.033c-0.421,0-0.763-0.344-0.763-0.765V15.894c0-0.421,0.342-0.762,0.763-0.762h36.251v11.595 c0,1.104,0.899,1.999,2.003,1.999h10.442V84.106z M32.333,32.421h34c0.828,0,1.5,0.672,1.5,1.5s-0.672,1.5-1.5,1.5h-34	c-0.828,0-1.5-0.672-1.5-1.5S31.505,32.421,32.333,32.421z M67.833,44.001c0,0.828-0.672,1.5-1.5,1.5h-34 c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34C67.161,42.501,67.833,43.173,67.833,44.001z M67.833,53.751 c0,0.828-0.672,1.5-1.5,1.5h-34c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34C67.161,52.251,67.833,52.923,67.833,53.751z M67.833,63.667c0,0.828-0.672,1.5-1.5,1.5h-34c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34 C67.161,62.167,67.833,62.839,67.833,63.667z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- DOCUMENT2 -->
+                    <li ng-show="vm.blade.isCommandDocument2">
+                        <a data-ng-click="vm.blade.commandDocument2()" class="fxs-commandBar-item" href="#" data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandDocument2Text  || 'Dokument'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 100 100" focusable="false">
+                                    <path d="M65.164,11.126H26.033c-2.627,0-4.767,2.141-4.767,4.768v68.213c0,2.63,2.14,4.768,4.767,4.768h47.932	c2.63,0,4.768-2.138,4.768-4.768V25.869L65.164,11.126z M66.289,18.261l5.948,6.463h-5.948V18.261z M74.729,84.106 c0,0.421-0.344,0.765-0.765,0.765H26.033c-0.421,0-0.763-0.344-0.763-0.765V15.894c0-0.421,0.342-0.762,0.763-0.762h36.251v11.595 c0,1.104,0.899,1.999,2.003,1.999h10.442V84.106z M32.333,32.421h34c0.828,0,1.5,0.672,1.5,1.5s-0.672,1.5-1.5,1.5h-34	c-0.828,0-1.5-0.672-1.5-1.5S31.505,32.421,32.333,32.421z M67.833,44.001c0,0.828-0.672,1.5-1.5,1.5h-34 c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34C67.161,42.501,67.833,43.173,67.833,44.001z M67.833,53.751 c0,0.828-0.672,1.5-1.5,1.5h-34c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34C67.161,52.251,67.833,52.923,67.833,53.751z M67.833,63.667c0,0.828-0.672,1.5-1.5,1.5h-34c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34 C67.161,62.167,67.833,62.839,67.833,63.667z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- DOCUMENT3 -->
+                    <li ng-show="vm.blade.isCommandDocument3">
+                        <a data-ng-click="vm.blade.commandDocument3()" class="fxs-commandBar-item" href="#" data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandDocument3Text  || 'Dokument'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 100 100" focusable="false">
+                                    <path d="M65.164,11.126H26.033c-2.627,0-4.767,2.141-4.767,4.768v68.213c0,2.63,2.14,4.768,4.767,4.768h47.932	c2.63,0,4.768-2.138,4.768-4.768V25.869L65.164,11.126z M66.289,18.261l5.948,6.463h-5.948V18.261z M74.729,84.106 c0,0.421-0.344,0.765-0.765,0.765H26.033c-0.421,0-0.763-0.344-0.763-0.765V15.894c0-0.421,0.342-0.762,0.763-0.762h36.251v11.595 c0,1.104,0.899,1.999,2.003,1.999h10.442V84.106z M32.333,32.421h34c0.828,0,1.5,0.672,1.5,1.5s-0.672,1.5-1.5,1.5h-34	c-0.828,0-1.5-0.672-1.5-1.5S31.505,32.421,32.333,32.421z M67.833,44.001c0,0.828-0.672,1.5-1.5,1.5h-34 c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34C67.161,42.501,67.833,43.173,67.833,44.001z M67.833,53.751 c0,0.828-0.672,1.5-1.5,1.5h-34c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34C67.161,52.251,67.833,52.923,67.833,53.751z M67.833,63.667c0,0.828-0.672,1.5-1.5,1.5h-34c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34 C67.161,62.167,67.833,62.839,67.833,63.667z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- DOCUMENT4 -->
+                    <li ng-show="vm.blade.isCommandDocument4">
+                        <a data-ng-click="vm.blade.commandDocument4()" class="fxs-commandBar-item" href="#" data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandDocument4Text  || 'Dokument'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 100 100" focusable="false">
+                                    <path d="M65.164,11.126H26.033c-2.627,0-4.767,2.141-4.767,4.768v68.213c0,2.63,2.14,4.768,4.767,4.768h47.932	c2.63,0,4.768-2.138,4.768-4.768V25.869L65.164,11.126z M66.289,18.261l5.948,6.463h-5.948V18.261z M74.729,84.106 c0,0.421-0.344,0.765-0.765,0.765H26.033c-0.421,0-0.763-0.344-0.763-0.765V15.894c0-0.421,0.342-0.762,0.763-0.762h36.251v11.595 c0,1.104,0.899,1.999,2.003,1.999h10.442V84.106z M32.333,32.421h34c0.828,0,1.5,0.672,1.5,1.5s-0.672,1.5-1.5,1.5h-34	c-0.828,0-1.5-0.672-1.5-1.5S31.505,32.421,32.333,32.421z M67.833,44.001c0,0.828-0.672,1.5-1.5,1.5h-34 c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34C67.161,42.501,67.833,43.173,67.833,44.001z M67.833,53.751 c0,0.828-0.672,1.5-1.5,1.5h-34c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34C67.161,52.251,67.833,52.923,67.833,53.751z M67.833,63.667c0,0.828-0.672,1.5-1.5,1.5h-34c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34 C67.161,62.167,67.833,62.839,67.833,63.667z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- Document5 -->
+                    <li ng-show="vm.blade.isCommandDocument5">
+                        <a data-ng-click="vm.blade.commandDocument5()" class="fxs-commandBar-item" href="#" data-bind='css: { "fxs-commandBar-itemDisabled": !enabled(), "fxs-commandBar-itemPressed": pressed() }, attr: { href: enabled() ? "#" : null }'>
+                            <div class="fxs-commandBar-item-text" data-bind="text: text()">{{vm.blade.commandDocument5Text  || 'Dokument'}}</div>
+                            <div class="fxs-commandBar-item-icon" data-bind="image: icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 100 100" focusable="false">
+                                    <path d="M65.164,11.126H26.033c-2.627,0-4.767,2.141-4.767,4.768v68.213c0,2.63,2.14,4.768,4.767,4.768h47.932	c2.63,0,4.768-2.138,4.768-4.768V25.869L65.164,11.126z M66.289,18.261l5.948,6.463h-5.948V18.261z M74.729,84.106 c0,0.421-0.344,0.765-0.765,0.765H26.033c-0.421,0-0.763-0.344-0.763-0.765V15.894c0-0.421,0.342-0.762,0.763-0.762h36.251v11.595 c0,1.104,0.899,1.999,2.003,1.999h10.442V84.106z M32.333,32.421h34c0.828,0,1.5,0.672,1.5,1.5s-0.672,1.5-1.5,1.5h-34	c-0.828,0-1.5-0.672-1.5-1.5S31.505,32.421,32.333,32.421z M67.833,44.001c0,0.828-0.672,1.5-1.5,1.5h-34 c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34C67.161,42.501,67.833,43.173,67.833,44.001z M67.833,53.751 c0,0.828-0.672,1.5-1.5,1.5h-34c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34C67.161,52.251,67.833,52.923,67.833,53.751z M67.833,63.667c0,0.828-0.672,1.5-1.5,1.5h-34c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5h34 C67.161,62.167,67.833,62.839,67.833,63.667z" />
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="fxs-blade-content fxs-pannable" style="height:calc(100% - 175px);">
+        <div class="fxs-blade-stacklayout fxs-stacklayout fxs-stacklayout-vertical" ng-style="vm.blade.widthStackLayout">
+            <div class="fxs-stacklayout-child">
+                <div class="fxs-lens">
+                    <h2 class="fxs-lens-title"></h2>
+                    <div class="fxs-lens-layout">
+                        <section class="fxs-tile fxs-tilesize-fullwidthfitheight fx-rightClik">
+                            <div class="fxs-part">
+                                <header class="fxs-part-title">
+                                    <h2 class="msportalfx-tooltip-overflow">{{vm.contentTitle}}</h2>
+                                    <h3 class="msportalfx-tooltip-overflow">{{vm.contentSubTitle}}</h3>
+                                </header>
+                                <section class="fxs-part-content css-scope-HubsExtension">
+                                    <div tabindex="0" class="fxcontrol-base azc-control azc-theme-frost azc-grid-focusableRow azc-grid-selectableRow azc-grid-activateableRow azc-grid-rightClickableRow azc-grid azc-grid-headerHidden Formatter FormatterHtmlBindings Focusable Selectable RightClickableRow" data-bind="pcGrid: $root" data-control="true">
+                                        <div class="azc-grid-container">
+
+                                            <!-- neutral -->
+                                            <div data-ng-if="vm.blade.isInnerHtml">
+                                                <div ng-transclude></div>
+                                            </div>
+
+                                            <!-- nav -->
+                                            <div data-ng-if="vm.isNav" data-nav data-view-model="vm"></div>
+
+                                            <!-- navGrid -->
+                                            <div data-ng-if="vm.blade.isNavGrid" data-nav-grid data-view-model="vm.blade.navGrid"></div>
+
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fxs-blade-maximized-content"></div>
+    </div>
+    <div class="fxs-blade-actionBar"></div>
+</section>
