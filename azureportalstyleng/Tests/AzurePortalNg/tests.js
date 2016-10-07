@@ -1,3 +1,5 @@
+console.log(angular.module('azureportalng'));
+
 describe('AzurePortalNg.AvatarMenu', function () {
     var sut;
     var portalService;

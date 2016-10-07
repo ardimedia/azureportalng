@@ -1,0 +1,26 @@
+﻿body {
+  background-color: #2e80ab;
+  background-image: linear-gradient(to bottom, #2e80ab 0%, #61b7da 100%);
+  background-repeat: no-repeat;
+  font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif;
+  font-weight: 400;
+  font-size: small;
+  -ms-scrollbar-arrow-color: #758393;
+  -ms-scrollbar-face-color: #63707e;
+  -ms-scrollbar-track-color: #dcdfe2; }
+
+a {
+  color: #00bcf2;
+  text-decoration: none; }
+
+img, a img, :link img, :visited img {
+  border: 0; }
+
+input.ng-invalid {
+  border: 1px solid red; }
+
+.collapsed {
+  visibility: collapse;
+  width: 0;
+  min-width: 0; }
+

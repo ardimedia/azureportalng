@@ -1,0 +1,26 @@
+﻿[
+  {
+    "outputFile": "Design/test/test.css",
+    "inputFile": "Design/test/test.scss"
+  },
+  {
+    "outputFile": "Design/design.css",
+    "inputFile": "Design/design.scss"
+  },
+  {
+    "outputFile": "Design/libmixin.css",
+    "inputFile": "Design/libmixin.scss"
+  },
+  {
+    "outputFile": "Design/portallayout.css",
+    "inputFile": "Design/portallayout.scss"
+  },
+  {
+    "outputFile": "Design/themems.css",
+    "inputFile": "Design/themems.scss"
+  },
+  {
+    "outputFile": "azureportalng/css/apn.css",
+    "inputFile": "azureportalng/css/apn.scss"
+  }
+]

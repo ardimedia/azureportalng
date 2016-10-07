@@ -1,26 +1,23 @@
 {
   "name": "azureportalstyleng",
-  "description": "Azure Portal Style (for angular)",
-  "private": true,
-  "version": "1.0.0",
+  "description": "Angular Portal - Azure Style",
+  "version": "0.3.0",
+  "license": "ISC",
   "dependencies": {
-    "angular": "^1.5.0",
-    "angular-resource": "^1.5.0",
-    "jquery": "^2.2.1",
-    "ng-dialog": "^0.5.8"
+    "angular": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "ng-dialog": "^0.6.4"
   },
   "devDependencies": {
-    "angular-mocks": "^1.5.0",
-    "del": "^2.2.0",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-concat": "^2.6.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0",
-    "gulp-typescript": "^2.12.1",
-    "jasmine": "^2.4.1",
-    "merge2": "^1.0.1",
-    "typescript": "^1.9.0-dev.20160310",
-    "typings": "^0.7.7"
+    "@types/angular": "^1.5.16",
+    "@types/angular-mocks": "^1.5.5",
+    "@types/angular-resource": "^1.5.6",
+    "@types/jasmine": "^2.2.35",
+    "@types/jquery": "^2.0.32",
+    "@types/ng-dialog": "^0.0.31",
+    "angular-mocks": "^1.5.8",
+    "dts-generator": "1.7.0",
+    "jasmine": "^2.5.2",
+    "typescript": "^2.0.3"
   }
 }
