@@ -16,7 +16,7 @@
     "@types/jquery": "^2.0.32",
     "@types/ng-dialog": "^0.0.31",
     "angular-mocks": "^1.5.8",
-    "dts-generator": "1.7.0",
+    "dts-generator": "^2.0.0",
     "jasmine": "^2.5.2",
     "typescript": "^2.0.3"
   }
