@@ -1,4 +1,3 @@
-AzurePortalStyleNg
-==================
+# azureportalng 
 
 Very early preview.
