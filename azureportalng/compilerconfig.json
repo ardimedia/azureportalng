@@ -1,23 +1,27 @@
 ﻿[
   {
-    "outputFile": "Design/test/test.css",
-    "inputFile": "Design/test/test.scss"
+    "outputFile": "azureportalng/directives/dialog/style.css",
+    "inputFile": "azureportalng/directives/dialog/style.scss"
   },
   {
-    "outputFile": "Design/design.css",
-    "inputFile": "Design/design.scss"
+    "outputFile": "design/test/test.css",
+    "inputFile": "design/test/test.scss"
   },
   {
-    "outputFile": "Design/libmixin.css",
-    "inputFile": "Design/libmixin.scss"
+    "outputFile": "design/design.css",
+    "inputFile": "design/design.scss"
   },
   {
-    "outputFile": "Design/portallayout.css",
-    "inputFile": "Design/portallayout.scss"
+    "outputFile": "design/libmixin.css",
+    "inputFile": "design/libmixin.scss"
   },
   {
-    "outputFile": "Design/themems.css",
-    "inputFile": "Design/themems.scss"
+    "outputFile": "design/portallayout.css",
+    "inputFile": "design/portallayout.scss"
+  },
+  {
+    "outputFile": "design/themems.css",
+    "inputFile": "design/themems.scss"
   },
   {
     "outputFile": "azureportalng/css/apn.css",

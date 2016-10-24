@@ -2,9 +2,10 @@
   "compileOnSave": true,
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "none",
     "moduleResolution": "node",
-    "outDir": "dist/azureportalng",
+    "outFile": "dist/js/apn.js",
+    "declaration": true,
     "sourceMap": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -12,10 +13,9 @@
     "noImplicitAny": false
   },
   "exclude": [
-    "design",
     "dist",
     "node_modules",
-    "tests",
-    "ZOBSOELTE"
+    "scripts",
+    "tests"
   ]
 }

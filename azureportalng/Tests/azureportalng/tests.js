@@ -1,5 +1,3 @@
-console.log(angular.module('azureportalng'));
-
 describe('AzurePortalNg.AvatarMenu', function () {
     var sut;
     var portalService;
@@ -59,7 +57,7 @@ describe('AzurePortalNg.BladeArea', function () {
     //#region clearPath
     it("clearPath - path not found - throw exception", function () {
         var exception = function () { sut.clearPath('test-path'); };
-        expect(exception).toThrow(new Error('[AzurePortalNg.BladeArea.clearPath] path: \'test-path\' could not be removed, since path not found in bladeUrls.'));
+        expect(exception).toThrow(new Error('[azureportalng.BladeArea.clearPath] path: \'test-path\' could not be removed, since path not found in bladeUrls.'));
     });
     //#endregion
     //#region clearLevel
@@ -101,7 +99,7 @@ describe('AzurePortalNg.BladeData', function () {
     //#region getDataList
     //it("getDataList throws expection", function () {
     //    var exception = function () { sut.getDataList(); };
-    //    expect(exception).toThrow(new Error('[AzurePortalNg.BladeData] \'onGetDataList\' is an abstract function. Define one in the derived class.'));
+    //    expect(exception).toThrow(new Error('[azureportalng.BladeData] \'onGetDataList\' is an abstract function. Define one in the derived class.'));
     //    expect(sut.statusbar).toBe('Daten laden...');
     //    expect(sut.statusbarClass).toBe('');
     //});
@@ -109,7 +107,7 @@ describe('AzurePortalNg.BladeData', function () {
     //#region getDataList
     //it("getDataDetail throws expection", function () {
     //    var exception = function () { sut.getDataDetail(); };
-    //    expect(exception).toThrow(new Error('[AzurePortalNg.BladeData] \'onGetDataDetail\' is an abstract function. Define one in the derived class.'));
+    //    expect(exception).toThrow(new Error('[azureportalng.BladeData] \'onGetDataDetail\' is an abstract function. Define one in the derived class.'));
     //    expect(sut.statusbar).toBe('Daten laden...');
     //    expect(sut.statusbarClass).toBe('');
     //});
@@ -149,7 +147,7 @@ describe('AzurePortalNg.BladeList', function () {
     //#region activate
     //it("activate - throw exception, since getDataList() is abstract", function () {
     //    var exception = function () { sut.activate(); };
-    //    expect(exception).toThrow(new Error('[AzurePortalNg.BladeData] \'onGetDataList\' is an abstract function. Define one in the derived class.'));
+    //    expect(exception).toThrow(new Error('[azureportalng.BladeData] \'onGetDataList\' is an abstract function. Define one in the derived class.'));
     //});
     //#endregion
     //#region onFilter
@@ -312,13 +310,13 @@ describe('AzurePortalNg.Blade', function () {
     //#region navigateTo
     it("navigateTo throws expection - abstract function", function () {
         var exception = function () { sut.navigateTo('test-path'); };
-        expect(exception).toThrow(new Error('[AzurePortalNg.Blade] \'onNavigateTo\' is an abstract function. Define one in the derived class.'));
+        expect(exception).toThrow(new Error('[azureportalng.Blade] \'onNavigateTo\' is an abstract function. Define one in the derived class.'));
     });
     //#endregion
     //#region close
     it("close throws exception - path could not be removed", function () {
         var exception = function () { sut.close(); };
-        expect(exception).toThrow(new Error('[AzurePortalNg.Blade] path: \'test-path\' could not be removed, since no \'this.portalService.bladeArea\' available.'));
+        expect(exception).toThrow(new Error('[azureportalng.Blade] path: \'test-path\' could not be removed, since no \'this.portalService.bladeArea\' available.'));
     });
     //#endregion
     //#endregion
@@ -326,9 +324,9 @@ describe('AzurePortalNg.Blade', function () {
 
 describe('AzurePortalNg.Debug', function () {
     beforeEach(function () {
-        AzurePortalNg.Debug.isEnabled = false;
-        AzurePortalNg.Debug.isWithObjects = false;
-        AzurePortalNg.Debug.keys = new Array();
+        Debug.isEnabled = false;
+        Debug.isWithObjects = false;
+        Debug.keys = new Array();
     });
     //#region Specs for Constructor
     it("Constructor successful.", function () {

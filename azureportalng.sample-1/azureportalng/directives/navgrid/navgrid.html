@@ -1,0 +1,27 @@
+<table class="azc-grid-full azc-grid-multiselectable" aria-readonly="true">
+    <caption data-bind="text: data.summary"></caption>
+    <colgroup>
+        <col class="col0" style="width: 41px;">
+        <col class="col1">
+    </colgroup>
+    <tbody class="azc-grid-groupdata" role="rowgroup">
+        <tr data-ng-repeat="item in vm.items track by $index" data-ng-click="vm.navigateTo(item.bladePath);" role="row" aria-selected="false" data-grid-row-activated="false" data-grid-selectable="true" data-grid-focusable="true" data-grid-activateable="true" ng-show="item.isVisible" style="cursor:pointer" ng-style="item.style">
+            <td class="msportalfx-gridcolumn-asseticon" role="gridcell" data-grid-cell-activated="false">
+                <div class="azc-vivaControl" data-bind='vivaControl: "DEB28B4C-518F-4F70-A817-BF9277606CAB"'>
+                    <div data-bind="image: value">
+                        <svg data-ng-show="item.title" xmlns="http://www.w3.org/2000/svg" class="msportal-fx-svg-placeholder" viewBox="0 0 50 50" focusable="false">
+                            <rect class="msportalfx-svg-c04" x="19.8" y="39.4" width="10.6" height="3.4" />
+                            <polygon class="msportalfx-svg-c04" points="23.1,50 27,50 30.3,46.5 19.8,46.5" />
+                            <path class="msportalfx-svg-c20" d="M 41.2 14.7 L 41.2 14.7 v -0.3 c 0 -7.7 -6.6 -14.1 -14.7 -14.2 c -0.2 -0.3 -4.8 0.1 -4.8 0.1 l 0 0 c -7.3 0.9 -13 7 -13 14.1 c 0 0.2 -0.8 5.8 4.9 10.5 c 2.6 2.3 5.3 8.5 5.7 10.3 l 0.3 0.6 h 10.6 l 0.3 -0.6 c 0.4 -1.8 3.2 -8 5.7 -10.2 C 41.9 20.2 41.2 14.9 41.2 14.7 Z" />
+                            <path class="msportalfx-svg-c01" d="M 30.4 18.1 l -1.7 10.6 h -2 V 18.2 l 0.1 -0.2 c 3.8 0 3.3 -3.5 3.3 -3.5 H 19.8 v 0.3 c 0 0.8 0.3 3.3 3.5 3.3 v 10.6 h -2 l -0.5 -2.5 l -1.3 -8.1 c -2.3 0 -3 -1.5 -3.3 -2.6 c 0 -0.4 0 -0.9 0 -1.4 c 0 -2.8 3.2 -3.1 3.2 -3.1 h 11 c 0 0 3.5 0.4 3.5 3.5 C 33.8 14.5 33.9 18.1 30.4 18.1 Z" />
+                            <path class="msportalfx-svg-c01" opacity="0.15" enable-background="new " d="M 41.2 16.4 c 0.1 -1 0 -1.7 0 -1.8 l 0 0 v -0.3 c 0 -7.7 -6.6 -14.1 -14.7 -14.2 c -0.2 -0.3 -4.8 0.1 -4.8 0.1 l 0 0 c -7.3 0.9 -13 7 -13 14.1 c 0 0.1 -0.1 0.9 0 2.1 H 41.2 Z" />
+                        </svg>
+                    </div>
+                </div>
+            </td>
+            <td tabindex="0" role="gridcell" data-activatable="true" data-grid-cell-activated="false">
+                <a ng-href="{{item.hrefPath}}" target="_blank" style="color:black">{{item.title}}</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
