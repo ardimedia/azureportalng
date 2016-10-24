@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AzurePortalStyleNg.Ui.Web")]
-[assembly: AssemblyDescription("Release Date: 2016-03-13")]
+[assembly: AssemblyTitle("azureportalng")]
+[assembly: AssemblyDescription("Release Date: 2016-10-24")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Infoware, Schaan - Liechtenstein")]
-[assembly: AssemblyProduct("AzurePortalStyleNg.Ui.Web")]
-[assembly: AssemblyCopyright("Copyright © 2016 Infoware")]
+[assembly: AssemblyCompany("Ardimedia, Schaan - Liechtenstein")]
+[assembly: AssemblyProduct("azureportalng")]
+[assembly: AssemblyCopyright("Copyright © 2016 Ardimedia")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
