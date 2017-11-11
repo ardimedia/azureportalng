@@ -1,6 +1,6 @@
 ﻿namespace Sample1 {
 
-    class Sample1Shell extends AzurePortalNg.PortalShell {
+    class Sample1Shell extends AzurePortalNg.PortalShell implements angular.IController {
         //#region Constructors
 
         constructor(portalService: AzurePortalNg.PortalService) {
@@ -28,6 +28,12 @@
         }
 
         //#endregion
+
+        // #region Angular Methods
+
+        $onInit() { }
+
+        // #endregion
 
         //#region Methods
 

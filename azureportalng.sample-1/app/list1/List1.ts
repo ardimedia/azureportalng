@@ -2,7 +2,7 @@
 
     //#region Class Definition
 
-    class List1 extends AzurePortalNg.BladeList {
+    class List1 extends AzurePortalNg.BladeList implements angular.IController{
 
         //#region Constructors
 
@@ -13,6 +13,12 @@
         }
 
         //#endregion
+
+        // #region Angular Methods
+
+        $onInit() { }
+
+        // #endregion
 
         //#region Methods
 

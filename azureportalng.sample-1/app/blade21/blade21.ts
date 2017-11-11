@@ -3,7 +3,7 @@
 
     //#region Class Definition
 
-    class Blade21 extends AzurePortalNg.BladeList {
+    class Blade21 extends AzurePortalNg.BladeList implements angular.IController{
 
         //#region Constructors
 
@@ -17,6 +17,12 @@
         }
 
         //#endregion
+
+        // #region Angular Methods
+
+        $onInit() { }
+
+        // #endregion
 
         //#region Methods - Overrides for Blade
 

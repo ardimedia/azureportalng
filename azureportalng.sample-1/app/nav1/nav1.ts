@@ -1,6 +1,6 @@
 ﻿namespace Sample1 {
 
-    class Nav1 extends AzurePortalNg.BladeNav {
+    class Nav1 extends AzurePortalNg.BladeNav implements angular.IController {
         //#region Constructors
 
         constructor(portalService: AzurePortalNg.PortalService) {
@@ -23,6 +23,12 @@
         }
 
         //#endregion
+
+        // #region Angular Methods
+
+        $onInit() { }
+
+        // #endregion
 
         //#region Methods
 

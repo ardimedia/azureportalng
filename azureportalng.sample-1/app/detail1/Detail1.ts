@@ -3,7 +3,7 @@
 
     //#region Class Definition
 
-    class Detail1 extends AzurePortalNg.BladeDetail {
+    class Detail1 extends AzurePortalNg.BladeDetail implements angular.IController{
 
         //#region Constructors
 
@@ -14,6 +14,12 @@
         }
 
         //#endregion
+
+        // #region Angular Methods
+
+        $onInit() { }
+
+        // #endregion
 
         //#region Methods
 

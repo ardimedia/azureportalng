@@ -2,7 +2,7 @@
 
     //#region Class Definition
 
-    class Blade11 extends AzurePortalNg.BladeList {
+    class Blade11 extends AzurePortalNg.BladeList implements angular.IController {
         //#region Constructors
 
         constructor(portalService: AzurePortalNg.PortalService) {
@@ -15,6 +15,12 @@
         }
 
         //#endregion
+
+        // #region Angular Methods
+
+        $onInit() { }
+
+        // #endregion
 
         //#region Methods - Overrides for Blade
 
