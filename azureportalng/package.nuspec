@@ -2,18 +2,15 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>azureportalng</id>
-    <version>0.2.1-beta</version>
+    <version>0.2.2-beta</version>
     <authors>Ardimedai</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Framework for building web sites based on the Azure Portal Layout.</description>
     <releaseNotes>Early preview.</releaseNotes>
-    <dependencies>
-      <dependency id="angularjs" version="1.5.8" />
-    </dependencies>
   </metadata>
   <files>
-    <file src="dist\azureportalng\js\apn.js" target="content\azureportalng\js\apn.js" />
-    <file src="dist\azureportalng\js\apn.d.ts" target="content\azureportalng\js\apn.d.ts" />
+    <file src="dist\js\apn.js" target="content\azureportalng\js\apn.js" />
+    <file src="dist\js\apn.d.ts" target="content\azureportalng\js\apn.d.ts" />
 
     <file src="azureportalng\directives\blade\blade.html" target="content\azureportalng\directives\blade\blade.html" />
     <file src="azureportalng\directives\home\home.html" target="content\azureportalng\directives\home\home.html" />

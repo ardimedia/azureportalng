@@ -1,5 +1,6 @@
 ﻿## LIST PACKAGE
-C:\APP\nuget\nuget list azureportalng -allversion -prerelease -Source https://nuget.ardimedia.com/nuget
+C:\APP\nuget\nuget list azureportalng      -allversion -prerelease -Source https://nuget.ardimedia.com/nuget
+C:\APP\nuget\nuget list AzurePortalStyleNg -allversion -prerelease 
 
 ## DEPLOY TO ARDIMEDIA
 

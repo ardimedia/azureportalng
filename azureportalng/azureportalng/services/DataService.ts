@@ -13,10 +13,10 @@
 
         getData(url: string): angular.IHttpPromise<any[] | any> {
             return this.$http({ method: 'GET', url: url })
-                .success((data: any) => {
+                .then((data: any) => {
                     return data;
                 })
-                .error((error: any) => {
+                .catch((error: any) => {
                     return error;
                 });
         }

@@ -1246,10 +1246,10 @@ var AzurePortalNg;
         //#region Methods
         DataService.prototype.getData = function (url) {
             return this.$http({ method: 'GET', url: url })
-                .success(function (data) {
+                .then(function (data) {
                 return data;
             })
-                .error(function (error) {
+                .catch(function (error) {
                 return error;
             });
         };
