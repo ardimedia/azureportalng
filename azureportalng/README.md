@@ -18,4 +18,4 @@ DOS commands:
     (by hand) COMPILE the solution
 
     C:\APP\nuget\nuget.exe pack package.nuspec -OutputDirectory dist
-    COPY dist\azureportalng.0.2.1-beta.nupkg \\SVRTFS01.ardimedia.com\d$\!Data\NuGet\Packages
+    COPY dist\azureportalng.0.2.2-beta.nupkg \\SVRTFS01.ardimedia.com\d$\!Data\NuGet\Packages
