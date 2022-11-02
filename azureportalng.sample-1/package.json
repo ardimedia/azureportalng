@@ -16,7 +16,7 @@
     "@types/angular": "^1.6.39",
     "@types/angular-resource": "^1.5.14",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "typescript": "^2.6.1"
   }
 }
